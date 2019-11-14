@@ -14,7 +14,7 @@ class ProfilePage extends React.Component {
     const { router } = this.props
     return (
       <div>
-        <Header />
+        <Header loggedIn={this.props.loggedIn}/>
         <AppContainer>
           <h1 className="font-lrg font-bold-med inline-block">{router.query.id}</h1>
           <Card>

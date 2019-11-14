@@ -135,6 +135,11 @@
 
 .link {
   color: #6462EF !important;
+  cursor: pointer;
+}
+
+.link-no-color-change {
+  cursor: pointer;
 }
 
 .column-section:not(:first-child) {

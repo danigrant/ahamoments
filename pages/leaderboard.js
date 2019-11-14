@@ -5,7 +5,7 @@ import Leaderboard from '../components/Leaderboard'
 const LeaderboardPage = props => {
   return (
     <div>
-      <Header />
+      <Header loggedIn={props.loggedIn}/>
       <AppContainer>
         <h1 className="font-lrg font-bold-med">The most 🔥 Aha Moment creators</h1>
         <Leaderboard />

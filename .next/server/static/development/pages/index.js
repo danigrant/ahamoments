@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -391,8 +391,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchBox */ "./components/SearchBox.js");
 /* harmony import */ var _LogInButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LogInButton */ "./components/LogInButton.js");
 /* harmony import */ var _LogInModalOverlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LogInModalOverlay */ "./components/LogInModalOverlay.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -407,86 +410,107 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 13
       },
       __self: this
     }, !this.props.loggedIn && __jsx(_LogInModalOverlay__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       },
       __self: this
     }), __jsx("div", {
       className: "header-wrapper light-border-bottom drop-shadow",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }, __jsx("div", {
       className: "constrained-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "logo logo-sml",
-      src: "/images/logo.png",
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 19
       },
       __self: this
-    }), __jsx(_SearchBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: "/",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
+      },
+      __self: this
+    }, __jsx("img", {
+      className: "logo logo-sml link-no-color-change",
+      src: "/images/logo.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    })), __jsx(_SearchBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
       },
       __self: this
     }), __jsx("div", {
       className: "leaderboard-menu-link inline-block font-md",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 24
+      },
+      __self: this
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: "/leaderboard",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
       },
       __self: this
     }, __jsx("p", {
-      className: "font-color-light-grey inline-block",
+      className: "font-color-light-grey link-no-color-change inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 26
       },
       __self: this
-    }, "Leaderboard")), __jsx("div", {
+    }, "Leaderboard"))), __jsx("div", {
       className: "float-right inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 29
       },
       __self: this
     }, !this.props.loggedIn && __jsx("div", {
       className: "menu-bar-login-button",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 32
       },
       __self: this
     }, __jsx(_LogInButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 32
       },
       __self: this
-    })), this.props.loggedIn && __jsx("img", {
-      className: "avatar avatar-med",
+    })), this.props.loggedIn && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      href: "/explainer/@barackobama",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }, __jsx("img", {
+      className: "avatar avatar-med link-no-color-change",
       src: "/images/temp-avatar.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 37
       },
       __self: this
-    })))));
+    }))))));
   }
 
 }
@@ -3623,7 +3647,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ 7:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
