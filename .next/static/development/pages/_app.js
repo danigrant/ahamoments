@@ -7758,7 +7758,7 @@ function (_App) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_12__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_13__["default"])(AhaMoments).call(this, props));
     _this.state = {
-      loggedIn: false
+      loggedIn: true
     };
     return _this;
   }

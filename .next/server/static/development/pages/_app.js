@@ -686,7 +686,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: false
+      loggedIn: true
     };
   }
 

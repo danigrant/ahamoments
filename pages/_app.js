@@ -6,7 +6,7 @@ class AhaMoments extends App {
   constructor(props) {
     super(props)
     this.state = {
-      loggedIn: false
+      loggedIn: true
     }
   }
   render() {
