@@ -61311,18 +61311,24 @@ function _getTopExplanationsAllTime() {
         switch (_context7.prev = _context7.next) {
           case 0:
             return _context7.abrupt("return", [{
+              "explanationID": "6CpE8XLCBYuMVAFr3wKE",
               "concept": "integrals",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "text",
-                //audio, photo, video, youtube, tweet, text
+                //audio, photo, video, youtube, tweet, text, link
                 "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
                 "mediaLink": "",
                 "mediaConsumptionGuidance": ""
               }
             }, {
+              "explanationID": "eK2dxVLq5je8dfLWJjZL",
               "concept": "derivatives",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "tweet",
                 //audio, photo, video, youtube, tweet, text
@@ -61331,8 +61337,11 @@ function _getTopExplanationsAllTime() {
                 "mediaConsumptionGuidance": ""
               }
             }, {
+              "explanationID": "g1oC8rsxdEdjEce34Ick",
               "concept": "limits",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "youtube",
                 //audio, photo, video, youtube, tweet, text
@@ -61341,8 +61350,11 @@ function _getTopExplanationsAllTime() {
                 "mediaConsumptionGuidance": "Watch from minute 1:30 to 4:40"
               }
             }, {
+              "explanationID": "h81W5hM76wl8PhdMe0oX",
               "concept": "logarithm",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "link",
                 //audio, photo, video, youtube, tweet, text, link
@@ -61351,8 +61363,11 @@ function _getTopExplanationsAllTime() {
                 "mediaConsumptionGuidance": ""
               }
             }, {
+              "explanationID": "h9U3t1rg4gUj3amJ9IUW",
               "concept": "differential-equation",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "video",
                 //audio, photo, video, youtube, tweet, text
@@ -61374,7 +61389,8 @@ function _getTopExplanationsAllTime() {
 
 function getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
-}
+} // returns array of explanations for a concept sorted in rank order
+
 
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
@@ -61416,6 +61432,95 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
+function getConceptExplanations() {
+  return _getConceptExplanations.apply(this, arguments);
+}
+
+function _getConceptExplanations() {
+  _getConceptExplanations = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee9() {
+    return _regenerator["default"].wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            return _context9.abrupt("return", [{
+              "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "text",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+                "mediaLink": "",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "explanationID": "eK2dxVLq5je8dfLWJjZL",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "tweet",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This explains this well",
+                "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "explanationID": "g1oC8rsxdEdjEce34Ick",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "youtube",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This is a good video",
+                "mediaLink": "https://www.youtube.com/watch?v=Q-K3O9styao",
+                "mediaConsumptionGuidance": "Watch from minute 1:30 to 4:40"
+              }
+            }, {
+              "explanationID": "h81W5hM76wl8PhdMe0oX",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "link",
+                //audio, photo, video, youtube, tweet, text, link
+                "introText": "This is a good blog post",
+                "mediaLink": "https://waitbutwhy.com/2016/03/my-ted-talk.html",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "explanationID": "h9U3t1rg4gUj3amJ9IUW",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "video",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This is a good video",
+                "mediaLink": "http://movietrailers.apple.com/movies/wb/the-lego-ninjago-movie/the-lego-ninjago-movie-trailer-2_h720p.mov",
+                "mediaConsumptionGuidance": "watch the whole thing, why not."
+              }
+            }]);
+
+          case 1:
+          case "end":
+            return _context9.stop();
+        }
+      }
+    }, _callee9);
+  }));
+  return _getConceptExplanations.apply(this, arguments);
+}
+
 module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
@@ -61423,7 +61528,8 @@ module.exports = {
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
-  getConceptsThatNeedLove: getConceptsThatNeedLove
+  getConceptsThatNeedLove: getConceptsThatNeedLove,
+  getConceptExplanations: getConceptExplanations
 };
 
 /***/ }),

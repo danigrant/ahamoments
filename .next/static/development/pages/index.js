@@ -174,6 +174,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
@@ -181,6 +183,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ExplanationCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
 
 
 
@@ -208,118 +211,130 @@ function (_React$Component) {
         className: "explanation-card-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         },
         __self: this
       }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 19
         },
         __self: this
       }, __jsx("img", {
         className: "avatar avatar-sml",
-        src: "/images/temp-avatar5.jpg",
+        src: this.props.explanation.authorAvatarUrl,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 20
         },
         __self: this
       }), __jsx("p", {
         className: "font-color-light-grey inline-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         },
         __self: this
       }, __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_12___default.a, {
-        href: "/explainer/@hasanminhaj",
+        href: "/explainer/".concat(this.props.explanation.authorUserID),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 22
         },
         __self: this
-      }, "@hasanminhaj")), " "), "explains", __jsx("span", {
+      }, this.props.explanation.authorDisplayName)), " "), "explains", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_12___default.a, {
-        href: "/concept/reinmann-sums",
+        href: "/concept/".concat(this.props.explanation.concept),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 24
         },
         __self: this
-      }, "Riemann Sums")), " "), "through", __jsx("span", {
+      }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_13__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 26
         },
         __self: this
-      }, " spoken word"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, __jsx("p", {
+      }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_13__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }, "Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, this.props.explanation.explanation.introText), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 31
         },
         __self: this
-      }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, this.props.explanation.explanation.mediaLink), __jsx("p", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 32
         },
         __self: this
+      }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
       }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 36
         },
         __self: this
       }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_11__["default"], {
         className: "float-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 37
         },
         __self: this
       }))));
@@ -65249,31 +65264,39 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
-/* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/AppContainer */ "./components/AppContainer.js");
-/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Card */ "./components/Card.js");
-/* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/CardSection */ "./components/CardSection.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _components_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
-/* harmony import */ var _components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/NewConceptsNeedExplanationsCard */ "./components/NewConceptsNeedExplanationsCard.js");
-/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/ExplanationCard */ "./components/ExplanationCard.js");
-/* harmony import */ var _components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/TopCreatorsOfWeekSection */ "./components/TopCreatorsOfWeekSection.js");
-/* harmony import */ var _components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/TopConceptsOfWeekSection */ "./components/TopConceptsOfWeekSection.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/AppContainer */ "./components/AppContainer.js");
+/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Card */ "./components/Card.js");
+/* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _components_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var _components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/NewConceptsNeedExplanationsCard */ "./components/NewConceptsNeedExplanationsCard.js");
+/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/ExplanationCard */ "./components/ExplanationCard.js");
+/* harmony import */ var _components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/TopCreatorsOfWeekSection */ "./components/TopCreatorsOfWeekSection.js");
+/* harmony import */ var _components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/TopConceptsOfWeekSection */ "./components/TopConceptsOfWeekSection.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_18__);
+
+
 
 
 
 
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
 
 
 
@@ -65289,155 +65312,201 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Index, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Index, _React$Component);
 
   function Index(props) {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Index);
+    var _this;
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Index).call(this, props));
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Index);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Index).call(this, props));
+    _this.state = {
+      topExplanationsArray: []
+    };
+    return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.t0 = this;
+                _context.next = 3;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_18__["getTopExplanationsAllTime"])();
+
+              case 3:
+                _context.t1 = _context.sent;
+                _context.t2 = {
+                  topExplanationsArray: _context.t1
+                };
+
+                _context.t0.setState.call(_context.t0, _context.t2);
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
     key: "render",
     value: function render() {
-      return __jsx("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        },
-        __self: this
-      }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        loggedIn: this.props.loggedIn,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        },
-        __self: this
-      }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "columns-parent-div",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "column-70-p",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "column-section",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: "font-lrg font-bold-med",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 26
-        },
-        __self: this
-      })), __jsx("div", {
-        className: "column-section",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: "font-lrg font-bold-med",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, "The most \uD83D\uDD25 Aha Moment creations right now"), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }))), __jsx("div", {
-        className: "column-30-p",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "column-section",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: "font-lrg font-bold-med",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, "Top Creators This Week"), __jsx(_components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_14__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      })), __jsx("div", {
-        className: "column-section",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: "font-lrg font-bold-med",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      }, "Top Concepts This Week"), __jsx(_components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_15__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        },
-        __self: this
-      }))))));
+      {
+        if (!this.state.topExplanationsArray.length) {
+          return __jsx("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 30
+            },
+            __self: this
+          }, "Loading...");
+        } else {
+          return __jsx("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 34
+            },
+            __self: this
+          }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            loggedIn: this.props.loggedIn,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 35
+            },
+            __self: this
+          }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 36
+            },
+            __self: this
+          }, __jsx("div", {
+            className: "columns-parent-div",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 37
+            },
+            __self: this
+          }, __jsx("div", {
+            className: "column-70-p",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 38
+            },
+            __self: this
+          }, __jsx("div", {
+            className: "column-section",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 39
+            },
+            __self: this
+          }, __jsx("h1", {
+            className: "font-lrg font-bold-med",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 40
+            },
+            __self: this
+          }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_14__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 41
+            },
+            __self: this
+          })), __jsx("div", {
+            className: "column-section",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 43
+            },
+            __self: this
+          }, __jsx("h1", {
+            className: "font-lrg font-bold-med",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            },
+            __self: this
+          }, "The most \uD83D\uDD25 Aha Moment creations right now"), this.state.topExplanationsArray.map(function (e) {
+            return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_15__["default"], {
+              key: e.explanationID,
+              explanation: e,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 47
+              },
+              __self: this
+            });
+          }))), __jsx("div", {
+            className: "column-30-p",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 52
+            },
+            __self: this
+          }, __jsx("div", {
+            className: "column-section",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 53
+            },
+            __self: this
+          }, __jsx("h1", {
+            className: "font-lrg font-bold-med",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 54
+            },
+            __self: this
+          }, "Top Creators This Week"), __jsx(_components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_16__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 55
+            },
+            __self: this
+          })), __jsx("div", {
+            className: "column-section",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 57
+            },
+            __self: this
+          }, __jsx("h1", {
+            className: "font-lrg font-bold-med",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 58
+            },
+            __self: this
+          }, "Top Concepts This Week"), __jsx(_components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 59
+            },
+            __self: this
+          }))))));
+        }
+      }
     }
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
@@ -65782,18 +65851,24 @@ function _getTopExplanationsAllTime() {
         switch (_context7.prev = _context7.next) {
           case 0:
             return _context7.abrupt("return", [{
+              "explanationID": "6CpE8XLCBYuMVAFr3wKE",
               "concept": "integrals",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "text",
-                //audio, photo, video, youtube, tweet, text
+                //audio, photo, video, youtube, tweet, text, link
                 "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
                 "mediaLink": "",
                 "mediaConsumptionGuidance": ""
               }
             }, {
+              "explanationID": "eK2dxVLq5je8dfLWJjZL",
               "concept": "derivatives",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "tweet",
                 //audio, photo, video, youtube, tweet, text
@@ -65802,8 +65877,11 @@ function _getTopExplanationsAllTime() {
                 "mediaConsumptionGuidance": ""
               }
             }, {
+              "explanationID": "g1oC8rsxdEdjEce34Ick",
               "concept": "limits",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "youtube",
                 //audio, photo, video, youtube, tweet, text
@@ -65812,8 +65890,11 @@ function _getTopExplanationsAllTime() {
                 "mediaConsumptionGuidance": "Watch from minute 1:30 to 4:40"
               }
             }, {
+              "explanationID": "h81W5hM76wl8PhdMe0oX",
               "concept": "logarithm",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "link",
                 //audio, photo, video, youtube, tweet, text, link
@@ -65822,8 +65903,11 @@ function _getTopExplanationsAllTime() {
                 "mediaConsumptionGuidance": ""
               }
             }, {
+              "explanationID": "h9U3t1rg4gUj3amJ9IUW",
               "concept": "differential-equation",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
               "explanation": {
                 "type": "video",
                 //audio, photo, video, youtube, tweet, text
@@ -65845,7 +65929,8 @@ function _getTopExplanationsAllTime() {
 
 function getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
-}
+} // returns array of explanations for a concept sorted in rank order
+
 
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
@@ -65887,6 +65972,95 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
+function getConceptExplanations() {
+  return _getConceptExplanations.apply(this, arguments);
+}
+
+function _getConceptExplanations() {
+  _getConceptExplanations = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee9() {
+    return _regenerator["default"].wrap(function _callee9$(_context9) {
+      while (1) {
+        switch (_context9.prev = _context9.next) {
+          case 0:
+            return _context9.abrupt("return", [{
+              "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "text",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+                "mediaLink": "",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "explanationID": "eK2dxVLq5je8dfLWJjZL",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "tweet",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This explains this well",
+                "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "explanationID": "g1oC8rsxdEdjEce34Ick",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "youtube",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This is a good video",
+                "mediaLink": "https://www.youtube.com/watch?v=Q-K3O9styao",
+                "mediaConsumptionGuidance": "Watch from minute 1:30 to 4:40"
+              }
+            }, {
+              "explanationID": "h81W5hM76wl8PhdMe0oX",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "link",
+                //audio, photo, video, youtube, tweet, text, link
+                "introText": "This is a good blog post",
+                "mediaLink": "https://waitbutwhy.com/2016/03/my-ted-talk.html",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "explanationID": "h9U3t1rg4gUj3amJ9IUW",
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "authorAvatarUrl": "/images/temp-avatar.jpg",
+              "authorDisplayName": "Barack Obama",
+              "explanation": {
+                "type": "video",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This is a good video",
+                "mediaLink": "http://movietrailers.apple.com/movies/wb/the-lego-ninjago-movie/the-lego-ninjago-movie-trailer-2_h720p.mov",
+                "mediaConsumptionGuidance": "watch the whole thing, why not."
+              }
+            }]);
+
+          case 1:
+          case "end":
+            return _context9.stop();
+        }
+      }
+    }, _callee9);
+  }));
+  return _getConceptExplanations.apply(this, arguments);
+}
+
 module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
@@ -65894,7 +66068,59 @@ module.exports = {
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
-  getConceptsThatNeedLove: getConceptsThatNeedLove
+  getConceptsThatNeedLove: getConceptsThatNeedLove,
+  getConceptExplanations: getConceptExplanations
+};
+
+/***/ }),
+
+/***/ "./utils/utils.js":
+/*!************************!*\
+  !*** ./utils/utils.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var conceptToDisplayName = function conceptToDisplayName(concept) {
+  // replace - with space
+  return concept.replace("-", " ");
+}; //audio, photo, video, youtube, tweet, text, link
+
+
+var explanationTypeToDisplayType = function explanationTypeToDisplayType(explanationType) {
+  switch (explanationType) {
+    case "audio":
+      return "spoken word";
+      break;
+
+    case "photo":
+      return "illustration";
+      break;
+
+    case "video":
+      return "monologue";
+      break;
+
+    case "youtube":
+      return "poetry";
+      break;
+
+    case "tweet":
+      return "280 characters";
+      break;
+
+    case "text":
+      return "biography";
+      break;
+
+    default:
+      return "interpretive dance";
+  }
+};
+
+module.exports = {
+  conceptToDisplayName: conceptToDisplayName,
+  explanationTypeToDisplayType: explanationTypeToDisplayType
 };
 
 /***/ }),
