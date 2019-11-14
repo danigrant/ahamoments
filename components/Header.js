@@ -3,6 +3,7 @@ import SearchBox from './SearchBox'
 import LogInButton from './LogInButton'
 import LogInModalOverlay from './LogInModalOverlay'
 import Link from 'next/link'
+import { logUserIn } from '../utils/firebase'
 
 class Header extends React.Component {
   constructor(props) {
@@ -11,10 +12,6 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        {
-          !this.props.loggedIn &&
-          <LogInModalOverlay />
-        }
         <div className="header-wrapper light-border-bottom drop-shadow">
           <div className="constrained-width">
             <Link href="/">
@@ -29,7 +26,7 @@ class Header extends React.Component {
             <div className="float-right inline-block">
               {
                 !this.props.loggedIn &&
-                <div className="menu-bar-login-button"><LogInButton /></div>
+                <div onClick={logUserIn} className="menu-bar-login-button"><LogInButton /></div>
               }
               {
                 this.props.loggedIn &&
@@ -46,3 +43,15 @@ class Header extends React.Component {
 }
 
 export default Header
+
+// {
+//   !this.props.loggedIn &&
+//   <LogInModalOverlay />
+// }
+
+
+// async handleLogUserIn() {
+//   // first await logUserIn
+//   // in parent function needs to be an auth changed watcher so we dont have to pass up anything
+//   // actually if that is the case then i dont need this function
+// }

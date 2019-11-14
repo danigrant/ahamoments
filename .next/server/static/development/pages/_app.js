@@ -181,6 +181,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/weak-map.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js ***!
@@ -338,6 +349,72 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = _interopRequireDefault;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Object$getOwnPropertyDescriptor = __webpack_require__(/*! ../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+
+var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _WeakMap = __webpack_require__(/*! ../core-js/weak-map */ "./node_modules/@babel/runtime-corejs2/core-js/weak-map.js");
+
+function _getRequireWildcardCache() {
+  if (typeof _WeakMap !== "function") return null;
+  var cache = new _WeakMap();
+
+  _getRequireWildcardCache = function _getRequireWildcardCache() {
+    return cache;
+  };
+
+  return cache;
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  }
+
+  var cache = _getRequireWildcardCache();
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+
+  if (obj != null) {
+    var hasPropertyDescriptor = _Object$defineProperty && _Object$getOwnPropertyDescriptor;
+
+    for (var key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? _Object$getOwnPropertyDescriptor(obj, key) : null;
+
+        if (desc && (desc.get || desc.set)) {
+          _Object$defineProperty(newObj, key, desc);
+        } else {
+          newObj[key] = obj[key];
+        }
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+module.exports = _interopRequireWildcard;
 
 /***/ }),
 
@@ -663,6 +740,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__);
 
 
 
@@ -681,12 +760,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+ // this instantiates firebase
 
 class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
   constructor(props) {
     super(props);
     this.state = {
-      loggedIn: true
+      loggedIn: false
     };
   }
 
@@ -698,13 +778,13 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       },
       __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 17
       },
       __self: this
     }, __jsx("link", {
@@ -712,7 +792,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }), __jsx("link", {
@@ -720,7 +800,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "https://fonts.googleapis.com/icon?family=Material+Icons",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 19
       },
       __self: this
     }), __jsx("link", {
@@ -728,7 +808,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "/css/utils.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 20
       },
       __self: this
     }), __jsx("link", {
@@ -736,7 +816,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "/css/styles.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 21
       },
       __self: this
     })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -744,7 +824,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
     }, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 23
       },
       __self: this
     })));
@@ -759,6 +839,97 @@ AhaMoments.getInitialProps = async appContext => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (AhaMoments);
+
+/***/ }),
+
+/***/ "./utils/firebase.js":
+/*!***************************!*\
+  !*** ./utils/firebase.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js");
+
+var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "firebase"));
+
+/*
+  This file contains firebase config and instantiation
+  contains functions that interact with the db
+
+  This file also holds all of the auth functions
+  logUserIn
+  getLoggedInUser <-- returns false if no user logged in
+*/
+// initialize
+const firebaseConfig = {
+  apiKey: "AIzaSyBmeHPOy2Uvargw51ygM30ye9-lrpWoEOU",
+  authDomain: "explain-this.firebaseapp.com",
+  databaseURL: "https://explain-this.firebaseio.com",
+  projectId: "explain-this",
+  storageBucket: "explain-this.appspot.com",
+  messagingSenderId: "145315125752",
+  appId: "1:145315125752:web:4e7c3fe717a051b0471e0d",
+  measurementId: "G-2HP7D44T1F"
+};
+console.log(firebaseConfig.apiKey);
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const db = firebase.firestore();
+const conceptsRef = db.collection('concepts');
+const explanationsRef = db.collection('explanations');
+const usersRef = db.collection('users');
+const increment = firebase.firestore.FieldValue.increment(1);
+const decrement = firebase.firestore.FieldValue.increment(-1);
+const provider = new firebase.auth.TwitterAuthProvider(); // auth
+
+async function getLoggedInUser() {
+  let user = firebase.auth().currentUser;
+
+  if (!user) {
+    // No user is signed in.
+    return false;
+  } // maybe pull some stuff about the user into an obj and return that?
+  // user.photoURL, user.displayName
+
+
+  return user;
+}
+
+async function logUserIn() {
+  firebase.auth().signInWithPopup(provider).then(function (result) {
+    // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+    // You can use these server side with your app's credentials to access the Twitter API.
+    let token = result.credential.accessToken;
+    let secret = result.credential.secret; // The signed-in user info.
+
+    let user = result.user; // can use the getLoggedInUser function to return a good user obj
+    // user.photoURL, user.displayName does not return twitter handle
+
+    console.log(user);
+    return user;
+  }).catch(function (error) {
+    // Handle Errors here.
+    let errorCode = error.code;
+    let errorMessage = error.message; // The email of the user's account used.
+
+    let email = error.email; // The firebase.auth.AuthCredential type that was used.
+
+    let credential = error.credential;
+    console.log(error);
+  });
+}
+
+module.exports = {
+  logUserIn,
+  getLoggedInUser
+};
 
 /***/ }),
 
@@ -859,6 +1030,28 @@ module.exports = require("core-js/library/fn/object/keys");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "core-js/library/fn/weak-map":
+/*!**********************************************!*\
+  !*** external "core-js/library/fn/weak-map" ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "firebase":
+/*!***************************!*\
+  !*** external "firebase" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase");
 
 /***/ }),
 

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -327,7 +327,13 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
         lineNumber: 21
       },
       __self: this
-    }, "@hasanminhaj"), " "), "explains", __jsx("span", {
+    }, __jsx("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, "@hasanminhaj")), " "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
@@ -341,7 +347,13 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
         lineNumber: 23
       },
       __self: this
-    }, "Riemann Sums"), " "), "through", __jsx("span", {
+    }, __jsx("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, "Riemann Sums")), " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
@@ -410,8 +422,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _LogInModalOverlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LogInModalOverlay */ "./components/LogInModalOverlay.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_5__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -427,34 +442,28 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 14
       },
       __self: this
-    }, !this.props.loggedIn && __jsx(_LogInModalOverlay__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }), __jsx("div", {
+    }, __jsx("div", {
       className: "header-wrapper light-border-bottom drop-shadow",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 15
       },
       __self: this
     }, __jsx("div", {
       className: "constrained-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 16
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: "/",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 17
       },
       __self: this
     }, __jsx("img", {
@@ -462,61 +471,62 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       src: "/images/logo.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 18
       },
       __self: this
     })), __jsx(_SearchBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 20
       },
       __self: this
     }), __jsx("div", {
       className: "leaderboard-menu-link inline-block font-md",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 21
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: "/leaderboard",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 22
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey link-no-color-change inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 23
       },
       __self: this
     }, "Leaderboard"))), __jsx("div", {
       className: "float-right inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 26
       },
       __self: this
     }, !this.props.loggedIn && __jsx("div", {
+      onClick: _utils_firebase__WEBPACK_IMPORTED_MODULE_5__["logUserIn"],
       className: "menu-bar-login-button",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 29
       },
       __self: this
     }, __jsx(_LogInButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 29
       },
       __self: this
     })), this.props.loggedIn && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
       href: "/explainer/@barackobama",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 33
       },
       __self: this
     }, __jsx("img", {
@@ -524,7 +534,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       src: "/images/temp-avatar.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 34
       },
       __self: this
     }))))));
@@ -532,7 +542,15 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Header);
+/* harmony default export */ __webpack_exports__["default"] = (Header); // {
+//   !this.props.loggedIn &&
+//   <LogInModalOverlay />
+// }
+// async handleLogUserIn() {
+//   // first await logUserIn
+//   // in parent function needs to be an auth changed watcher so we dont have to pass up anything
+//   // actually if that is the case then i dont need this function
+// }
 
 /***/ }),
 
@@ -3769,7 +3787,98 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ 5:
+/***/ "./utils/firebase.js":
+/*!***************************!*\
+  !*** ./utils/firebase.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js");
+
+var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "firebase"));
+
+/*
+  This file contains firebase config and instantiation
+  contains functions that interact with the db
+
+  This file also holds all of the auth functions
+  logUserIn
+  getLoggedInUser <-- returns false if no user logged in
+*/
+// initialize
+const firebaseConfig = {
+  apiKey: "AIzaSyBmeHPOy2Uvargw51ygM30ye9-lrpWoEOU",
+  authDomain: "explain-this.firebaseapp.com",
+  databaseURL: "https://explain-this.firebaseio.com",
+  projectId: "explain-this",
+  storageBucket: "explain-this.appspot.com",
+  messagingSenderId: "145315125752",
+  appId: "1:145315125752:web:4e7c3fe717a051b0471e0d",
+  measurementId: "G-2HP7D44T1F"
+};
+console.log(firebaseConfig.apiKey);
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const db = firebase.firestore();
+const conceptsRef = db.collection('concepts');
+const explanationsRef = db.collection('explanations');
+const usersRef = db.collection('users');
+const increment = firebase.firestore.FieldValue.increment(1);
+const decrement = firebase.firestore.FieldValue.increment(-1);
+const provider = new firebase.auth.TwitterAuthProvider(); // auth
+
+async function getLoggedInUser() {
+  let user = firebase.auth().currentUser;
+
+  if (!user) {
+    // No user is signed in.
+    return false;
+  } // maybe pull some stuff about the user into an obj and return that?
+  // user.photoURL, user.displayName
+
+
+  return user;
+}
+
+async function logUserIn() {
+  firebase.auth().signInWithPopup(provider).then(function (result) {
+    // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+    // You can use these server side with your app's credentials to access the Twitter API.
+    let token = result.credential.accessToken;
+    let secret = result.credential.secret; // The signed-in user info.
+
+    let user = result.user; // can use the getLoggedInUser function to return a good user obj
+    // user.photoURL, user.displayName does not return twitter handle
+
+    console.log(user);
+    return user;
+  }).catch(function (error) {
+    // Handle Errors here.
+    let errorCode = error.code;
+    let errorMessage = error.message; // The email of the user's account used.
+
+    let email = error.email; // The firebase.auth.AuthCredential type that was used.
+
+    let credential = error.credential;
+    console.log(error);
+  });
+}
+
+module.exports = {
+  logUserIn,
+  getLoggedInUser
+};
+
+/***/ }),
+
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -3866,6 +3975,17 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/weak-map");
+
+/***/ }),
+
+/***/ "firebase":
+/*!***************************!*\
+  !*** external "firebase" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase");
 
 /***/ }),
 

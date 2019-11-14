@@ -18,9 +18,9 @@ class ExplanationCard extends React.Component {
           <CardSection>
             <img className="avatar avatar-sml" src="/images/temp-avatar5.jpg" />
             <p className="font-color-light-grey inline-block">
-              <span className="link"><Link href="/explainer/@hasanminhaj">@hasanminhaj</Link> </span>
+              <span className="link"><Link href="/explainer/@hasanminhaj"><a>@hasanminhaj</a></Link> </span>
               explains
-              <span className="link"> <Link href="/concept/reinmann-sums">Riemann Sums</Link> </span>
+              <span className="link"> <Link href="/concept/reinmann-sums"><a>Riemann Sums</a></Link> </span>
               through
               <span className="link"> spoken word</span>
             </p>
