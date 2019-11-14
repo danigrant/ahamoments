@@ -7,6 +7,8 @@ import Link from 'next/link'
 import MultiAvatarUnit from '../components/MultiAvatarUnit'
 import NewConceptsNeedExplanationsCard from '../components/NewConceptsNeedExplanationsCard'
 import ExplanationCard from '../components/ExplanationCard'
+import TopCreatorsOfWeekSection from '../components/TopCreatorsOfWeekSection'
+import TopConceptsOfWeekSection from '../components/TopConceptsOfWeekSection'
 
 class Index extends React.Component {
   constructor(props) {
@@ -18,7 +20,7 @@ class Index extends React.Component {
         <Header />
         <AppContainer>
           <div className="columns-parent-div">
-            <div className="column-lrg">
+            <div className="column-70-p">
               <div className="column-section">
                 <h1 className="font-lrg font-bold-med">Ideas looking for Aha Moments</h1>
                 <NewConceptsNeedExplanationsCard />
@@ -30,7 +32,16 @@ class Index extends React.Component {
                 <ExplanationCard />
               </div>
             </div>
-            <div className="column-sml">small column</div>
+            <div className="column-30-p">
+              <div className="column-section">
+                <h1 className="font-lrg font-bold-med">Top Creators This Week</h1>
+                <TopCreatorsOfWeekSection />
+              </div>
+              <div className="column-section">
+                <h1 className="font-lrg font-bold-med">Top Concepts This Week</h1>
+                <TopConceptsOfWeekSection />
+              </div>
+            </div>
           </div>
         </AppContainer>
       </div>

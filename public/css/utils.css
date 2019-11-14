@@ -100,12 +100,20 @@
   height: 100%;
 }
 
-.columns-parent-div .column-sml {
+.columns-parent-div .column-30-p {
   width: 29%;
 }
 
-.columns-parent-div .column-lrg {
+.columns-parent-div .column-70-p {
   width: 69%;
+}
+
+.columns-parent-div .column-20-p {
+  width: 19%;
+}
+
+.columns-parent-div .column-80-p {
+  width: 79%;
 }
 
 .link {
@@ -152,4 +160,15 @@
 
 .margin-left {
   margin-left: 15px;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.flex-horizontal-center {
+  justify-content: center;
 }

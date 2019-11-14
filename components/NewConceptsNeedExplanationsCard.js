@@ -10,7 +10,7 @@ const NewConceptsNeedExplanationsCard = props => {
       </CardSection>
       <CardSection>
         <div className="columns-parent-div">
-          <div className="column-lrg">
+          <div className="column-70-p">
             <div className="row">
               <h2>Integrals</h2>
             </div>
@@ -18,14 +18,14 @@ const NewConceptsNeedExplanationsCard = props => {
               <p className="font-color-light-grey">no one has contributed an explanation yet</p>
             </div>
           </div>
-          <div className="column-sml">
+          <div className="column-30-p">
             <div className="action-button button background-purple rounded-border font-med font-bold-extra">Contribute</div>
           </div>
         </div>
       </CardSection>
       <CardSection>
       <div className="columns-parent-div">
-        <div className="column-lrg">
+        <div className="column-70-p">
           <div className="row">
             <h2>Integrals</h2>
           </div>
@@ -34,17 +34,17 @@ const NewConceptsNeedExplanationsCard = props => {
             <p className="follows-multi-avatar-unit font-color-light-grey inline-block">+ 3 others have added explanations</p>
           </div>
         </div>
-        <div className="column-sml">
+        <div className="column-30-p">
           <div className="action-button float-right button background-purple rounded-border font-med font-bold-extra">Contribute</div>
         </div>
       </div>
       </CardSection>
       <CardSection>
       <div className="columns-parent-div">
-        <div className="column-lrg">
+        <div className="column-70-p">
           <p className="font-color-light-grey">+ 23 other ideas</p>
         </div>
-        <div className="column-sml">
+        <div className="column-30-p">
           <div className="action-button float-right button background-grey light-border rounded-border font-med font-bold-extra">Expand</div>
         </div>
       </div>

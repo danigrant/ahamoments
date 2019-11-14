@@ -1767,7 +1767,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "column-lrg",
+        className: "column-70-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18

@@ -84,7 +84,7 @@ h2, p {
   background-color: #f9f9f9;
 }
 
-.card-section-wrapper .column-sml {
+.card-section-wrapper .column-30-p {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;

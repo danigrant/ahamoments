@@ -131,7 +131,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "column-lrg",
+        className: "column-70-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 19
@@ -184,7 +184,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "column-lrg",
+        className: "column-70-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28
@@ -245,7 +245,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "column-lrg",
+        className: "column-70-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 43
@@ -306,7 +306,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "column-lrg",
+        className: "column-70-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 58

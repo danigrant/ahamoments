@@ -73,7 +73,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("div", {
-        className: "column-lrg",
+        className: "column-70-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 17
@@ -113,7 +113,7 @@ function (_React$Component) {
         },
         __self: this
       }, "Contribute wacky and wonderful explanations to these ideas."))))), __jsx("div", {
-        className: "column-sml",
+        className: "column-30-p",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 27

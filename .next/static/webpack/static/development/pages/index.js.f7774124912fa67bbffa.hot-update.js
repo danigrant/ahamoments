@@ -55,7 +55,7 @@ var NewConceptsNeedExplanationsCard = function NewConceptsNeedExplanationsCard(p
     },
     __self: this
   }, __jsx("div", {
-    className: "column-lrg",
+    className: "column-70-p",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
@@ -116,7 +116,7 @@ var NewConceptsNeedExplanationsCard = function NewConceptsNeedExplanationsCard(p
     },
     __self: this
   }, __jsx("div", {
-    className: "column-lrg",
+    className: "column-70-p",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
@@ -183,7 +183,7 @@ var NewConceptsNeedExplanationsCard = function NewConceptsNeedExplanationsCard(p
     },
     __self: this
   }, __jsx("div", {
-    className: "column-lrg",
+    className: "column-70-p",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44
