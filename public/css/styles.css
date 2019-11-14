@@ -10,7 +10,7 @@ textarea:focus, input:focus{
   outline: none;
 }
 
-p {
+h2, p {
   margin: 0;
 }
 
@@ -76,10 +76,16 @@ p {
 
 .card-section-wrapper {
   background-color: white;
-  padding: 20px 104px 20px 20px;
+  padding: 20px 40px 20px 20px;
 
 }
 
 .card-section-wrapper:hover {
   background-color: #f9f9f9;
+}
+
+.card-section-wrapper .column-sml {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }

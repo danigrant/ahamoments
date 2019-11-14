@@ -1,20 +1,20 @@
-.font-sm {
+.font-sml {
   font-size: 13px;
 }
 
-.font-md {
+.font-med {
   font-size: 16px;
 }
 
-.font-lg {
+.font-lrg {
   font-size: 20px;
 }
 
-.font-bold-sm {
+.font-bold-sml {
   font-weight: 400;
 }
 
-.font-bold-md {
+.font-bold-med {
   font-weight: 700;
 }
 
@@ -26,15 +26,18 @@
   border-radius: 200px;
 }
 
-.avatar-sm {
+.avatar-sml {
   width: 35px;
+  position: relative;
+  top: 10px;
+  margin-right: 15px;
 }
 
-.avatar-md {
+.avatar-med {
   width: 65px;
 }
 
-.avatar-lg {
+.avatar-lrg {
 
 }
 
@@ -42,12 +45,12 @@
 
 }
 
-.logo-sm {
+.logo-sml {
   width: 65px;
   height: 65px;
 }
 
-.logo-lg {
+.logo-lrg {
 
 }
 
@@ -99,4 +102,30 @@
 
 .columns-parent-div .column-lrg {
   width: 69%;
+}
+
+.link {
+  color: #6462EF !important;
+}
+
+.column-section:not(:first-child) {
+  margin-top: 60px;
+}
+
+.button {
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.background-purple {
+  background: #6462EF;
+  color: white;
+}
+
+.background-grey {
+  background: #F9F9F9;
 }

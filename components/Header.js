@@ -9,13 +9,13 @@ class Header extends React.Component {
     return (
       <div className="header-wrapper light-border-bottom drop-shadow">
         <div className="constrained-width">
-          <img className="logo logo-sm" src="/images/logo.png" />
+          <img className="logo logo-sml" src="/images/logo.png" />
           <SearchBox />
           <div className="leaderboard-menu-link inline-block font-md">
             <p className="font-color-light-grey inline-block">Leaderboard</p>
           </div>
           <div className="float-right inline-block">
-            <img className="avatar avatar-md" src="https://pbs.twimg.com/profile_images/822547732376207360/5g0FC8XX.jpg" />
+            <img className="avatar avatar-med" src="/images/temp-avatar.jpg" />
           </div>
         </div>
       </div>
