@@ -1,9 +1,13 @@
 import React from 'react'
 import SearchBox from './SearchBox'
+import LogInButton from './LogInButton'
 
 class Header extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      loggedIn: false
+    }
   }
   render() {
     return (
@@ -15,7 +19,14 @@ class Header extends React.Component {
             <p className="font-color-light-grey inline-block">Leaderboard</p>
           </div>
           <div className="float-right inline-block">
-            <img className="avatar avatar-med" src="/images/temp-avatar.jpg" />
+            {
+              !this.state.loggedIn &&
+              <div className="menu-bar-login-button"><LogInButton /></div>
+            }
+            {
+              this.state.loggedIn &&
+              <img className="avatar avatar-med" src="/images/temp-avatar.jpg" />
+            }
           </div>
         </div>
       </div>

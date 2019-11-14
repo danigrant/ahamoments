@@ -195,14 +195,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _SearchBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchBox */ "./components/SearchBox.js");
+/* harmony import */ var _LogInButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LogInButton */ "./components/LogInButton.js");
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
 class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loggedIn: false
+    };
   }
 
   render() {
@@ -210,14 +215,14 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       className: "header-wrapper light-border-bottom drop-shadow",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 10
+        lineNumber: 14
       },
       __self: this
     }, __jsx("div", {
       className: "constrained-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 11
+        lineNumber: 15
       },
       __self: this
     }, __jsx("img", {
@@ -225,42 +230,55 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       src: "/images/logo.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 16
       },
       __self: this
     }), __jsx(_SearchBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 17
       },
       __self: this
     }), __jsx("div", {
       className: "leaderboard-menu-link inline-block font-md",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 18
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 19
       },
       __self: this
     }, "Leaderboard")), __jsx("div", {
       className: "float-right inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 21
       },
       __self: this
-    }, __jsx("img", {
+    }, !this.state.loggedIn && __jsx("div", {
+      className: "menu-bar-login-button",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, __jsx(_LogInButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    })), this.state.loggedIn && __jsx("img", {
       className: "avatar avatar-med",
       src: "/images/temp-avatar.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 28
       },
       __self: this
     }))));
@@ -756,6 +774,36 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Leaderboard);
+
+/***/ }),
+
+/***/ "./components/LogInButton.js":
+/*!***********************************!*\
+  !*** ./components/LogInButton.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/LogInButton.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const LogInButton = props => {
+  return __jsx("div", {
+    className: "button grow background-blue rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, "Log In");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LogInButton);
 
 /***/ }),
 

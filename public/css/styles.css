@@ -184,3 +184,8 @@ h2, p {
 .leaderboard-table tr:last-child td {
   border: none;
 }
+
+.menu-bar-login-button {
+  position: relative;
+  top: 20px;
+}
