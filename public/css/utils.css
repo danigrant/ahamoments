@@ -148,6 +148,10 @@
   background: #F9F9F9;
 }
 
+.background-dark-grey {
+  background: #9C9C9C;
+}
+
 .background-green {
   background: #A3D066;
   color: white;
@@ -162,6 +166,18 @@
   margin-left: 15px;
 }
 
+.margin-top-sml {
+  margin-top: 15px;
+}
+
+.margin-top-med {
+  margin-top: 35px;
+}
+
+.margin-top-lrg {
+  margin-top: 55px;
+}
+
 .grow {
   transition: all .2s ease-in-out;
 }
@@ -171,4 +187,8 @@
 
 .flex-horizontal-center {
   justify-content: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }

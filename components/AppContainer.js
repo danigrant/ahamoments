@@ -1,6 +1,6 @@
 const AppContainer = props => {
   return (
-    <div class="appcontainer-wrapper constrained-width">
+    <div className="appcontainer-wrapper constrained-width">
       {props.children}
     </div>
   )
