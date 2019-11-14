@@ -346,24 +346,30 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       },
       __self: this
     }), __jsx("th", {
-      className: "center",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
       },
       __self: this
-    }, "Aha Moments"), __jsx("th", {
+    }), __jsx("th", {
       className: "center",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       },
       __self: this
-    }, "Explanations"), __jsx("th", {
+    }, "Aha Moments"), __jsx("th", {
       className: "center",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22
+      },
+      __self: this
+    }, "Explanations"), __jsx("th", {
+      className: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
       },
       __self: this
     }, __jsx("img", {
@@ -371,14 +377,14 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/reactions/get-it-cat.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 23
       },
       __self: this
     })), __jsx("th", {
       className: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       },
       __self: this
     }, __jsx("img", {
@@ -386,14 +392,14 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/reactions/laughing.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 24
       },
       __self: this
     })), __jsx("th", {
       className: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
     }, __jsx("img", {
@@ -401,20 +407,26 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/reactions/shocked.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
     }))), __jsx("tr", {
       className: "light-border-bottom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 27
       },
       __self: this
     }, __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 28
+      },
+      __self: this
+    }, "1"), __jsx("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
       },
       __self: this
     }, __jsx("img", {
@@ -422,61 +434,67 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/temp-avatar.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 29
       },
       __self: this
     })), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 30
       },
       __self: this
     }, "@barackobama"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 31
       },
       __self: this
     }, "200"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 32
       },
       __self: this
     }, "100"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 33
       },
       __self: this
     }, "50"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 34
       },
       __self: this
     }, "40"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 35
       },
       __self: this
     }, "30")), __jsx("tr", {
       className: "light-border-bottom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 37
       },
       __self: this
     }, __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 38
+      },
+      __self: this
+    }, "2"), __jsx("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 39
       },
       __self: this
     }, __jsx("img", {
@@ -484,61 +502,67 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/temp-avatar2.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 39
       },
       __self: this
     })), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 40
       },
       __self: this
     }, "@hasanminhaj"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 41
       },
       __self: this
     }, "200"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 42
       },
       __self: this
     }, "100"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 43
       },
       __self: this
     }, "50"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41
+        lineNumber: 44
       },
       __self: this
     }, "40"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 45
       },
       __self: this
     }, "30")), __jsx("tr", {
       className: "light-border-bottom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 47
       },
       __self: this
     }, __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 48
+      },
+      __self: this
+    }, "3"), __jsx("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
       },
       __self: this
     }, __jsx("img", {
@@ -546,61 +570,67 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/temp-avatar3.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 49
       },
       __self: this
     })), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 50
       },
       __self: this
     }, "@trevornoah"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 51
       },
       __self: this
     }, "200"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 52
       },
       __self: this
     }, "100"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 53
       },
       __self: this
     }, "50"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 54
       },
       __self: this
     }, "40"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 55
       },
       __self: this
     }, "30")), __jsx("tr", {
       className: "light-border-bottom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 57
       },
       __self: this
     }, __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 58
+      },
+      __self: this
+    }, "4"), __jsx("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
       },
       __self: this
     }, __jsx("img", {
@@ -608,61 +638,67 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/temp-avatar4.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 59
       },
       __self: this
     })), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 60
       },
       __self: this
     }, "@stephencolbert"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 61
       },
       __self: this
     }, "200"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 62
       },
       __self: this
     }, "100"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 63
       },
       __self: this
     }, "50"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 64
       },
       __self: this
     }, "40"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 65
       },
       __self: this
     }, "30")), __jsx("tr", {
       className: "light-border-bottom",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 67
       },
       __self: this
     }, __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 68
+      },
+      __self: this
+    }, "5"), __jsx("td", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
       },
       __self: this
     }, __jsx("img", {
@@ -670,48 +706,48 @@ class Leaderboard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       src: "/images/temp-avatar5.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63
+        lineNumber: 69
       },
       __self: this
     })), __jsx("td", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 70
       },
       __self: this
     }, "@iamjohnoliver"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 71
       },
       __self: this
     }, "200"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 72
       },
       __self: this
     }, "100"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 67
+        lineNumber: 73
       },
       __self: this
     }, "50"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 74
       },
       __self: this
     }, "40"), __jsx("td", {
       className: "center font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 75
       },
       __self: this
     }, "30"))))));
