@@ -1,0 +1,90 @@
+.font-sm {
+  font-size: 13px;
+}
+
+.font-md {
+
+}
+
+.font-lg {
+
+}
+
+.font-bold-sm {
+  font-weight: 400;
+}
+
+.font-bold-md {
+  font-weight: 700;
+}
+
+.font-bold-extra {
+  font-weight: 900;
+}
+
+.avatar {
+  border-radius: 200px;
+}
+
+.avatar-sm {
+  width: 35px;
+}
+
+.avatar-md {
+  width: 65px;
+}
+
+.avatar-lg {
+
+}
+
+.logo {
+
+}
+
+.logo-sm {
+  width: 65px;
+  height: 65px;
+}
+
+.logo-lg {
+
+}
+
+.rounded-border {
+  border-radius: 5px;
+}
+
+.light-border {
+  border: 1px solid #e8e8e8;
+}
+
+.light-border-bottom {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.drop-shadow {
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+}
+
+.font-color-light-grey {
+  color: #6f6f6f;
+}
+
+.material-icons {
+  width: 24px;
+  position: relative;
+  top: 7px;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-right {
+  float: right;
+}

@@ -1,0 +1,62 @@
+body {
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.appcontainer-wrapper {
+
+}
+
+.header-wrapper {
+  background-color: white;
+  height: 66px;
+  width: 100%;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.constrained-width {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.searchbox-wrapper {
+  width: 300px;
+  display: inline-block;
+  position: relative;
+  bottom: 27px;
+  left: 50px;
+}
+
+.searchbox-wrapper form {
+  position: relative;
+  margin: 0 5px 0 0;
+  width: 100%;
+  background-color: white;
+  height: 35px;
+}
+
+.searchbox-wrapper form input {
+  height: 35px;
+  padding: 0 10px 0 40px;
+  width: -webkit-fill-available;
+  outline: none;
+  border: none;
+}
+
+.searchbox-wrapper form i {
+  height: 14px;
+  left: 8px;
+  position: absolute;
+  top: 5px;
+  width: 14px;
+}
+
+.leaderboard-menu-link {
+  position: relative;
+  left: 150px;
+  bottom: 25px;
+}
