@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import AppContainer from '../components/AppContainer'
 import Card from '../components/Card'
 import CardSection from '../components/CardSection'
+import Link from 'next/link'
 
 class Leaderboard extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class Leaderboard extends React.Component {
               <tr className="light-border-bottom">
                 <td>1</td>
                 <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar.jpg" /></td>
-                <td>@barackobama</td>
+                <td className="link-no-color-change"><Link href="/explainer/@barackobama">@barackobama</Link></td>
                 <td className="center font-color-light-grey">200</td>
                 <td className="center font-color-light-grey">100</td>
                 <td className="center font-color-light-grey">50</td>
@@ -37,7 +38,7 @@ class Leaderboard extends React.Component {
               <tr className="light-border-bottom">
                 <td>2</td>
                 <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar2.jpg" /></td>
-                <td>@hasanminhaj</td>
+                <td className="link-no-color-change"><Link href="/explainer/@hasanminhaj">@hasanminhaj</Link></td>
                 <td className="center font-color-light-grey">200</td>
                 <td className="center font-color-light-grey">100</td>
                 <td className="center font-color-light-grey">50</td>
@@ -47,7 +48,7 @@ class Leaderboard extends React.Component {
               <tr className="light-border-bottom">
                 <td>3</td>
                 <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar3.jpg" /></td>
-                <td>@trevornoah</td>
+                <td className="link-no-color-change"><Link href="/explainer/@trevornoah">@trevornoah</Link></td>
                 <td className="center font-color-light-grey">200</td>
                 <td className="center font-color-light-grey">100</td>
                 <td className="center font-color-light-grey">50</td>
@@ -57,7 +58,7 @@ class Leaderboard extends React.Component {
               <tr className="light-border-bottom">
                 <td>4</td>
                 <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar4.jpg" /></td>
-                <td>@stephencolbert</td>
+                <td className="link-no-color-change"><Link href="/explainer/@stephencolbert">@stephencolbert</Link></td>
                 <td className="center font-color-light-grey">200</td>
                 <td className="center font-color-light-grey">100</td>
                 <td className="center font-color-light-grey">50</td>
@@ -67,7 +68,7 @@ class Leaderboard extends React.Component {
               <tr className="light-border-bottom">
                 <td>5</td>
                 <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar5.jpg" /></td>
-                <td>@iamjohnoliver</td>
+                <td className="link-no-color-change"><Link href="/explainer/@iamjohnoliver">@iamjohnoliver</Link></td>
                 <td className="center font-color-light-grey">200</td>
                 <td className="center font-color-light-grey">100</td>
                 <td className="center font-color-light-grey">50</td>
