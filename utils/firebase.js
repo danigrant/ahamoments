@@ -22,8 +22,6 @@ const firebaseConfig = {
   measurementId: "G-2HP7D44T1F"
 }
 
-console.log(firebaseConfig.apiKey);
-
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -64,7 +62,7 @@ async function logUserIn() {
     let user = result.user;
     // can use the getLoggedInUser function to return a good user obj
 
-    // user.photoURL, user.displayName does not return twitter handle
+    // user.photoURL, user.displayName, user.email, user.uid does not return twitter handle
     console.log(user);
     return user
   }).catch(function(error) {
@@ -79,4 +77,26 @@ async function logUserIn() {
   });
 }
 
-module.exports = { logUserIn, getLoggedInUser }
+async function pollForAuthChanges() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log({
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        photoURL: user.photoURL,
+        isAnonymous: user.isAnonymous,
+        uid: user.uid,
+        providerData: user.providerData
+      });
+      // ...
+    } else {
+      // User is signed out.
+      // ...
+      console.log('user just signed out');
+    }
+  });
+}
+
+module.exports = { firebase, logUserIn, getLoggedInUser, pollForAuthChanges }

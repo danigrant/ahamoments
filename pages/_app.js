@@ -2,6 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
 import '../utils/firebase' // this instantiates firebase
+import { firebase, pollForAuthChanges } from '../utils/firebase'
 
 class AhaMoments extends App {
   constructor(props) {
@@ -9,6 +10,32 @@ class AhaMoments extends App {
     this.state = {
       loggedIn: false
     }
+  }
+  componentDidMount() {
+    let thisRef = this;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        console.log({
+          displayName: user.displayName,
+          email: user.email,
+          emailVerified: user.emailVerified,
+          photoURL: user.photoURL,
+          isAnonymous: user.isAnonymous,
+          uid: user.uid,
+          providerData: user.providerData
+        })
+        // update state to add current user
+        thisRef.setState({
+          loggedIn: true
+        })
+      } else {
+        // user logged out
+        thisRef.setState({
+          loggedIn: false
+        })
+      }
+    })
   }
   render() {
     const { Component, pageProps } = this.props

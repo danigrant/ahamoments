@@ -65482,7 +65482,6 @@ var firebaseConfig = {
   appId: "1:145315125752:web:4e7c3fe717a051b0471e0d",
   measurementId: "G-2HP7D44T1F"
 };
-console.log(firebaseConfig.apiKey);
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -65550,7 +65549,7 @@ function _logUserIn() {
               var secret = result.credential.secret; // The signed-in user info.
 
               var user = result.user; // can use the getLoggedInUser function to return a good user obj
-              // user.photoURL, user.displayName does not return twitter handle
+              // user.photoURL, user.displayName, user.email, user.uid does not return twitter handle
 
               console.log(user);
               return user;
@@ -65575,9 +65574,52 @@ function _logUserIn() {
   return _logUserIn.apply(this, arguments);
 }
 
+function pollForAuthChanges() {
+  return _pollForAuthChanges.apply(this, arguments);
+}
+
+function _pollForAuthChanges() {
+  _pollForAuthChanges = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee3() {
+    return _regenerator["default"].wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            firebase.auth().onAuthStateChanged(function (user) {
+              if (user) {
+                // User is signed in.
+                console.log({
+                  displayName: user.displayName,
+                  email: user.email,
+                  emailVerified: user.emailVerified,
+                  photoURL: user.photoURL,
+                  isAnonymous: user.isAnonymous,
+                  uid: user.uid,
+                  providerData: user.providerData
+                }); // ...
+              } else {
+                // User is signed out.
+                // ...
+                console.log('user just signed out');
+              }
+            });
+
+          case 1:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _pollForAuthChanges.apply(this, arguments);
+}
+
 module.exports = {
+  firebase: firebase,
   logUserIn: logUserIn,
-  getLoggedInUser: getLoggedInUser
+  getLoggedInUser: getLoggedInUser,
+  pollForAuthChanges: pollForAuthChanges
 };
 
 /***/ }),

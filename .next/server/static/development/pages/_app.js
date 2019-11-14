@@ -762,12 +762,41 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
  // this instantiates firebase
 
+
+
 class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
   constructor(props) {
     super(props);
     this.state = {
       loggedIn: false
     };
+  }
+
+  componentDidMount() {
+    let thisRef = this;
+    _utils_firebase__WEBPACK_IMPORTED_MODULE_11__["firebase"].auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        console.log({
+          displayName: user.displayName,
+          email: user.email,
+          emailVerified: user.emailVerified,
+          photoURL: user.photoURL,
+          isAnonymous: user.isAnonymous,
+          uid: user.uid,
+          providerData: user.providerData
+        }); // update state to add current user
+
+        thisRef.setState({
+          loggedIn: true
+        });
+      } else {
+        // user logged out
+        thisRef.setState({
+          loggedIn: false
+        });
+      }
+    });
   }
 
   render() {
@@ -778,13 +807,13 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 43
       },
       __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 44
       },
       __self: this
     }, __jsx("link", {
@@ -792,7 +821,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 45
       },
       __self: this
     }), __jsx("link", {
@@ -800,7 +829,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "https://fonts.googleapis.com/icon?family=Material+Icons",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 46
       },
       __self: this
     }), __jsx("link", {
@@ -808,7 +837,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "/css/utils.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 47
       },
       __self: this
     }), __jsx("link", {
@@ -816,7 +845,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "/css/styles.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 48
       },
       __self: this
     })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
@@ -824,7 +853,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
     }, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 50
       },
       __self: this
     })));
@@ -875,7 +904,6 @@ const firebaseConfig = {
   appId: "1:145315125752:web:4e7c3fe717a051b0471e0d",
   measurementId: "G-2HP7D44T1F"
 };
-console.log(firebaseConfig.apiKey);
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -910,7 +938,7 @@ async function logUserIn() {
     let secret = result.credential.secret; // The signed-in user info.
 
     let user = result.user; // can use the getLoggedInUser function to return a good user obj
-    // user.photoURL, user.displayName does not return twitter handle
+    // user.photoURL, user.displayName, user.email, user.uid does not return twitter handle
 
     console.log(user);
     return user;
@@ -926,9 +954,32 @@ async function logUserIn() {
   });
 }
 
+async function pollForAuthChanges() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
+      console.log({
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        photoURL: user.photoURL,
+        isAnonymous: user.isAnonymous,
+        uid: user.uid,
+        providerData: user.providerData
+      }); // ...
+    } else {
+      // User is signed out.
+      // ...
+      console.log('user just signed out');
+    }
+  });
+}
+
 module.exports = {
+  firebase,
   logUserIn,
-  getLoggedInUser
+  getLoggedInUser,
+  pollForAuthChanges
 };
 
 /***/ }),

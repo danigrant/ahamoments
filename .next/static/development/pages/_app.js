@@ -60825,6 +60825,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
  // this instantiates firebase
 
+
+
 var AhaMoments =
 /*#__PURE__*/
 function (_App) {
@@ -60843,6 +60845,34 @@ function (_App) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_11__["default"])(AhaMoments, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var thisRef = this;
+      _utils_firebase__WEBPACK_IMPORTED_MODULE_18__["firebase"].auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // User is signed in.
+          console.log({
+            displayName: user.displayName,
+            email: user.email,
+            emailVerified: user.emailVerified,
+            photoURL: user.photoURL,
+            isAnonymous: user.isAnonymous,
+            uid: user.uid,
+            providerData: user.providerData
+          }); // update state to add current user
+
+          thisRef.setState({
+            loggedIn: true
+          });
+        } else {
+          // user logged out
+          thisRef.setState({
+            loggedIn: false
+          });
+        }
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -60851,13 +60881,13 @@ function (_App) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 43
         },
         __self: this
       }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_17___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 44
         },
         __self: this
       }, __jsx("link", {
@@ -60865,7 +60895,7 @@ function (_App) {
         rel: "stylesheet",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 45
         },
         __self: this
       }), __jsx("link", {
@@ -60873,7 +60903,7 @@ function (_App) {
         href: "https://fonts.googleapis.com/icon?family=Material+Icons",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 46
         },
         __self: this
       }), __jsx("link", {
@@ -60881,7 +60911,7 @@ function (_App) {
         href: "/css/utils.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 47
         },
         __self: this
       }), __jsx("link", {
@@ -60889,7 +60919,7 @@ function (_App) {
         href: "/css/styles.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 48
         },
         __self: this
       })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_9__["default"])({
@@ -60897,7 +60927,7 @@ function (_App) {
       }, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 50
         },
         __self: this
       })));
@@ -60981,7 +61011,6 @@ var firebaseConfig = {
   appId: "1:145315125752:web:4e7c3fe717a051b0471e0d",
   measurementId: "G-2HP7D44T1F"
 };
-console.log(firebaseConfig.apiKey);
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -61049,7 +61078,7 @@ function _logUserIn() {
               var secret = result.credential.secret; // The signed-in user info.
 
               var user = result.user; // can use the getLoggedInUser function to return a good user obj
-              // user.photoURL, user.displayName does not return twitter handle
+              // user.photoURL, user.displayName, user.email, user.uid does not return twitter handle
 
               console.log(user);
               return user;
@@ -61074,9 +61103,52 @@ function _logUserIn() {
   return _logUserIn.apply(this, arguments);
 }
 
+function pollForAuthChanges() {
+  return _pollForAuthChanges.apply(this, arguments);
+}
+
+function _pollForAuthChanges() {
+  _pollForAuthChanges = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee3() {
+    return _regenerator["default"].wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            firebase.auth().onAuthStateChanged(function (user) {
+              if (user) {
+                // User is signed in.
+                console.log({
+                  displayName: user.displayName,
+                  email: user.email,
+                  emailVerified: user.emailVerified,
+                  photoURL: user.photoURL,
+                  isAnonymous: user.isAnonymous,
+                  uid: user.uid,
+                  providerData: user.providerData
+                }); // ...
+              } else {
+                // User is signed out.
+                // ...
+                console.log('user just signed out');
+              }
+            });
+
+          case 1:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _pollForAuthChanges.apply(this, arguments);
+}
+
 module.exports = {
+  firebase: firebase,
   logUserIn: logUserIn,
-  getLoggedInUser: getLoggedInUser
+  getLoggedInUser: getLoggedInUser,
+  pollForAuthChanges: pollForAuthChanges
 };
 
 /***/ }),
