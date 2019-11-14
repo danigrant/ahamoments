@@ -2,6 +2,10 @@
   font-size: 13px;
 }
 
+.font-med::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
 .font-med {
   font-size: 16px;
 }

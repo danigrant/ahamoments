@@ -14,6 +14,11 @@ h2, p {
   margin: 0;
 }
 
+::-webkit-input-placeholder {
+  font-family: 'Nunito', sans-serif;
+  color: #9C9C9C;
+}
+
 .appcontainer-wrapper {
   margin-top: 30px !important;
 }
@@ -146,4 +151,19 @@ h2, p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.add-explanation-form input {
+  width: 100%;
+  height: 47px;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+
+.add-explanation-form textarea {
+  width: 100%;
+  padding-left: 15px;
+  padding-top: 15px;
+  box-sizing: border-box;
+  height: auto;
 }
