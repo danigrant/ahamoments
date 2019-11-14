@@ -7,7 +7,9 @@ class LogInModalOverlay extends React.Component {
   }
   render() {
     return (
-      <div className="login-modal-overlay-wrapper">
+      <div>
+        <div className="login-modal-overlay-wrapper">
+        </div>
         <LogInModal />
       </div>
     )

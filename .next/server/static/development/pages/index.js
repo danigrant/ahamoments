@@ -551,7 +551,7 @@ class LogInModal extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
 
   render() {
     return __jsx("div", {
-      className: "login-modal-wrapper",
+      className: "login-modal-wrapper center",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
@@ -563,16 +563,31 @@ class LogInModal extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component 
         lineNumber: 12
       },
       __self: this
-    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, __jsx("i", {
+      className: "material-icons float-right margin-right-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 13
       },
       __self: this
-    }, __jsx("p", {
+    }, "close_rounded"), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 14
+      },
+      __self: this
+    }, __jsx("img", {
+      className: "logo-lrg",
+      src: "/images/logo.png",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
       },
       __self: this
     }, "this is a modal?"))));
@@ -608,16 +623,22 @@ class LogInModalOverlay extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Com
 
   render() {
     return __jsx("div", {
-      className: "login-modal-overlay-wrapper",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 10
       },
       __self: this
-    }, __jsx(_LogInModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }, __jsx("div", {
+      className: "login-modal-overlay-wrapper",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 11
+      },
+      __self: this
+    }), __jsx(_LogInModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
       },
       __self: this
     }));
