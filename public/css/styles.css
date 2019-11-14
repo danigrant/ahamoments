@@ -141,3 +141,9 @@ h2, p {
 .explanation-card-wrapper {
   margin-bottom: 35px;
 }
+
+.media-type-selection-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

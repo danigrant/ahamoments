@@ -40,7 +40,16 @@ class ConceptPage extends React.Component {
                 <span className="link"> spoken word</span>
               </h2>
               <div className="media-type-selection-section margin-top-sml">
-                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med">Podcast Snippet</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Write Something</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Podcast Snippet</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">YouTube Clip</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Video</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Audio</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Tweet</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Video</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Photo</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Draw Something And Upload It</div>
+                <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Link To Something On The Web</div>
               </div>
             </CardSection>
           </Card>

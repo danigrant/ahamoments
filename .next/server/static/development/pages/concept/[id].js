@@ -827,49 +827,112 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       },
       __self: this
     }, __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med",
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 43
       },
       __self: this
-    }, "Podcast Snippet")))), __jsx("h1", {
-      className: "margin-top-lrg font-lrg font-bold-med inline-block",
+    }, "Write Something"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 44
+      },
+      __self: this
+    }, "Podcast Snippet"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45
+      },
+      __self: this
+    }, "YouTube Clip"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 46
+      },
+      __self: this
+    }, "Record Your Own Video"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 47
+      },
+      __self: this
+    }, "Record Your Own Audio"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }, "Tweet"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
+      },
+      __self: this
+    }, "Upload A Video"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 50
+      },
+      __self: this
+    }, "Upload A Photo"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 51
+      },
+      __self: this
+    }, "Draw Something And Upload It"), __jsx("div", {
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }, "Link To Something On The Web")))), __jsx("h1", {
+      className: "margin-top-lrg font-lrg font-bold-med inline-block",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
       },
       __self: this
     }, "All of the wacky and wonderful ways to explain a ", router.query.id, " "), __jsx("p", {
       className: "font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 57
       },
       __self: this
     }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
       className: "margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 58
       },
       __self: this
     }, __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 59
       },
       __self: this
     }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 60
       },
       __self: this
     }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 61
       },
       __self: this
     }))));
