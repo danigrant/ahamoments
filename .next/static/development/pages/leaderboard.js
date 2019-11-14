@@ -252,7 +252,414 @@ function (_React$Component) {
           lineNumber: 13
         },
         __self: this
-      });
+      }, __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }, __jsx("table", {
+        className: "leaderboard-table font-bold-med",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }, __jsx("tr", {
+        className: "light-border-bottom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }), __jsx("th", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }), __jsx("th", {
+        className: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, "Aha Moments"), __jsx("th", {
+        className: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }, "Explanations"), __jsx("th", {
+        className: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar-sml-size-no-positioning",
+        src: "/images/reactions/get-it-cat.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      })), __jsx("th", {
+        className: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar-sml-size-no-positioning",
+        src: "/images/reactions/laughing.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      })), __jsx("th", {
+        className: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar-sml-size-no-positioning",
+        src: "/images/reactions/shocked.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }))), __jsx("tr", {
+        className: "light-border-bottom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar avatar-sml-size-no-positioning",
+        src: "/images/temp-avatar.jpg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      })), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, "@barackobama"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, "200"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, "100"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        },
+        __self: this
+      }, "50"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        },
+        __self: this
+      }, "40"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }, "30")), __jsx("tr", {
+        className: "light-border-bottom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar avatar-sml-size-no-positioning",
+        src: "/images/temp-avatar2.jpg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      })), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, "@hasanminhaj"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, "200"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        },
+        __self: this
+      }, "100"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, "50"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }, "40"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, "30")), __jsx("tr", {
+        className: "light-border-bottom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: this
+      }, __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar avatar-sml-size-no-positioning",
+        src: "/images/temp-avatar3.jpg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        },
+        __self: this
+      })), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        },
+        __self: this
+      }, "@trevornoah"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }, "200"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, "100"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, "50"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      }, "40"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, "30")), __jsx("tr", {
+        className: "light-border-bottom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar avatar-sml-size-no-positioning",
+        src: "/images/temp-avatar4.jpg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      })), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, "@stephencolbert"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "200"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, "100"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, "50"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, "40"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }, "30")), __jsx("tr", {
+        className: "light-border-bottom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, __jsx("img", {
+        className: "avatar avatar-sml-size-no-positioning",
+        src: "/images/temp-avatar5.jpg",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      })), __jsx("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }, "@iamjohnoliver"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
+        },
+        __self: this
+      }, "200"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
+        },
+        __self: this
+      }, "100"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        },
+        __self: this
+      }, "50"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      }, "40"), __jsx("td", {
+        className: "center font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 69
+        },
+        __self: this
+      }, "30"))))));
     }
   }]);
 
