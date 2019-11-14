@@ -120,6 +120,10 @@
   width: 79%;
 }
 
+.columns-parent-div .column-50-p {
+  width: 49%;
+}
+
 .link {
   color: #6462EF !important;
 }
@@ -201,6 +205,24 @@
   justify-content: center;
 }
 
+.flex-center-contents-vertically {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-justify-flex-start {
+  justify-content: flex-start;
+}
+
+.flex-justify-flex-end {
+  justify-content: flex-end;
+}
+
 .capitalize {
   text-transform: capitalize;
+}
+
+.top-zero {
+  top: 0 !important;
 }
