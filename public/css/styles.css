@@ -89,3 +89,13 @@ h2, p {
   flex-direction: row-reverse;
   align-items: center;
 }
+
+.multi-avatar-unit-wrapper .avatar:nth-of-type(2) {
+  position: relative;
+  left: -10px;
+}
+
+.multi-avatar-unit-wrapper .avatar:nth-of-type(3) {
+  position: relative;
+  left: -20px;
+}

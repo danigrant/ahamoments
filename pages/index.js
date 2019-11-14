@@ -46,7 +46,7 @@ class Index extends React.Component {
                       </div>
                       <div className="row">
                         <MultiAvatarUnit />
-                        <p className="font-color-light-grey inline-block">no one has contributed an explanation yet</p>
+                        <p className="font-color-light-grey inline-block">+ 3 others have added explanations</p>
                       </div>
                     </div>
                     <div className="column-sml">

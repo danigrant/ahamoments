@@ -289,7 +289,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const MultiAvatarUnit = props => {
   return __jsx("div", {
-    className: "inline-block",
+    className: "multi-avatar-unit-wrapper inline-block",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 3
@@ -2343,7 +2343,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         lineNumber: 49
       },
       __self: this
-    }, "no one has contributed an explanation yet"))), __jsx("div", {
+    }, "+ 3 others have added explanations"))), __jsx("div", {
       className: "column-sml",
       __source: {
         fileName: _jsxFileName,
