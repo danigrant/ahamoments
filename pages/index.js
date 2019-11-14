@@ -4,6 +4,7 @@ import AppContainer from '../components/AppContainer'
 import Card from '../components/Card'
 import CardSection from '../components/CardSection'
 import Link from 'next/link'
+import MultiAvatarUnit from '../components/MultiAvatarUnit'
 
 class Index extends React.Component {
   constructor(props) {
@@ -44,7 +45,8 @@ class Index extends React.Component {
                         <h2>Integrals</h2>
                       </div>
                       <div className="row">
-                        <p className="font-color-light-grey">no one has contributed an explanation yet</p>
+                        <MultiAvatarUnit />
+                        <p className="font-color-light-grey inline-block">no one has contributed an explanation yet</p>
                       </div>
                     </div>
                     <div className="column-sml">

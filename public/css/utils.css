@@ -26,6 +26,12 @@
   border-radius: 200px;
 }
 
+.avatar-tiny {
+  width: 25px;
+  position: relative;
+  top: 7px;
+}
+
 .avatar-sml {
   width: 35px;
   position: relative;
