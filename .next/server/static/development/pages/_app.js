@@ -685,6 +685,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
   constructor(props) {
     super(props);
+    this.state = {
+      loggedIn: false
+    };
   }
 
   render() {
@@ -695,13 +698,13 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 15
       },
       __self: this
     }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
+        lineNumber: 16
       },
       __self: this
     }, __jsx("link", {
@@ -709,7 +712,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       rel: "stylesheet",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 17
       },
       __self: this
     }), __jsx("link", {
@@ -717,7 +720,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "https://fonts.googleapis.com/icon?family=Material+Icons",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 18
       },
       __self: this
     }), __jsx("link", {
@@ -725,7 +728,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "/css/utils.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 19
       },
       __self: this
     }), __jsx("link", {
@@ -733,13 +736,15 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       href: "/css/styles.css",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 20
       },
       __self: this
-    })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({}, pageProps, {
+    })), __jsx(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
+      loggedIn: this.state.loggedIn
+    }, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 22
       },
       __self: this
     })));

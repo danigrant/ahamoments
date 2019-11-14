@@ -17,7 +17,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header loggedIn={this.props.loggedIn} />
         <AppContainer>
           <div className="columns-parent-div">
             <div className="column-70-p">

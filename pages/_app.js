@@ -5,6 +5,9 @@ import Head from 'next/head'
 class AhaMoments extends App {
   constructor(props) {
     super(props)
+    this.state = {
+      loggedIn: false
+    }
   }
   render() {
     const { Component, pageProps } = this.props
@@ -16,7 +19,7 @@ class AhaMoments extends App {
           <link rel="stylesheet" href="/css/utils.css" />
           <link rel="stylesheet" href="/css/styles.css" />
         </Head>
-        <Component {...pageProps} />
+        <Component loggedIn={this.state.loggedIn} {...pageProps} />
       </div>
     )
   }

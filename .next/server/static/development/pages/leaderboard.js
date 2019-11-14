@@ -196,8 +196,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _SearchBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchBox */ "./components/SearchBox.js");
 /* harmony import */ var _LogInButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LogInButton */ "./components/LogInButton.js");
+/* harmony import */ var _LogInModalOverlay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LogInModalOverlay */ "./components/LogInModalOverlay.js");
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/Header.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -205,24 +207,33 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
   }
 
   render() {
     return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, !this.props.loggedIn && __jsx(_LogInModalOverlay__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), __jsx("div", {
       className: "header-wrapper light-border-bottom drop-shadow",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 14
+        lineNumber: 17
       },
       __self: this
     }, __jsx("div", {
       className: "constrained-width",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 18
       },
       __self: this
     }, __jsx("img", {
@@ -230,58 +241,58 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       src: "/images/logo.png",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 19
       },
       __self: this
     }), __jsx(_SearchBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 20
       },
       __self: this
     }), __jsx("div", {
       className: "leaderboard-menu-link inline-block font-md",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 21
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 22
       },
       __self: this
     }, "Leaderboard")), __jsx("div", {
       className: "float-right inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 24
       },
       __self: this
-    }, !this.state.loggedIn && __jsx("div", {
+    }, !this.props.loggedIn && __jsx("div", {
       className: "menu-bar-login-button",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 27
       },
       __self: this
     }, __jsx(_LogInButton__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 27
       },
       __self: this
-    })), this.state.loggedIn && __jsx("img", {
+    })), this.props.loggedIn && __jsx("img", {
       className: "avatar avatar-med",
       src: "/images/temp-avatar.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 31
       },
       __self: this
-    }))));
+    })))));
   }
 
 }
@@ -807,6 +818,110 @@ const LogInButton = props => {
 
 /***/ }),
 
+/***/ "./components/LogInModal.js":
+/*!**********************************!*\
+  !*** ./components/LogInModal.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/LogInModal.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class LogInModal extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return __jsx("div", {
+      className: "login-modal-wrapper",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, "this is a modal?"))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (LogInModal);
+
+/***/ }),
+
+/***/ "./components/LogInModalOverlay.js":
+/*!*****************************************!*\
+  !*** ./components/LogInModalOverlay.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _LogInModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LogInModal */ "./components/LogInModal.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/LogInModalOverlay.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+class LogInModalOverlay extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return __jsx("div", {
+      className: "login-modal-overlay-wrapper",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 10
+      },
+      __self: this
+    }, __jsx(_LogInModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (LogInModalOverlay);
+
+/***/ }),
+
 /***/ "./components/SearchBox.js":
 /*!*********************************!*\
   !*** ./components/SearchBox.js ***!
@@ -849,7 +964,7 @@ class SearchBox extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     }, "search_rounded"), __jsx("input", {
-      autocomplete: "off",
+      autoComplete: "off",
       name: "q",
       placeholder: "Find your next aha moment\u2026",
       __source: {
