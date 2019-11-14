@@ -260,8 +260,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AhaButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AhaButton */ "./components/AhaButton.js");
 /* harmony import */ var _DontGetItButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DontGetItButton */ "./components/DontGetItButton.js");
 /* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ExplanationCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -280,19 +283,19 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       className: "explanation-card-wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 16
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 17
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }, __jsx("img", {
@@ -300,72 +303,86 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       src: "/images/temp-avatar5.jpg",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 19
       },
       __self: this
     }), __jsx("p", {
       className: "font-color-light-grey inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 20
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 21
       },
       __self: this
-    }, "@iamjohnoliver "), "explains", __jsx("span", {
+    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      href: "/explainer/@hasanminhaj",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, "@hasanminhaj"), " "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 23
       },
       __self: this
-    }, " Riemann Sums "), "through", __jsx("span", {
+    }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      href: "/concept/reinmann-sums",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, "Riemann Sums"), " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
     }, " spoken word"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 28
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 29
       },
       __self: this
     }, "Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 31
       },
       __self: this
     }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 32
       },
       __self: this
     }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 33
       },
       __self: this
     }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
       className: "float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 34
       },
       __self: this
     }))));

@@ -1,6 +1,7 @@
 import Card from './Card'
 import CardSection from './CardSection'
 import MultiAvatarUnit from './MultiAvatarUnit'
+import Link from 'next/link'
 
 const NewConceptsNeedExplanationsCard = props => {
   return (
@@ -12,7 +13,9 @@ const NewConceptsNeedExplanationsCard = props => {
         <div className="columns-parent-div">
           <div className="column-70-p">
             <div className="row">
-              <h2>Integrals</h2>
+              <Link href="/concept/integral">
+                <h2 className="link-no-color-change">Integrals</h2>
+              </Link>
             </div>
             <div className="row">
               <p className="font-color-light-grey">no one has contributed an explanation yet</p>
@@ -27,7 +30,9 @@ const NewConceptsNeedExplanationsCard = props => {
       <div className="columns-parent-div">
         <div className="column-70-p">
           <div className="row">
-            <h2>Integrals</h2>
+            <Link href="/concept/integral">
+              <h2 className="link-no-color-change">Integrals</h2>
+            </Link>
           </div>
           <div className="row">
             <MultiAvatarUnit />

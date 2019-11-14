@@ -5,6 +5,7 @@ import MultiAvatarUnit from './MultiAvatarUnit'
 import AhaButton from './AhaButton'
 import DontGetItButton from './DontGetItButton'
 import ReactionButtonBar from './ReactionButtonBar'
+import Link from 'next/link'
 
 class ExplanationCard extends React.Component {
   constructor(props) {
@@ -17,9 +18,9 @@ class ExplanationCard extends React.Component {
           <CardSection>
             <img className="avatar avatar-sml" src="/images/temp-avatar5.jpg" />
             <p className="font-color-light-grey inline-block">
-              <span className="link">@iamjohnoliver </span>
+              <span className="link"><Link href="/explainer/@hasanminhaj">@hasanminhaj</Link> </span>
               explains
-              <span className="link"> Riemann Sums </span>
+              <span className="link"> <Link href="/concept/reinmann-sums">Riemann Sums</Link> </span>
               through
               <span className="link"> spoken word</span>
             </p>

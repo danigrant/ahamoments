@@ -172,6 +172,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AhaButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./AhaButton */ "./components/AhaButton.js");
 /* harmony import */ var _DontGetItButton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./DontGetItButton */ "./components/DontGetItButton.js");
 /* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -179,6 +181,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ExplanationCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
 
 
 
@@ -205,19 +208,19 @@ function (_React$Component) {
         className: "explanation-card-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 16
         },
         __self: this
       }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 17
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
       }, __jsx("img", {
@@ -225,72 +228,86 @@ function (_React$Component) {
         src: "/images/temp-avatar5.jpg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 19
         },
         __self: this
       }), __jsx("p", {
         className: "font-color-light-grey inline-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19
+          lineNumber: 20
         },
         __self: this
       }, __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 21
         },
         __self: this
-      }, "@iamjohnoliver "), "explains", __jsx("span", {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_12___default.a, {
+        href: "/explainer/@hasanminhaj",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }, "@hasanminhaj"), " "), "explains", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 23
         },
         __self: this
-      }, " Riemann Sums "), "through", __jsx("span", {
+      }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_12___default.a, {
+        href: "/concept/reinmann-sums",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, "Riemann Sums"), " "), "through", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 25
         },
         __self: this
       }, " spoken word"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 28
         },
         __self: this
       }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 29
         },
         __self: this
       }, "Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 31
         },
         __self: this
       }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 32
         },
         __self: this
       }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         },
         __self: this
       }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_11__["default"], {
         className: "float-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 34
         },
         __self: this
       }))));
@@ -814,9 +831,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
 /* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/NewConceptsNeedExplanationsCard.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -825,189 +845,205 @@ var NewConceptsNeedExplanationsCard = function NewConceptsNeedExplanationsCard(p
   return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }, __jsx("p", {
     className: "font-color-light-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
   }, "Contribute wacky and wonderful explanations to these ideas.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "columns-parent-div",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
   }, __jsx("div", {
-    className: "column-70-p",
+    className: "columns-parent-div",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: this
   }, __jsx("div", {
-    className: "row",
+    className: "column-70-p",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, __jsx("h2", {
+  }, __jsx("div", {
+    className: "row",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, "Integrals")), __jsx("div", {
-    className: "row",
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/concept/integral",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, __jsx("h2", {
+    className: "link-no-color-change",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
+    },
+    __self: this
+  }, "Integrals"))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
     },
     __self: this
   }, __jsx("p", {
     className: "font-color-light-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: this
   }, "no one has contributed an explanation yet"))), __jsx("div", {
     className: "column-30-p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     },
     __self: this
   }, __jsx("div", {
     className: "action-button button background-purple rounded-border font-med font-bold-extra",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 25
     },
     __self: this
   }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 29
     },
     __self: this
   }, __jsx("div", {
     className: "columns-parent-div",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 30
     },
     __self: this
   }, __jsx("div", {
     className: "column-70-p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 31
     },
     __self: this
   }, __jsx("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }, __jsx("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: this
-  }, "Integrals")), __jsx("div", {
     className: "row",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32
     },
     __self: this
-  }, __jsx(_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/concept/integral",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
+    },
+    __self: this
+  }, __jsx("h2", {
+    className: "link-no-color-change",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "Integrals"))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: this
+  }, __jsx(_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
     },
     __self: this
   }), __jsx("p", {
     className: "follows-multi-avatar-unit font-color-light-grey inline-block",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 39
     },
     __self: this
   }, "+ 3 others have added explanations"))), __jsx("div", {
     className: "column-30-p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 42
     },
     __self: this
   }, __jsx("div", {
     className: "action-button float-right button background-purple rounded-border font-med font-bold-extra",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, __jsx("div", {
-    className: "columns-parent-div",
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 43
     },
     __self: this
-  }, __jsx("div", {
-    className: "column-70-p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }, __jsx("p", {
-    className: "font-color-light-grey",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: this
-  }, "+ 23 other ideas")), __jsx("div", {
-    className: "column-30-p",
+  }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47
     },
     __self: this
   }, __jsx("div", {
-    className: "action-button float-right button background-grey light-border rounded-border font-med font-bold-extra",
+    className: "columns-parent-div",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "column-70-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }, "+ 23 other ideas")), __jsx("div", {
+    className: "column-30-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52
+    },
+    __self: this
+  }, __jsx("div", {
+    className: "action-button float-right button background-grey light-border rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
     },
     __self: this
   }, "Expand")))));
@@ -1189,6 +1225,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -1196,6 +1234,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopConceptsOfWeekSection.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
 
 
 
@@ -1217,172 +1256,212 @@ function (_React$Component) {
       return __jsx(_Card__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 12
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 13
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
-        },
-        __self: this
-      }, __jsx("h2", {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 14
         },
         __self: this
-      }, "Derivative")), __jsx("div", {
-        className: "row",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/concept/derivative",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
+        },
+        __self: this
+      }, "Derivative"))), __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 20
         },
         __self: this
       }, "200 explanations \u2022 100 aha moments"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 23
         },
         __self: this
       }, __jsx("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        },
-        __self: this
-      }, __jsx("h2", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, "Limit")), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 24
         },
         __self: this
-      }, __jsx("p", {
-        className: "font-color-light-grey",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/concept/limit",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
         },
         __self: this
-      }, "200 explanations \u2022 100 aha moments"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 26
         },
         __self: this
-      }, __jsx("div", {
+      }, "Limit"))), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 29
         },
         __self: this
-      }, __jsx("h2", {
+      }, __jsx("p", {
+        className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 30
         },
         __self: this
-      }, "Integral")), __jsx("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, __jsx("p", {
-        className: "font-color-light-grey",
+      }, "200 explanations \u2022 100 aha moments"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
         },
         __self: this
-      }, "200 explanations \u2022 100 aha moments"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/concept/integral",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
         },
         __self: this
-      }, __jsx("div", {
+      }, "Integral"))), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, __jsx("h2", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, "Differential Equation")), __jsx("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 39
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 40
         },
         __self: this
       }, "200 explanations \u2022 100 aha moments"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 43
         },
         __self: this
       }, __jsx("div", {
         className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/concept/differential-equation",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 45
         },
         __self: this
       }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 46
         },
         __self: this
-      }, "Logarithm")), __jsx("div", {
+      }, "Differential Equation"))), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 49
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 50
+        },
+        __self: this
+      }, "200 explanations \u2022 100 aha moments"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/concept/logarithm",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "link-no-color-change",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "Logarithm"))), __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, __jsx("p", {
+        className: "font-color-light-grey",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
         },
         __self: this
       }, "200 explanations \u2022 100 aha moments"))));
@@ -1414,6 +1493,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
 
 
 
@@ -1421,6 +1502,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopCreatorsOfWeekSection.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+
 
 
 
@@ -1442,27 +1524,27 @@ function (_React$Component) {
       return __jsx(_Card__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
-        },
-        __self: this
-      }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 12
         },
         __self: this
-      }, __jsx("div", {
-        className: "columns-parent-div",
+      }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 13
         },
         __self: this
       }, __jsx("div", {
-        className: "column-20-p flex-horizontal-center",
+        className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 14
+        },
+        __self: this
+      }, __jsx("div", {
+        className: "column-20-p flex-horizontal-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
         },
         __self: this
       }, __jsx("img", {
@@ -1470,61 +1552,69 @@ function (_React$Component) {
         src: "/images/temp-avatar5.jpg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 16
         },
         __self: this
       })), __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
-        },
-        __self: this
-      }, __jsx("h2", {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 19
         },
         __self: this
-      }, "@iamjohnoliver")), __jsx("div", {
-        className: "row",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/explainer/@iamjohnoliver",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 21
+        },
+        __self: this
+      }, "@iamjohnoliver"))), __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 25
         },
         __self: this
       }, "124 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 30
         },
         __self: this
       }, __jsx("div", {
         className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 31
         },
         __self: this
       }, __jsx("div", {
         className: "column-20-p flex-horizontal-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 32
         },
         __self: this
       }, __jsx("img", {
@@ -1532,61 +1622,69 @@ function (_React$Component) {
         src: "/images/temp-avatar.jpg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 33
         },
         __self: this
       })), __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 35
         },
         __self: this
       }, __jsx("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }, __jsx("h2", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }, "@barackobama")), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 36
         },
         __self: this
-      }, __jsx("p", {
-        className: "font-color-light-grey",
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/explainer/@barackobama",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 37
         },
         __self: this
-      }, "121 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, __jsx("h2", {
+        className: "link-no-color-change",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        },
+        __self: this
+      }, "@barackobama"))), __jsx("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }, __jsx("p", {
+        className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 42
+        },
+        __self: this
+      }, "121 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
         },
         __self: this
       }, __jsx("div", {
         className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 48
         },
         __self: this
       }, __jsx("div", {
         className: "column-20-p flex-horizontal-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 49
         },
         __self: this
       }, __jsx("img", {
@@ -1594,61 +1692,69 @@ function (_React$Component) {
         src: "/images/temp-avatar2.jpg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 50
         },
         __self: this
       })), __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 52
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 53
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/explainer/@hasanminhaj",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
         },
         __self: this
       }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 55
         },
         __self: this
-      }, "@hasanminhaj")), __jsx("div", {
+      }, "@hasanminhaj"))), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 58
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 59
         },
         __self: this
       }, "114 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 64
         },
         __self: this
       }, __jsx("div", {
         className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 65
         },
         __self: this
       }, __jsx("div", {
         className: "column-20-p flex-horizontal-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 66
         },
         __self: this
       }, __jsx("img", {
@@ -1656,61 +1762,69 @@ function (_React$Component) {
         src: "/images/temp-avatar3.jpg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 67
         },
         __self: this
       })), __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 69
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 70
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/explainer/@trevornoah",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
         },
         __self: this
       }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 72
         },
         __self: this
-      }, "@trevornoah")), __jsx("div", {
+      }, "@trevornoah"))), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 75
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 76
         },
         __self: this
       }, "102 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_7__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 81
         },
         __self: this
       }, __jsx("div", {
         className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 82
         },
         __self: this
       }, __jsx("div", {
         className: "column-20-p flex-horizontal-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 83
         },
         __self: this
       }, __jsx("img", {
@@ -1718,41 +1832,49 @@ function (_React$Component) {
         src: "/images/temp-avatar4.jpg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 84
         },
         __self: this
       })), __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 86
         },
         __self: this
       }, __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 87
+        },
+        __self: this
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        href: "/explainer/@stephencolbert",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
         },
         __self: this
       }, __jsx("h2", {
+        className: "link-no-color-change",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 89
         },
         __self: this
-      }, "@stephencolbert")), __jsx("div", {
+      }, "@stephencolbert"))), __jsx("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 92
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 93
         },
         __self: this
       }, "84 Explanations"))))));

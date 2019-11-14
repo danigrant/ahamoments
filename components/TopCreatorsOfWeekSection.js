@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import CardSection from './CardSection'
+import Link from 'next/link'
 
 class TopCreatorsOfWeekSection extends React.Component {
   constructor(props) {
@@ -16,7 +17,9 @@ class TopCreatorsOfWeekSection extends React.Component {
             </div>
             <div className="column-80-p">
               <div className="row">
-                <h2>@iamjohnoliver</h2>
+                <Link href="/explainer/@iamjohnoliver">
+                  <h2 className="link-no-color-change">@iamjohnoliver</h2>
+                </Link>
               </div>
               <div className="row">
                 <p className="font-color-light-grey">124 Explanations</p>
@@ -31,7 +34,9 @@ class TopCreatorsOfWeekSection extends React.Component {
             </div>
             <div className="column-80-p">
               <div className="row">
-                <h2>@barackobama</h2>
+                <Link href="/explainer/@barackobama">
+                  <h2 className="link-no-color-change">@barackobama</h2>
+                </Link>
               </div>
               <div className="row">
                 <p className="font-color-light-grey">121 Explanations</p>
@@ -46,7 +51,9 @@ class TopCreatorsOfWeekSection extends React.Component {
             </div>
             <div className="column-80-p">
               <div className="row">
-                <h2>@hasanminhaj</h2>
+                <Link href="/explainer/@hasanminhaj">
+                  <h2 className="link-no-color-change">@hasanminhaj</h2>
+                </Link>
               </div>
               <div className="row">
                 <p className="font-color-light-grey">114 Explanations</p>
@@ -61,7 +68,9 @@ class TopCreatorsOfWeekSection extends React.Component {
             </div>
             <div className="column-80-p">
               <div className="row">
-                <h2>@trevornoah</h2>
+                <Link href="/explainer/@trevornoah">
+                  <h2 className="link-no-color-change">@trevornoah</h2>
+                </Link>
               </div>
               <div className="row">
                 <p className="font-color-light-grey">102 Explanations</p>
@@ -76,7 +85,9 @@ class TopCreatorsOfWeekSection extends React.Component {
             </div>
             <div className="column-80-p">
               <div className="row">
-                <h2>@stephencolbert</h2>
+                <Link href="/explainer/@stephencolbert">
+                  <h2 className="link-no-color-change">@stephencolbert</h2>
+                </Link>
               </div>
               <div className="row">
                 <p className="font-color-light-grey">84 Explanations</p>
