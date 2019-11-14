@@ -93,6 +93,36 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/AhaButton.js":
+/*!*********************************!*\
+  !*** ./components/AhaButton.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/AhaButton.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const AhaButton = props => {
+  return __jsx("div", {
+    className: "button background-green rounded-border font-med font-bold-extra inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, "Aha!");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (AhaButton);
+
+/***/ }),
+
 /***/ "./components/AppContainer.js":
 /*!************************************!*\
   !*** ./components/AppContainer.js ***!
@@ -180,6 +210,170 @@ const CardSection = props => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CardSection);
+
+/***/ }),
+
+/***/ "./components/DontGetItButton.js":
+/*!***************************************!*\
+  !*** ./components/DontGetItButton.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/DontGetItButton.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const DontGetItButton = props => {
+  return __jsx("div", {
+    className: "button background-blue rounded-border font-med font-bold-extra inline-block margin-left",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, "Don\u2019t Get It");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (DontGetItButton);
+
+/***/ }),
+
+/***/ "./components/ExplanationCard.js":
+/*!***************************************!*\
+  !*** ./components/ExplanationCard.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var _AhaButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AhaButton */ "./components/AhaButton.js");
+/* harmony import */ var _DontGetItButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DontGetItButton */ "./components/DontGetItButton.js");
+/* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ExplanationCard.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+
+class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return __jsx("div", {
+      className: "explanation-card-wrapper",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, __jsx("img", {
+      className: "avatar avatar-sml",
+      src: "/images/temp-avatar5.jpg",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }), __jsx("p", {
+      className: "font-color-light-grey inline-block",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, __jsx("span", {
+      className: "link",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, "@iamjohnoliver "), "explains", __jsx("span", {
+      className: "link",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, " Riemann Sums "), "through", __jsx("span", {
+      className: "link",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, " spoken word"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }, "Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
+      },
+      __self: this
+    }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 32
+      },
+      __self: this
+    }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      className: "float-right",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }))));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (ExplanationCard);
 
 /***/ }),
 
@@ -296,7 +490,7 @@ const MultiAvatarUnit = props => {
     },
     __self: undefined
   }, __jsx("img", {
-    className: "avatar avatar-tiny",
+    className: "avatar avatar-sml",
     src: "/images/temp-avatar2.jpg",
     __source: {
       fileName: _jsxFileName,
@@ -304,7 +498,7 @@ const MultiAvatarUnit = props => {
     },
     __self: undefined
   }), __jsx("img", {
-    className: "avatar avatar-tiny",
+    className: "avatar avatar-sml",
     src: "/images/temp-avatar3.jpg",
     __source: {
       fileName: _jsxFileName,
@@ -312,17 +506,317 @@ const MultiAvatarUnit = props => {
     },
     __self: undefined
   }), __jsx("img", {
-    className: "avatar avatar-tiny",
+    className: "avatar avatar-sml",
     src: "/images/temp-avatar4.jpg",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
     },
     __self: undefined
+  }), __jsx("img", {
+    className: "avatar avatar-sml",
+    src: "/images/temp-avatar5.jpg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
   }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MultiAvatarUnit);
+
+/***/ }),
+
+/***/ "./components/NewConceptsNeedExplanationsCard.js":
+/*!*******************************************************!*\
+  !*** ./components/NewConceptsNeedExplanationsCard.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/NewConceptsNeedExplanationsCard.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const NewConceptsNeedExplanationsCard = props => {
+  return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, "Contribute wacky and wonderful explanations to these ideas.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-lrg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, "Integrals")), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, "no one has contributed an explanation yet"))), __jsx("div", {
+    className: "column-sml",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "action-button button background-purple rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: undefined
+  }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-lrg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: undefined
+  }, "Integrals")), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx(_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }), __jsx("p", {
+    className: "follows-multi-avatar-unit font-color-light-grey inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: undefined
+  }, "+ 3 others have added explanations"))), __jsx("div", {
+    className: "column-sml",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "action-button float-right button background-purple rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38
+    },
+    __self: undefined
+  }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-lrg",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45
+    },
+    __self: undefined
+  }, "+ 23 other ideas")), __jsx("div", {
+    className: "column-sml",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "action-button float-right button background-grey light-border rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }, "Expand")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NewConceptsNeedExplanationsCard);
+
+/***/ }),
+
+/***/ "./components/ReactionButtonBar.js":
+/*!*****************************************!*\
+  !*** ./components/ReactionButtonBar.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ReactionButtonBar.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const ReactionButtonBar = props => {
+  return __jsx("div", {
+    className: "reaction-button-bar-wrapper rounded-border inline-block float-right light-border",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "reaction-button inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "avatar-sml-size-no-positioning",
+    src: "/images/reactions/get-it-cat.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "reaction-button inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "avatar-sml-size-no-positioning",
+    src: "/images/reactions/laughing.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "reaction-button inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "avatar-sml-size-no-positioning",
+    src: "/images/reactions/shocked.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ReactionButtonBar);
 
 /***/ }),
 
@@ -2148,8 +2642,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var _components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/NewConceptsNeedExplanationsCard */ "./components/NewConceptsNeedExplanationsCard.js");
+/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/ExplanationCard */ "./components/ExplanationCard.js");
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -2167,242 +2665,92 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15
+        lineNumber: 17
       },
       __self: this
     }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 18
       },
       __self: this
-    }, __jsx("div", {
-      className: "column-lrg",
+    }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 19
       },
       __self: this
     }, __jsx("div", {
-      className: "column-section",
+      className: "columns-parent-div",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 20
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "column-lrg",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "column-section",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
       },
       __self: this
     }, __jsx("h1", {
       className: "font-lrg font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, "Ideas looking for Aha Moments."), __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 23
       },
       __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
+    }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 24
       },
       __self: this
-    }, "Contribute wacky and wonderful explanations to these ideas.")), __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    })), __jsx("div", {
+      className: "column-section",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 26
       },
       __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
+    }, __jsx("h1", {
+      className: "font-lrg font-bold-med",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 27
       },
       __self: this
-    }, __jsx("div", {
-      className: "column-lrg",
+    }, "The most \uD83D\uDD25 Aha Moment creations right now"), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 28
       },
       __self: this
-    }, __jsx("div", {
-      className: "row",
+    }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 29
       },
       __self: this
-    }, __jsx("h2", {
+    }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 30
       },
       __self: this
-    }, "Integrals")), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
+    }))), __jsx("div", {
+      className: "column-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 33
-      },
-      __self: this
-    }, "no one has contributed an explanation yet"))), __jsx("div", {
-      className: "column-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button button background-purple rounded-border font-med font-bold-extra",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    }, "Contribute")))), __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-lrg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 43
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }, __jsx("h2", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    }, "Integrals")), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }, __jsx(_components_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }), __jsx("p", {
-      className: "font-color-light-grey inline-block",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, "+ 3 others have added explanations"))), __jsx("div", {
-      className: "column-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button float-right button background-purple rounded-border font-med font-bold-extra",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: this
-    }, "Contribute")))), __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-lrg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 60
-      },
-      __self: this
-    }, "+ 23 other ideas")), __jsx("div", {
-      className: "column-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button float-right button background-grey light-border rounded-border font-med font-bold-extra",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 63
-      },
-      __self: this
-    }, "Expand"))))))), __jsx("div", {
-      className: "column-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
       },
       __self: this
     }, "small column"))));

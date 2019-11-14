@@ -92,10 +92,52 @@ h2, p {
 
 .multi-avatar-unit-wrapper .avatar:nth-of-type(2) {
   position: relative;
-  left: -10px;
+  left: -20px;
 }
 
 .multi-avatar-unit-wrapper .avatar:nth-of-type(3) {
   position: relative;
-  left: -20px;
+  left: -40px;
+}
+
+.multi-avatar-unit-wrapper .avatar:nth-of-type(4) {
+  position: relative;
+  left: -60px;
+}
+
+.multi-avatar-unit-wrapper .avatar:nth-of-type(5) {
+  position: relative;
+  left: -80px;
+}
+
+.follows-multi-avatar-unit {
+  position: relative;
+  left: -60px;
+}
+
+.reaction-button-bar-wrapper {
+  width: fit-content;
+  position: relative;
+  bottom: 10px;
+}
+
+.reaction-button {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  background-color: white;
+}
+
+.reaction-button:nth-of-type(2) {
+  border-left: 0.5px solid #e8e8e8;
+  border-right: 0.5px solid #e8e8e8;
+}
+
+.reaction-button:hover {
+  background: #f9f9f9;
+  filter: brightness(105%);
+}
+
+.explanation-card-wrapper {
+  margin-bottom: 35px;
 }
