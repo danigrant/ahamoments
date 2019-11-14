@@ -61105,7 +61105,8 @@ function _logUserIn() {
 
 function pollForAuthChanges() {
   return _pollForAuthChanges.apply(this, arguments);
-}
+} // various utils
+
 
 function _pollForAuthChanges() {
   _pollForAuthChanges = (0, _asyncToGenerator2["default"])(
@@ -61144,11 +61145,285 @@ function _pollForAuthChanges() {
   return _pollForAuthChanges.apply(this, arguments);
 }
 
+function getUserNameByID(_x) {
+  return _getUserNameByID.apply(this, arguments);
+} // get and return various data
+// returns 2 concepts for the front page that need love as an obj
+
+
+function _getUserNameByID() {
+  _getUserNameByID = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee4(userID) {
+    return _regenerator["default"].wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            return _context4.abrupt("return", "Barack Obama");
+
+          case 1:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _getUserNameByID.apply(this, arguments);
+}
+
+function getConceptsThatNeedLove() {
+  return _getConceptsThatNeedLove.apply(this, arguments);
+} // returns top 5 creators in an array
+
+
+function _getConceptsThatNeedLove() {
+  _getConceptsThatNeedLove = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee5() {
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            return _context5.abrupt("return", {
+              "totalAmountOfConceptsNeedingLove": 43,
+              "conceptsNeedingLoveToDisplay": [{
+                "concept": "Integrals",
+                "numContributors": 11,
+                "threeContributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
+              }, {
+                "concept": "Limits",
+                "numContributors": 4,
+                "threeContributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
+              }]
+            });
+
+          case 1:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  return _getConceptsThatNeedLove.apply(this, arguments);
+}
+
+function getTopCreatorsAllTime() {
+  return _getTopCreatorsAllTime.apply(this, arguments);
+} // returns array of top 5 explanations
+
+
+function _getTopCreatorsAllTime() {
+  _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee6() {
+    return _regenerator["default"].wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            return _context6.abrupt("return", [{
+              "displayName": "Barack Obama",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            }, {
+              "displayName": "",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            }, {
+              "displayName": "",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            }, {
+              "displayName": "",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            }, {
+              "displayName": "",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            }, {
+              "displayName": "",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            }]);
+
+          case 1:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+  return _getTopCreatorsAllTime.apply(this, arguments);
+}
+
+function getTopExplanationsAllTime() {
+  return _getTopExplanationsAllTime.apply(this, arguments);
+}
+
+function _getTopExplanationsAllTime() {
+  _getTopExplanationsAllTime = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee7() {
+    return _regenerator["default"].wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            return _context7.abrupt("return", [{
+              "concept": "integrals",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "explanation": {
+                "type": "text",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+                "mediaLink": "",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "concept": "derivatives",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "explanation": {
+                "type": "tweet",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This explains this well",
+                "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "concept": "limits",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "explanation": {
+                "type": "youtube",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This is a good video",
+                "mediaLink": "https://www.youtube.com/watch?v=Q-K3O9styao",
+                "mediaConsumptionGuidance": "Watch from minute 1:30 to 4:40"
+              }
+            }, {
+              "concept": "logarithm",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "explanation": {
+                "type": "link",
+                //audio, photo, video, youtube, tweet, text, link
+                "introText": "This is a good blog post",
+                "mediaLink": "https://waitbutwhy.com/2016/03/my-ted-talk.html",
+                "mediaConsumptionGuidance": ""
+              }
+            }, {
+              "concept": "differential-equation",
+              "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "explanation": {
+                "type": "video",
+                //audio, photo, video, youtube, tweet, text
+                "introText": "This is a good video",
+                "mediaLink": "http://movietrailers.apple.com/movies/wb/the-lego-ninjago-movie/the-lego-ninjago-movie-trailer-2_h720p.mov",
+                "mediaConsumptionGuidance": "watch the whole thing, why not."
+              }
+            }]);
+
+          case 1:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
+  return _getTopExplanationsAllTime.apply(this, arguments);
+}
+
+function getTopConceptsAllTime() {
+  return _getTopConceptsAllTime.apply(this, arguments);
+}
+
+function _getTopConceptsAllTime() {
+  _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee8() {
+    return _regenerator["default"].wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            return _context8.abrupt("return", [{
+              "conceptName": "Integrals",
+              // these need to be transformed into - instead of space
+              "explanationCount": 10
+            }, {
+              "conceptName": "Derivatives",
+              // these need to be transformed into - instead of space
+              "explanationCount": 10
+            }, {
+              "conceptName": "Limits",
+              // these need to be transformed into - instead of space
+              "explanationCount": 10
+            }, {
+              "conceptName": "Infinity",
+              // these need to be transformed into - instead of space
+              "explanationCount": 10
+            }, {
+              "conceptName": "Logarithm",
+              // these need to be transformed into - instead of space
+              "explanationCount": 10
+            }]);
+
+          case 1:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, _callee8);
+  }));
+  return _getTopConceptsAllTime.apply(this, arguments);
+}
+
 module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
   getLoggedInUser: getLoggedInUser,
-  pollForAuthChanges: pollForAuthChanges
+  getTopConceptsAllTime: getTopConceptsAllTime,
+  getTopCreatorsAllTime: getTopCreatorsAllTime,
+  getTopExplanationsAllTime: getTopExplanationsAllTime,
+  getConceptsThatNeedLove: getConceptsThatNeedLove
 };
 
 /***/ }),
