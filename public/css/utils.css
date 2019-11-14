@@ -1,3 +1,7 @@
+.font-tny {
+  font-size: 11px;
+}
+
 .font-sml {
   font-size: 13px;
 }
@@ -83,6 +87,10 @@
   color: #6f6f6f;
 }
 
+.font-color-lighter-grey {
+  color: #b7b7b7;
+}
+
 .material-icons {
   width: 24px;
   position: relative;
@@ -136,10 +144,10 @@
 .button {
   box-sizing: border-box;
   text-align: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   width: fit-content;
   min-width: 100px;
 }
@@ -177,6 +185,18 @@
 
 .margin-bottom-sml {
   margin-bottom: 15px;
+}
+
+.margin-bottom-med {
+  margin-bottom: 35px;
+}
+
+.margin-bottom-lrg {
+  margin-bottom: 55px;
+}
+
+.margin-right-tny {
+  margin-right: 5px;
 }
 
 .margin-right-sml {
@@ -224,6 +244,10 @@
   text-transform: capitalize;
 }
 
+.all-caps {
+  text-transform: uppercase;
+}
+
 .top-zero {
   top: 0 !important;
 }
@@ -231,4 +255,11 @@
 .center {
   text-align: center;
   margin: 0 auto;
+}
+
+.twitter-color {
+  background: #00aced;
+  border-color: #00aced;
+  fill: white;
+  color: white;
 }
