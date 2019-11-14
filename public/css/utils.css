@@ -3,11 +3,11 @@
 }
 
 .font-md {
-
+  font-size: 16px;
 }
 
 .font-lg {
-
+  font-size: 20px;
 }
 
 .font-bold-sm {
@@ -77,14 +77,26 @@
   top: 7px;
 }
 
-textarea:focus, input:focus{
-  outline: none;
-}
-
 .inline-block {
   display: inline-block;
 }
 
 .float-right {
   float: right;
+}
+
+.columns-parent-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.columns-parent-div .column-sml {
+  width: 29%;
+}
+
+.columns-parent-div .column-lrg {
+  width: 69%;
 }

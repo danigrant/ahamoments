@@ -9,7 +9,7 @@ class SearchBox extends React.Component {
       <div className="searchbox-wrapper light-border rounded-border">
         <form>
           <i className="material-icons font-color-light-grey">search_rounded</i>
-          <input autocomplete="off" name="q" placeholder="Find your next aha moment…" value="" />
+          <input autocomplete="off" name="q" placeholder="Find your next aha moment…" />
         </form>
       </div>
     )

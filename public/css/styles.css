@@ -6,8 +6,16 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-.appcontainer-wrapper {
+textarea:focus, input:focus{
+  outline: none;
+}
 
+p {
+  margin: 0;
+}
+
+.appcontainer-wrapper {
+  margin-top: 30px !important;
 }
 
 .header-wrapper {
@@ -59,4 +67,19 @@ body {
   position: relative;
   left: 150px;
   bottom: 25px;
+}
+
+.card-wrapper {
+  background-color: white;
+
+}
+
+.card-section-wrapper {
+  background-color: white;
+  padding: 20px 104px 20px 20px;
+
+}
+
+.card-section-wrapper:hover {
+  background-color: #f9f9f9;
 }
