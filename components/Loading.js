@@ -6,8 +6,8 @@ const Loading = props => {
     <div>
       <Header loggedIn={props.loggedIn} loggedInUser={props.loggedInUser}/>
       <AppContainer>
-        <div id="loading-bar-spinner" class="spinner">
-          <div class="spinner-icon"></div>
+        <div id="loading-bar-spinner" className="spinner">
+          <div className="spinner-icon"></div>
         </div>
       </AppContainer>
     </div>
