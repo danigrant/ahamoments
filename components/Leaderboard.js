@@ -31,7 +31,7 @@ class Leaderboard extends React.Component {
                     <tr className="light-border-bottom">
                       <td>{index + 1}</td>
                       <td><img className="avatar avatar-sml-size-no-positioning" src={c.avatarUrl} /></td>
-                      <td className="link-no-color-change"><Link href="/explainer/@barackobama">{c.displayName}</Link></td>
+                      <td className="link-no-color-change"><Link href={`/explainer/${c.userID}`}>{c.displayName}</Link></td>
                       <td className="center font-color-light-grey">{c.ahaMomentCount}</td>
                       <td className="center font-color-light-grey">{c.explanationCount}</td>
                       <td className="center font-color-light-grey">{c.reactions.gotItCount}</td>

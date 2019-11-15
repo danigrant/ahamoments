@@ -3081,45 +3081,45 @@ async function logUserIn() {
 
 
 async function getUserByID(userID) {
-  return {
-    "displayName": "Barack Obama",
-    "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "/images/temp-avatar.jpg",
-    "ahaMomentCount": 4,
-    "explanationCount": 5,
-    "reactionsCount": {
-      "gotIt": 1,
-      "laughing": 2,
-      "shocked": 3
-    },
-    explanations: [{
-      "explanationID": "6CpE8XLCBYuMVAFr3wKE",
-      "concept": "integrals",
-      "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-      "authorAvatarUrl": "/images/temp-avatar.jpg",
-      "authorDisplayName": "Barack Obama",
+  // first get metadata
+  let snapshot = await usersRef.where('userID', '==', userID).get();
+  let data = {};
+  await snapshot.forEach(doc => {
+    let docData = doc.data();
+    data = {
+      "displayName": docData.displayName,
+      "userID": docData.userID,
+      "avatarUrl": docData.avatarUrl,
+      "ahaMomentCount": docData.ahaMomentCount,
+      "explanationCount": docData.explanationCount,
+      "reactionsCount": {
+        "gotIt": docData.reactionGotItCount,
+        "laughing": docData.reactionLaughingCount,
+        "shocked": docData.reactionShockedCount
+      },
+      explanations: []
+    };
+  }); // then get explanations
+
+  let explanationSnapshot = await explanationsRef.where('authorUserID', '==', userID).get(); //.orderBy('score', 'desc').get()
+
+  await explanationSnapshot.forEach(doc => {
+    let explanationDocData = doc.data();
+    data.explanations.push({
+      "explanationID": doc.id,
+      "concept": explanationDocData.concept,
+      "authorUserID": explanationDocData.authorUserID,
+      "authorAvatarUrl": explanationDocData.authorAvatarUrl,
+      "authorDisplayName": explanationDocData.authorDisplayName,
       "explanation": {
-        "type": "text",
-        //audio, photo, video, youtube, tweet, text
-        "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
-        "mediaLink": "",
-        "mediaConsumptionGuidance": ""
+        "type": explanationDocData.explanation.type,
+        "introText": explanationDocData.explanation.introText,
+        "mediaLink": explanationDocData.explanation.mediaLink,
+        "mediaConsumptionGuidance": explanationDocData.explanation.mediaConsumptionGuidance
       }
-    }, {
-      "explanationID": "eK2dxVLq5je8dfLWJjZL",
-      "concept": "integrals",
-      "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-      "authorAvatarUrl": "/images/temp-avatar.jpg",
-      "authorDisplayName": "Barack Obama",
-      "explanation": {
-        "type": "tweet",
-        //audio, photo, video, youtube, tweet, text
-        "introText": "This explains this well",
-        "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
-        "mediaConsumptionGuidance": ""
-      }
-    }]
-  };
+    });
+  });
+  return data;
 } // get and return various data
 
 

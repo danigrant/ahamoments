@@ -64809,51 +64809,63 @@ function _getUserByID() {
   _getUserByID = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
   _regenerator["default"].mark(function _callee4(userID) {
+    var snapshot, data, explanationSnapshot;
     return _regenerator["default"].wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
-            return _context4.abrupt("return", {
-              "displayName": "Barack Obama",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "/images/temp-avatar.jpg",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              },
-              explanations: [{
-                "explanationID": "6CpE8XLCBYuMVAFr3wKE",
-                "concept": "integrals",
-                "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-                "authorAvatarUrl": "/images/temp-avatar.jpg",
-                "authorDisplayName": "Barack Obama",
-                "explanation": {
-                  "type": "text",
-                  //audio, photo, video, youtube, tweet, text
-                  "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
-                  "mediaLink": "",
-                  "mediaConsumptionGuidance": ""
-                }
-              }, {
-                "explanationID": "eK2dxVLq5je8dfLWJjZL",
-                "concept": "integrals",
-                "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-                "authorAvatarUrl": "/images/temp-avatar.jpg",
-                "authorDisplayName": "Barack Obama",
-                "explanation": {
-                  "type": "tweet",
-                  //audio, photo, video, youtube, tweet, text
-                  "introText": "This explains this well",
-                  "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
-                  "mediaConsumptionGuidance": ""
-                }
-              }]
+            _context4.next = 2;
+            return usersRef.where('userID', '==', userID).get();
+
+          case 2:
+            snapshot = _context4.sent;
+            data = {};
+            _context4.next = 6;
+            return snapshot.forEach(function (doc) {
+              var docData = doc.data();
+              data = {
+                "displayName": docData.displayName,
+                "userID": docData.userID,
+                "avatarUrl": docData.avatarUrl,
+                "ahaMomentCount": docData.ahaMomentCount,
+                "explanationCount": docData.explanationCount,
+                "reactionsCount": {
+                  "gotIt": docData.reactionGotItCount,
+                  "laughing": docData.reactionLaughingCount,
+                  "shocked": docData.reactionShockedCount
+                },
+                explanations: []
+              };
             });
 
-          case 1:
+          case 6:
+            _context4.next = 8;
+            return explanationsRef.where('authorUserID', '==', userID).get();
+
+          case 8:
+            explanationSnapshot = _context4.sent;
+            _context4.next = 11;
+            return explanationSnapshot.forEach(function (doc) {
+              var explanationDocData = doc.data();
+              data.explanations.push({
+                "explanationID": doc.id,
+                "concept": explanationDocData.concept,
+                "authorUserID": explanationDocData.authorUserID,
+                "authorAvatarUrl": explanationDocData.authorAvatarUrl,
+                "authorDisplayName": explanationDocData.authorDisplayName,
+                "explanation": {
+                  "type": explanationDocData.explanation.type,
+                  "introText": explanationDocData.explanation.introText,
+                  "mediaLink": explanationDocData.explanation.mediaLink,
+                  "mediaConsumptionGuidance": explanationDocData.explanation.mediaConsumptionGuidance
+                }
+              });
+            });
+
+          case 11:
+            return _context4.abrupt("return", data);
+
+          case 12:
           case "end":
             return _context4.stop();
         }
