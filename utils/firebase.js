@@ -147,7 +147,7 @@ async function getConceptsThatNeedLove() {
     "totalAmountOfConceptsNeedingLove": 43,
     "conceptsNeedingLoveToDisplay": [
 		{
-			"conceptName": "Integrals",
+			"conceptName": "Derivative",
 			"numContributors": 11,
 			"contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
 		},
@@ -225,74 +225,35 @@ async function getTopCreatorsAllTime() {
 
 // returns array of top 5 explanations
 async function getTopExplanationsAllTime() {
-  return [{
-    "explanationID": "6CpE8XLCBYuMVAFr3wKE",
-    "concept": "integrals",
-		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "authorAvatarUrl": "/images/temp-avatar.jpg",
-    "authorDisplayName": "Barack Obama",
-		"explanation": {
-			"type": "text", //audio, photo, video, youtube, tweet, text, link
-			"introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
-			"mediaLink": "",
-			"mediaConsumptionGuidance": ""
-		}
-	},
-  {
-    "explanationID": "eK2dxVLq5je8dfLWJjZL",
-    "concept": "derivatives",
-		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "authorAvatarUrl": "/images/temp-avatar.jpg",
-    "authorDisplayName": "Barack Obama",
-		"explanation": {
-			"type": "tweet", //audio, photo, video, youtube, tweet, text
-			"introText": "This explains this well",
-			"mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
-			"mediaConsumptionGuidance": ""
-		}
-	},
-  {
-    "explanationID": "g1oC8rsxdEdjEce34Ick",
-    "concept": "limits",
-		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "authorAvatarUrl": "/images/temp-avatar.jpg",
-    "authorDisplayName": "Barack Obama",
-		"explanation": {
-			"type": "youtube", //audio, photo, video, youtube, tweet, text
-			"introText": "This is a good video",
-			"mediaLink": "https://www.youtube.com/watch?v=Q-K3O9styao",
-			"mediaConsumptionGuidance": "Watch from minute 1:30 to 4:40"
-		}
-	},
-  {
-    "explanationID": "h81W5hM76wl8PhdMe0oX",
-    "concept": "logarithm",
-		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "authorAvatarUrl": "/images/temp-avatar.jpg",
-    "authorDisplayName": "Barack Obama",
-		"explanation": {
-			"type": "link", //audio, photo, video, youtube, tweet, text, link
-			"introText": "This is a good blog post",
-			"mediaLink": "https://waitbutwhy.com/2016/03/my-ted-talk.html",
-			"mediaConsumptionGuidance": ""
-		}
-	},
-  {
-    "explanationID": "h9U3t1rg4gUj3amJ9IUW",
-    "concept": "differential-equation",
-		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "authorAvatarUrl": "/images/temp-avatar.jpg",
-    "authorDisplayName": "Barack Obama",
-		"explanation": {
-			"type": "video", //audio, photo, video, youtube, tweet, text
-			"introText": "This is a good video",
-			"mediaLink": "http://movietrailers.apple.com/movies/wb/the-lego-ninjago-movie/the-lego-ninjago-movie-trailer-2_h720p.mov",
-			"mediaConsumptionGuidance": "watch the whole thing, why not."
-		}
-	}]
+  let snapshot = await explanationsRef.get() //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
+  let data = []
+  await snapshot.forEach(doc => {
+    let docData = doc.data()
+    data.push({
+      "explanationID": doc.id,
+      "concept": docData.concept,
+      "authorUserID": docData.authorUserID,
+      "authorAvatarUrl": docData.authorAvatarUrl,
+      "authorDisplayName": docData.authorDisplayName,
+      "explanation": {
+        "type": docData.explanation.type,
+        "introText": docData.explanation.introText,
+        "mediaLink": docData.explanation.mediaLink,
+        "mediaConsumptionGuidance": docData.explanation.mediaConsumptionGuidance
+      },
+      "ahaMomentCount": docData.ahaMomentCount,
+      "totalScore": docData.totalScore,
+      "reactions": {
+        "gotItCount": docData.reactionGotItCount,
+        "laughingCount": docData.reactionLaughingCount,
+        "shockedCount": docData.reactionShockedCount
+      }
+    })
+  })
+  return data
 }
 
-async function getTopConceptsAllTime() {
+  async function getTopConceptsAllTime() {
   return [
     {
     	"conceptName": "Integrals", // these need to be transformed into - instead of space
@@ -320,16 +281,14 @@ async function getTopConceptsAllTime() {
       "ahaMomentCount": 20
     }
   ]
-}
+  }
 
-// returns array of explanations for a concept sorted in rank order
-async function getConceptExplanations(concept) {
-  console.log("concept:", concept);
-  let snapshot = await explanationsRef.where('concept', '==', concept).get() //.orderBy('score', 'desc').get()
+  // returns array of explanations for a concept sorted in rank order
+  async function getConceptExplanations(concept) {
+  let formattedConcept = concept.toLowerCase()
+  let snapshot = await explanationsRef.where('concept', '==', formattedConcept).get() //.orderBy('score', 'desc').get()
   let data = []
-  console.log(snapshot);
   await snapshot.forEach(doc => {
-    console.log(doc.id);
     let docData = doc.data()
     data.push({
       "explanationID": doc.id,

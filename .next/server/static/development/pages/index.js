@@ -1,7 +1,7 @@
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = require('../../../../ssr-module-cache.js');
+/******/ 	var installedModules = require('../../../ssr-module-cache.js');
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,299 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./components/AddExplanationCard.js":
-/*!******************************************!*\
-  !*** ./components/AddExplanationCard.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/AddExplanationCard.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-
-
-class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const {
-      router
-    } = this.props;
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
-    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
-      className: "column-20-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    }, __jsx("span", {
-      className: "link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, "@barackobama "), "explains", __jsx("span", {
-      className: "link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }, " ", router.query.id, " "), "through", __jsx("span", {
-      className: "link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
-    }, " spoken word")), __jsx("div", {
-      className: "media-type-selection-section margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 33
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
-    }, "Write Something"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, "Podcast Snippet"), __jsx("div", {
-      className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, "YouTube Clip"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    }, "Record Your Own Video"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }, "Record Your Own Audio"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 39
-      },
-      __self: this
-    }, "Tweet"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: this
-    }, "Upload A Video"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, "Upload A Photo"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }, "Draw Something And Upload It"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 43
-      },
-      __self: this
-    }, "Link To Something On The Web"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 46
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${router.query.id}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }, "Link to YouTube video"), __jsx("input", {
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "url",
-      placeholder: "https:// ...",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, "What part should someone listen to?"), __jsx("h2", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: this
-    }, "(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)"), __jsx("input", {
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "how-to-consume",
-      placeholder: "Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: this
-    }))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 57
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button button background-purple rounded-border font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, "Submit!"))));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(AddExplanationCard));
-
-/***/ }),
 
 /***/ "./components/AhaButton.js":
 /*!*********************************!*\
@@ -499,6 +210,128 @@ const CardSection = props => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CardSection);
+
+/***/ }),
+
+/***/ "./components/ConceptCardSectionForNewConceptsNeedingLove.js":
+/*!*******************************************************************!*\
+  !*** ./components/ConceptCardSectionForNewConceptsNeedingLove.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ConceptCardSectionForNewConceptsNeedingLove.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const ConceptCardSectionForNewConceptsNeedingLove = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-70-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: `/concept/${props.concept.conceptName}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "link-no-color-change",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_4__["conceptToDisplayName"])(props.concept.conceptName)))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, props.concept.numContributors > 0 && __jsx(_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    avatars: props.concept.contributorAvatars,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }), props.concept.numContributors == 0 && __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, "no one has contributed an explanation yet"), props.concept.numContributors > 0 && __jsx("p", {
+    className: "follows-multi-avatar-unit font-color-light-grey inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, props.concept.numContributors > 4 ? `+ ${props.concept.numContributors} others have added explanations` : 'have added explanations'))), __jsx("div", {
+    className: "column-30-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "action-button button background-purple rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, "Contribute")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ConceptCardSectionForNewConceptsNeedingLove);
 
 /***/ }),
 
@@ -1214,6 +1047,109 @@ const MultiAvatarUnit = props => {
 
 /***/ }),
 
+/***/ "./components/NewConceptsNeedExplanationsCard.js":
+/*!*******************************************************!*\
+  !*** ./components/NewConceptsNeedExplanationsCard.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _ConceptCardSectionForNewConceptsNeedingLove__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ConceptCardSectionForNewConceptsNeedingLove */ "./components/ConceptCardSectionForNewConceptsNeedingLove.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/NewConceptsNeedExplanationsCard.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const NewConceptsNeedExplanationsCard = props => {
+  return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, "Contribute wacky and wonderful explanations to these ideas.")), __jsx(_ConceptCardSectionForNewConceptsNeedingLove__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    concept: props.concepts[0],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }), __jsx(_ConceptCardSectionForNewConceptsNeedingLove__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    concept: props.concepts[1],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-70-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, `+ ${props.totalConcepts} other ideas`)), __jsx("div", {
+    className: "column-30-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "action-button float-right button background-grey light-border rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, "Expand")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (NewConceptsNeedExplanationsCard);
+
+/***/ }),
+
 /***/ "./components/ReactionButtonBar.js":
 /*!*****************************************!*\
   !*** ./components/ReactionButtonBar.js ***!
@@ -1345,6 +1281,287 @@ class SearchBox extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchBox);
+
+/***/ }),
+
+/***/ "./components/TopConceptCardSection.js":
+/*!*********************************************!*\
+  !*** ./components/TopConceptCardSection.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopConceptCardSection.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const TopConceptCardSection = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: "/concept/derivative",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "link-no-color-change",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_3__["conceptToDisplayName"])(props.concept.conceptName)))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, props.concept.explanationCount, " explanations \u2022 ", props.concept.ahaMomentCount, " aha moments"))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TopConceptCardSection);
+
+/***/ }),
+
+/***/ "./components/TopConceptsOfWeekSection.js":
+/*!************************************************!*\
+  !*** ./components/TopConceptsOfWeekSection.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _TopConceptCardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopConceptCardSection */ "./components/TopConceptCardSection.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopConceptsOfWeekSection.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class TopConceptsOfWeekSection extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, this.props.concepts.map(c => {
+      return __jsx(_TopConceptCardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        concept: c,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      });
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TopConceptsOfWeekSection);
+
+/***/ }),
+
+/***/ "./components/TopCreatorCardSection.js":
+/*!*********************************************!*\
+  !*** ./components/TopCreatorCardSection.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopCreatorCardSection.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const TopCreatorCardSection = props => {
+  console.log(props);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-20-p flex-horizontal-center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "avatar avatar-sml-size-no-positioning",
+    src: props.creator.avatarUrl,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "column-80-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: `/explainer/${props.creator.userID}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "link-no-color-change",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, props.creator.displayName))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, props.creator.explanationCount, " explanations"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TopCreatorCardSection);
+
+/***/ }),
+
+/***/ "./components/TopCreatorsOfWeekSection.js":
+/*!************************************************!*\
+  !*** ./components/TopCreatorsOfWeekSection.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _TopCreatorCardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopCreatorCardSection */ "./components/TopCreatorCardSection.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopCreatorsOfWeekSection.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+class TopCreatorsOfWeekSection extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, this.props.creators.map(c => {
+      return __jsx(_TopCreatorCardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        creator: c,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      });
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TopCreatorsOfWeekSection);
 
 /***/ }),
 
@@ -3093,10 +3310,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/concept/[id].js":
-/*!*******************************!*\
-  !*** ./pages/concept/[id].js ***!
-  \*******************************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3104,18 +3321,21 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Header */ "./components/Header.js");
-/* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/AppContainer */ "./components/AppContainer.js");
-/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Card */ "./components/Card.js");
-/* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/CardSection */ "./components/CardSection.js");
-/* harmony import */ var _components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/AddExplanationCard */ "./components/AddExplanationCard.js");
-/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
-/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/concept/[id].js";
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/AppContainer */ "./components/AppContainer.js");
+/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Card */ "./components/Card.js");
+/* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var _components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/NewConceptsNeedExplanationsCard */ "./components/NewConceptsNeedExplanationsCard.js");
+/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/ExplanationCard */ "./components/ExplanationCard.js");
+/* harmony import */ var _components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/TopCreatorsOfWeekSection */ "./components/TopCreatorsOfWeekSection.js");
+/* harmony import */ var _components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/TopConceptsOfWeekSection */ "./components/TopConceptsOfWeekSection.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Loading */ "./components/Loading.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3128,35 +3348,40 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+
+
+
+class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      conceptExplanationsArray: []
+      topExplanationsArray: [],
+      conceptsNeedingLoveArray: [],
+      topCreatorsArray: [],
+      topConceptsArray: []
     };
   }
 
   async componentDidMount() {
-    const {
-      router
-    } = this.props;
+    let tempConceptsNeedingLove = await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getConceptsThatNeedLove"])();
     this.setState({
-      conceptExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_8__["getConceptExplanations"])(router.query.id)
+      topExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopExplanationsAllTime"])(),
+      conceptsNeedingLoveArray: tempConceptsNeedingLove.conceptsNeedingLoveToDisplay,
+      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove,
+      topCreatorsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopCreatorsAllTime"])(),
+      topConceptsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopConceptsAllTime"])()
     });
   }
 
   render() {
-    const {
-      router
-    } = this.props;
     {
-      if (!this.state.conceptExplanationsArray.length) {
-        return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length || !this.state.topCreatorsArray.length || !this.state.topConceptsArray.length) {
+        return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_12__["default"], {
           loggedIn: this.props.loggedIn,
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 39
           },
           __self: this
         });
@@ -3164,7 +3389,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 43
           },
           __self: this
         }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -3172,81 +3397,132 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 44
           },
           __self: this
         }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 45
           },
           __self: this
         }, __jsx("div", {
-          className: "concept-title-bar",
+          className: "columns-parent-div",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 46
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "column-70-p",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "column-section",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
           },
           __self: this
         }, __jsx("h1", {
-          className: "font-lrg font-bold-med inline-block capitalize",
+          className: "font-lrg font-bold-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 49
           },
           __self: this
-        }, router.query.id), __jsx("p", {
-          className: "font-color-light-grey inline-block margin-left",
+        }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          concepts: this.state.conceptsNeedingLoveArray,
+          totalConcepts: this.state.totalConceptsNeedingLove,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 50
           },
           __self: this
-        }, "originally asked by @bofirstdog")), __jsx(_components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        })), __jsx("div", {
+          className: "column-section",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 52
           },
           __self: this
-        }), __jsx("h1", {
-          className: "margin-top-lrg font-lrg font-bold-med inline-block",
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42
+            lineNumber: 53
           },
           __self: this
-        }, "All of the wacky and wonderful ways to explain a ", router.query.id, " "), __jsx("p", {
-          className: "font-color-light-grey",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 43
-          },
-          __self: this
-        }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
-          className: "margin-top-sml",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 44
-          },
-          __self: this
-        }, this.state.conceptExplanationsArray.map(e => {
-          return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, "The most \uD83D\uDD25 Aha Moment creations right now"), this.state.topExplanationsArray.map(e => {
+          return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
             key: e.explanationID,
             explanation: e,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 47
+              lineNumber: 56
             },
             __self: this
           });
-        }))));
+        }))), __jsx("div", {
+          className: "column-30-p",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "column-section",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          },
+          __self: this
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63
+          },
+          __self: this
+        }, "Top Creators This Week"), __jsx(_components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          creators: this.state.topCreatorsArray,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 64
+          },
+          __self: this
+        })), __jsx("div", {
+          className: "column-section",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66
+          },
+          __self: this
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 67
+          },
+          __self: this
+        }, "Top Concepts This Week"), __jsx(_components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          concepts: this.state.topConceptsArray,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 68
+          },
+          __self: this
+        }))))));
       }
     }
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_9__["withRouter"])(ConceptPage));
+/* harmony default export */ __webpack_exports__["default"] = (Index);
 
 /***/ }),
 
@@ -3626,14 +3902,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3:
-/*!*************************************!*\
-  !*** multi ./pages/concept/[id].js ***!
-  \*************************************/
+/***/ 5:
+/*!******************************!*\
+  !*** multi ./pages/index.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danigrant/Projects/ahamoments/pages/concept/[id].js */"./pages/concept/[id].js");
+module.exports = __webpack_require__(/*! /Users/danigrant/Projects/ahamoments/pages/index.js */"./pages/index.js");
 
 
 /***/ }),
@@ -3737,17 +4013,6 @@ module.exports = require("firebase");
 
 /***/ }),
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("next/router");
-
-/***/ }),
-
 /***/ "prop-types":
 /*!*****************************!*\
   !*** external "prop-types" ***!
@@ -3804,4 +4069,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=[id].js.map
+//# sourceMappingURL=index.js.map
