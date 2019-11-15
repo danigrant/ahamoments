@@ -38,8 +38,20 @@ const provider = new firebase.auth.TwitterAuthProvider();
 
 // auth
 
-async function saveUserToDB() {
+async function saveUserToDB(displayName, email, photoURL, uid) {
+  // first check if this a new user?
+  let snapshot = await usersRef.where('email', '==', email).get()
+  // only add user to db if the user is new
+  if (snapshot.empty) {
+    let newUser = {
+      "avatarUrl": photoURL,
+      "displayName": displayName,
+      "email": email,
+      "userID": uid
+    }
 
+    usersRef.add(newUser)
+  }
 }
 
 async function getLoggedInUser() {

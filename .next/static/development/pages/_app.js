@@ -60881,16 +60881,15 @@ function (_App) {
                 _utils_firebase__WEBPACK_IMPORTED_MODULE_19__["firebase"].auth().onAuthStateChanged(function (user) {
                   if (user) {
                     // User is signed in.
-                    console.log({
-                      displayName: user.displayName,
-                      email: user.email,
-                      emailVerified: user.emailVerified,
-                      photoURL: user.photoURL,
-                      isAnonymous: user.isAnonymous,
-                      uid: user.uid,
-                      providerData: user.providerData
-                    }); // update state to add current user
-
+                    // update state to add current user
+                    thisRef.setState({
+                      tempUser: {
+                        displayName: user.displayName,
+                        email: user.email,
+                        photoURL: user.photoURL,
+                        uid: user.uid
+                      }
+                    });
                     thisRef.handleUserLoggedIn();
                   } else {
                     // user logged out
@@ -60938,7 +60937,9 @@ function (_App) {
 
                 _context2.t0.setState.call(_context2.t0, _context2.t2);
 
-              case 6:
+                Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_19__["saveUserToDB"])(this.state.tempUser.displayName, this.state.tempUser.email, this.state.tempUser.photoURL, this.state.tempUser.uid);
+
+              case 7:
               case "end":
                 return _context2.stop();
             }
@@ -61105,18 +61106,37 @@ var increment = firebase.firestore.FieldValue.increment(1);
 var decrement = firebase.firestore.FieldValue.increment(-1);
 var provider = new firebase.auth.TwitterAuthProvider(); // auth
 
-function saveUserToDB() {
+function saveUserToDB(_x, _x2, _x3, _x4) {
   return _saveUserToDB.apply(this, arguments);
 }
 
 function _saveUserToDB() {
   _saveUserToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee() {
+  _regenerator["default"].mark(function _callee(displayName, email, photoURL, uid) {
+    var snapshot, newUser;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            _context.next = 2;
+            return usersRef.where('email', '==', email).get();
+
+          case 2:
+            snapshot = _context.sent;
+
+            // only add user to db if the user is new
+            if (snapshot.empty) {
+              newUser = {
+                "avatarUrl": photoURL,
+                "displayName": displayName,
+                "email": email,
+                "userID": uid
+              };
+              usersRef.add(newUser);
+            }
+
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -61217,7 +61237,7 @@ function _logUserIn() {
   return _logUserIn.apply(this, arguments);
 }
 
-function getUserByID(_x) {
+function getUserByID(_x5) {
   return _getUserByID.apply(this, arguments);
 } // get and return various data
 
@@ -61509,7 +61529,7 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x2) {
+function getConceptExplanations(_x6) {
   return _getConceptExplanations.apply(this, arguments);
 }
 

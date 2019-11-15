@@ -785,16 +785,15 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
     _utils_firebase__WEBPACK_IMPORTED_MODULE_11__["firebase"].auth().onAuthStateChanged(function (user) {
       if (user) {
         // User is signed in.
-        console.log({
-          displayName: user.displayName,
-          email: user.email,
-          emailVerified: user.emailVerified,
-          photoURL: user.photoURL,
-          isAnonymous: user.isAnonymous,
-          uid: user.uid,
-          providerData: user.providerData
-        }); // update state to add current user
-
+        // update state to add current user
+        thisRef.setState({
+          tempUser: {
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            uid: user.uid
+          }
+        });
         thisRef.handleUserLoggedIn();
       } else {
         // user logged out
@@ -811,6 +810,7 @@ class AhaMoments extends next_app__WEBPACK_IMPORTED_MODULE_9___default.a {
       loggedIn: true,
       loggedInUser: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getLoggedInUser"])()
     });
+    Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["saveUserToDB"])(this.state.tempUser.displayName, this.state.tempUser.email, this.state.tempUser.photoURL, this.state.tempUser.uid);
   }
 
   render() {
@@ -932,7 +932,20 @@ const increment = firebase.firestore.FieldValue.increment(1);
 const decrement = firebase.firestore.FieldValue.increment(-1);
 const provider = new firebase.auth.TwitterAuthProvider(); // auth
 
-async function saveUserToDB() {}
+async function saveUserToDB(displayName, email, photoURL, uid) {
+  // first check if this a new user?
+  let snapshot = await usersRef.where('email', '==', email).get(); // only add user to db if the user is new
+
+  if (snapshot.empty) {
+    let newUser = {
+      "avatarUrl": photoURL,
+      "displayName": displayName,
+      "email": email,
+      "userID": uid
+    };
+    usersRef.add(newUser);
+  }
+}
 
 async function getLoggedInUser() {
   let user = firebase.auth().currentUser;

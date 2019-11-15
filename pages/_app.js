@@ -2,7 +2,7 @@ import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
 import '../utils/firebase' // this instantiates firebase
-import { firebase, getLoggedInUser } from '../utils/firebase'
+import { firebase, getLoggedInUser, saveUserToDB } from '../utils/firebase'
 
 class AhaMoments extends App {
   constructor(props) {
@@ -24,16 +24,15 @@ class AhaMoments extends App {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // User is signed in.
-        console.log({
-          displayName: user.displayName,
-          email: user.email,
-          emailVerified: user.emailVerified,
-          photoURL: user.photoURL,
-          isAnonymous: user.isAnonymous,
-          uid: user.uid,
-          providerData: user.providerData
-        })
         // update state to add current user
+        thisRef.setState({
+          tempUser: {
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+            uid: user.uid
+          }
+        })
         thisRef.handleUserLoggedIn()
       } else {
         // user logged out
@@ -49,6 +48,7 @@ class AhaMoments extends App {
       loggedIn: true,
       loggedInUser: await getLoggedInUser()
     })
+    saveUserToDB(this.state.tempUser.displayName, this.state.tempUser.email, this.state.tempUser.photoURL, this.state.tempUser.uid)
   }
   render() {
     const { Component, pageProps } = this.props

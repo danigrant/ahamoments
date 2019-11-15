@@ -64688,18 +64688,37 @@ var increment = firebase.firestore.FieldValue.increment(1);
 var decrement = firebase.firestore.FieldValue.increment(-1);
 var provider = new firebase.auth.TwitterAuthProvider(); // auth
 
-function saveUserToDB() {
+function saveUserToDB(_x, _x2, _x3, _x4) {
   return _saveUserToDB.apply(this, arguments);
 }
 
 function _saveUserToDB() {
   _saveUserToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee() {
+  _regenerator["default"].mark(function _callee(displayName, email, photoURL, uid) {
+    var snapshot, newUser;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            _context.next = 2;
+            return usersRef.where('email', '==', email).get();
+
+          case 2:
+            snapshot = _context.sent;
+
+            // only add user to db if the user is new
+            if (snapshot.empty) {
+              newUser = {
+                "avatarUrl": photoURL,
+                "displayName": displayName,
+                "email": email,
+                "userID": uid
+              };
+              usersRef.add(newUser);
+            }
+
+          case 4:
           case "end":
             return _context.stop();
         }
@@ -64800,7 +64819,7 @@ function _logUserIn() {
   return _logUserIn.apply(this, arguments);
 }
 
-function getUserByID(_x) {
+function getUserByID(_x5) {
   return _getUserByID.apply(this, arguments);
 } // get and return various data
 
@@ -65092,7 +65111,7 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x2) {
+function getConceptExplanations(_x6) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
