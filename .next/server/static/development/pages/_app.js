@@ -1131,23 +1131,28 @@ async function getTopConceptsAllTime() {
   return [{
     "conceptName": "Integrals",
     // these need to be transformed into - instead of space
-    "explanationCount": 10
+    "explanationCount": 10,
+    "ahaMomentCount": 20
   }, {
     "conceptName": "Derivatives",
     // these need to be transformed into - instead of space
-    "explanationCount": 10
+    "explanationCount": 10,
+    "ahaMomentCount": 20
   }, {
     "conceptName": "Limits",
     // these need to be transformed into - instead of space
-    "explanationCount": 10
+    "explanationCount": 10,
+    "ahaMomentCount": 20
   }, {
     "conceptName": "Infinity",
     // these need to be transformed into - instead of space
-    "explanationCount": 10
+    "explanationCount": 10,
+    "ahaMomentCount": 20
   }, {
     "conceptName": "Logarithm",
     // these need to be transformed into - instead of space
-    "explanationCount": 10
+    "explanationCount": 10,
+    "ahaMomentCount": 20
   }];
 } // returns array of explanations for a concept sorted in rank order
 

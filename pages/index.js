@@ -9,7 +9,7 @@ import NewConceptsNeedExplanationsCard from '../components/NewConceptsNeedExplan
 import ExplanationCard from '../components/ExplanationCard'
 import TopCreatorsOfWeekSection from '../components/TopCreatorsOfWeekSection'
 import TopConceptsOfWeekSection from '../components/TopConceptsOfWeekSection'
-import { getTopExplanationsAllTime, getConceptsThatNeedLove, getTopCreatorsAllTime } from '../utils/firebase'
+import { getTopExplanationsAllTime, getConceptsThatNeedLove, getTopCreatorsAllTime, getTopConceptsAllTime } from '../utils/firebase'
 import Loading from '../components/Loading'
 
 class Index extends React.Component {
@@ -18,7 +18,8 @@ class Index extends React.Component {
     this.state = {
       topExplanationsArray: [],
       conceptsNeedingLoveArray: [],
-      topCreatorsArray: []
+      topCreatorsArray: [],
+      topConceptsArray: []
     }
   }
   async componentDidMount() {
@@ -27,12 +28,13 @@ class Index extends React.Component {
       topExplanationsArray: await getTopExplanationsAllTime(),
       conceptsNeedingLoveArray: tempConceptsNeedingLove.conceptsNeedingLoveToDisplay,
       totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove,
-      topCreatorsArray: await getTopCreatorsAllTime()
+      topCreatorsArray: await getTopCreatorsAllTime(),
+      topConceptsArray: await getTopConceptsAllTime()
     })
   }
   render() {
     {
-      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length || !this.state.topCreatorsArray.length) {
+      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length || !this.state.topCreatorsArray.length || !this.state.topConceptsArray.length) {
         return (
           <Loading loggedIn={this.props.loggedIn} />
         )
@@ -63,7 +65,7 @@ class Index extends React.Component {
                   </div>
                   <div className="column-section">
                     <h1 className="font-lrg font-bold-med">Top Concepts This Week</h1>
-                    <TopConceptsOfWeekSection />
+                    <TopConceptsOfWeekSection concepts={this.state.topConceptsArray} />
                   </div>
                 </div>
               </div>
