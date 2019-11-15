@@ -225,7 +225,7 @@ function (_React$Component) {
         },
         __self: this
       })), this.props.loggedIn && __jsx(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
-        href: "/explainer/@barackobama",
+        href: "/explainer/".concat(this.props.loggedInUser.userID),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
@@ -233,7 +233,7 @@ function (_React$Component) {
         __self: this
       }, __jsx("img", {
         className: "avatar avatar-med link-no-color-change",
-        src: "/images/temp-avatar.jpg",
+        src: this.props.loggedInUser.avatarUrl,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34
@@ -836,6 +836,7 @@ var Loading = function Loading(props) {
     __self: this
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     loggedIn: props.loggedIn,
+    loggedInUser: props.loggedInUser,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -64655,6 +64656,7 @@ function (_React$Component) {
         if (!this.state.topCreatorArray.length) {
           return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_11__["default"], {
             loggedIn: this.props.loggedIn,
+            loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 24
@@ -64670,6 +64672,7 @@ function (_React$Component) {
             __self: this
           }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
             loggedIn: this.props.loggedIn,
+            loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 29
@@ -64783,7 +64786,18 @@ function _getLoggedInUser() {
             return _context.abrupt("return", false);
 
           case 3:
-            return _context.abrupt("return", user);
+            return _context.abrupt("return", {
+              "displayName": "Barack Obama",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "/images/temp-avatar.jpg",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            });
 
           case 4:
           case "end":
@@ -64797,7 +64811,8 @@ function _getLoggedInUser() {
 
 function logUserIn() {
   return _logUserIn.apply(this, arguments);
-}
+} // various utils
+
 
 function _logUserIn() {
   _logUserIn = (0, _asyncToGenerator2["default"])(
@@ -64839,36 +64854,58 @@ function _logUserIn() {
   return _logUserIn.apply(this, arguments);
 }
 
-function pollForAuthChanges() {
-  return _pollForAuthChanges.apply(this, arguments);
-} // various utils
+function getUserByID(_x) {
+  return _getUserByID.apply(this, arguments);
+} // get and return various data
+// returns 2 concepts for the front page that need love as an obj
 
 
-function _pollForAuthChanges() {
-  _pollForAuthChanges = (0, _asyncToGenerator2["default"])(
+function _getUserByID() {
+  _getUserByID = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee3() {
+  _regenerator["default"].mark(function _callee3(userID) {
     return _regenerator["default"].wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            firebase.auth().onAuthStateChanged(function (user) {
-              if (user) {
-                // User is signed in.
-                console.log({
-                  displayName: user.displayName,
-                  email: user.email,
-                  emailVerified: user.emailVerified,
-                  photoURL: user.photoURL,
-                  isAnonymous: user.isAnonymous,
-                  uid: user.uid,
-                  providerData: user.providerData
-                }); // ...
-              } else {
-                // User is signed out.
-                // ...
-                console.log('user just signed out');
-              }
+            return _context3.abrupt("return", {
+              "displayName": "Barack Obama",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "/images/temp-avatar.jpg",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              },
+              explanations: [{
+                "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+                "concept": "integrals",
+                "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+                "authorAvatarUrl": "/images/temp-avatar.jpg",
+                "authorDisplayName": "Barack Obama",
+                "explanation": {
+                  "type": "text",
+                  //audio, photo, video, youtube, tweet, text
+                  "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+                  "mediaLink": "",
+                  "mediaConsumptionGuidance": ""
+                }
+              }, {
+                "explanationID": "eK2dxVLq5je8dfLWJjZL",
+                "concept": "integrals",
+                "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+                "authorAvatarUrl": "/images/temp-avatar.jpg",
+                "authorDisplayName": "Barack Obama",
+                "explanation": {
+                  "type": "tweet",
+                  //audio, photo, video, youtube, tweet, text
+                  "introText": "This explains this well",
+                  "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+                  "mediaConsumptionGuidance": ""
+                }
+              }]
             });
 
           case 1:
@@ -64878,33 +64915,7 @@ function _pollForAuthChanges() {
       }
     }, _callee3);
   }));
-  return _pollForAuthChanges.apply(this, arguments);
-}
-
-function getUserNameByID(_x) {
-  return _getUserNameByID.apply(this, arguments);
-} // get and return various data
-// returns 2 concepts for the front page that need love as an obj
-
-
-function _getUserNameByID() {
-  _getUserNameByID = (0, _asyncToGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee4(userID) {
-    return _regenerator["default"].wrap(function _callee4$(_context4) {
-      while (1) {
-        switch (_context4.prev = _context4.next) {
-          case 0:
-            return _context4.abrupt("return", "Barack Obama");
-
-          case 1:
-          case "end":
-            return _context4.stop();
-        }
-      }
-    }, _callee4);
-  }));
-  return _getUserNameByID.apply(this, arguments);
+  return _getUserByID.apply(this, arguments);
 }
 
 function getConceptsThatNeedLove() {
@@ -64915,12 +64926,12 @@ function getConceptsThatNeedLove() {
 function _getConceptsThatNeedLove() {
   _getConceptsThatNeedLove = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee5() {
-    return _regenerator["default"].wrap(function _callee5$(_context5) {
+  _regenerator["default"].mark(function _callee4() {
+    return _regenerator["default"].wrap(function _callee4$(_context4) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context4.prev = _context4.next) {
           case 0:
-            return _context5.abrupt("return", {
+            return _context4.abrupt("return", {
               "totalAmountOfConceptsNeedingLove": 43,
               "conceptsNeedingLoveToDisplay": [{
                 "conceptName": "Integrals",
@@ -64935,10 +64946,10 @@ function _getConceptsThatNeedLove() {
 
           case 1:
           case "end":
-            return _context5.stop();
+            return _context4.stop();
         }
       }
-    }, _callee5);
+    }, _callee4);
   }));
   return _getConceptsThatNeedLove.apply(this, arguments);
 }
@@ -64951,12 +64962,12 @@ function getTopCreatorsAllTime() {
 function _getTopCreatorsAllTime() {
   _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee6() {
-    return _regenerator["default"].wrap(function _callee6$(_context6) {
+  _regenerator["default"].mark(function _callee5() {
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) {
-        switch (_context6.prev = _context6.next) {
+        switch (_context5.prev = _context5.next) {
           case 0:
-            return _context6.abrupt("return", [{
+            return _context5.abrupt("return", [{
               "displayName": "Barack Obama",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
               "avatarUrl": "/images/temp-avatar.jpg",
@@ -65015,10 +65026,10 @@ function _getTopCreatorsAllTime() {
 
           case 1:
           case "end":
-            return _context6.stop();
+            return _context5.stop();
         }
       }
-    }, _callee6);
+    }, _callee5);
   }));
   return _getTopCreatorsAllTime.apply(this, arguments);
 }
@@ -65030,12 +65041,12 @@ function getTopExplanationsAllTime() {
 function _getTopExplanationsAllTime() {
   _getTopExplanationsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee7() {
-    return _regenerator["default"].wrap(function _callee7$(_context7) {
+  _regenerator["default"].mark(function _callee6() {
+    return _regenerator["default"].wrap(function _callee6$(_context6) {
       while (1) {
-        switch (_context7.prev = _context7.next) {
+        switch (_context6.prev = _context6.next) {
           case 0:
-            return _context7.abrupt("return", [{
+            return _context6.abrupt("return", [{
               "explanationID": "6CpE8XLCBYuMVAFr3wKE",
               "concept": "integrals",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
@@ -65104,10 +65115,10 @@ function _getTopExplanationsAllTime() {
 
           case 1:
           case "end":
-            return _context7.stop();
+            return _context6.stop();
         }
       }
-    }, _callee7);
+    }, _callee6);
   }));
   return _getTopExplanationsAllTime.apply(this, arguments);
 }
@@ -65120,12 +65131,12 @@ function getTopConceptsAllTime() {
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee8() {
-    return _regenerator["default"].wrap(function _callee8$(_context8) {
+  _regenerator["default"].mark(function _callee7() {
+    return _regenerator["default"].wrap(function _callee7$(_context7) {
       while (1) {
-        switch (_context8.prev = _context8.next) {
+        switch (_context7.prev = _context7.next) {
           case 0:
-            return _context8.abrupt("return", [{
+            return _context7.abrupt("return", [{
               "conceptName": "Integrals",
               // these need to be transformed into - instead of space
               "explanationCount": 10,
@@ -65154,10 +65165,10 @@ function _getTopConceptsAllTime() {
 
           case 1:
           case "end":
-            return _context8.stop();
+            return _context7.stop();
         }
       }
-    }, _callee8);
+    }, _callee7);
   }));
   return _getTopConceptsAllTime.apply(this, arguments);
 }
@@ -65169,12 +65180,12 @@ function getConceptExplanations() {
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee9() {
-    return _regenerator["default"].wrap(function _callee9$(_context9) {
+  _regenerator["default"].mark(function _callee8() {
+    return _regenerator["default"].wrap(function _callee8$(_context8) {
       while (1) {
-        switch (_context9.prev = _context9.next) {
+        switch (_context8.prev = _context8.next) {
           case 0:
-            return _context9.abrupt("return", [{
+            return _context8.abrupt("return", [{
               "explanationID": "6CpE8XLCBYuMVAFr3wKE",
               "concept": "integrals",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
@@ -65243,10 +65254,10 @@ function _getConceptExplanations() {
 
           case 1:
           case "end":
-            return _context9.stop();
+            return _context8.stop();
         }
       }
-    }, _callee9);
+    }, _callee8);
   }));
   return _getConceptExplanations.apply(this, arguments);
 }
@@ -65255,6 +65266,7 @@ module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
   getLoggedInUser: getLoggedInUser,
+  getUserByID: getUserByID,
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,

@@ -36,12 +36,12 @@ class Index extends React.Component {
     {
       if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length || !this.state.topCreatorsArray.length || !this.state.topConceptsArray.length) {
         return (
-          <Loading loggedIn={this.props.loggedIn} />
+          <Loading loggedIn={this.props.loggedIn} loggedInUser={this.props.loggedInUser}/>
         )
       } else {
         return (
           <div>
-            <Header loggedIn={this.props.loggedIn} />
+            <Header loggedIn={this.props.loggedIn} loggedInUser={this.props.loggedInUser} />
             <AppContainer>
               <div className="columns-parent-div">
                 <div className="column-70-p">

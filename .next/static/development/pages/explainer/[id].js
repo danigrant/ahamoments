@@ -483,7 +483,7 @@ function (_React$Component) {
         },
         __self: this
       })), this.props.loggedIn && __jsx(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
-        href: "/explainer/@barackobama",
+        href: "/explainer/".concat(this.props.loggedInUser.userID),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 33
@@ -491,7 +491,7 @@ function (_React$Component) {
         __self: this
       }, __jsx("img", {
         className: "avatar avatar-med link-no-color-change",
-        src: "/images/temp-avatar.jpg",
+        src: this.props.loggedInUser.avatarUrl,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 34
@@ -513,6 +513,68 @@ function (_React$Component) {
 //   // in parent function needs to be an auth changed watcher so we dont have to pass up anything
 //   // actually if that is the case then i dont need this function
 // }
+
+/***/ }),
+
+/***/ "./components/Loading.js":
+/*!*******************************!*\
+  !*** ./components/Loading.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _AppContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppContainer */ "./components/AppContainer.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/Loading.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var Loading = function Loading(props) {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    loggedIn: props.loggedIn,
+    loggedInUser: props.loggedInUser,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }), __jsx(_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, __jsx("div", {
+    id: "loading-bar-spinner",
+    "class": "spinner",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("div", {
+    "class": "spinner-icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loading);
 
 /***/ }),
 
@@ -64347,27 +64409,37 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Header */ "./components/Header.js");
-/* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/AppContainer */ "./components/AppContainer.js");
-/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Card */ "./components/Card.js");
-/* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/CardSection */ "./components/CardSection.js");
-/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/Header */ "./components/Header.js");
+/* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/AppContainer */ "./components/AppContainer.js");
+/* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/Card */ "./components/Card.js");
+/* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/CardSection */ "./components/CardSection.js");
+/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
+/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_15__);
+
+
 
 
 
 
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/explainer/[id].js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+
 
 
 
@@ -64379,146 +64451,188 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
 var ProfilePage =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(ProfilePage, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(ProfilePage, _React$Component);
 
   function ProfilePage(props) {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ProfilePage);
+    var _this;
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ProfilePage).call(this, props));
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, ProfilePage);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(ProfilePage).call(this, props));
+    _this.state = {
+      currentProfileUser: {}
+    };
+    return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ProfilePage, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(ProfilePage, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.t0 = this;
+                _context.next = 3;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_14__["getUserByID"])(this.props.router.query.id);
+
+              case 3:
+                _context.t1 = _context.sent;
+                _context.t2 = {
+                  currentProfileUser: _context.t1
+                };
+
+                _context.t0.setState.call(_context.t0, _context.t2);
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
     key: "render",
     value: function render() {
       var router = this.props.router;
-      return __jsx("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 16
-        },
-        __self: this
-      }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        loggedIn: this.props.loggedIn,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_7__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18
-        },
-        __self: this
-      }, __jsx("h1", {
-        className: "font-lrg font-bold-med inline-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        },
-        __self: this
-      }, router.query.id), __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 20
-        },
-        __self: this
-      }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 21
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "columns-parent-div",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "column-50-p flex-center-contents-vertically flex-justify-flex-start",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, __jsx("img", {
-        className: "avatar avatar-sml top-zero",
-        src: "/images/temp-avatar.jpg",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }), __jsx("p", {
-        className: "font-bold-med font-med inline-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, router.query.id)), __jsx("div", {
-        className: "column-50-p flex-center-contents-vertically flex-justify-flex-end",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        },
-        __self: this
-      }, __jsx("p", {
-        className: "font-color-light-grey font-bold-med",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, "15 explanations \u2022 98 aha moments \u2022 ranked #115"))))), __jsx("h1", {
-        className: "margin-top-lrg font-lrg font-bold-med inline-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }, "Here are all the different ways ", router.query.id, " has explained things"), __jsx("p", {
-        className: "font-color-light-grey",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
-        className: "margin-top-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      }, __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }))));
+      {
+        if (!this.state.currentProfileUser.displayName) {
+          return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_13__["default"], {
+            loggedIn: this.props.loggedIn,
+            loggedInUser: this.props.loggedInUser,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 28
+            },
+            __self: this
+          });
+        } else {
+          return __jsx("div", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 32
+            },
+            __self: this
+          }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
+            loggedIn: this.props.loggedIn,
+            loggedInUser: this.props.loggedInUser,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 33
+            },
+            __self: this
+          }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 34
+            },
+            __self: this
+          }, __jsx("h1", {
+            className: "font-lrg font-bold-med inline-block",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 35
+            },
+            __self: this
+          }, this.state.currentProfileUser.displayName), __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_10__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 36
+            },
+            __self: this
+          }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 37
+            },
+            __self: this
+          }, __jsx("div", {
+            className: "columns-parent-div",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 38
+            },
+            __self: this
+          }, __jsx("div", {
+            className: "column-50-p flex-center-contents-vertically flex-justify-flex-start",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 39
+            },
+            __self: this
+          }, __jsx("img", {
+            className: "avatar avatar-sml top-zero",
+            src: "/images/temp-avatar.jpg",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 40
+            },
+            __self: this
+          }), __jsx("p", {
+            className: "font-bold-med font-med inline-block",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 41
+            },
+            __self: this
+          }, this.state.currentProfileUser.displayName)), __jsx("div", {
+            className: "column-50-p flex-center-contents-vertically flex-justify-flex-end",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 43
+            },
+            __self: this
+          }, __jsx("p", {
+            className: "font-color-light-grey font-bold-med",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 44
+            },
+            __self: this
+          }, this.state.currentProfileUser.explanationCount, " explanations \u2022 ", this.state.currentProfileUser.ahaMomentCount, " aha moments"))))), __jsx("h1", {
+            className: "margin-top-lrg font-lrg font-bold-med inline-block",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 49
+            },
+            __self: this
+          }, "Here are all the different ways ", this.state.currentProfileUser.displayName, " has explained things"), __jsx("div", {
+            className: "margin-top-sml",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 50
+            },
+            __self: this
+          }, this.state.currentProfileUser.explanations.map(function (e) {
+            return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
+              key: e.explanationID,
+              explanation: e,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 53
+              },
+              __self: this
+            });
+          }))));
+        }
+      }
     }
   }]);
 
   return ProfilePage;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_11__["withRouter"])(ProfilePage));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_15__["withRouter"])(ProfilePage));
 
 /***/ }),
 
@@ -64597,7 +64711,18 @@ function _getLoggedInUser() {
             return _context.abrupt("return", false);
 
           case 3:
-            return _context.abrupt("return", user);
+            return _context.abrupt("return", {
+              "displayName": "Barack Obama",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "/images/temp-avatar.jpg",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              }
+            });
 
           case 4:
           case "end":
@@ -64611,7 +64736,8 @@ function _getLoggedInUser() {
 
 function logUserIn() {
   return _logUserIn.apply(this, arguments);
-}
+} // various utils
+
 
 function _logUserIn() {
   _logUserIn = (0, _asyncToGenerator2["default"])(
@@ -64653,36 +64779,58 @@ function _logUserIn() {
   return _logUserIn.apply(this, arguments);
 }
 
-function pollForAuthChanges() {
-  return _pollForAuthChanges.apply(this, arguments);
-} // various utils
+function getUserByID(_x) {
+  return _getUserByID.apply(this, arguments);
+} // get and return various data
+// returns 2 concepts for the front page that need love as an obj
 
 
-function _pollForAuthChanges() {
-  _pollForAuthChanges = (0, _asyncToGenerator2["default"])(
+function _getUserByID() {
+  _getUserByID = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee3() {
+  _regenerator["default"].mark(function _callee3(userID) {
     return _regenerator["default"].wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            firebase.auth().onAuthStateChanged(function (user) {
-              if (user) {
-                // User is signed in.
-                console.log({
-                  displayName: user.displayName,
-                  email: user.email,
-                  emailVerified: user.emailVerified,
-                  photoURL: user.photoURL,
-                  isAnonymous: user.isAnonymous,
-                  uid: user.uid,
-                  providerData: user.providerData
-                }); // ...
-              } else {
-                // User is signed out.
-                // ...
-                console.log('user just signed out');
-              }
+            return _context3.abrupt("return", {
+              "displayName": "Barack Obama",
+              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+              "avatarUrl": "/images/temp-avatar.jpg",
+              "ahaMomentCount": 4,
+              "explanationCount": 5,
+              "reactionsCount": {
+                "gotIt": 1,
+                "laughing": 2,
+                "shocked": 3
+              },
+              explanations: [{
+                "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+                "concept": "integrals",
+                "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+                "authorAvatarUrl": "/images/temp-avatar.jpg",
+                "authorDisplayName": "Barack Obama",
+                "explanation": {
+                  "type": "text",
+                  //audio, photo, video, youtube, tweet, text
+                  "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+                  "mediaLink": "",
+                  "mediaConsumptionGuidance": ""
+                }
+              }, {
+                "explanationID": "eK2dxVLq5je8dfLWJjZL",
+                "concept": "integrals",
+                "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+                "authorAvatarUrl": "/images/temp-avatar.jpg",
+                "authorDisplayName": "Barack Obama",
+                "explanation": {
+                  "type": "tweet",
+                  //audio, photo, video, youtube, tweet, text
+                  "introText": "This explains this well",
+                  "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+                  "mediaConsumptionGuidance": ""
+                }
+              }]
             });
 
           case 1:
@@ -64692,33 +64840,7 @@ function _pollForAuthChanges() {
       }
     }, _callee3);
   }));
-  return _pollForAuthChanges.apply(this, arguments);
-}
-
-function getUserNameByID(_x) {
-  return _getUserNameByID.apply(this, arguments);
-} // get and return various data
-// returns 2 concepts for the front page that need love as an obj
-
-
-function _getUserNameByID() {
-  _getUserNameByID = (0, _asyncToGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee4(userID) {
-    return _regenerator["default"].wrap(function _callee4$(_context4) {
-      while (1) {
-        switch (_context4.prev = _context4.next) {
-          case 0:
-            return _context4.abrupt("return", "Barack Obama");
-
-          case 1:
-          case "end":
-            return _context4.stop();
-        }
-      }
-    }, _callee4);
-  }));
-  return _getUserNameByID.apply(this, arguments);
+  return _getUserByID.apply(this, arguments);
 }
 
 function getConceptsThatNeedLove() {
@@ -64729,12 +64851,12 @@ function getConceptsThatNeedLove() {
 function _getConceptsThatNeedLove() {
   _getConceptsThatNeedLove = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee5() {
-    return _regenerator["default"].wrap(function _callee5$(_context5) {
+  _regenerator["default"].mark(function _callee4() {
+    return _regenerator["default"].wrap(function _callee4$(_context4) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context4.prev = _context4.next) {
           case 0:
-            return _context5.abrupt("return", {
+            return _context4.abrupt("return", {
               "totalAmountOfConceptsNeedingLove": 43,
               "conceptsNeedingLoveToDisplay": [{
                 "conceptName": "Integrals",
@@ -64749,10 +64871,10 @@ function _getConceptsThatNeedLove() {
 
           case 1:
           case "end":
-            return _context5.stop();
+            return _context4.stop();
         }
       }
-    }, _callee5);
+    }, _callee4);
   }));
   return _getConceptsThatNeedLove.apply(this, arguments);
 }
@@ -64765,12 +64887,12 @@ function getTopCreatorsAllTime() {
 function _getTopCreatorsAllTime() {
   _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee6() {
-    return _regenerator["default"].wrap(function _callee6$(_context6) {
+  _regenerator["default"].mark(function _callee5() {
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) {
-        switch (_context6.prev = _context6.next) {
+        switch (_context5.prev = _context5.next) {
           case 0:
-            return _context6.abrupt("return", [{
+            return _context5.abrupt("return", [{
               "displayName": "Barack Obama",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
               "avatarUrl": "/images/temp-avatar.jpg",
@@ -64829,10 +64951,10 @@ function _getTopCreatorsAllTime() {
 
           case 1:
           case "end":
-            return _context6.stop();
+            return _context5.stop();
         }
       }
-    }, _callee6);
+    }, _callee5);
   }));
   return _getTopCreatorsAllTime.apply(this, arguments);
 }
@@ -64844,12 +64966,12 @@ function getTopExplanationsAllTime() {
 function _getTopExplanationsAllTime() {
   _getTopExplanationsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee7() {
-    return _regenerator["default"].wrap(function _callee7$(_context7) {
+  _regenerator["default"].mark(function _callee6() {
+    return _regenerator["default"].wrap(function _callee6$(_context6) {
       while (1) {
-        switch (_context7.prev = _context7.next) {
+        switch (_context6.prev = _context6.next) {
           case 0:
-            return _context7.abrupt("return", [{
+            return _context6.abrupt("return", [{
               "explanationID": "6CpE8XLCBYuMVAFr3wKE",
               "concept": "integrals",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
@@ -64918,10 +65040,10 @@ function _getTopExplanationsAllTime() {
 
           case 1:
           case "end":
-            return _context7.stop();
+            return _context6.stop();
         }
       }
-    }, _callee7);
+    }, _callee6);
   }));
   return _getTopExplanationsAllTime.apply(this, arguments);
 }
@@ -64934,12 +65056,12 @@ function getTopConceptsAllTime() {
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee8() {
-    return _regenerator["default"].wrap(function _callee8$(_context8) {
+  _regenerator["default"].mark(function _callee7() {
+    return _regenerator["default"].wrap(function _callee7$(_context7) {
       while (1) {
-        switch (_context8.prev = _context8.next) {
+        switch (_context7.prev = _context7.next) {
           case 0:
-            return _context8.abrupt("return", [{
+            return _context7.abrupt("return", [{
               "conceptName": "Integrals",
               // these need to be transformed into - instead of space
               "explanationCount": 10,
@@ -64968,10 +65090,10 @@ function _getTopConceptsAllTime() {
 
           case 1:
           case "end":
-            return _context8.stop();
+            return _context7.stop();
         }
       }
-    }, _callee8);
+    }, _callee7);
   }));
   return _getTopConceptsAllTime.apply(this, arguments);
 }
@@ -64983,12 +65105,12 @@ function getConceptExplanations() {
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee9() {
-    return _regenerator["default"].wrap(function _callee9$(_context9) {
+  _regenerator["default"].mark(function _callee8() {
+    return _regenerator["default"].wrap(function _callee8$(_context8) {
       while (1) {
-        switch (_context9.prev = _context9.next) {
+        switch (_context8.prev = _context8.next) {
           case 0:
-            return _context9.abrupt("return", [{
+            return _context8.abrupt("return", [{
               "explanationID": "6CpE8XLCBYuMVAFr3wKE",
               "concept": "integrals",
               "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
@@ -65057,10 +65179,10 @@ function _getConceptExplanations() {
 
           case 1:
           case "end":
-            return _context9.stop();
+            return _context8.stop();
         }
       }
-    }, _callee9);
+    }, _callee8);
   }));
   return _getConceptExplanations.apply(this, arguments);
 }
@@ -65069,6 +65191,7 @@ module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
   getLoggedInUser: getLoggedInUser,
+  getUserByID: getUserByID,
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,

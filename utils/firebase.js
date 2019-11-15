@@ -46,10 +46,21 @@ async function getLoggedInUser() {
     return false;
   }
 
+  return {
+    "displayName": "Barack Obama",
+		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+		"avatarUrl": "/images/temp-avatar.jpg",
+		"ahaMomentCount": 4,
+		"explanationCount": 5,
+		"reactionsCount": {
+			"gotIt": 1,
+			"laughing": 2,
+			"shocked": 3
+		}
+  }
+
   // maybe pull some stuff about the user into an obj and return that?
   // user.photoURL, user.displayName
-
-  return user
 }
 
 async function logUserIn() {
@@ -77,32 +88,47 @@ async function logUserIn() {
   });
 }
 
-async function pollForAuthChanges() {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      console.log({
-        displayName: user.displayName,
-        email: user.email,
-        emailVerified: user.emailVerified,
-        photoURL: user.photoURL,
-        isAnonymous: user.isAnonymous,
-        uid: user.uid,
-        providerData: user.providerData
-      });
-      // ...
-    } else {
-      // User is signed out.
-      // ...
-      console.log('user just signed out');
-    }
-  });
-}
-
 // various utils
 
-async function getUserNameByID(userID) {
-  return "Barack Obama"
+async function getUserByID(userID) {
+  return {
+		"displayName": "Barack Obama",
+		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+		"avatarUrl": "/images/temp-avatar.jpg",
+		"ahaMomentCount": 4,
+		"explanationCount": 5,
+		"reactionsCount": {
+			"gotIt": 1,
+			"laughing": 2,
+			"shocked": 3
+		},
+    explanations: [{
+      "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+      "concept": "integrals",
+  		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+      "authorAvatarUrl": "/images/temp-avatar.jpg",
+      "authorDisplayName": "Barack Obama",
+  		"explanation": {
+  			"type": "text", //audio, photo, video, youtube, tweet, text
+  			"introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+  			"mediaLink": "",
+  			"mediaConsumptionGuidance": ""
+  		}
+  	},
+    {
+      "explanationID": "eK2dxVLq5je8dfLWJjZL",
+      "concept": "integrals",
+  		"authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+      "authorAvatarUrl": "/images/temp-avatar.jpg",
+      "authorDisplayName": "Barack Obama",
+  		"explanation": {
+  			"type": "tweet", //audio, photo, video, youtube, tweet, text
+  			"introText": "This explains this well",
+  			"mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+  			"mediaConsumptionGuidance": ""
+  		}
+  	}]
+  }
 }
 
 // get and return various data
@@ -361,9 +387,10 @@ module.exports = {
   firebase,
   logUserIn,
   getLoggedInUser,
+  getUserByID,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,
   getConceptsThatNeedLove,
-  getConceptExplanations
+  getConceptExplanations,
 }

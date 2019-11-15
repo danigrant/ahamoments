@@ -2,16 +2,24 @@ import React from 'react'
 import App from 'next/app'
 import Head from 'next/head'
 import '../utils/firebase' // this instantiates firebase
-import { firebase, pollForAuthChanges } from '../utils/firebase'
+import { firebase, getLoggedInUser } from '../utils/firebase'
 
 class AhaMoments extends App {
   constructor(props) {
     super(props)
     this.state = {
-      loggedIn: false
+      loggedIn: false,
+      loggedInUser: {}
     }
+    this.handleUserLoggedIn = this.handleUserLoggedIn.bind(this)
   }
-  componentDidMount() {
+  async componentDidMount() {
+    if (this.state.loggedIn) {
+      this.setState({
+        loggedInUser: await getLoggedInUser()
+      })
+    }
+
     let thisRef = this;
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
@@ -26,15 +34,20 @@ class AhaMoments extends App {
           providerData: user.providerData
         })
         // update state to add current user
-        thisRef.setState({
-          loggedIn: true
-        })
+        thisRef.handleUserLoggedIn()
       } else {
         // user logged out
         thisRef.setState({
-          loggedIn: false
+          loggedIn: false,
+          loggedInUser: {}
         })
       }
+    })
+  }
+  async handleUserLoggedIn() {
+    this.setState({
+      loggedIn: true,
+      loggedInUser: await getLoggedInUser()
     })
   }
   render() {
@@ -47,7 +60,7 @@ class AhaMoments extends App {
           <link rel="stylesheet" href="/css/utils.css" />
           <link rel="stylesheet" href="/css/styles.css" />
         </Head>
-        <Component loggedIn={this.state.loggedIn} {...pageProps} />
+        <Component loggedIn={this.state.loggedIn} loggedInUser={this.state.loggedInUser} {...pageProps} />
       </div>
     )
   }

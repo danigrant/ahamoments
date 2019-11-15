@@ -30,8 +30,8 @@ class Header extends React.Component {
               }
               {
                 this.props.loggedIn &&
-                <Link href="/explainer/@barackobama">
-                  <img className="avatar avatar-med link-no-color-change" src="/images/temp-avatar.jpg" />
+                <Link href={`/explainer/${this.props.loggedInUser.userID}`}>
+                  <img className="avatar avatar-med link-no-color-change" src={this.props.loggedInUser.avatarUrl} />
                 </Link>
               }
             </div>

@@ -300,7 +300,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     })), this.props.loggedIn && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: "/explainer/@barackobama",
+      href: `/explainer/${this.props.loggedInUser.userID}`,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 33
@@ -308,7 +308,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this
     }, __jsx("img", {
       className: "avatar avatar-med link-no-color-change",
-      src: "/images/temp-avatar.jpg",
+      src: this.props.loggedInUser.avatarUrl,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 34
@@ -889,6 +889,7 @@ const Loading = props => {
     __self: undefined
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
     loggedIn: props.loggedIn,
+    loggedInUser: props.loggedInUser,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
@@ -3003,6 +3004,7 @@ class LeaderboardPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       if (!this.state.topCreatorArray.length) {
         return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_4__["default"], {
           loggedIn: this.props.loggedIn,
+          loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 24
@@ -3018,6 +3020,7 @@ class LeaderboardPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
           __self: this
         }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
           loggedIn: this.props.loggedIn,
+          loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 29
@@ -3106,11 +3109,21 @@ async function getLoggedInUser() {
   if (!user) {
     // No user is signed in.
     return false;
-  } // maybe pull some stuff about the user into an obj and return that?
+  }
+
+  return {
+    "displayName": "Barack Obama",
+    "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+    "avatarUrl": "/images/temp-avatar.jpg",
+    "ahaMomentCount": 4,
+    "explanationCount": 5,
+    "reactionsCount": {
+      "gotIt": 1,
+      "laughing": 2,
+      "shocked": 3
+    }
+  }; // maybe pull some stuff about the user into an obj and return that?
   // user.photoURL, user.displayName
-
-
-  return user;
 }
 
 async function logUserIn() {
@@ -3135,32 +3148,49 @@ async function logUserIn() {
     let credential = error.credential;
     console.log(error);
   });
-}
-
-async function pollForAuthChanges() {
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      console.log({
-        displayName: user.displayName,
-        email: user.email,
-        emailVerified: user.emailVerified,
-        photoURL: user.photoURL,
-        isAnonymous: user.isAnonymous,
-        uid: user.uid,
-        providerData: user.providerData
-      }); // ...
-    } else {
-      // User is signed out.
-      // ...
-      console.log('user just signed out');
-    }
-  });
 } // various utils
 
 
-async function getUserNameByID(userID) {
-  return "Barack Obama";
+async function getUserByID(userID) {
+  return {
+    "displayName": "Barack Obama",
+    "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+    "avatarUrl": "/images/temp-avatar.jpg",
+    "ahaMomentCount": 4,
+    "explanationCount": 5,
+    "reactionsCount": {
+      "gotIt": 1,
+      "laughing": 2,
+      "shocked": 3
+    },
+    explanations: [{
+      "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+      "concept": "integrals",
+      "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+      "authorAvatarUrl": "/images/temp-avatar.jpg",
+      "authorDisplayName": "Barack Obama",
+      "explanation": {
+        "type": "text",
+        //audio, photo, video, youtube, tweet, text
+        "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+        "mediaLink": "",
+        "mediaConsumptionGuidance": ""
+      }
+    }, {
+      "explanationID": "eK2dxVLq5je8dfLWJjZL",
+      "concept": "integrals",
+      "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+      "authorAvatarUrl": "/images/temp-avatar.jpg",
+      "authorDisplayName": "Barack Obama",
+      "explanation": {
+        "type": "tweet",
+        //audio, photo, video, youtube, tweet, text
+        "introText": "This explains this well",
+        "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+        "mediaConsumptionGuidance": ""
+      }
+    }]
+  };
 } // get and return various data
 // returns 2 concepts for the front page that need love as an obj
 
@@ -3413,6 +3443,7 @@ module.exports = {
   firebase,
   logUserIn,
   getLoggedInUser,
+  getUserByID,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

@@ -21,12 +21,12 @@ class LeaderboardPage extends React.Component {
     {
       if (!this.state.topCreatorArray.length) {
         return (
-          <Loading loggedIn={this.props.loggedIn} />
+          <Loading loggedIn={this.props.loggedIn} loggedInUser={this.props.loggedInUser} />
         )
       } else {
         return (
           <div>
-            <Header loggedIn={this.props.loggedIn}/>
+            <Header loggedIn={this.props.loggedIn} loggedInUser={this.props.loggedInUser}/>
             <AppContainer>
               <h1 className="font-lrg font-bold-med">The most 🔥 Aha Moment creators</h1>
               <Leaderboard topCreators={this.props.topCreatorArray} />

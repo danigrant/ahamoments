@@ -15,7 +15,7 @@ class ConceptPage extends React.Component {
     const { router } = this.props
     return (
       <div>
-        <Header loggedIn={this.props.loggedIn}/>
+        <Header loggedIn={this.props.loggedIn} loggedInUser={this.props.loggedInUser}/>
         <AppContainer>
           <div className="concept-title-bar">
             <h1 className="font-lrg font-bold-med inline-block capitalize">{router.query.id}</h1>

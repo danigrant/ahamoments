@@ -538,7 +538,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     })), this.props.loggedIn && __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: "/explainer/@barackobama",
+      href: `/explainer/${this.props.loggedInUser.userID}`,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 33
@@ -546,7 +546,7 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       __self: this
     }, __jsx("img", {
       className: "avatar avatar-med link-no-color-change",
-      src: "/images/temp-avatar.jpg",
+      src: this.props.loggedInUser.avatarUrl,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 34
@@ -566,6 +566,68 @@ class Header extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 //   // in parent function needs to be an auth changed watcher so we dont have to pass up anything
 //   // actually if that is the case then i dont need this function
 // }
+
+/***/ }),
+
+/***/ "./components/Loading.js":
+/*!*******************************!*\
+  !*** ./components/Loading.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.js");
+/* harmony import */ var _AppContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppContainer */ "./components/AppContainer.js");
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/Loading.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Loading = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: undefined
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    loggedIn: props.loggedIn,
+    loggedInUser: props.loggedInUser,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }), __jsx(_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("div", {
+    id: "loading-bar-spinner",
+    class: "spinner",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("div", {
+    class: "spinner-icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Loading);
 
 /***/ }),
 
@@ -2758,10 +2820,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Card */ "./components/Card.js");
 /* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/CardSection */ "./components/CardSection.js");
 /* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/explainer/[id].js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -2773,138 +2840,147 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 class ProfilePage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      currentProfileUser: {}
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      currentProfileUser: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_7__["getUserByID"])(this.props.router.query.id)
+    });
   }
 
   render() {
     const {
       router
     } = this.props;
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      loggedIn: this.props.loggedIn,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 17
-      },
-      __self: this
-    }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, __jsx("h1", {
-      className: "font-lrg font-bold-med inline-block",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, router.query.id), __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-50-p flex-center-contents-vertically flex-justify-flex-start",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "avatar avatar-sml top-zero",
-      src: "/images/temp-avatar.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }), __jsx("p", {
-      className: "font-bold-med font-med inline-block",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, router.query.id)), __jsx("div", {
-      className: "column-50-p flex-center-contents-vertically flex-justify-flex-end",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: this
-    }, "15 explanations \u2022 98 aha moments \u2022 ranked #115"))))), __jsx("h1", {
-      className: "margin-top-lrg font-lrg font-bold-med inline-block",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 33
-      },
-      __self: this
-    }, "Here are all the different ways ", router.query.id, " has explained things"), __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
-    }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
-      className: "margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    }), __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }))));
+    {
+      if (!this.state.currentProfileUser.displayName) {
+        return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          loggedIn: this.props.loggedIn,
+          loggedInUser: this.props.loggedInUser,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28
+          },
+          __self: this
+        });
+      } else {
+        return __jsx("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32
+          },
+          __self: this
+        }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          loggedIn: this.props.loggedIn,
+          loggedInUser: this.props.loggedInUser,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33
+          },
+          __self: this
+        }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 34
+          },
+          __self: this
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med inline-block",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          },
+          __self: this
+        }, this.state.currentProfileUser.displayName), __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
+          },
+          __self: this
+        }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "columns-parent-div",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "column-50-p flex-center-contents-vertically flex-justify-flex-start",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 39
+          },
+          __self: this
+        }, __jsx("img", {
+          className: "avatar avatar-sml top-zero",
+          src: "/images/temp-avatar.jpg",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        }), __jsx("p", {
+          className: "font-bold-med font-med inline-block",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          },
+          __self: this
+        }, this.state.currentProfileUser.displayName)), __jsx("div", {
+          className: "column-50-p flex-center-contents-vertically flex-justify-flex-end",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43
+          },
+          __self: this
+        }, __jsx("p", {
+          className: "font-color-light-grey font-bold-med",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 44
+          },
+          __self: this
+        }, this.state.currentProfileUser.explanationCount, " explanations \u2022 ", this.state.currentProfileUser.ahaMomentCount, " aha moments"))))), __jsx("h1", {
+          className: "margin-top-lrg font-lrg font-bold-med inline-block",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49
+          },
+          __self: this
+        }, "Here are all the different ways ", this.state.currentProfileUser.displayName, " has explained things"), __jsx("div", {
+          className: "margin-top-sml",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }, this.state.currentProfileUser.explanations.map(e => {
+          return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            key: e.explanationID,
+            explanation: e,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 53
+            },
+            __self: this
+          });
+        }))));
+      }
+    }
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_6__["withRouter"])(ProfilePage));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_8__["withRouter"])(ProfilePage));
 
 /***/ }),
 
@@ -2960,11 +3036,21 @@ async function getLoggedInUser() {
   if (!user) {
     // No user is signed in.
     return false;
-  } // maybe pull some stuff about the user into an obj and return that?
+  }
+
+  return {
+    "displayName": "Barack Obama",
+    "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+    "avatarUrl": "/images/temp-avatar.jpg",
+    "ahaMomentCount": 4,
+    "explanationCount": 5,
+    "reactionsCount": {
+      "gotIt": 1,
+      "laughing": 2,
+      "shocked": 3
+    }
+  }; // maybe pull some stuff about the user into an obj and return that?
   // user.photoURL, user.displayName
-
-
-  return user;
 }
 
 async function logUserIn() {
@@ -2989,32 +3075,49 @@ async function logUserIn() {
     let credential = error.credential;
     console.log(error);
   });
-}
-
-async function pollForAuthChanges() {
-  firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      console.log({
-        displayName: user.displayName,
-        email: user.email,
-        emailVerified: user.emailVerified,
-        photoURL: user.photoURL,
-        isAnonymous: user.isAnonymous,
-        uid: user.uid,
-        providerData: user.providerData
-      }); // ...
-    } else {
-      // User is signed out.
-      // ...
-      console.log('user just signed out');
-    }
-  });
 } // various utils
 
 
-async function getUserNameByID(userID) {
-  return "Barack Obama";
+async function getUserByID(userID) {
+  return {
+    "displayName": "Barack Obama",
+    "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+    "avatarUrl": "/images/temp-avatar.jpg",
+    "ahaMomentCount": 4,
+    "explanationCount": 5,
+    "reactionsCount": {
+      "gotIt": 1,
+      "laughing": 2,
+      "shocked": 3
+    },
+    explanations: [{
+      "explanationID": "6CpE8XLCBYuMVAFr3wKE",
+      "concept": "integrals",
+      "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+      "authorAvatarUrl": "/images/temp-avatar.jpg",
+      "authorDisplayName": "Barack Obama",
+      "explanation": {
+        "type": "text",
+        //audio, photo, video, youtube, tweet, text
+        "introText": "Here is my explanation. Williamsburg pop-up disrupt selvage street art knausgaard. Enamel pin bespoke bicycle rights, craft beer mustache chartreuse cronut cred actually. Jean shorts hexagon art party pop-up four loko scenester, retro four dollar toast meggings gluten-free.",
+        "mediaLink": "",
+        "mediaConsumptionGuidance": ""
+      }
+    }, {
+      "explanationID": "eK2dxVLq5je8dfLWJjZL",
+      "concept": "integrals",
+      "authorUserID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
+      "authorAvatarUrl": "/images/temp-avatar.jpg",
+      "authorDisplayName": "Barack Obama",
+      "explanation": {
+        "type": "tweet",
+        //audio, photo, video, youtube, tweet, text
+        "introText": "This explains this well",
+        "mediaLink": "https://twitter.com/fredwilson/status/1148358347428642817",
+        "mediaConsumptionGuidance": ""
+      }
+    }]
+  };
 } // get and return various data
 // returns 2 concepts for the front page that need love as an obj
 
@@ -3267,6 +3370,7 @@ module.exports = {
   firebase,
   logUserIn,
   getLoggedInUser,
+  getUserByID,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

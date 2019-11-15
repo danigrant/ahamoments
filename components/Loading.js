@@ -4,7 +4,7 @@ import AppContainer from './AppContainer'
 const Loading = props => {
   return (
     <div>
-      <Header loggedIn={props.loggedIn} />
+      <Header loggedIn={props.loggedIn} loggedInUser={props.loggedInUser}/>
       <AppContainer>
         <div id="loading-bar-spinner" class="spinner">
           <div class="spinner-icon"></div>
