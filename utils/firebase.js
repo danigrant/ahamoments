@@ -161,66 +161,24 @@ async function getConceptsThatNeedLove() {
 
 // returns top 5 creators in an array
 async function getTopCreatorsAllTime() {
-  return [{
-		"displayName": "Barack Obama",
-		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-		"avatarUrl": "/images/temp-avatar.jpg",
-		"ahaMomentCount": 4,
-		"explanationCount": 5,
-		"reactionsCount": {
-			"gotIt": 1,
-			"laughing": 2,
-			"shocked": 3
-		}
-  },
-  {
-		"displayName": "Hasan Minhaj",
-		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-		"avatarUrl": "/images/temp-avatar2.jpg",
-		"ahaMomentCount": 4,
-		"explanationCount": 5,
-		"reactionsCount": {
-			"gotIt": 1,
-			"laughing": 2,
-			"shocked": 3
-		}
-  },
-  {
-		"displayName": "Stephen Colbert",
-		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-		"avatarUrl": "/images/temp-avatar3.jpg",
-		"ahaMomentCount": 4,
-		"explanationCount": 5,
-		"reactionsCount": {
-			"gotIt": 1,
-			"laughing": 2,
-			"shocked": 3
-		}
-  },
-  {
-		"displayName": "John Oliver",
-		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-		"avatarUrl": "/images/temp-avatar4.jpg",
-		"ahaMomentCount": 4,
-		"explanationCount": 5,
-		"reactionsCount": {
-			"gotIt": 1,
-			"laughing": 2,
-			"shocked": 3
-		}
-  },
-  {
-		"displayName": "Trevor Noah",
-		"userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-		"avatarUrl": "/images/temp-avatar5.jpg",
-		"ahaMomentCount": 4,
-		"explanationCount": 5,
-		"reactionsCount": {
-			"gotIt": 1,
-			"laughing": 2,
-			"shocked": 3
-		}
-  }]
+  let snapshot = await usersRef.get() //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
+  let data = []
+  await snapshot.forEach(doc => {
+    let docData = doc.data()
+    data.push({
+      "displayName": docData.displayName,
+      "userID": docData.userID,
+      "avatarUrl": docData.avatarUrl,
+      "ahaMomentCount": docData.ahaMomentCount,
+      "explanationCount": docData.explanationCount,
+      "reactions": {
+        "gotItCount": docData.reactionGotItCount,
+        "laughingCount": docData.reactionLaughingCount,
+        "shockedCount": docData.reactionShockedCount
+      }
+    })
+  })
+  return data
 }
 
 // returns array of top 5 explanations

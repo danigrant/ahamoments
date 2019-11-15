@@ -65531,68 +65531,39 @@ function _getTopCreatorsAllTime() {
   _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
   _regenerator["default"].mark(function _callee7() {
+    var snapshot, data;
     return _regenerator["default"].wrap(function _callee7$(_context7) {
       while (1) {
         switch (_context7.prev = _context7.next) {
           case 0:
-            return _context7.abrupt("return", [{
-              "displayName": "Barack Obama",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "/images/temp-avatar.jpg",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              }
-            }, {
-              "displayName": "Hasan Minhaj",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "/images/temp-avatar2.jpg",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              }
-            }, {
-              "displayName": "Stephen Colbert",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "/images/temp-avatar3.jpg",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              }
-            }, {
-              "displayName": "John Oliver",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "/images/temp-avatar4.jpg",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              }
-            }, {
-              "displayName": "Trevor Noah",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "/images/temp-avatar5.jpg",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              }
-            }]);
+            _context7.next = 2;
+            return usersRef.get();
 
-          case 1:
+          case 2:
+            snapshot = _context7.sent;
+            //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
+            data = [];
+            _context7.next = 6;
+            return snapshot.forEach(function (doc) {
+              var docData = doc.data();
+              data.push({
+                "displayName": docData.displayName,
+                "userID": docData.userID,
+                "avatarUrl": docData.avatarUrl,
+                "ahaMomentCount": docData.ahaMomentCount,
+                "explanationCount": docData.explanationCount,
+                "reactions": {
+                  "gotItCount": docData.reactionGotItCount,
+                  "laughingCount": docData.reactionLaughingCount,
+                  "shockedCount": docData.reactionShockedCount
+                }
+              });
+            });
+
+          case 6:
+            return _context7.abrupt("return", data);
+
+          case 7:
           case "end":
             return _context7.stop();
         }
