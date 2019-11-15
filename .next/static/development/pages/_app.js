@@ -61515,14 +61515,14 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations() {
+function getConceptExplanations(_x2) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee8() {
+  _regenerator["default"].mark(function _callee8(concept) {
     return _regenerator["default"].wrap(function _callee8$(_context8) {
       while (1) {
         switch (_context8.prev = _context8.next) {

@@ -3297,7 +3297,7 @@ async function getTopConceptsAllTime() {
 } // returns array of explanations for a concept sorted in rank order
 
 
-async function getConceptExplanations() {
+async function getConceptExplanations(concept) {
   return [{
     "explanationID": "6CpE8XLCBYuMVAFr3wKE",
     "concept": "integrals",
