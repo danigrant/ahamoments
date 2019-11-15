@@ -730,7 +730,22 @@ const Loading = props => {
       lineNumber: 8
     },
     __self: undefined
-  }));
+  }, __jsx("div", {
+    id: "loading-bar-spinner",
+    class: "spinner",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("div", {
+    class: "spinner-icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Loading);

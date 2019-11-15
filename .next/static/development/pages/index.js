@@ -677,7 +677,22 @@ var Loading = function Loading(props) {
       lineNumber: 8
     },
     __self: this
-  }));
+  }, __jsx("div", {
+    id: "loading-bar-spinner",
+    "class": "spinner",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("div", {
+    "class": "spinner-icon",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Loading);

@@ -50,7 +50,7 @@
 }
 
 .avatar-lrg {
-
+  width: 135px;
 }
 
 .logo {
@@ -218,6 +218,10 @@
 
 .margin-top-lrg {
   margin-top: 55px;
+}
+
+.margin-top-xtr {
+  margin-top: 100px;
 }
 
 .grow {
