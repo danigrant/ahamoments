@@ -1,17 +1,41 @@
+import React from 'react'
 import Header from '../components/Header'
 import AppContainer from '../components/AppContainer'
 import Leaderboard from '../components/Leaderboard'
+import Loading from '../components/Loading'
+import { getTopCreatorsAllTime } from '../utils/firebase'
 
-const LeaderboardPage = props => {
-  return (
-    <div>
-      <Header loggedIn={props.loggedIn}/>
-      <AppContainer>
-        <h1 className="font-lrg font-bold-med">The most 🔥 Aha Moment creators</h1>
-        <Leaderboard />
-      </AppContainer>
-    </div>
-  )
+class LeaderboardPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      topCreatorArray: []
+    }
+  }
+  async componentDidMount() {
+    this.setState({
+      topCreatorArray: await getTopCreatorsAllTime()
+    })
+  }
+  render() {
+    {
+      if (!this.state.topCreatorArray.length) {
+        return (
+          <Loading loggedIn={this.props.loggedIn} />
+        )
+      } else {
+        return (
+          <div>
+            <Header loggedIn={this.props.loggedIn}/>
+            <AppContainer>
+              <h1 className="font-lrg font-bold-med">The most 🔥 Aha Moment creators</h1>
+              <Leaderboard topCreators={this.props.topCreatorArray} />
+            </AppContainer>
+          </div>
+        )
+      }
+    }
+  }
 }
 
 export default LeaderboardPage
