@@ -10,6 +10,7 @@ import ExplanationCard from '../components/ExplanationCard'
 import TopCreatorsOfWeekSection from '../components/TopCreatorsOfWeekSection'
 import TopConceptsOfWeekSection from '../components/TopConceptsOfWeekSection'
 import { getTopExplanationsAllTime, getConceptsThatNeedLove } from '../utils/firebase'
+import Loading from '../components/Loading'
 
 class Index extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class Index extends React.Component {
     {
       if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length) {
         return (
-          <div>Loading...</div>
+          <Loading loggedIn={this.props.loggedIn} />
         )
       } else {
         return (
