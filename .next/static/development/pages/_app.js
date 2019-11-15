@@ -61223,7 +61223,7 @@ function _getTopCreatorsAllTime() {
             return _context6.abrupt("return", [{
               "displayName": "Barack Obama",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "",
+              "avatarUrl": "/images/temp-avatar.jpg",
               "ahaMomentCount": 4,
               "explanationCount": 5,
               "reactionsCount": {
@@ -61232,9 +61232,9 @@ function _getTopCreatorsAllTime() {
                 "shocked": 3
               }
             }, {
-              "displayName": "",
+              "displayName": "Hasan Minhaj",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "",
+              "avatarUrl": "/images/temp-avatar2.jpg",
               "ahaMomentCount": 4,
               "explanationCount": 5,
               "reactionsCount": {
@@ -61243,9 +61243,9 @@ function _getTopCreatorsAllTime() {
                 "shocked": 3
               }
             }, {
-              "displayName": "",
+              "displayName": "Stephen Colbert",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "",
+              "avatarUrl": "/images/temp-avatar3.jpg",
               "ahaMomentCount": 4,
               "explanationCount": 5,
               "reactionsCount": {
@@ -61254,9 +61254,9 @@ function _getTopCreatorsAllTime() {
                 "shocked": 3
               }
             }, {
-              "displayName": "",
+              "displayName": "John Oliver",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "",
+              "avatarUrl": "/images/temp-avatar4.jpg",
               "ahaMomentCount": 4,
               "explanationCount": 5,
               "reactionsCount": {
@@ -61265,20 +61265,9 @@ function _getTopCreatorsAllTime() {
                 "shocked": 3
               }
             }, {
-              "displayName": "",
+              "displayName": "Trevor Noah",
               "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "",
-              "ahaMomentCount": 4,
-              "explanationCount": 5,
-              "reactionsCount": {
-                "gotIt": 1,
-                "laughing": 2,
-                "shocked": 3
-              }
-            }, {
-              "displayName": "",
-              "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-              "avatarUrl": "",
+              "avatarUrl": "/images/temp-avatar5.jpg",
               "ahaMomentCount": 4,
               "explanationCount": 5,
               "reactionsCount": {

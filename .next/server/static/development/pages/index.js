@@ -1531,6 +1531,111 @@ class TopConceptsOfWeekSection extends react__WEBPACK_IMPORTED_MODULE_0___defaul
 
 /***/ }),
 
+/***/ "./components/TopCreatorCardSection.js":
+/*!*********************************************!*\
+  !*** ./components/TopCreatorCardSection.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopCreatorCardSection.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const TopCreatorCardSection = props => {
+  console.log(props);
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-20-p flex-horizontal-center",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx("img", {
+    className: "avatar avatar-sml-size-no-positioning",
+    src: props.creator.avatarUrl,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: "column-80-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    href: `/explainer/${props.creator.userID}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "link-no-color-change",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: undefined
+  }, props.creator.displayName))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }, __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, props.creator.explanationCount, " explanations"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (TopCreatorCardSection);
+
+/***/ }),
+
 /***/ "./components/TopCreatorsOfWeekSection.js":
 /*!************************************************!*\
   !*** ./components/TopCreatorsOfWeekSection.js ***!
@@ -1543,12 +1648,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _TopCreatorCardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopCreatorCardSection */ "./components/TopCreatorCardSection.js");
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/TopCreatorsOfWeekSection.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -1562,360 +1664,19 @@ class TopCreatorsOfWeekSection extends react__WEBPACK_IMPORTED_MODULE_0___defaul
     return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 11
       },
       __self: this
-    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-20-p flex-horizontal-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "avatar avatar-sml-size-no-positioning",
-      src: "/images/temp-avatar5.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/explainer/@iamjohnoliver",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "link-no-color-change",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, "@iamjohnoliver"))), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, "124 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-20-p flex-horizontal-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "avatar avatar-sml-size-no-positioning",
-      src: "/images/temp-avatar.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 33
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/explainer/@barackobama",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 37
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "link-no-color-change",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 38
-      },
-      __self: this
-    }, "@barackobama"))), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }, "121 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-20-p flex-horizontal-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "avatar avatar-sml-size-no-positioning",
-      src: "/images/temp-avatar2.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 53
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/explainer/@hasanminhaj",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 54
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "link-no-color-change",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 55
-      },
-      __self: this
-    }, "@hasanminhaj"))), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 58
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 59
-      },
-      __self: this
-    }, "114 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-20-p flex-horizontal-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "avatar avatar-sml-size-no-positioning",
-      src: "/images/temp-avatar3.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 70
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/explainer/@trevornoah",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 71
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "link-no-color-change",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 72
-      },
-      __self: this
-    }, "@trevornoah"))), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 76
-      },
-      __self: this
-    }, "102 Explanations"))))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-20-p flex-horizontal-center",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }, __jsx("img", {
-      className: "avatar avatar-sml-size-no-positioning",
-      src: "/images/temp-avatar4.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 84
-      },
-      __self: this
-    })), __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87
-      },
-      __self: this
-    }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
-      href: "/explainer/@stephencolbert",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "link-no-color-change",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, "@stephencolbert"))), __jsx("div", {
-      className: "row",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: this
-    }, "84 Explanations"))))));
+    }, this.props.creators.map(c => {
+      return __jsx(_TopCreatorCardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        creator: c,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      });
+    }));
   }
 
 }
@@ -3715,7 +3476,8 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     super(props);
     this.state = {
       topExplanationsArray: [],
-      conceptsNeedingLoveArray: []
+      conceptsNeedingLoveArray: [],
+      topCreatorsArray: []
     };
   }
 
@@ -3724,18 +3486,19 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     this.setState({
       topExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopExplanationsAllTime"])(),
       conceptsNeedingLoveArray: tempConceptsNeedingLove.conceptsNeedingLoveToDisplay,
-      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove
+      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove,
+      topCreatorsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopCreatorsAllTime"])()
     });
   }
 
   render() {
     {
-      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length) {
+      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length || !this.state.topCreatorsArray.length) {
         return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_12__["default"], {
           loggedIn: this.props.loggedIn,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 37
           },
           __self: this
         });
@@ -3743,48 +3506,48 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 41
           },
           __self: this
         }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
           loggedIn: this.props.loggedIn,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
-          },
-          __self: this
-        }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41
-          },
-          __self: this
-        }, __jsx("div", {
-          className: "columns-parent-div",
-          __source: {
-            fileName: _jsxFileName,
             lineNumber: 42
           },
           __self: this
-        }, __jsx("div", {
-          className: "column-70-p",
+        }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 43
           },
           __self: this
         }, __jsx("div", {
-          className: "column-section",
+          className: "columns-parent-div",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 44
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "column-70-p",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45
+          },
+          __self: this
+        }, __jsx("div", {
+          className: "column-section",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46
           },
           __self: this
         }, __jsx("h1", {
           className: "font-lrg font-bold-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 47
           },
           __self: this
         }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3792,21 +3555,21 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           totalConcepts: this.state.totalConceptsNeedingLove,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 48
           },
           __self: this
         })), __jsx("div", {
           className: "column-section",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 50
           },
           __self: this
         }, __jsx("h1", {
           className: "font-lrg font-bold-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 51
           },
           __self: this
         }, "The most \uD83D\uDD25 Aha Moment creations right now"), this.state.topExplanationsArray.map(e => {
@@ -3815,7 +3578,7 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
             explanation: e,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 52
+              lineNumber: 54
             },
             __self: this
           });
@@ -3823,47 +3586,48 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           className: "column-30-p",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 59
           },
           __self: this
         }, __jsx("div", {
           className: "column-section",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 60
           },
           __self: this
         }, __jsx("h1", {
           className: "font-lrg font-bold-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 61
           },
           __self: this
         }, "Top Creators This Week"), __jsx(_components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          creators: this.state.topCreatorsArray,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 62
           },
           __self: this
         })), __jsx("div", {
           className: "column-section",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 64
           },
           __self: this
         }, __jsx("h1", {
           className: "font-lrg font-bold-med",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 65
           },
           __self: this
         }, "Top Concepts This Week"), __jsx(_components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 64
+            lineNumber: 66
           },
           __self: this
         }))))));
@@ -4008,7 +3772,7 @@ async function getTopCreatorsAllTime() {
   return [{
     "displayName": "Barack Obama",
     "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "",
+    "avatarUrl": "/images/temp-avatar.jpg",
     "ahaMomentCount": 4,
     "explanationCount": 5,
     "reactionsCount": {
@@ -4017,9 +3781,9 @@ async function getTopCreatorsAllTime() {
       "shocked": 3
     }
   }, {
-    "displayName": "",
+    "displayName": "Hasan Minhaj",
     "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "",
+    "avatarUrl": "/images/temp-avatar2.jpg",
     "ahaMomentCount": 4,
     "explanationCount": 5,
     "reactionsCount": {
@@ -4028,9 +3792,9 @@ async function getTopCreatorsAllTime() {
       "shocked": 3
     }
   }, {
-    "displayName": "",
+    "displayName": "Stephen Colbert",
     "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "",
+    "avatarUrl": "/images/temp-avatar3.jpg",
     "ahaMomentCount": 4,
     "explanationCount": 5,
     "reactionsCount": {
@@ -4039,9 +3803,9 @@ async function getTopCreatorsAllTime() {
       "shocked": 3
     }
   }, {
-    "displayName": "",
+    "displayName": "John Oliver",
     "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "",
+    "avatarUrl": "/images/temp-avatar4.jpg",
     "ahaMomentCount": 4,
     "explanationCount": 5,
     "reactionsCount": {
@@ -4050,20 +3814,9 @@ async function getTopCreatorsAllTime() {
       "shocked": 3
     }
   }, {
-    "displayName": "",
+    "displayName": "Trevor Noah",
     "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "",
-    "ahaMomentCount": 4,
-    "explanationCount": 5,
-    "reactionsCount": {
-      "gotIt": 1,
-      "laughing": 2,
-      "shocked": 3
-    }
-  }, {
-    "displayName": "",
-    "userID": "MGIVZ1AERHSlK3eojuKUkaverHw1",
-    "avatarUrl": "",
+    "avatarUrl": "/images/temp-avatar5.jpg",
     "ahaMomentCount": 4,
     "explanationCount": 5,
     "reactionsCount": {

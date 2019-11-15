@@ -9,7 +9,7 @@ import NewConceptsNeedExplanationsCard from '../components/NewConceptsNeedExplan
 import ExplanationCard from '../components/ExplanationCard'
 import TopCreatorsOfWeekSection from '../components/TopCreatorsOfWeekSection'
 import TopConceptsOfWeekSection from '../components/TopConceptsOfWeekSection'
-import { getTopExplanationsAllTime, getConceptsThatNeedLove } from '../utils/firebase'
+import { getTopExplanationsAllTime, getConceptsThatNeedLove, getTopCreatorsAllTime } from '../utils/firebase'
 import Loading from '../components/Loading'
 
 class Index extends React.Component {
@@ -17,7 +17,8 @@ class Index extends React.Component {
     super(props)
     this.state = {
       topExplanationsArray: [],
-      conceptsNeedingLoveArray: []
+      conceptsNeedingLoveArray: [],
+      topCreatorsArray: []
     }
   }
   async componentDidMount() {
@@ -25,12 +26,13 @@ class Index extends React.Component {
     this.setState({
       topExplanationsArray: await getTopExplanationsAllTime(),
       conceptsNeedingLoveArray: tempConceptsNeedingLove.conceptsNeedingLoveToDisplay,
-      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove
+      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove,
+      topCreatorsArray: await getTopCreatorsAllTime()
     })
   }
   render() {
     {
-      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length) {
+      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length || !this.state.topCreatorsArray.length) {
         return (
           <Loading loggedIn={this.props.loggedIn} />
         )
@@ -57,7 +59,7 @@ class Index extends React.Component {
                 <div className="column-30-p">
                   <div className="column-section">
                     <h1 className="font-lrg font-bold-med">Top Creators This Week</h1>
-                    <TopCreatorsOfWeekSection />
+                    <TopCreatorsOfWeekSection creators={this.state.topCreatorsArray}/>
                   </div>
                   <div className="column-section">
                     <h1 className="font-lrg font-bold-med">Top Concepts This Week</h1>
