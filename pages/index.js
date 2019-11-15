@@ -9,23 +9,27 @@ import NewConceptsNeedExplanationsCard from '../components/NewConceptsNeedExplan
 import ExplanationCard from '../components/ExplanationCard'
 import TopCreatorsOfWeekSection from '../components/TopCreatorsOfWeekSection'
 import TopConceptsOfWeekSection from '../components/TopConceptsOfWeekSection'
-import { getTopExplanationsAllTime } from '../utils/firebase'
+import { getTopExplanationsAllTime, getConceptsThatNeedLove } from '../utils/firebase'
 
 class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      topExplanationsArray: []
+      topExplanationsArray: [],
+      conceptsNeedingLoveArray: []
     }
   }
   async componentDidMount() {
+    let tempConceptsNeedingLove = await getConceptsThatNeedLove()
     this.setState({
-      topExplanationsArray: await getTopExplanationsAllTime()
+      topExplanationsArray: await getTopExplanationsAllTime(),
+      conceptsNeedingLoveArray: tempConceptsNeedingLove.conceptsNeedingLoveToDisplay,
+      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove
     })
   }
   render() {
     {
-      if (!this.state.topExplanationsArray.length) {
+      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length) {
         return (
           <div>Loading...</div>
         )
@@ -38,7 +42,7 @@ class Index extends React.Component {
                 <div className="column-70-p">
                   <div className="column-section">
                     <h1 className="font-lrg font-bold-med">Ideas looking for Aha Moments</h1>
-                    <NewConceptsNeedExplanationsCard />
+                    <NewConceptsNeedExplanationsCard concepts={this.state.conceptsNeedingLoveArray} totalConcepts={this.state.totalConceptsNeedingLove}/>
                   </div>
                   <div className="column-section">
                     <h1 className="font-lrg font-bold-med">The most 🔥 Aha Moment creations right now</h1>

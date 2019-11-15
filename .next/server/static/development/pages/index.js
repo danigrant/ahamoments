@@ -213,6 +213,128 @@ const CardSection = props => {
 
 /***/ }),
 
+/***/ "./components/ConceptCardSectionForNewConceptsNeedingLove.js":
+/*!*******************************************************************!*\
+  !*** ./components/ConceptCardSectionForNewConceptsNeedingLove.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_4__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ConceptCardSectionForNewConceptsNeedingLove.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const ConceptCardSectionForNewConceptsNeedingLove = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
+  }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "columns-parent-div",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "column-70-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: undefined
+  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: `/concept/${props.concept.conceptName}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: undefined
+  }, __jsx("h2", {
+    className: "link-no-color-change",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_4__["conceptToDisplayName"])(props.concept.conceptName)))), __jsx("div", {
+    className: "row",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: undefined
+  }, props.concept.numContributors > 0 && __jsx(_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    avatars: props.concept.contributorAvatars,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }), props.concept.numContributors == 0 && __jsx("p", {
+    className: "font-color-light-grey",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, "no one has contributed an explanation yet"), props.concept.numContributors > 0 && __jsx("p", {
+    className: "follows-multi-avatar-unit font-color-light-grey inline-block",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, props.concept.numContributors > 4 ? `+ ${props.concept.numContributors} others have added explanations` : 'have added explanations'))), __jsx("div", {
+    className: "column-30-p",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: "action-button button background-purple rounded-border font-med font-bold-extra",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: undefined
+  }, "Contribute")))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ConceptCardSectionForNewConceptsNeedingLove);
+
+/***/ }),
+
 /***/ "./components/DontGetItButton.js":
 /*!***************************************!*\
   !*** ./components/DontGetItButton.js ***!
@@ -876,13 +998,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
-/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _ConceptCardSectionForNewConceptsNeedingLove__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ConceptCardSectionForNewConceptsNeedingLove */ "./components/ConceptCardSectionForNewConceptsNeedingLove.js");
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/NewConceptsNeedExplanationsCard.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -891,205 +1010,75 @@ const NewConceptsNeedExplanationsCard = props => {
   return __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 7
     },
     __self: undefined
   }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     },
     __self: undefined
   }, __jsx("p", {
     className: "font-color-light-grey",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     },
     __self: undefined
-  }, "Contribute wacky and wonderful explanations to these ideas.")), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Contribute wacky and wonderful explanations to these ideas.")), __jsx(_ConceptCardSectionForNewConceptsNeedingLove__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    concept: props.concepts[0],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: undefined
+  }), __jsx(_ConceptCardSectionForNewConceptsNeedingLove__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    concept: props.concepts[1],
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: undefined
-  }, __jsx("div", {
-    className: "columns-parent-div",
+  }), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     },
     __self: undefined
   }, __jsx("div", {
-    className: "column-70-p",
+    className: "columns-parent-div",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: undefined
   }, __jsx("div", {
-    className: "row",
+    className: "column-70-p",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/concept/integral",
+  }, __jsx("p", {
+    className: "font-color-light-grey",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: undefined
-  }, __jsx("h2", {
-    className: "link-no-color-change",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: undefined
-  }, "Integrals"))), __jsx("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, __jsx("p", {
-    className: "font-color-light-grey",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }, "no one has contributed an explanation yet"))), __jsx("div", {
+  }, `+ ${props.totalConcepts} other ideas`)), __jsx("div", {
     className: "column-30-p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "action-button button background-purple rounded-border font-med font-bold-extra",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
-  }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "columns-parent-div",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "column-70-p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 31
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 32
-    },
-    __self: undefined
-  }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/concept/integral",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    className: "link-no-color-change",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34
-    },
-    __self: undefined
-  }, "Integrals"))), __jsx("div", {
-    className: "row",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: undefined
-  }, __jsx(_MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: undefined
-  }), __jsx("p", {
-    className: "follows-multi-avatar-unit font-color-light-grey inline-block",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  }, "+ 3 others have added explanations"))), __jsx("div", {
-    className: "column-30-p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "action-button float-right button background-purple rounded-border font-med font-bold-extra",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: undefined
-  }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "columns-parent-div",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "column-70-p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 49
-    },
-    __self: undefined
-  }, __jsx("p", {
-    className: "font-color-light-grey",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: undefined
-  }, "+ 23 other ideas")), __jsx("div", {
-    className: "column-30-p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 18
     },
     __self: undefined
   }, __jsx("div", {
     className: "action-button float-right button background-grey light-border rounded-border font-med font-bold-extra",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 19
     },
     __self: undefined
   }, "Expand")))));
@@ -3662,23 +3651,27 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      topExplanationsArray: []
+      topExplanationsArray: [],
+      conceptsNeedingLoveArray: []
     };
   }
 
   async componentDidMount() {
+    let tempConceptsNeedingLove = await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getConceptsThatNeedLove"])();
     this.setState({
-      topExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopExplanationsAllTime"])()
+      topExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["getTopExplanationsAllTime"])(),
+      conceptsNeedingLoveArray: tempConceptsNeedingLove.conceptsNeedingLoveToDisplay,
+      totalConceptsNeedingLove: tempConceptsNeedingLove.totalAmountOfConceptsNeedingLove
     });
   }
 
   render() {
     {
-      if (!this.state.topExplanationsArray.length) {
+      if (!this.state.topExplanationsArray.length || !this.state.conceptsNeedingLoveArray.length) {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 34
           },
           __self: this
         }, "Loading...");
@@ -3686,57 +3679,37 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 38
           },
           __self: this
         }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
           loggedIn: this.props.loggedIn,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 39
           },
           __self: this
         }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 40
           },
           __self: this
         }, __jsx("div", {
           className: "columns-parent-div",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 41
           },
           __self: this
         }, __jsx("div", {
           className: "column-70-p",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 42
           },
           __self: this
         }, __jsx("div", {
-          className: "column-section",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39
-          },
-          __self: this
-        }, __jsx("h1", {
-          className: "font-lrg font-bold-med",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 40
-          },
-          __self: this
-        }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 41
-          },
-          __self: this
-        })), __jsx("div", {
           className: "column-section",
           __source: {
             fileName: _jsxFileName,
@@ -3750,13 +3723,35 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
             lineNumber: 44
           },
           __self: this
+        }, "Ideas looking for Aha Moments"), __jsx(_components_NewConceptsNeedExplanationsCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          concepts: this.state.conceptsNeedingLoveArray,
+          totalConcepts: this.state.totalConceptsNeedingLove,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 45
+          },
+          __self: this
+        })), __jsx("div", {
+          className: "column-section",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 47
+          },
+          __self: this
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          },
+          __self: this
         }, "The most \uD83D\uDD25 Aha Moment creations right now"), this.state.topExplanationsArray.map(e => {
           return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
             key: e.explanationID,
             explanation: e,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 47
+              lineNumber: 51
             },
             __self: this
           });
@@ -3764,30 +3759,10 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           className: "column-30-p",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 56
           },
           __self: this
         }, __jsx("div", {
-          className: "column-section",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 53
-          },
-          __self: this
-        }, __jsx("h1", {
-          className: "font-lrg font-bold-med",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 54
-          },
-          __self: this
-        }, "Top Creators This Week"), __jsx(_components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 55
-          },
-          __self: this
-        })), __jsx("div", {
           className: "column-section",
           __source: {
             fileName: _jsxFileName,
@@ -3801,10 +3776,30 @@ class Index extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
             lineNumber: 58
           },
           __self: this
-        }, "Top Concepts This Week"), __jsx(_components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }, "Top Creators This Week"), __jsx(_components_TopCreatorsOfWeekSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 59
+          },
+          __self: this
+        })), __jsx("div", {
+          className: "column-section",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 61
+          },
+          __self: this
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 62
+          },
+          __self: this
+        }, "Top Concepts This Week"), __jsx(_components_TopConceptsOfWeekSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63
           },
           __self: this
         }))))));
@@ -3933,13 +3928,13 @@ async function getConceptsThatNeedLove() {
   return {
     "totalAmountOfConceptsNeedingLove": 43,
     "conceptsNeedingLoveToDisplay": [{
-      "concept": "Integrals",
+      "conceptName": "Integrals",
       "numContributors": 11,
-      "threeContributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
+      "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
     }, {
-      "concept": "Limits",
+      "conceptName": "Limits",
       "numContributors": 4,
-      "threeContributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
+      "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
     }]
   };
 } // returns top 5 creators in an array

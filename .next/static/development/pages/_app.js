@@ -61187,13 +61187,13 @@ function _getConceptsThatNeedLove() {
             return _context5.abrupt("return", {
               "totalAmountOfConceptsNeedingLove": 43,
               "conceptsNeedingLoveToDisplay": [{
-                "concept": "Integrals",
+                "conceptName": "Integrals",
                 "numContributors": 11,
-                "threeContributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
+                "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
               }, {
-                "concept": "Limits",
+                "conceptName": "Limits",
                 "numContributors": 4,
-                "threeContributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
+                "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
               }]
             });
 
