@@ -29,7 +29,7 @@ class LeaderboardPage extends React.Component {
             <Header loggedIn={this.props.loggedIn} loggedInUser={this.props.loggedInUser}/>
             <AppContainer>
               <h1 className="font-lrg font-bold-med">The most 🔥 Aha Moment creators</h1>
-              <Leaderboard topCreators={this.props.topCreatorArray} />
+              <Leaderboard topCreators={this.state.topCreatorArray} />
             </AppContainer>
           </div>
         )

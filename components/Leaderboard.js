@@ -25,56 +25,22 @@ class Leaderboard extends React.Component {
                 <th className="center"><img className="avatar-sml-size-no-positioning" src="/images/reactions/laughing.png" /></th>
                 <th className="center"><img className="avatar-sml-size-no-positioning" src="/images/reactions/shocked.png" /></th>
               </tr>
-              <tr className="light-border-bottom">
-                <td>1</td>
-                <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar.jpg" /></td>
-                <td className="link-no-color-change"><Link href="/explainer/@barackobama">@barackobama</Link></td>
-                <td className="center font-color-light-grey">200</td>
-                <td className="center font-color-light-grey">100</td>
-                <td className="center font-color-light-grey">50</td>
-                <td className="center font-color-light-grey">40</td>
-                <td className="center font-color-light-grey">30</td>
-              </tr>
-              <tr className="light-border-bottom">
-                <td>2</td>
-                <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar2.jpg" /></td>
-                <td className="link-no-color-change"><Link href="/explainer/@hasanminhaj">@hasanminhaj</Link></td>
-                <td className="center font-color-light-grey">200</td>
-                <td className="center font-color-light-grey">100</td>
-                <td className="center font-color-light-grey">50</td>
-                <td className="center font-color-light-grey">40</td>
-                <td className="center font-color-light-grey">30</td>
-              </tr>
-              <tr className="light-border-bottom">
-                <td>3</td>
-                <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar3.jpg" /></td>
-                <td className="link-no-color-change"><Link href="/explainer/@trevornoah">@trevornoah</Link></td>
-                <td className="center font-color-light-grey">200</td>
-                <td className="center font-color-light-grey">100</td>
-                <td className="center font-color-light-grey">50</td>
-                <td className="center font-color-light-grey">40</td>
-                <td className="center font-color-light-grey">30</td>
-              </tr>
-              <tr className="light-border-bottom">
-                <td>4</td>
-                <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar4.jpg" /></td>
-                <td className="link-no-color-change"><Link href="/explainer/@stephencolbert">@stephencolbert</Link></td>
-                <td className="center font-color-light-grey">200</td>
-                <td className="center font-color-light-grey">100</td>
-                <td className="center font-color-light-grey">50</td>
-                <td className="center font-color-light-grey">40</td>
-                <td className="center font-color-light-grey">30</td>
-              </tr>
-              <tr className="light-border-bottom">
-                <td>5</td>
-                <td><img className="avatar avatar-sml-size-no-positioning" src="/images/temp-avatar5.jpg" /></td>
-                <td className="link-no-color-change"><Link href="/explainer/@iamjohnoliver">@iamjohnoliver</Link></td>
-                <td className="center font-color-light-grey">200</td>
-                <td className="center font-color-light-grey">100</td>
-                <td className="center font-color-light-grey">50</td>
-                <td className="center font-color-light-grey">40</td>
-                <td className="center font-color-light-grey">30</td>
-              </tr>
+              {
+                this.props.topCreators.map((c, index) => {
+                  return (
+                    <tr className="light-border-bottom">
+                      <td>{index + 1}</td>
+                      <td><img className="avatar avatar-sml-size-no-positioning" src={c.avatarUrl} /></td>
+                      <td className="link-no-color-change"><Link href="/explainer/@barackobama">{c.displayName}</Link></td>
+                      <td className="center font-color-light-grey">{c.ahaMomentCount}</td>
+                      <td className="center font-color-light-grey">{c.explanationCount}</td>
+                      <td className="center font-color-light-grey">{c.reactions.gotItCount}</td>
+                      <td className="center font-color-light-grey">{c.reactions.laughingCount}</td>
+                      <td className="center font-color-light-grey">{c.reactions.shockedCount}</td>
+                    </tr>
+                  )
+                })
+              }
             </table>
           </CardSection>
         </Card>
