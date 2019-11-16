@@ -108,7 +108,7 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.type == "youtube" &&
-                  <AddYouTube handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                  <AddYouTube handleIntroTextChange={this.handleIntroTextChange} handleMediaLinkChange={this.handleMediaLinkChange} handleMediaGuidanceChange={this.handleMediaGuidanceChange} currentConcept={router.query.id} />
                 }
                 {
                   this.state.type == "video" &&

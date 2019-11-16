@@ -478,7 +478,8 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       __self: this
     }), this.state.type == "youtube" && __jsx(_uploadExplanationComponents_AddYouTube__WEBPACK_IMPORTED_MODULE_10__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
+      handleMediaLinkChange: this.handleMediaLinkChange,
+      handleMediaGuidanceChange: this.handleMediaGuidanceChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
@@ -1920,12 +1921,16 @@ class AddYouTube extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
   constructor(props) {
     super(props);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendFileChangeToParent", e => {
-      this.props.handleFileChange(e);
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
       this.props.handleIntroTextChange(e);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaLinkChangeToParent", e => {
+      this.props.handleMediaLinkChange(e);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaGuidanceChangeToParent", e => {
+      this.props.handleMediaGuidanceChange(e);
     });
 
     this.state = {
@@ -1937,21 +1942,21 @@ class AddYouTube extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 23
       },
       __self: this
     }, __jsx("form", {
       className: "add-explanation-form",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 24
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 25
       },
       __self: this
     }, "Optional Intro Text"), __jsx("textarea", {
@@ -1963,25 +1968,51 @@ class AddYouTube extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
       rows: "5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 26
       },
       __self: this
     }), __jsx("h2", {
       className: "font-med font-bold-med margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 27
       },
       __self: this
-    }, "Add YouTube"), __jsx("input", {
-      onChange: this.sendFileChangeToParent,
-      className: "margin-top-sml font-med",
-      type: "file",
-      name: "photo-upload",
-      accept: "image/*",
+    }, "Link to YouTube video"), __jsx("input", {
+      onChange: this.sendMediaLinkChangeToParent,
+      className: "margin-top-sml font-med background-grey rounded-border light-border",
+      type: "text",
+      placeholder: "https://youtube.com/watch ...",
+      name: "video-input",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 28
+      },
+      __self: this
+    }), __jsx("h2", {
+      className: "font-med font-bold-med margin-top-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, "What part should someone listen to?"), __jsx("p", {
+      className: "font-color-light-grey font-med font-bold-med",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, "(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)"), __jsx("textarea", {
+      onChange: this.sendMediaGuidanceChangeToParent,
+      className: "margin-top-sml font-med background-grey rounded-border light-border",
+      type: "text",
+      name: "text",
+      placeholder: "start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00",
+      rows: "2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 31
       },
       __self: this
     })));
@@ -1989,15 +2020,7 @@ class AddYouTube extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (AddYouTube); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
+/* harmony default export */ __webpack_exports__["default"] = (AddYouTube);
 
 /***/ }),
 
