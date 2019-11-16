@@ -8,6 +8,7 @@
 */
 
 import * as firebase from 'firebase';
+import 'firebase/storage'
 import { generateFilePathAndName } from './utils'
 
 // initialize

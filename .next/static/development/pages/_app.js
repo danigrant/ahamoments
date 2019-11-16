@@ -56879,6 +56879,22 @@ module.exports = firebase;
 
 /***/ }),
 
+/***/ "./node_modules/firebase/storage/dist/index.esm.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/firebase/storage/dist/index.esm.js ***!
+  \*********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _firebase_storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @firebase/storage */ "./node_modules/@firebase/storage/dist/index.esm.js");
+
+//# sourceMappingURL=index.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/idb/build/idb.js":
 /*!***************************************!*\
   !*** ./node_modules/idb/build/idb.js ***!
@@ -61073,6 +61089,8 @@ var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js"));
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js"));
+
+__webpack_require__(/*! firebase/storage */ "./node_modules/firebase/storage/dist/index.esm.js");
 
 var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
 

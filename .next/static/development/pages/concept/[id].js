@@ -77,7 +77,9 @@ function (_React$Component) {
       fileToUpload: '',
       introText: '',
       mediaLink: '',
-      mediaConsumptionGuidance: ''
+      mediaConsumptionGuidance: '',
+      showAddExplanationSection: false,
+      typeSelected: false
     };
     return _this;
   }
@@ -91,95 +93,95 @@ function (_React$Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 35
         },
         __self: this
       }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 36
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 37
         },
         __self: this
       }, __jsx("div", {
         className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 38
         },
         __self: this
       }, __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 39
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 40
         },
         __self: this
       }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
         className: "column-20-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 42
         },
         __self: this
       }, __jsx("div", {
         className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 43
         },
         __self: this
-      }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, "Contribute")))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 49
         },
         __self: this
       }, __jsx("h2", {
         className: "font-med",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 50
         },
         __self: this
       }, __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 51
         },
         __self: this
       }, "@barackobama "), "explains", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 53
         },
         __self: this
       }, " ", router.query.id, " "), "through", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 55
         },
         __self: this
       }, " spoken word")), __jsx("div", {
         className: "media-type-selection-section margin-top-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 57
         },
         __self: this
       }, __jsx("div", {
@@ -191,7 +193,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 58
         },
         __self: this
       }, "Write Something"), __jsx("div", {
@@ -203,7 +205,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 59
         },
         __self: this
       }, "Podcast Snippet"), __jsx("div", {
@@ -215,7 +217,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, "YouTube Clip"), __jsx("div", {
@@ -227,7 +229,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       }, "Record Your Own Video"), __jsx("div", {
@@ -239,7 +241,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       }, "Record Your Own Audio"), __jsx("div", {
@@ -251,7 +253,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 63
         },
         __self: this
       }, "Tweet"), __jsx("div", {
@@ -263,7 +265,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 64
         },
         __self: this
       }, "Upload A Video"), __jsx("div", {
@@ -275,7 +277,7 @@ function (_React$Component) {
         className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 65
         },
         __self: this
       }, "Upload A Photo"), __jsx("div", {
@@ -287,7 +289,7 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 66
         },
         __self: this
       }, "Draw Something And Upload It"), __jsx("div", {
@@ -299,13 +301,19 @@ function (_React$Component) {
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 67
         },
         __self: this
-      }, "Link To Something On The Web"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, "Link To Something On The Web"))), this.state.typeSelected && __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 73
+        },
+        __self: this
+      }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74
         },
         __self: this
       }, __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -314,13 +322,13 @@ function (_React$Component) {
         currentConcept: router.query.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 75
         },
         __self: this
       })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 77
         },
         __self: this
       }, __jsx("div", {
@@ -328,10 +336,10 @@ function (_React$Component) {
         className: "action-button button background-purple rounded-border font-med font-bold-med",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 78
         },
         __self: this
-      }, "Submit!"))));
+      }, "Submit!")))));
     }
   }]);
 
@@ -58458,6 +58466,22 @@ module.exports = firebase;
 
 /***/ }),
 
+/***/ "./node_modules/firebase/storage/dist/index.esm.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/firebase/storage/dist/index.esm.js ***!
+  \*********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _firebase_storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @firebase/storage */ "./node_modules/@firebase/storage/dist/index.esm.js");
+
+//# sourceMappingURL=index.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/function-bind/implementation.js":
 /*!******************************************************!*\
   !*** ./node_modules/function-bind/implementation.js ***!
@@ -65143,6 +65167,8 @@ var _regenerator = _interopRequireDefault(__webpack_require__(/*! @babel/runtime
 var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js"));
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js"));
+
+__webpack_require__(/*! firebase/storage */ "./node_modules/firebase/storage/dist/index.esm.js");
 
 var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
 

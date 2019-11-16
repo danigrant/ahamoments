@@ -900,6 +900,8 @@ var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/hel
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "firebase"));
 
+__webpack_require__(/*! firebase/storage */ "firebase/storage");
+
 var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
 
 /*
@@ -1449,6 +1451,17 @@ module.exports = require("core-js/library/fn/weak-map");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase");
+
+/***/ }),
+
+/***/ "firebase/storage":
+/*!***********************************!*\
+  !*** external "firebase/storage" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/storage");
 
 /***/ }),
 

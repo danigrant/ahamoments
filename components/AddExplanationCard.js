@@ -14,6 +14,8 @@ class AddExplanationCard extends React.Component {
       introText: '',
       mediaLink: '',
       mediaConsumptionGuidance: '',
+      showAddExplanationSection: false,
+      typeSelected: false
     }
   }
   handleFileChange = (e) => {
@@ -42,33 +44,41 @@ class AddExplanationCard extends React.Component {
               </div>
             </div>
           </CardSection>
-          <CardSection>
-            <h2 className="font-med">
-              <span className="link">@barackobama </span>
-              explains
-              <span className="link"> {router.query.id} </span>
-              through
-              <span className="link"> spoken word</span>
-            </h2>
-            <div className="media-type-selection-section margin-top-sml">
-              <div onClick={() => { this.setState({ type: "text" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Write Something</div>
-              <div onClick={() => { this.setState({ type: "podcast" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Podcast Snippet</div>
-              <div onClick={() => { this.setState({ type: "youtube" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">YouTube Clip</div>
-              <div onClick={() => { this.setState({ type: "video" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Video</div>
-              <div onClick={() => { this.setState({ type: "audio" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Audio</div>
-              <div onClick={() => { this.setState({ type: "tweet" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Tweet</div>
-              <div onClick={() => { this.setState({ type: "video" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Video</div>
-              <div onClick={() => { this.setState({ type: "photo" }) }} className="action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Photo</div>
-              <div onClick={() => { this.setState({ type: "photo" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Draw Something And Upload It</div>
-              <div onClick={() => { this.setState({ type: "link" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Link To Something On The Web</div>
+          {
+            this.state.showAddExplanationSection &&
+            <CardSection>
+              <h2 className="font-med">
+                <span className="link">@barackobama </span>
+                explains
+                <span className="link"> {router.query.id} </span>
+                through
+                <span className="link"> spoken word</span>
+              </h2>
+              <div className="media-type-selection-section margin-top-sml">
+                <div onClick={() => { this.setState({ type: "text" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Write Something</div>
+                <div onClick={() => { this.setState({ type: "podcast" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Podcast Snippet</div>
+                <div onClick={() => { this.setState({ type: "youtube" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">YouTube Clip</div>
+                <div onClick={() => { this.setState({ type: "video" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Video</div>
+                <div onClick={() => { this.setState({ type: "audio" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Audio</div>
+                <div onClick={() => { this.setState({ type: "tweet" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Tweet</div>
+                <div onClick={() => { this.setState({ type: "video" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Video</div>
+                <div onClick={() => { this.setState({ type: "photo" }) }} className="action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Photo</div>
+                <div onClick={() => { this.setState({ type: "photo" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Draw Something And Upload It</div>
+                <div onClick={() => { this.setState({ type: "link" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Link To Something On The Web</div>
+              </div>
+            </CardSection>
+          }
+          {
+            this.state.typeSelected &&
+            <div>
+              <CardSection>
+                <UploadImage handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+              </CardSection>
+              <CardSection>
+                <div onClick={this.handleSubmit} className="action-button button background-purple rounded-border font-med font-bold-med">Submit!</div>
+              </CardSection>
             </div>
-          </CardSection>
-          <CardSection>
-            <UploadImage handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
-          </CardSection>
-          <CardSection>
-            <div onClick={this.handleSubmit} className="action-button button background-purple rounded-border font-med font-bold-med">Submit!</div>
-          </CardSection>
+          }
         </Card>
       </div>
     )
