@@ -487,6 +487,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       },
       __self: this
     }), this.state.type == "video" && __jsx(_uploadExplanationComponents_UploadVideo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      mode: this.state.activeElement == "recordVideo" ? "record" : "upload",
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
@@ -2306,15 +2307,22 @@ class UploadVideo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
         lineNumber: 24
       },
       __self: this
-    }, "Upload Your Video"), __jsx("input", {
+    }, "Upload Your Video"), this.props.mode == "record" && __jsx("p", {
+      className: "font-color-light-grey font-med font-bold-med",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "Record a video and then upload it here. In your video you can sing a song, do an interpretive dance, tell a joke or just explain it straight, Can\u2019t wait to see what you come up with."), __jsx("input", {
       onChange: this.sendFileChangeToParent,
       className: "margin-top-sml font-med",
       type: "file",
       name: "photo-upload",
-      accept: "image/*",
+      accept: "video/mp4,video/x-m4v,video/*",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 29
       },
       __self: this
     })));

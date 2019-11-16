@@ -112,7 +112,7 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.type == "video" &&
-                  <UploadVideo handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                  <UploadVideo mode={this.state.activeElement == "recordVideo" ? "record" : "upload"} handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
                 }
                 {
                   this.state.type == "audio" &&
