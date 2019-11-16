@@ -940,41 +940,35 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
         lineNumber: 64
       },
       __self: this
-    }), __jsx("p", {
+    }), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: this
-    }, this.props.explanation.explanation.mediaLink), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 68
       },
       __self: this
     }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 71
       },
       __self: this
     }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 72
       },
       __self: this
     }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 73
       },
       __self: this
     }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
       className: "float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 74
       },
       __self: this
     }))));
@@ -1635,31 +1629,66 @@ class SearchBox extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedAudio.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const EmbeddedAudio = props => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: undefined
-  }, "audio"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, props.audio));
-};
+
+
+
+class EmbeddedAudio extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mediaUrl: false
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      mediaUrl: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__["getFileURLFromFirebaseStorage"])(this.props.audio)
+    });
+  }
+
+  render() {
+    if (!this.state.mediaUrl) {
+      return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      });
+    }
+
+    return __jsx("div", {
+      className: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, __jsx("audio", {
+      className: "inline-explanation-audio",
+      controls: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, __jsx("source", {
+      src: this.state.mediaUrl,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }), "Your browser does not support in-browser audio players."));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (EmbeddedAudio);
 
@@ -1722,7 +1751,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedPhoto.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-// fetch photo from firebase
 
 
 
@@ -1746,7 +1774,7 @@ class EmbeddedPhoto extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 19
         },
         __self: this
       });
@@ -1756,7 +1784,7 @@ class EmbeddedPhoto extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       className: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 22
       },
       __self: this
     }, __jsx("img", {
@@ -1764,7 +1792,7 @@ class EmbeddedPhoto extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
       src: this.state.mediaUrl,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 23
       },
       __self: this
     }));
@@ -1869,31 +1897,66 @@ const EmbeddedTweet = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedVideo.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const EmbeddedVideo = props => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: undefined
-  }, "video"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, props.video));
-};
+
+
+
+class EmbeddedVideo extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mediaUrl: false
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      mediaUrl: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__["getFileURLFromFirebaseStorage"])(this.props.video)
+    });
+  }
+
+  render() {
+    if (!this.state.mediaUrl) {
+      return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      });
+    }
+
+    return __jsx("div", {
+      className: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, __jsx("video", {
+      className: "inline-explanation-video",
+      controls: true,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, __jsx("source", {
+      src: this.state.mediaUrl,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }), "Sorry, your browser doesn't support embedded videos."));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (EmbeddedVideo);
 

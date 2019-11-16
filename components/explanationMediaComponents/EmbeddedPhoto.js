@@ -1,4 +1,3 @@
-// fetch photo from firebase
 import React from 'react'
 import Loading from '../Loading'
 import { getFileURLFromFirebaseStorage } from '../../utils/firebase'

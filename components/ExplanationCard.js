@@ -63,7 +63,6 @@ class ExplanationCard extends React.Component {
               this.props.explanation.explanation.type == "youtube" &&
               <EmbeddedYouTube youtube={this.props.explanation.explanation.mediaLink}/>
             }
-            <p>{this.props.explanation.explanation.mediaLink}</p>
             {
               this.props.explanation.explanation.mediaConsumptionGuidance &&
               <p>{this.props.explanation.explanation.mediaConsumptionGuidance}</p>
