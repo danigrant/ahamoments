@@ -900,6 +900,8 @@ var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/hel
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "firebase"));
 
+var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
+
 /*
   This file contains firebase config and instantiation
   contains functions that interact with the db
@@ -908,7 +910,6 @@ var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "fire
   logUserIn
   getLoggedInUser <-- returns false if no user logged in
 */
-// initialize
 const firebaseConfig = {
   apiKey: "AIzaSyBmeHPOy2Uvargw51ygM30ye9-lrpWoEOU",
   authDomain: "explain-this.firebaseapp.com",
@@ -1040,8 +1041,12 @@ async function getUserByID(userID) {
 } // get and return various data
 
 
-async function saveExplanationToDB() {
-  console.log('saving explanation to db');
+async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, userID, concept) {
+  // will also want the user here
+  // first upload file to db
+  let fileName = (0, _utils.generateFilePathAndName)(fileType, userID, concept);
+  let snapshot = await storageRef.child(fileName).put(fileToUpload);
+  console.log(snapshot); // then need to save explanation to firestore
 } // returns 2 concepts for the front page that need love as an obj
 
 
@@ -1181,12 +1186,69 @@ module.exports = {
   saveUserToDB,
   getLoggedInUser,
   getUserByID,
-  saveExplanationToDB,
+  saveExplanationWithFileToDB,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,
   getConceptsThatNeedLove,
   getConceptExplanations
+};
+
+/***/ }),
+
+/***/ "./utils/utils.js":
+/*!************************!*\
+  !*** ./utils/utils.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const conceptToDisplayName = concept => {
+  // replace - with space
+  return concept.replace("-", " ");
+}; //audio, photo, video, youtube, tweet, text, link
+
+
+const explanationTypeToDisplayType = explanationType => {
+  switch (explanationType) {
+    case "audio":
+      return "spoken word";
+      break;
+
+    case "photo":
+      return "illustration";
+      break;
+
+    case "video":
+      return "monologue";
+      break;
+
+    case "youtube":
+      return "poetry";
+      break;
+
+    case "tweet":
+      return "280 characters";
+      break;
+
+    case "text":
+      return "biography";
+      break;
+
+    default:
+      return "interpretive dance";
+  }
+};
+
+const generateFilePathAndName = (fileType, userID, concept) => {
+  let randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  return `/${concept}/${fileType}/${userID}/${randomID}`;
+};
+
+module.exports = {
+  conceptToDisplayName,
+  explanationTypeToDisplayType,
+  generateFilePathAndName
 };
 
 /***/ }),

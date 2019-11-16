@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from '../Card'
 import CardSection from '../CardSection'
-import { saveExplanationToDB } from '../../utils/firebase'
 
 class UploadImage extends React.Component {
   constructor(props) {

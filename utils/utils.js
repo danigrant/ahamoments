@@ -29,7 +29,13 @@ const explanationTypeToDisplayType = explanationType => {
   }
 }
 
+const generateFilePathAndName = (fileType, userID, concept) => {
+  let randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  return `/${concept}/${fileType}/${userID}/${randomID}`
+}
+
 module.exports = {
   conceptToDisplayName,
-  explanationTypeToDisplayType
+  explanationTypeToDisplayType,
+  generateFilePathAndName
 }

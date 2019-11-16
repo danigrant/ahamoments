@@ -21,8 +21,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
 /* harmony import */ var _uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./uploadExplanationComponents/UploadImage */ "./components/uploadExplanationComponents/UploadImage.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -32,6 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/AddExplanationCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
 
 
 
@@ -63,185 +66,246 @@ function (_React$Component) {
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleSubmit", function (e) {
+      var router = _this.props.router;
       e.preventDefault();
-      console.log("submitting:", _this.state.introText, _this.state.fileToUpload);
+      Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_11__["saveExplanationWithFileToDB"])(_this.state.introText, _this.state.fileToUpload, _this.state.type, _this.props.loggedInUser.userID, router.query.id);
     });
 
+    _this.state = {
+      type: '',
+      // photo, video, audio, podcast, youtube, tweet, link, text
+      fileToUpload: '',
+      introText: '',
+      mediaLink: '',
+      mediaConsumptionGuidance: ''
+    };
     return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(AddExplanationCard, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var router = this.props.router;
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 33
         },
         __self: this
       }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 34
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 35
         },
         __self: this
       }, __jsx("div", {
         className: "columns-parent-div",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 36
         },
         __self: this
       }, __jsx("div", {
         className: "column-80-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 37
         },
         __self: this
       }, __jsx("p", {
         className: "font-color-light-grey",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 38
         },
         __self: this
       }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
         className: "column-20-p",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 40
         },
         __self: this
       }, __jsx("div", {
         className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 41
         },
         __self: this
       }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 45
         },
         __self: this
       }, __jsx("h2", {
         className: "font-med",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 46
         },
         __self: this
       }, __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 47
         },
         __self: this
       }, "@barackobama "), "explains", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 49
         },
         __self: this
       }, " ", router.query.id, " "), "through", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 51
         },
         __self: this
       }, " spoken word")), __jsx("div", {
         className: "media-type-selection-section margin-top-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, "Write Something"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "Podcast Snippet"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
-      }, "YouTube Clip"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, "Record Your Own Video"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      }, "Record Your Own Audio"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
-      }, "Tweet"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "Upload A Video"), __jsx("div", {
-        className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }, "Upload A Photo"), __jsx("div", {
-        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 53
         },
         __self: this
-      }, "Draw Something And Upload It"), __jsx("div", {
+      }, __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "text"
+          });
+        },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 54
         },
         __self: this
-      }, "Link To Something On The Web"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, "Write Something"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "podcast"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, "Podcast Snippet"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "youtube"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "YouTube Clip"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "video"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 57
+        },
+        __self: this
+      }, "Record Your Own Video"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "audio"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, "Record Your Own Audio"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "tweet"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, "Tweet"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "video"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }, "Upload A Video"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "photo"
+          });
+        },
+        className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 61
+        },
+        __self: this
+      }, "Upload A Photo"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "photo"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        },
+        __self: this
+      }, "Draw Something And Upload It"), __jsx("div", {
+        onClick: function onClick() {
+          _this2.setState({
+            type: "link"
+          });
+        },
+        className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        },
+        __self: this
+      }, "Link To Something On The Web"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66
         },
         __self: this
       }, __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -250,13 +314,13 @@ function (_React$Component) {
         currentConcept: router.query.id,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 67
         },
         __self: this
       })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 69
         },
         __self: this
       }, __jsx("div", {
@@ -264,7 +328,7 @@ function (_React$Component) {
         className: "action-button button background-purple rounded-border font-med font-bold-med",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 70
         },
         __self: this
       }, "Submit!"))));
@@ -274,7 +338,7 @@ function (_React$Component) {
   return AddExplanationCard;
 }(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_11__["withRouter"])(AddExplanationCard)); // <form className="add-explanation-form">
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_12__["withRouter"])(AddExplanationCard)); // <form className="add-explanation-form">
 //   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
 //   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
 //   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
@@ -1372,8 +1436,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -1383,7 +1445,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/UploadImage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
-
 
 
 
@@ -1420,21 +1481,21 @@ function (_React$Component) {
       return __jsx("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 20
         },
         __self: this
       }, __jsx("form", {
         className: "add-explanation-form",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 21
         },
         __self: this
       }, __jsx("h2", {
         className: "font-med font-bold-med",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 22
         },
         __self: this
       }, "Optional Intro Text"), __jsx("textarea", {
@@ -1446,14 +1507,14 @@ function (_React$Component) {
         rows: "5",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 23
         },
         __self: this
       }), __jsx("h2", {
         className: "font-med font-bold-med margin-top-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 24
         },
         __self: this
       }, "Upload Your Photo"), __jsx("input", {
@@ -1464,7 +1525,7 @@ function (_React$Component) {
         accept: "image/*",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 25
         },
         __self: this
       })));
@@ -65013,6 +65074,7 @@ function (_React$Component) {
             },
             __self: this
           }, "originally asked by @bofirstdog")), __jsx(_components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
+            loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
               lineNumber: 41
@@ -65082,6 +65144,8 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js"));
 
+var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
+
 /*
   This file contains firebase config and instantiation
   contains functions that interact with the db
@@ -65090,7 +65154,6 @@ var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "./no
   logUserIn
   getLoggedInUser <-- returns false if no user logged in
 */
-// initialize
 var firebaseConfig = {
   apiKey: "AIzaSyBmeHPOy2Uvargw51ygM30ye9-lrpWoEOU",
   authDomain: "explain-this.firebaseapp.com",
@@ -65322,29 +65385,38 @@ function _getUserByID() {
   return _getUserByID.apply(this, arguments);
 }
 
-function saveExplanationToDB() {
-  return _saveExplanationToDB.apply(this, arguments);
+function saveExplanationWithFileToDB(_x6, _x7, _x8, _x9, _x10) {
+  return _saveExplanationWithFileToDB.apply(this, arguments);
 } // returns 2 concepts for the front page that need love as an obj
 
 
-function _saveExplanationToDB() {
-  _saveExplanationToDB = (0, _asyncToGenerator2["default"])(
+function _saveExplanationWithFileToDB() {
+  _saveExplanationWithFileToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee5() {
+  _regenerator["default"].mark(function _callee5(introText, fileToUpload, fileType, userID, concept) {
+    var fileName, snapshot;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            console.log('saving explanation to db');
+            // will also want the user here
+            // first upload file to db
+            fileName = (0, _utils.generateFilePathAndName)(fileType, userID, concept);
+            _context5.next = 3;
+            return storageRef.child(fileName).put(fileToUpload);
 
-          case 1:
+          case 3:
+            snapshot = _context5.sent;
+            console.log(snapshot); // then need to save explanation to firestore
+
+          case 5:
           case "end":
             return _context5.stop();
         }
       }
     }, _callee5);
   }));
-  return _saveExplanationToDB.apply(this, arguments);
+  return _saveExplanationWithFileToDB.apply(this, arguments);
 }
 
 function getConceptsThatNeedLove() {
@@ -65542,7 +65614,7 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x6) {
+function getConceptExplanations(_x11) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
@@ -65607,7 +65679,7 @@ module.exports = {
   saveUserToDB: saveUserToDB,
   getLoggedInUser: getLoggedInUser,
   getUserByID: getUserByID,
-  saveExplanationToDB: saveExplanationToDB,
+  saveExplanationWithFileToDB: saveExplanationWithFileToDB,
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
@@ -65661,9 +65733,15 @@ var explanationTypeToDisplayType = function explanationTypeToDisplayType(explana
   }
 };
 
+var generateFilePathAndName = function generateFilePathAndName(fileType, userID, concept) {
+  var randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  return "/".concat(concept, "/").concat(fileType, "/").concat(userID, "/").concat(randomID);
+};
+
 module.exports = {
   conceptToDisplayName: conceptToDisplayName,
-  explanationTypeToDisplayType: explanationTypeToDisplayType
+  explanationTypeToDisplayType: explanationTypeToDisplayType,
+  generateFilePathAndName: generateFilePathAndName
 };
 
 /***/ }),

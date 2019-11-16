@@ -8,6 +8,7 @@
 */
 
 import * as firebase from 'firebase';
+import { generateFilePathAndName } from './utils'
 
 // initialize
 
@@ -153,8 +154,13 @@ async function getUserByID(userID) {
 
 // get and return various data
 
-async function saveExplanationToDB() {
-  console.log('saving explanation to db')
+async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, userID, concept) { // will also want the user here
+  // first upload file to db
+  let fileName = generateFilePathAndName(fileType, userID, concept)
+  let snapshot = await storageRef.child(fileName).put(fileToUpload)
+  console.log(snapshot);
+
+  // then need to save explanation to firestore
 }
 
 // returns 2 concepts for the front page that need love as an obj
@@ -294,7 +300,7 @@ module.exports = {
   saveUserToDB,
   getLoggedInUser,
   getUserByID,
-  saveExplanationToDB,
+  saveExplanationWithFileToDB,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

@@ -38,7 +38,7 @@ class ConceptPage extends React.Component {
                 <h1 className="font-lrg font-bold-med inline-block capitalize">{router.query.id}</h1>
                 <p className="font-color-light-grey inline-block margin-left">originally asked by @bofirstdog</p>
               </div>
-              <AddExplanationCard />
+              <AddExplanationCard loggedInUser={this.props.loggedInUser} />
               <h1 className="margin-top-lrg font-lrg font-bold-med inline-block">All of the wacky and wonderful ways to explain a {router.query.id} </h1>
               <p className="font-color-light-grey">There are 114 explanations here. Some will work for you, some won’t.  Keep going until you find one that gives you that aha! moment.</p>
               <div className="margin-top-sml">

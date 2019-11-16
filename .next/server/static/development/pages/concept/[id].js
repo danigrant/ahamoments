@@ -108,11 +108,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
 /* harmony import */ var _uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./uploadExplanationComponents/UploadImage */ "./components/uploadExplanationComponents/UploadImage.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/AddExplanationCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -136,9 +139,21 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleSubmit", e => {
+      const {
+        router
+      } = this.props;
       e.preventDefault();
-      console.log("submitting:", this.state.introText, this.state.fileToUpload);
+      Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_5__["saveExplanationWithFileToDB"])(this.state.introText, this.state.fileToUpload, this.state.type, this.props.loggedInUser.userID, router.query.id);
     });
+
+    this.state = {
+      type: '',
+      // photo, video, audio, podcast, youtube, tweet, link, text
+      fileToUpload: '',
+      introText: '',
+      mediaLink: '',
+      mediaConsumptionGuidance: ''
+    };
   }
 
   render() {
@@ -148,171 +163,221 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 33
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 34
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 35
       },
       __self: this
     }, __jsx("div", {
       className: "columns-parent-div",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27
+        lineNumber: 36
       },
       __self: this
     }, __jsx("div", {
       className: "column-80-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 37
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 38
       },
       __self: this
     }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
       className: "column-20-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 40
       },
       __self: this
     }, __jsx("div", {
       className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 41
       },
       __self: this
     }, "Contribute")))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 45
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 46
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 47
       },
       __self: this
     }, "@barackobama "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 49
       },
       __self: this
     }, " ", router.query.id, " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 51
       },
       __self: this
     }, " spoken word")), __jsx("div", {
       className: "media-type-selection-section margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      },
-      __self: this
-    }, "Write Something"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 46
-      },
-      __self: this
-    }, "Podcast Snippet"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      },
-      __self: this
-    }, "YouTube Clip"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 48
-      },
-      __self: this
-    }, "Record Your Own Video"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 49
-      },
-      __self: this
-    }, "Record Your Own Audio"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50
-      },
-      __self: this
-    }, "Tweet"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 51
-      },
-      __self: this
-    }, "Upload A Video"), __jsx("div", {
-      className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 52
-      },
-      __self: this
-    }, "Upload A Photo"), __jsx("div", {
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 53
       },
       __self: this
-    }, "Draw Something And Upload It"), __jsx("div", {
+    }, __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "text"
+        });
+      },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 54
       },
       __self: this
-    }, "Link To Something On The Web"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, "Write Something"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "podcast"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 55
+      },
+      __self: this
+    }, "Podcast Snippet"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "youtube"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: this
+    }, "YouTube Clip"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "video"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 57
+      },
+      __self: this
+    }, "Record Your Own Video"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "audio"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58
+      },
+      __self: this
+    }, "Record Your Own Audio"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "tweet"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 59
+      },
+      __self: this
+    }, "Tweet"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "video"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }, "Upload A Video"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "photo"
+        });
+      },
+      className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61
+      },
+      __self: this
+    }, "Upload A Photo"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "photo"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 62
+      },
+      __self: this
+    }, "Draw Something And Upload It"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          type: "link"
+        });
+      },
+      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 63
+      },
+      __self: this
+    }, "Link To Something On The Web"))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
       },
       __self: this
     }, __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -321,13 +386,13 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 67
       },
       __self: this
     })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 69
       },
       __self: this
     }, __jsx("div", {
@@ -335,7 +400,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 70
       },
       __self: this
     }, "Submit!"))));
@@ -343,7 +408,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_5__["withRouter"])(AddExplanationCard)); // <form className="add-explanation-form">
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_6__["withRouter"])(AddExplanationCard)); // <form className="add-explanation-form">
 //   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
 //   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
 //   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
@@ -1335,12 +1400,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
 /* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_4__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/UploadImage.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
 
 
 
@@ -1366,21 +1428,21 @@ class UploadImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 20
       },
       __self: this
     }, __jsx("form", {
       className: "add-explanation-form",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 21
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 22
       },
       __self: this
     }, "Optional Intro Text"), __jsx("textarea", {
@@ -1392,14 +1454,14 @@ class UploadImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
       rows: "5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 23
       },
       __self: this
     }), __jsx("h2", {
       className: "font-med font-bold-med margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 24
       },
       __self: this
     }, "Upload Your Photo"), __jsx("input", {
@@ -1410,7 +1472,7 @@ class UploadImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
       accept: "image/*",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 25
       },
       __self: this
     })));
@@ -3315,6 +3377,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
           },
           __self: this
         }, "originally asked by @bofirstdog")), __jsx(_components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 41
@@ -3376,6 +3439,8 @@ var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/hel
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "firebase"));
 
+var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
+
 /*
   This file contains firebase config and instantiation
   contains functions that interact with the db
@@ -3384,7 +3449,6 @@ var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "fire
   logUserIn
   getLoggedInUser <-- returns false if no user logged in
 */
-// initialize
 const firebaseConfig = {
   apiKey: "AIzaSyBmeHPOy2Uvargw51ygM30ye9-lrpWoEOU",
   authDomain: "explain-this.firebaseapp.com",
@@ -3516,8 +3580,12 @@ async function getUserByID(userID) {
 } // get and return various data
 
 
-async function saveExplanationToDB() {
-  console.log('saving explanation to db');
+async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, userID, concept) {
+  // will also want the user here
+  // first upload file to db
+  let fileName = (0, _utils.generateFilePathAndName)(fileType, userID, concept);
+  let snapshot = await storageRef.child(fileName).put(fileToUpload);
+  console.log(snapshot); // then need to save explanation to firestore
 } // returns 2 concepts for the front page that need love as an obj
 
 
@@ -3657,7 +3725,7 @@ module.exports = {
   saveUserToDB,
   getLoggedInUser,
   getUserByID,
-  saveExplanationToDB,
+  saveExplanationWithFileToDB,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,
@@ -3711,9 +3779,15 @@ const explanationTypeToDisplayType = explanationType => {
   }
 };
 
+const generateFilePathAndName = (fileType, userID, concept) => {
+  let randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  return `/${concept}/${fileType}/${userID}/${randomID}`;
+};
+
 module.exports = {
   conceptToDisplayName,
-  explanationTypeToDisplayType
+  explanationTypeToDisplayType,
+  generateFilePathAndName
 };
 
 /***/ }),

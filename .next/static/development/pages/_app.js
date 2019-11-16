@@ -61074,6 +61074,8 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 
 var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js"));
 
+var _utils = __webpack_require__(/*! ./utils */ "./utils/utils.js");
+
 /*
   This file contains firebase config and instantiation
   contains functions that interact with the db
@@ -61082,7 +61084,6 @@ var firebase = _interopRequireWildcard(__webpack_require__(/*! firebase */ "./no
   logUserIn
   getLoggedInUser <-- returns false if no user logged in
 */
-// initialize
 var firebaseConfig = {
   apiKey: "AIzaSyBmeHPOy2Uvargw51ygM30ye9-lrpWoEOU",
   authDomain: "explain-this.firebaseapp.com",
@@ -61314,29 +61315,38 @@ function _getUserByID() {
   return _getUserByID.apply(this, arguments);
 }
 
-function saveExplanationToDB() {
-  return _saveExplanationToDB.apply(this, arguments);
+function saveExplanationWithFileToDB(_x6, _x7, _x8, _x9, _x10) {
+  return _saveExplanationWithFileToDB.apply(this, arguments);
 } // returns 2 concepts for the front page that need love as an obj
 
 
-function _saveExplanationToDB() {
-  _saveExplanationToDB = (0, _asyncToGenerator2["default"])(
+function _saveExplanationWithFileToDB() {
+  _saveExplanationWithFileToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee5() {
+  _regenerator["default"].mark(function _callee5(introText, fileToUpload, fileType, userID, concept) {
+    var fileName, snapshot;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
-            console.log('saving explanation to db');
+            // will also want the user here
+            // first upload file to db
+            fileName = (0, _utils.generateFilePathAndName)(fileType, userID, concept);
+            _context5.next = 3;
+            return storageRef.child(fileName).put(fileToUpload);
 
-          case 1:
+          case 3:
+            snapshot = _context5.sent;
+            console.log(snapshot); // then need to save explanation to firestore
+
+          case 5:
           case "end":
             return _context5.stop();
         }
       }
     }, _callee5);
   }));
-  return _saveExplanationToDB.apply(this, arguments);
+  return _saveExplanationWithFileToDB.apply(this, arguments);
 }
 
 function getConceptsThatNeedLove() {
@@ -61534,7 +61544,7 @@ function _getTopConceptsAllTime() {
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x6) {
+function getConceptExplanations(_x11) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
@@ -61599,12 +61609,69 @@ module.exports = {
   saveUserToDB: saveUserToDB,
   getLoggedInUser: getLoggedInUser,
   getUserByID: getUserByID,
-  saveExplanationToDB: saveExplanationToDB,
+  saveExplanationWithFileToDB: saveExplanationWithFileToDB,
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
   getConceptsThatNeedLove: getConceptsThatNeedLove,
   getConceptExplanations: getConceptExplanations
+};
+
+/***/ }),
+
+/***/ "./utils/utils.js":
+/*!************************!*\
+  !*** ./utils/utils.js ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var conceptToDisplayName = function conceptToDisplayName(concept) {
+  // replace - with space
+  return concept.replace("-", " ");
+}; //audio, photo, video, youtube, tweet, text, link
+
+
+var explanationTypeToDisplayType = function explanationTypeToDisplayType(explanationType) {
+  switch (explanationType) {
+    case "audio":
+      return "spoken word";
+      break;
+
+    case "photo":
+      return "illustration";
+      break;
+
+    case "video":
+      return "monologue";
+      break;
+
+    case "youtube":
+      return "poetry";
+      break;
+
+    case "tweet":
+      return "280 characters";
+      break;
+
+    case "text":
+      return "biography";
+      break;
+
+    default:
+      return "interpretive dance";
+  }
+};
+
+var generateFilePathAndName = function generateFilePathAndName(fileType, userID, concept) {
+  var randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  return "/".concat(concept, "/").concat(fileType, "/").concat(userID, "/").concat(randomID);
+};
+
+module.exports = {
+  conceptToDisplayName: conceptToDisplayName,
+  explanationTypeToDisplayType: explanationTypeToDisplayType,
+  generateFilePathAndName: generateFilePathAndName
 };
 
 /***/ }),
