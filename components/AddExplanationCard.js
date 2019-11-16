@@ -120,7 +120,7 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.type == "tweet" &&
-                  <AddTweet handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                  <AddTweet handleIntroTextChange={this.handleIntroTextChange} handleMediaLinkChange={this.handleMediaLinkChange} currentConcept={router.query.id} />
                 }
                 {
                   this.state.type == "photo" &&

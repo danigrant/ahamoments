@@ -61473,7 +61473,7 @@ function _saveExplanationToDB() {
               "authorAvatarUrl": explanationObj.authorAvatarUrl,
               "datetime": firebase.firestore.Timestamp.now(),
               "explanation": {
-                "introText": explanationObj.explanation.introText,
+                "introText": explanationObj.explanation.introText ? explanationObj.explanation.introText : "",
                 "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.explanation.mediaConsumptionGuidance : "",
                 "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type

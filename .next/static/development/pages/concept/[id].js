@@ -435,7 +435,7 @@ function (_React$Component) {
         __self: this
       }), this.state.type == "tweet" && __jsx(_uploadExplanationComponents_AddTweet__WEBPACK_IMPORTED_MODULE_13__["default"], {
         handleIntroTextChange: this.handleIntroTextChange,
-        handleFileChange: this.handleFileChange,
+        handleMediaLinkChange: this.handleMediaLinkChange,
         currentConcept: router.query.id,
         __source: {
           fileName: _jsxFileName,
@@ -1911,12 +1911,12 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(AddTweet).call(this, props));
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "sendFileChangeToParent", function (e) {
-      _this.props.handleFileChange(e);
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "sendIntroTextChangeToParent", function (e) {
       _this.props.handleIntroTextChange(e);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "sendMediaLinkChangeToParent", function (e) {
+      _this.props.handleMediaLinkChange(e);
     });
 
     _this.state = {
@@ -1967,12 +1967,12 @@ function (_React$Component) {
           lineNumber: 24
         },
         __self: this
-      }, "Add Tweet"), __jsx("input", {
-        onChange: this.sendFileChangeToParent,
-        className: "margin-top-sml font-med",
-        type: "file",
-        name: "photo-upload",
-        accept: "image/*",
+      }, "Link to Tweet"), __jsx("input", {
+        onChange: this.sendMediaLinkChangeToParent,
+        className: "margin-top-sml font-med background-grey rounded-border light-border",
+        type: "text",
+        placeholder: "https://twitter.com/ ...",
+        name: "tweet-input",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
@@ -1985,15 +1985,7 @@ function (_React$Component) {
   return AddTweet;
 }(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (AddTweet); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
+/* harmony default export */ __webpack_exports__["default"] = (AddTweet);
 
 /***/ }),
 
@@ -66650,7 +66642,7 @@ function _saveExplanationToDB() {
               "authorAvatarUrl": explanationObj.authorAvatarUrl,
               "datetime": firebase.firestore.Timestamp.now(),
               "explanation": {
-                "introText": explanationObj.explanation.introText,
+                "introText": explanationObj.explanation.introText ? explanationObj.explanation.introText : "",
                 "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.explanation.mediaConsumptionGuidance : "",
                 "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type
