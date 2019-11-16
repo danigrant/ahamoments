@@ -9,7 +9,7 @@ import AddPodcast from './uploadExplanationComponents/AddPodcast'
 import AddLink from './uploadExplanationComponents/AddLink'
 import AddYouTube from './uploadExplanationComponents/AddYouTube'
 import WriteText from './uploadExplanationComponents/WriteText'
-import { saveExplanationWithFileToDB, saveWrittenExplanationToDB } from '../utils/firebase'
+import { saveExplanationWithFileToDB, saveWrittenExplanationToDB, saveExternalLinkExplanationToDB } from '../utils/firebase'
 import { withRouter } from 'next/router'
 
 class AddExplanationCard extends React.Component {
@@ -31,13 +31,21 @@ class AddExplanationCard extends React.Component {
   handleIntroTextChange = (e) => {
     this.setState({introText: e.target.value});
   }
+  handleMediaLinkChange = (e) => {
+    this.setState({mediaLink: e.target.value});
+  }
+  handleMediaGuidanceChange = (e) => {
+    this.setState({mediaConsumptionGuidance: e.target.value});
+  }
   handleSubmit = (e) => {
     const { router } = this.props
     e.preventDefault()
     if (this.state.type == "photo" || this.state.type == "video" || this.state.type == "audio") {
-      saveExplanationWithFileToDB(this.state.introText, this.state.fileToUpload, this.state.type, this.props.loggedInUser.userID, router.query.id)
+      saveExplanationWithFileToDB(this.state.introText, this.state.fileToUpload, this.state.activeElement, this.props.loggedInUser.userID, router.query.id)
     } else if (this.state.type == "text") {
       saveWrittenExplanationToDB(this.state.introText, this.props.loggedInUser.userID, router.query.id)
+    } else if (this.state.type == "podcast" || this.state.type == "youtube" || this.state.type == "tweet" || this.state.type == "link") {
+      saveExternalLinkExplanationToDB(this.state.introText, this.state.mediaLink, this.state.mediaConsumptionGuidance, this.state.activeElement, this.props.loggedInUser.userID, router.query.id)
     }
   }
   render() {
@@ -96,7 +104,7 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.type == "podcast" &&
-                  <AddPodcast handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                  <AddPodcast handleIntroTextChange={this.handleIntroTextChange} handleMediaLinkChange={this.handleMediaLinkChange} handleMediaGuidanceChange={this.handleMediaGuidanceChange} currentConcept={router.query.id} />
                 }
                 {
                   this.state.type == "youtube" &&

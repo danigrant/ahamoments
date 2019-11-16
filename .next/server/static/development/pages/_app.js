@@ -1091,7 +1091,7 @@ async function saveExplanationToDB(explanationObj) {
     "datetime": firebase.firestore.Timestamp.now(),
     "explanation": {
       "introText": explanationObj.explanation.introText,
-      "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
+      "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.explanation.mediaConsumptionGuidance : "",
       "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
       "type": explanationObj.explanation.type
     }
@@ -1145,6 +1145,25 @@ async function saveWrittenExplanationToDB(text, userID, concept) {
     "explanation": {
       "introText": text,
       "type": "text"
+    }
+  });
+}
+
+async function saveExternalLinkExplanationToDB(introText, mediaLink, mediaConsumptionGuidance, fileType, userID, concept) {
+  // first need some user profile data
+  let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
+
+  await saveExplanationToDB({
+    "concept": concept,
+    "authorUserID": userID,
+    "authorDisplayName": userObj.displayName,
+    "authorAvatarUrl": userObj.avatarUrl,
+    "datetime": firebase.firestore.Timestamp.now(),
+    "explanation": {
+      "introText": introText,
+      "mediaLink": mediaLink,
+      "mediaConsumptionGuidance": mediaConsumptionGuidance,
+      "type": fileType
     }
   });
 } // returns 2 concepts for the front page that need love as an obj
@@ -1288,6 +1307,7 @@ module.exports = {
   getUserByID,
   saveExplanationWithFileToDB,
   saveWrittenExplanationToDB,
+  saveExternalLinkExplanationToDB,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

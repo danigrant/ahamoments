@@ -61474,7 +61474,7 @@ function _saveExplanationToDB() {
               "datetime": firebase.firestore.Timestamp.now(),
               "explanation": {
                 "introText": explanationObj.explanation.introText,
-                "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
+                "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.explanation.mediaConsumptionGuidance : "",
                 "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type
               }
@@ -61551,8 +61551,7 @@ function _saveExplanationWithFileToDB() {
 
 function saveWrittenExplanationToDB(_x15, _x16, _x17) {
   return _saveWrittenExplanationToDB.apply(this, arguments);
-} // returns 2 concepts for the front page that need love as an obj
-
+}
 
 function _saveWrittenExplanationToDB() {
   _saveWrittenExplanationToDB = (0, _asyncToGenerator2["default"])(
@@ -61596,6 +61595,50 @@ function _saveWrittenExplanationToDB() {
   return _saveWrittenExplanationToDB.apply(this, arguments);
 }
 
+function saveExternalLinkExplanationToDB(_x18, _x19, _x20, _x21, _x22, _x23) {
+  return _saveExternalLinkExplanationToDB.apply(this, arguments);
+} // returns 2 concepts for the front page that need love as an obj
+
+
+function _saveExternalLinkExplanationToDB() {
+  _saveExternalLinkExplanationToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee11(introText, mediaLink, mediaConsumptionGuidance, fileType, userID, concept) {
+    var userObj;
+    return _regenerator["default"].wrap(function _callee11$(_context11) {
+      while (1) {
+        switch (_context11.prev = _context11.next) {
+          case 0:
+            _context11.next = 2;
+            return getUserProfileInfoByUserID(userID);
+
+          case 2:
+            userObj = _context11.sent;
+            _context11.next = 5;
+            return saveExplanationToDB({
+              "concept": concept,
+              "authorUserID": userID,
+              "authorDisplayName": userObj.displayName,
+              "authorAvatarUrl": userObj.avatarUrl,
+              "datetime": firebase.firestore.Timestamp.now(),
+              "explanation": {
+                "introText": introText,
+                "mediaLink": mediaLink,
+                "mediaConsumptionGuidance": mediaConsumptionGuidance,
+                "type": fileType
+              }
+            });
+
+          case 5:
+          case "end":
+            return _context11.stop();
+        }
+      }
+    }, _callee11);
+  }));
+  return _saveExternalLinkExplanationToDB.apply(this, arguments);
+}
+
 function getConceptsThatNeedLove() {
   return _getConceptsThatNeedLove.apply(this, arguments);
 } // returns top 5 creators in an array
@@ -61604,12 +61647,12 @@ function getConceptsThatNeedLove() {
 function _getConceptsThatNeedLove() {
   _getConceptsThatNeedLove = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee11() {
-    return _regenerator["default"].wrap(function _callee11$(_context11) {
+  _regenerator["default"].mark(function _callee12() {
+    return _regenerator["default"].wrap(function _callee12$(_context12) {
       while (1) {
-        switch (_context11.prev = _context11.next) {
+        switch (_context12.prev = _context12.next) {
           case 0:
-            return _context11.abrupt("return", {
+            return _context12.abrupt("return", {
               "totalAmountOfConceptsNeedingLove": 43,
               "conceptsNeedingLoveToDisplay": [{
                 "conceptName": "Derivative",
@@ -61624,10 +61667,10 @@ function _getConceptsThatNeedLove() {
 
           case 1:
           case "end":
-            return _context11.stop();
+            return _context12.stop();
         }
       }
-    }, _callee11);
+    }, _callee12);
   }));
   return _getConceptsThatNeedLove.apply(this, arguments);
 }
@@ -61640,20 +61683,20 @@ function getTopCreatorsAllTime() {
 function _getTopCreatorsAllTime() {
   _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee12() {
+  _regenerator["default"].mark(function _callee13() {
     var snapshot, data;
-    return _regenerator["default"].wrap(function _callee12$(_context12) {
+    return _regenerator["default"].wrap(function _callee13$(_context13) {
       while (1) {
-        switch (_context12.prev = _context12.next) {
+        switch (_context13.prev = _context13.next) {
           case 0:
-            _context12.next = 2;
+            _context13.next = 2;
             return usersRef.get();
 
           case 2:
-            snapshot = _context12.sent;
+            snapshot = _context13.sent;
             //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
-            _context12.next = 6;
+            _context13.next = 6;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61671,14 +61714,14 @@ function _getTopCreatorsAllTime() {
             });
 
           case 6:
-            return _context12.abrupt("return", data);
+            return _context13.abrupt("return", data);
 
           case 7:
           case "end":
-            return _context12.stop();
+            return _context13.stop();
         }
       }
-    }, _callee12);
+    }, _callee13);
   }));
   return _getTopCreatorsAllTime.apply(this, arguments);
 }
@@ -61690,20 +61733,20 @@ function getTopExplanationsAllTime() {
 function _getTopExplanationsAllTime() {
   _getTopExplanationsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee13() {
+  _regenerator["default"].mark(function _callee14() {
     var snapshot, data;
-    return _regenerator["default"].wrap(function _callee13$(_context13) {
+    return _regenerator["default"].wrap(function _callee14$(_context14) {
       while (1) {
-        switch (_context13.prev = _context13.next) {
+        switch (_context14.prev = _context14.next) {
           case 0:
-            _context13.next = 2;
+            _context14.next = 2;
             return explanationsRef.get();
 
           case 2:
-            snapshot = _context13.sent;
+            snapshot = _context14.sent;
             //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
-            _context13.next = 6;
+            _context14.next = 6;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61729,14 +61772,14 @@ function _getTopExplanationsAllTime() {
             });
 
           case 6:
-            return _context13.abrupt("return", data);
+            return _context14.abrupt("return", data);
 
           case 7:
           case "end":
-            return _context13.stop();
+            return _context14.stop();
         }
       }
-    }, _callee13);
+    }, _callee14);
   }));
   return _getTopExplanationsAllTime.apply(this, arguments);
 }
@@ -61749,12 +61792,12 @@ function getTopConceptsAllTime() {
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee14() {
-    return _regenerator["default"].wrap(function _callee14$(_context14) {
+  _regenerator["default"].mark(function _callee15() {
+    return _regenerator["default"].wrap(function _callee15$(_context15) {
       while (1) {
-        switch (_context14.prev = _context14.next) {
+        switch (_context15.prev = _context15.next) {
           case 0:
-            return _context14.abrupt("return", [{
+            return _context15.abrupt("return", [{
               "conceptName": "Integrals",
               // these need to be transformed into - instead of space
               "explanationCount": 10,
@@ -61783,36 +61826,36 @@ function _getTopConceptsAllTime() {
 
           case 1:
           case "end":
-            return _context14.stop();
+            return _context15.stop();
         }
       }
-    }, _callee14);
+    }, _callee15);
   }));
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x18) {
+function getConceptExplanations(_x24) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee15(concept) {
+  _regenerator["default"].mark(function _callee16(concept) {
     var formattedConcept, snapshot, data;
-    return _regenerator["default"].wrap(function _callee15$(_context15) {
+    return _regenerator["default"].wrap(function _callee16$(_context16) {
       while (1) {
-        switch (_context15.prev = _context15.next) {
+        switch (_context16.prev = _context16.next) {
           case 0:
             formattedConcept = concept.toLowerCase();
-            _context15.next = 3;
+            _context16.next = 3;
             return explanationsRef.where('concept', '==', formattedConcept).get();
 
           case 3:
-            snapshot = _context15.sent;
+            snapshot = _context16.sent;
             //.orderBy('score', 'desc').get()
             data = [];
-            _context15.next = 7;
+            _context16.next = 7;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61838,14 +61881,14 @@ function _getConceptExplanations() {
             });
 
           case 7:
-            return _context15.abrupt("return", data);
+            return _context16.abrupt("return", data);
 
           case 8:
           case "end":
-            return _context15.stop();
+            return _context16.stop();
         }
       }
-    }, _callee15);
+    }, _callee16);
   }));
   return _getConceptExplanations.apply(this, arguments);
 }
@@ -61858,6 +61901,7 @@ module.exports = {
   getUserByID: getUserByID,
   saveExplanationWithFileToDB: saveExplanationWithFileToDB,
   saveWrittenExplanationToDB: saveWrittenExplanationToDB,
+  saveExternalLinkExplanationToDB: saveExternalLinkExplanationToDB,
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
