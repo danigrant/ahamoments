@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../Card'
 import CardSection from '../CardSection'
+import { saveExplanationToDB } from '../../utils/firebase'
 
 class UploadImage extends React.Component {
   constructor(props) {
@@ -9,19 +10,20 @@ class UploadImage extends React.Component {
       fileToUpload: ''
     }
   }
-  handleFileChange = (e) => {
-    console.log('e.target', e.target.files[0]); // this prints
-    this.setState({fileToUpload: e.target.files[0]}); //this is empty. what!?
+  sendFileChangeToParent = (e) => {
+    this.props.handleFileChange(e)
+  }
+  sendIntroTextChangeToParent = (e) => {
+    this.props.handleIntroTextChange(e)
   }
   render() {
-    console.log('this.state.fileToUpload', this.state.fileToUpload);
     return (
       <div>
         <form className="add-explanation-form">
           <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-          <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
+          <textarea onChange={this.sendIntroTextChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
           <h2 className="font-med font-bold-med margin-top-sml">Upload Your Photo</h2>
-          <input className="margin-top-sml font-med" type="file" name="photo-upload" onChange={this.handleFileChange} accept="image/*" />
+          <input onChange={this.sendFileChangeToParent} className="margin-top-sml font-med" type="file" name="photo-upload" accept="image/*" />
         </form>
       </div>
     )

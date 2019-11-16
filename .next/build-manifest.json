@@ -19,10 +19,6 @@
     "/concept/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
-    ],
-    "/explainer/[id]": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
     ]
   }
 }

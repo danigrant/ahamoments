@@ -61104,7 +61104,9 @@ var explanationsRef = db.collection('explanations');
 var usersRef = db.collection('users');
 var increment = firebase.firestore.FieldValue.increment(1);
 var decrement = firebase.firestore.FieldValue.increment(-1);
-var provider = new firebase.auth.TwitterAuthProvider(); // auth
+var provider = new firebase.auth.TwitterAuthProvider();
+var storage = firebase.app().storage();
+var storageRef = firebase.app().storage().ref(); // auth
 
 function saveUserToDB(_x, _x2, _x3, _x4) {
   return _saveUserToDB.apply(this, arguments);
@@ -61325,6 +61327,9 @@ function _saveExplanationToDB() {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
+            console.log('saving explanation to db');
+
+          case 1:
           case "end":
             return _context5.stop();
         }

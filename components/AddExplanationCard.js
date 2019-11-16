@@ -8,6 +8,16 @@ class AddExplanationCard extends React.Component {
   constructor(props) {
     super(props)
   }
+  handleFileChange = (e) => {
+    this.setState({fileToUpload: e.target.files[0]});
+  }
+  handleIntroTextChange = (e) => {
+    this.setState({introText: e.target.value});
+  }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("submitting:", this.state.introText, this.state.fileToUpload);
+  }
   render() {
     const { router } = this.props
     return (
@@ -45,10 +55,10 @@ class AddExplanationCard extends React.Component {
             </div>
           </CardSection>
           <CardSection>
-            <UploadImage currentConcept={router.query.id} />
+            <UploadImage handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
           </CardSection>
           <CardSection>
-            <div className="action-button button background-purple rounded-border font-med font-bold-med">Submit!</div>
+            <div onClick={this.handleSubmit} className="action-button button background-purple rounded-border font-med font-bold-med">Submit!</div>
           </CardSection>
         </Card>
       </div>

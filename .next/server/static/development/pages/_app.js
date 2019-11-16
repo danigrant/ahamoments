@@ -930,7 +930,9 @@ const explanationsRef = db.collection('explanations');
 const usersRef = db.collection('users');
 const increment = firebase.firestore.FieldValue.increment(1);
 const decrement = firebase.firestore.FieldValue.increment(-1);
-const provider = new firebase.auth.TwitterAuthProvider(); // auth
+const provider = new firebase.auth.TwitterAuthProvider();
+const storage = firebase.app().storage();
+const storageRef = firebase.app().storage().ref(); // auth
 
 async function saveUserToDB(displayName, email, photoURL, uid) {
   // first check if this a new user?
@@ -1038,7 +1040,9 @@ async function getUserByID(userID) {
 } // get and return various data
 
 
-async function saveExplanationToDB() {} // returns 2 concepts for the front page that need love as an obj
+async function saveExplanationToDB() {
+  console.log('saving explanation to db');
+} // returns 2 concepts for the front page that need love as an obj
 
 
 async function getConceptsThatNeedLove() {

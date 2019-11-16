@@ -36,6 +36,9 @@ const decrement = firebase.firestore.FieldValue.increment(-1);
 
 const provider = new firebase.auth.TwitterAuthProvider();
 
+const storage = firebase.app().storage();
+const storageRef = firebase.app().storage().ref();
+
 
 // auth
 
@@ -151,7 +154,7 @@ async function getUserByID(userID) {
 // get and return various data
 
 async function saveExplanationToDB() {
-
+  console.log('saving explanation to db')
 }
 
 // returns 2 concepts for the front page that need love as an obj
