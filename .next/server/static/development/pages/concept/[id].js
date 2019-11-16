@@ -2095,15 +2095,22 @@ class UploadAudio extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
         lineNumber: 24
       },
       __self: this
-    }, "Upload Your Audio"), __jsx("input", {
+    }, "Upload Your Audio"), __jsx("p", {
+      className: "font-color-light-grey font-med font-bold-med",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }, "Record a voice memo and then upload it here. You can sing a song, do some freestyle rap, speak some poetry, tell a joke or just explain it straight, Can\u2019t wait to see what you come up with."), __jsx("input", {
       onChange: this.sendFileChangeToParent,
       className: "margin-top-sml font-med",
       type: "file",
       name: "photo-upload",
-      accept: "image/*",
+      accept: "audio/*",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       },
       __self: this
     })));

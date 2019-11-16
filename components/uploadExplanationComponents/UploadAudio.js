@@ -22,7 +22,8 @@ class UploadAudio extends React.Component {
           <h2 className="font-med font-bold-med">Optional Intro Text</h2>
           <textarea onChange={this.sendIntroTextChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
           <h2 className="font-med font-bold-med margin-top-sml">Upload Your Audio</h2>
-          <input onChange={this.sendFileChangeToParent} className="margin-top-sml font-med" type="file" name="photo-upload" accept="image/*" />
+          <p className="font-color-light-grey font-med font-bold-med">Record a voice memo and then upload it here. You can sing a song, do some freestyle rap, speak some poetry, tell a joke or just explain it straight, Can’t wait to see what you come up with.</p>
+          <input onChange={this.sendFileChangeToParent} className="margin-top-sml font-med" type="file" name="photo-upload" accept="audio/*" />
         </form>
       </div>
     )
