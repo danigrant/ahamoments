@@ -165,6 +165,10 @@ a {
   padding-left: 15px;
 }
 
+.add-explanation-form input[type="file"] {
+  padding-left: 0;
+}
+
 .add-explanation-form textarea {
   width: 100%;
   padding-left: 15px;

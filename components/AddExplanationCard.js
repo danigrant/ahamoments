@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import CardSection from './CardSection'
+import UploadImage from './uploadExplanationComponents/UploadImage'
 import { withRouter } from 'next/router'
 
 class AddExplanationCard extends React.Component {
@@ -33,26 +34,18 @@ class AddExplanationCard extends React.Component {
             <div className="media-type-selection-section margin-top-sml">
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Write Something</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Podcast Snippet</div>
-              <div className="action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">YouTube Clip</div>
+              <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">YouTube Clip</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Video</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Audio</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Tweet</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Video</div>
-              <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Photo</div>
+              <div className="action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Photo</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Draw Something And Upload It</div>
               <div className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Link To Something On The Web</div>
             </div>
           </CardSection>
           <CardSection>
-          <form className="add-explanation-form">
-            <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-            <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-            <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-            <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-            <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-            <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-            <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-          </form>
+            <UploadImage currentConcept={router.query.id} />
           </CardSection>
           <CardSection>
             <div className="action-button button background-purple rounded-border font-med font-bold-med">Submit!</div>
@@ -64,3 +57,14 @@ class AddExplanationCard extends React.Component {
 }
 
 export default withRouter(AddExplanationCard)
+
+
+// <form className="add-explanation-form">
+//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
+//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
+//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
+//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
+//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
+//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
+//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
+// </form>

@@ -36,6 +36,7 @@ const decrement = firebase.firestore.FieldValue.increment(-1);
 
 const provider = new firebase.auth.TwitterAuthProvider();
 
+
 // auth
 
 async function saveUserToDB(displayName, email, photoURL, uid) {
