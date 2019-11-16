@@ -9,6 +9,8 @@ import AddPodcast from './uploadExplanationComponents/AddPodcast'
 import AddLink from './uploadExplanationComponents/AddLink'
 import AddYouTube from './uploadExplanationComponents/AddYouTube'
 import WriteText from './uploadExplanationComponents/WriteText'
+import { Fireworks } from 'fireworks/lib/react'
+
 import { saveExplanationWithFileToDB, saveWrittenExplanationToDB, saveExternalLinkExplanationToDB } from '../utils/firebase'
 import { withRouter } from 'next/router'
 
@@ -22,7 +24,8 @@ class AddExplanationCard extends React.Component {
       mediaLink: '',
       mediaConsumptionGuidance: '',
       showAddExplanationSection: false,
-      activeElement: "none" // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
+      activeElement: "none", // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
+      justSubmitted: false
     }
   }
   handleFileChange = (e) => {
@@ -51,13 +54,29 @@ class AddExplanationCard extends React.Component {
     this.setState({
       showAddExplanationSection: false,
       typeSelected: false,
-      activeElement: "none"
+      activeElement: "none",
+      justSubmitted: true
     })
+    let thisRef = this;
+    setTimeout(function() {
+      thisRef.setState({
+        justSubmitted: false
+      })
+    }, 1000)
   }
   render() {
+    let fxProps = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+      colors: ['#e91e63', '#ff9800', '#ff5722']
+    }
     const { router } = this.props
     return (
       <div>
+        {
+          this.state.justSubmitted &&
+          <Fireworks {...fxProps} />
+        }
         <Card>
           <CardSection>
             <div className="columns-parent-div">
