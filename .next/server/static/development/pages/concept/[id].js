@@ -226,13 +226,20 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
           showAddExplanationSection: false
         });
       },
-      className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
+      className: "font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 49
       },
       __self: this
-    }, "Close")))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, __jsx("i", {
+      className: "material-icons",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49
+      },
+      __self: this
+    }, "close_rounded"))))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 56

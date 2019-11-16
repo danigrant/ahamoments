@@ -46,7 +46,7 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.showAddExplanationSection &&
-                  <div onClick={() => { this.setState({ showAddExplanationSection: false }) }} className="action-button button background-purple rounded-border font-med font-bold-extra float-right">Close</div>
+                  <div onClick={() => { this.setState({ showAddExplanationSection: false }) }} className="font-med font-bold-extra float-right"><i className="material-icons">close_rounded</i></div>
                 }
               </div>
             </div>
