@@ -111,6 +111,7 @@ async function logUserIn() {
 
 // various utils
 
+// returns everything plus explanations
 async function getUserByID(userID) {
   // first get metadata
   let snapshot = await usersRef.where('userID', '==', userID).get()
@@ -152,15 +153,89 @@ async function getUserByID(userID) {
   return data
 }
 
+async function getUserProfileInfoByUserID(userID) {
+  let snapshot = await usersRef.where('userID', '==', userID).get()
+  let data = {}
+  await snapshot.forEach(doc => {
+    let docData = doc.data()
+    data = {
+      "displayName": docData.displayName,
+  		"userID": docData.userID,
+  		"avatarUrl": docData.avatarUrl,
+  		"ahaMomentCount": docData.ahaMomentCount,
+  		"explanationCount": docData.explanationCount,
+  		"reactionsCount": {
+  			"gotIt": docData.reactionGotItCount,
+  			"laughing": docData.reactionLaughingCount,
+  			"shocked": docData.reactionShockedCount
+  		}
+    }
+  })
+  return data
+}
+
+async function getDocIDByUserID(userID) {
+  let snapshot = await usersRef.where('userID', '==', userID).get()
+  let userDocID = ""
+  await snapshot.forEach(doc => {
+    userDocID = doc.id
+  })
+  return userDocID
+}
+
+async function incrementUserExplanationCount(userID) {
+  let docID = await getDocIDByUserID(userID)
+  let userRef = usersRef.doc(docID)
+
+  userRef.update({ explanationCount: increment })
+}
+
 // get and return various data
+
+async function saveExplanationToDB(explanationObj) {
+  let newExplanation = {
+    "concept": explanationObj.concept,
+    "authorUserID": explanationObj.authorUserID,
+    "authorDisplayName": explanationObj.authorDisplayName,
+    "authorAvatarUrl": explanationObj.authorAvatarUrl,
+    "datetime": firebase.firestore.Timestamp.now(),
+    "explanation": {
+      "introText": explanationObj.explanation.introText,
+      "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
+      "mediaLink": explanationObj.explanation.mediaLink,
+      "type": explanationObj.explanation.type
+    }
+  }
+  explanationsRef.add(newExplanation)
+  incrementUserExplanationCount(explanationObj.authorUserID)
+}
 
 async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, userID, concept) { // will also want the user here
   // first upload file to db
   let fileName = generateFilePathAndName(fileType, userID, concept)
   let snapshot = await storageRef.child(fileName).put(fileToUpload)
-  console.log(snapshot);
+  if (!snapshot.state == "success") {
+    console.log("error");
+  }
 
   // then need to save explanation to firestore
+
+  // first to do that, need some user profile data
+  let userObj = await getUserProfileInfoByUserID(userID)
+
+  // then save to firebase
+  await saveExplanationToDB({
+    "concept": concept,
+    "authorUserID": userID,
+    "authorDisplayName": userObj.displayName,
+    "authorAvatarUrl": userObj.avatarUrl,
+    "datetime": firebase.firestore.Timestamp.now(),
+    "explanation": {
+      "introText": introText,
+      "mediaLink": snapshot.metadata.fullPath,
+      "type": fileType
+    }
+  })
 }
 
 // returns 2 concepts for the front page that need love as an obj

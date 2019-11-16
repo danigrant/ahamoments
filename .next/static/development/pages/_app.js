@@ -61198,6 +61198,7 @@ function _getLoggedInUser() {
 function logUserIn() {
   return _logUserIn.apply(this, arguments);
 } // various utils
+// returns everything plus explanations
 
 
 function _logUserIn() {
@@ -61242,8 +61243,7 @@ function _logUserIn() {
 
 function getUserByID(_x5) {
   return _getUserByID.apply(this, arguments);
-} // get and return various data
-
+}
 
 function _getUserByID() {
   _getUserByID = (0, _asyncToGenerator2["default"])(
@@ -61315,7 +61315,166 @@ function _getUserByID() {
   return _getUserByID.apply(this, arguments);
 }
 
-function saveExplanationWithFileToDB(_x6, _x7, _x8, _x9, _x10) {
+function getUserProfileInfoByUserID(_x6) {
+  return _getUserProfileInfoByUserID.apply(this, arguments);
+}
+
+function _getUserProfileInfoByUserID() {
+  _getUserProfileInfoByUserID = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee5(userID) {
+    var snapshot, data;
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return usersRef.where('userID', '==', userID).get();
+
+          case 2:
+            snapshot = _context5.sent;
+            data = {};
+            _context5.next = 6;
+            return snapshot.forEach(function (doc) {
+              var docData = doc.data();
+              data = {
+                "displayName": docData.displayName,
+                "userID": docData.userID,
+                "avatarUrl": docData.avatarUrl,
+                "ahaMomentCount": docData.ahaMomentCount,
+                "explanationCount": docData.explanationCount,
+                "reactionsCount": {
+                  "gotIt": docData.reactionGotItCount,
+                  "laughing": docData.reactionLaughingCount,
+                  "shocked": docData.reactionShockedCount
+                }
+              };
+            });
+
+          case 6:
+            return _context5.abrupt("return", data);
+
+          case 7:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+  return _getUserProfileInfoByUserID.apply(this, arguments);
+}
+
+function getDocIDByUserID(_x7) {
+  return _getDocIDByUserID.apply(this, arguments);
+}
+
+function _getDocIDByUserID() {
+  _getDocIDByUserID = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee6(userID) {
+    var snapshot, userDocID;
+    return _regenerator["default"].wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            _context6.next = 2;
+            return usersRef.where('userID', '==', userID).get();
+
+          case 2:
+            snapshot = _context6.sent;
+            userDocID = "";
+            _context6.next = 6;
+            return snapshot.forEach(function (doc) {
+              userDocID = doc.id;
+            });
+
+          case 6:
+            return _context6.abrupt("return", userDocID);
+
+          case 7:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6);
+  }));
+  return _getDocIDByUserID.apply(this, arguments);
+}
+
+function incrementUserExplanationCount(_x8) {
+  return _incrementUserExplanationCount.apply(this, arguments);
+} // get and return various data
+
+
+function _incrementUserExplanationCount() {
+  _incrementUserExplanationCount = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee7(userID) {
+    var docID, userRef;
+    return _regenerator["default"].wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.next = 2;
+            return getDocIDByUserID(userID);
+
+          case 2:
+            docID = _context7.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              explanationCount: increment
+            });
+
+          case 5:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7);
+  }));
+  return _incrementUserExplanationCount.apply(this, arguments);
+}
+
+function saveExplanationToDB(_x9) {
+  return _saveExplanationToDB.apply(this, arguments);
+}
+
+function _saveExplanationToDB() {
+  _saveExplanationToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee8(explanationObj) {
+    var newExplanation;
+    return _regenerator["default"].wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            newExplanation = {
+              "concept": explanationObj.concept,
+              "authorUserID": explanationObj.authorUserID,
+              "authorDisplayName": explanationObj.authorDisplayName,
+              "authorAvatarUrl": explanationObj.authorAvatarUrl,
+              "datetime": firebase.firestore.Timestamp.now(),
+              "explanation": {
+                "introText": explanationObj.explanation.introText,
+                "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
+                "mediaLink": explanationObj.explanation.mediaLink,
+                "type": explanationObj.explanation.type
+              }
+            };
+            explanationsRef.add(newExplanation);
+            incrementUserExplanationCount(explanationObj.authorUserID);
+
+          case 3:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, _callee8);
+  }));
+  return _saveExplanationToDB.apply(this, arguments);
+}
+
+function saveExplanationWithFileToDB(_x10, _x11, _x12, _x13, _x14) {
   return _saveExplanationWithFileToDB.apply(this, arguments);
 } // returns 2 concepts for the front page that need love as an obj
 
@@ -61323,28 +61482,52 @@ function saveExplanationWithFileToDB(_x6, _x7, _x8, _x9, _x10) {
 function _saveExplanationWithFileToDB() {
   _saveExplanationWithFileToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee5(introText, fileToUpload, fileType, userID, concept) {
-    var fileName, snapshot;
-    return _regenerator["default"].wrap(function _callee5$(_context5) {
+  _regenerator["default"].mark(function _callee9(introText, fileToUpload, fileType, userID, concept) {
+    var fileName, snapshot, userObj;
+    return _regenerator["default"].wrap(function _callee9$(_context9) {
       while (1) {
-        switch (_context5.prev = _context5.next) {
+        switch (_context9.prev = _context9.next) {
           case 0:
             // will also want the user here
             // first upload file to db
             fileName = (0, _utils.generateFilePathAndName)(fileType, userID, concept);
-            _context5.next = 3;
+            _context9.next = 3;
             return storageRef.child(fileName).put(fileToUpload);
 
           case 3:
-            snapshot = _context5.sent;
-            console.log(snapshot); // then need to save explanation to firestore
+            snapshot = _context9.sent;
 
-          case 5:
+            if (!snapshot.state == "success") {
+              console.log("error");
+            } // then need to save explanation to firestore
+            // first to do that, need some user profile data
+
+
+            _context9.next = 7;
+            return getUserProfileInfoByUserID(userID);
+
+          case 7:
+            userObj = _context9.sent;
+            _context9.next = 10;
+            return saveExplanationToDB({
+              "concept": concept,
+              "authorUserID": userID,
+              "authorDisplayName": userObj.displayName,
+              "authorAvatarUrl": userObj.avatarUrl,
+              "datetime": firebase.firestore.Timestamp.now(),
+              "explanation": {
+                "introText": introText,
+                "mediaLink": snapshot.metadata.fullPath,
+                "type": fileType
+              }
+            });
+
+          case 10:
           case "end":
-            return _context5.stop();
+            return _context9.stop();
         }
       }
-    }, _callee5);
+    }, _callee9);
   }));
   return _saveExplanationWithFileToDB.apply(this, arguments);
 }
@@ -61357,12 +61540,12 @@ function getConceptsThatNeedLove() {
 function _getConceptsThatNeedLove() {
   _getConceptsThatNeedLove = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee6() {
-    return _regenerator["default"].wrap(function _callee6$(_context6) {
+  _regenerator["default"].mark(function _callee10() {
+    return _regenerator["default"].wrap(function _callee10$(_context10) {
       while (1) {
-        switch (_context6.prev = _context6.next) {
+        switch (_context10.prev = _context10.next) {
           case 0:
-            return _context6.abrupt("return", {
+            return _context10.abrupt("return", {
               "totalAmountOfConceptsNeedingLove": 43,
               "conceptsNeedingLoveToDisplay": [{
                 "conceptName": "Derivative",
@@ -61377,10 +61560,10 @@ function _getConceptsThatNeedLove() {
 
           case 1:
           case "end":
-            return _context6.stop();
+            return _context10.stop();
         }
       }
-    }, _callee6);
+    }, _callee10);
   }));
   return _getConceptsThatNeedLove.apply(this, arguments);
 }
@@ -61393,20 +61576,20 @@ function getTopCreatorsAllTime() {
 function _getTopCreatorsAllTime() {
   _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee7() {
+  _regenerator["default"].mark(function _callee11() {
     var snapshot, data;
-    return _regenerator["default"].wrap(function _callee7$(_context7) {
+    return _regenerator["default"].wrap(function _callee11$(_context11) {
       while (1) {
-        switch (_context7.prev = _context7.next) {
+        switch (_context11.prev = _context11.next) {
           case 0:
-            _context7.next = 2;
+            _context11.next = 2;
             return usersRef.get();
 
           case 2:
-            snapshot = _context7.sent;
+            snapshot = _context11.sent;
             //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
-            _context7.next = 6;
+            _context11.next = 6;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61424,14 +61607,14 @@ function _getTopCreatorsAllTime() {
             });
 
           case 6:
-            return _context7.abrupt("return", data);
+            return _context11.abrupt("return", data);
 
           case 7:
           case "end":
-            return _context7.stop();
+            return _context11.stop();
         }
       }
-    }, _callee7);
+    }, _callee11);
   }));
   return _getTopCreatorsAllTime.apply(this, arguments);
 }
@@ -61443,20 +61626,20 @@ function getTopExplanationsAllTime() {
 function _getTopExplanationsAllTime() {
   _getTopExplanationsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee8() {
+  _regenerator["default"].mark(function _callee12() {
     var snapshot, data;
-    return _regenerator["default"].wrap(function _callee8$(_context8) {
+    return _regenerator["default"].wrap(function _callee12$(_context12) {
       while (1) {
-        switch (_context8.prev = _context8.next) {
+        switch (_context12.prev = _context12.next) {
           case 0:
-            _context8.next = 2;
+            _context12.next = 2;
             return explanationsRef.get();
 
           case 2:
-            snapshot = _context8.sent;
+            snapshot = _context12.sent;
             //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
-            _context8.next = 6;
+            _context12.next = 6;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61482,14 +61665,14 @@ function _getTopExplanationsAllTime() {
             });
 
           case 6:
-            return _context8.abrupt("return", data);
+            return _context12.abrupt("return", data);
 
           case 7:
           case "end":
-            return _context8.stop();
+            return _context12.stop();
         }
       }
-    }, _callee8);
+    }, _callee12);
   }));
   return _getTopExplanationsAllTime.apply(this, arguments);
 }
@@ -61502,12 +61685,12 @@ function getTopConceptsAllTime() {
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee9() {
-    return _regenerator["default"].wrap(function _callee9$(_context9) {
+  _regenerator["default"].mark(function _callee13() {
+    return _regenerator["default"].wrap(function _callee13$(_context13) {
       while (1) {
-        switch (_context9.prev = _context9.next) {
+        switch (_context13.prev = _context13.next) {
           case 0:
-            return _context9.abrupt("return", [{
+            return _context13.abrupt("return", [{
               "conceptName": "Integrals",
               // these need to be transformed into - instead of space
               "explanationCount": 10,
@@ -61536,36 +61719,36 @@ function _getTopConceptsAllTime() {
 
           case 1:
           case "end":
-            return _context9.stop();
+            return _context13.stop();
         }
       }
-    }, _callee9);
+    }, _callee13);
   }));
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x11) {
+function getConceptExplanations(_x15) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee10(concept) {
+  _regenerator["default"].mark(function _callee14(concept) {
     var formattedConcept, snapshot, data;
-    return _regenerator["default"].wrap(function _callee10$(_context10) {
+    return _regenerator["default"].wrap(function _callee14$(_context14) {
       while (1) {
-        switch (_context10.prev = _context10.next) {
+        switch (_context14.prev = _context14.next) {
           case 0:
             formattedConcept = concept.toLowerCase();
-            _context10.next = 3;
+            _context14.next = 3;
             return explanationsRef.where('concept', '==', formattedConcept).get();
 
           case 3:
-            snapshot = _context10.sent;
+            snapshot = _context14.sent;
             //.orderBy('score', 'desc').get()
             data = [];
-            _context10.next = 7;
+            _context14.next = 7;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61591,14 +61774,14 @@ function _getConceptExplanations() {
             });
 
           case 7:
-            return _context10.abrupt("return", data);
+            return _context14.abrupt("return", data);
 
           case 8:
           case "end":
-            return _context10.stop();
+            return _context14.stop();
         }
       }
-    }, _callee10);
+    }, _callee14);
   }));
   return _getConceptExplanations.apply(this, arguments);
 }
