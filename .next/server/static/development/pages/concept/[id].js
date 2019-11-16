@@ -223,7 +223,8 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Contribute"), this.state.showAddExplanationSection && __jsx("div", {
       onClick: () => {
         this.setState({
-          showAddExplanationSection: false
+          showAddExplanationSection: false,
+          typeSelected: false
         });
       },
       className: "font-med font-bold-extra float-right",
@@ -283,7 +284,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "text"
+          typeSelected: "text"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -295,7 +296,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Write Something"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "podcast"
+          typeSelected: "podcast"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -307,7 +308,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Podcast Snippet"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "youtube"
+          typeSelected: "youtube"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -319,7 +320,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "YouTube Clip"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "video"
+          typeSelected: "video"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -331,7 +332,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Record Your Own Video"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "audio"
+          typeSelected: "audio"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -343,7 +344,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Record Your Own Audio"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "tweet"
+          typeSelected: "tweet"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -355,7 +356,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Tweet"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "video"
+          typeSelected: "video"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -367,7 +368,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Upload A Video"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "photo"
+          typeSelected: "photo"
         });
       },
       className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -379,7 +380,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Upload A Photo"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "photo"
+          typeSelected: "photo"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -391,7 +392,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     }, "Draw Something And Upload It"), __jsx("div", {
       onClick: () => {
         this.setState({
-          type: "link"
+          typeSelected: "link"
         });
       },
       className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -400,7 +401,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         lineNumber: 74
       },
       __self: this
-    }, "Link To Something On The Web"))), this.state.typeSelected && __jsx("div", {
+    }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.typeSelected && __jsx("div", {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 80

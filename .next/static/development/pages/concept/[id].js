@@ -151,7 +151,8 @@ function (_React$Component) {
       }, "Contribute"), this.state.showAddExplanationSection && __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            showAddExplanationSection: false
+            showAddExplanationSection: false,
+            typeSelected: false
           });
         },
         className: "font-med font-bold-extra float-right",
@@ -211,7 +212,7 @@ function (_React$Component) {
       }, __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "text"
+            typeSelected: "text"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -223,7 +224,7 @@ function (_React$Component) {
       }, "Write Something"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "podcast"
+            typeSelected: "podcast"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -235,7 +236,7 @@ function (_React$Component) {
       }, "Podcast Snippet"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "youtube"
+            typeSelected: "youtube"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -247,7 +248,7 @@ function (_React$Component) {
       }, "YouTube Clip"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "video"
+            typeSelected: "video"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -259,7 +260,7 @@ function (_React$Component) {
       }, "Record Your Own Video"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "audio"
+            typeSelected: "audio"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -271,7 +272,7 @@ function (_React$Component) {
       }, "Record Your Own Audio"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "tweet"
+            typeSelected: "tweet"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -283,7 +284,7 @@ function (_React$Component) {
       }, "Tweet"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "video"
+            typeSelected: "video"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -295,7 +296,7 @@ function (_React$Component) {
       }, "Upload A Video"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "photo"
+            typeSelected: "photo"
           });
         },
         className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -307,7 +308,7 @@ function (_React$Component) {
       }, "Upload A Photo"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "photo"
+            typeSelected: "photo"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -319,7 +320,7 @@ function (_React$Component) {
       }, "Draw Something And Upload It"), __jsx("div", {
         onClick: function onClick() {
           _this2.setState({
-            type: "link"
+            typeSelected: "link"
           });
         },
         className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
@@ -328,7 +329,7 @@ function (_React$Component) {
           lineNumber: 74
         },
         __self: this
-      }, "Link To Something On The Web"))), this.state.typeSelected && __jsx("div", {
+      }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.typeSelected && __jsx("div", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 80
