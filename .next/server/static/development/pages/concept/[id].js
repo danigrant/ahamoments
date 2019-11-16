@@ -176,7 +176,14 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_12__["saveWrittenExplanationToDB"])(this.state.introText, this.props.loggedInUser.userID, router.query.id);
       } else if (this.state.type == "podcast" || this.state.type == "youtube" || this.state.type == "tweet" || this.state.type == "link") {
         Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_12__["saveExternalLinkExplanationToDB"])(this.state.introText, this.state.mediaLink, this.state.mediaConsumptionGuidance, this.state.activeElement, this.props.loggedInUser.userID, router.query.id);
-      }
+      } // reset the ui
+
+
+      this.setState({
+        showAddExplanationSection: false,
+        typeSelected: false,
+        activeElement: "none"
+      });
     });
 
     this.state = {
@@ -199,47 +206,47 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 60
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55
+        lineNumber: 61
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 62
       },
       __self: this
     }, __jsx("div", {
       className: "columns-parent-div",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 63
       },
       __self: this
     }, __jsx("div", {
       className: "column-80-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 64
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59
+        lineNumber: 65
       },
       __self: this
     }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
       className: "column-20-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 67
       },
       __self: this
     }, !this.state.showAddExplanationSection && __jsx("div", {
@@ -251,7 +258,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 70
       },
       __self: this
     }, "Contribute"), this.state.showAddExplanationSection && __jsx("div", {
@@ -265,55 +272,55 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 74
       },
       __self: this
     }, __jsx("i", {
       className: "material-icons",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 74
       },
       __self: this
     }, "close_rounded"))))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 81
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 82
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 83
       },
       __self: this
     }, "@barackobama "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 85
       },
       __self: this
     }, " ", router.query.id, " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 87
       },
       __self: this
     }, " spoken word")), __jsx("div", {
       className: "media-type-selection-section margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 83
+        lineNumber: 89
       },
       __self: this
     }, __jsx("div", {
@@ -326,7 +333,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "write" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 90
       },
       __self: this
     }, "Write Something"), __jsx("div", {
@@ -339,7 +346,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "podcast" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 91
       },
       __self: this
     }, "Podcast Snippet"), __jsx("div", {
@@ -352,7 +359,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "youtube" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 92
       },
       __self: this
     }, "YouTube Clip"), __jsx("div", {
@@ -365,7 +372,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "recordVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87
+        lineNumber: 93
       },
       __self: this
     }, "Record Your Own Video"), __jsx("div", {
@@ -378,7 +385,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "recordAudio" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 94
       },
       __self: this
     }, "Record Your Own Audio"), __jsx("div", {
@@ -391,7 +398,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "tweet" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 95
       },
       __self: this
     }, "Tweet"), __jsx("div", {
@@ -404,7 +411,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "uploadVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 90
+        lineNumber: 96
       },
       __self: this
     }, "Upload A Video"), __jsx("div", {
@@ -417,7 +424,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "uploadPhoto" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 91
+        lineNumber: 97
       },
       __self: this
     }, "Upload A Photo"), __jsx("div", {
@@ -430,7 +437,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "draw" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 98
       },
       __self: this
     }, "Draw Something And Upload It"), __jsx("div", {
@@ -443,19 +450,19 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: this.state.activeElement == "link" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 99
       },
       __self: this
     }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.type && __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 99
+        lineNumber: 105
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 106
       },
       __self: this
     }, this.state.type == "text" && __jsx(_uploadExplanationComponents_WriteText__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -463,7 +470,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 103
+        lineNumber: 109
       },
       __self: this
     }), this.state.type == "podcast" && __jsx(_uploadExplanationComponents_AddPodcast__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -473,7 +480,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107
+        lineNumber: 113
       },
       __self: this
     }), this.state.type == "youtube" && __jsx(_uploadExplanationComponents_AddYouTube__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -483,7 +490,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111
+        lineNumber: 117
       },
       __self: this
     }), this.state.type == "video" && __jsx(_uploadExplanationComponents_UploadVideo__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -493,7 +500,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115
+        lineNumber: 121
       },
       __self: this
     }), this.state.type == "audio" && __jsx(_uploadExplanationComponents_UploadAudio__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -502,7 +509,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 119
+        lineNumber: 125
       },
       __self: this
     }), this.state.type == "tweet" && __jsx(_uploadExplanationComponents_AddTweet__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -511,7 +518,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 129
       },
       __self: this
     }), this.state.type == "photo" && __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -521,7 +528,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127
+        lineNumber: 133
       },
       __self: this
     }), this.state.type == "link" && __jsx(_uploadExplanationComponents_AddLink__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -530,13 +537,13 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131
+        lineNumber: 137
       },
       __self: this
     })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 134
+        lineNumber: 140
       },
       __self: this
     }, __jsx("div", {
@@ -544,7 +551,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 135
+        lineNumber: 141
       },
       __self: this
     }, "Submit!")))));

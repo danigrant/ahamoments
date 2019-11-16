@@ -47,6 +47,12 @@ class AddExplanationCard extends React.Component {
     } else if (this.state.type == "podcast" || this.state.type == "youtube" || this.state.type == "tweet" || this.state.type == "link") {
       saveExternalLinkExplanationToDB(this.state.introText, this.state.mediaLink, this.state.mediaConsumptionGuidance, this.state.activeElement, this.props.loggedInUser.userID, router.query.id)
     }
+    // reset the ui
+    this.setState({
+      showAddExplanationSection: false,
+      typeSelected: false,
+      activeElement: "none"
+    })
   }
   render() {
     const { router } = this.props
