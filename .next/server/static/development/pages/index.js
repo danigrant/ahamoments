@@ -384,10 +384,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedPhoto */ "./components/explanationMediaComponents/EmbeddedPhoto.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedAudio */ "./components/explanationMediaComponents/EmbeddedAudio.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedVideo */ "./components/explanationMediaComponents/EmbeddedVideo.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedTweet */ "./components/explanationMediaComponents/EmbeddedTweet.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedYouTube */ "./components/explanationMediaComponents/EmbeddedYouTube.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedPodcast */ "./components/explanationMediaComponents/EmbeddedPodcast.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedLink */ "./components/explanationMediaComponents/EmbeddedLink.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_15__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ExplanationCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
 
 
 
@@ -408,19 +422,19 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       className: "explanation-card-wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 24
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 25
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 19
+        lineNumber: 26
       },
       __self: this
     }, __jsx("img", {
@@ -428,110 +442,159 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       src: this.props.explanation.authorAvatarUrl,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 27
       },
       __self: this
     }), __jsx("p", {
       className: "font-color-light-grey inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 28
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 29
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
       href: `/explainer/${this.props.explanation.authorUserID}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 29
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 29
       },
       __self: this
     }, this.props.explanation.authorDisplayName)), " "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 31
       },
       __self: this
     }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
       href: `/concept/${this.props.explanation.concept}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 31
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 31
       },
       __self: this
-    }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_8__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
+    }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_15__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 33
       },
       __self: this
-    }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_8__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_15__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 29
+        lineNumber: 36
       },
       __self: this
     }, __jsx("p", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30
+        lineNumber: 37
       },
       __self: this
-    }, this.props.explanation.explanation.introText), __jsx("p", {
+    }, this.props.explanation.explanation.introText), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      tweet: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 40
       },
       __self: this
-    }, this.props.explanation.explanation.mediaLink), __jsx("p", {
+    }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      audio: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 32
+        lineNumber: 44
+      },
+      __self: this
+    }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_14__["default"], {
+      link: this.props.explanation.explanation.mediaLink,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 48
+      },
+      __self: this
+    }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      photo: this.props.explanation.explanation.mediaLink,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 52
+      },
+      __self: this
+    }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      podcast: this.props.explanation.explanation.mediaLink,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56
+      },
+      __self: this
+    }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      video: this.props.explanation.explanation.mediaLink,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60
+      },
+      __self: this
+    }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      youtube: this.props.explanation.explanation.mediaLink,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 64
+      },
+      __self: this
+    }), __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 66
+      },
+      __self: this
+    }, this.props.explanation.explanation.mediaLink), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69
       },
       __self: this
     }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 72
       },
       __self: this
     }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 73
       },
       __self: this
     }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 74
       },
       __self: this
     }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
       className: "float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 75
       },
       __self: this
     }))));
@@ -1562,6 +1625,322 @@ class TopCreatorsOfWeekSection extends react__WEBPACK_IMPORTED_MODULE_0___defaul
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (TopCreatorsOfWeekSection);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedAudio.js":
+/*!****************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedAudio.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedAudio.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EmbeddedAudio = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "audio"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, props.audio));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedAudio);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedLink.js":
+/*!***************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedLink.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedLink.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EmbeddedLink = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "link"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, props.link));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedLink);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedPhoto.js":
+/*!****************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedPhoto.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedPhoto.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+// fetch photo from firebase
+
+
+
+
+class EmbeddedPhoto extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mediaUrl: false
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      mediaUrl: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_2__["getFileURLFromFirebaseStorage"])(this.props.photo)
+    });
+  }
+
+  render() {
+    if (!this.state.mediaUrl) {
+      return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      });
+    }
+
+    return __jsx("div", {
+      className: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, __jsx("img", {
+      className: "inline-explanation-image",
+      src: this.state.mediaUrl,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedPhoto);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedPodcast.js":
+/*!******************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedPodcast.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedPodcast.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EmbeddedPodcast = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "podcast"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, props.podcast));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedPodcast);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedTweet.js":
+/*!****************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedTweet.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedTweet.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EmbeddedTweet = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "tweet"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, props.tweet));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedTweet);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedVideo.js":
+/*!****************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedVideo.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedVideo.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EmbeddedVideo = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "video"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, props.video));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedVideo);
+
+/***/ }),
+
+/***/ "./components/explanationMediaComponents/EmbeddedYouTube.js":
+/*!******************************************************************!*\
+  !*** ./components/explanationMediaComponents/EmbeddedYouTube.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedYouTube.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const EmbeddedYouTube = props => {
+  return __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 3
+    },
+    __self: undefined
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: undefined
+  }, "youtube"), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: undefined
+  }, props.youtube));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (EmbeddedYouTube);
 
 /***/ }),
 
@@ -3719,6 +4098,11 @@ async function incrementUserExplanationCount(userID) {
   userRef.update({
     explanationCount: increment
   });
+}
+
+async function getFileURLFromFirebaseStorage(url) {
+  let downloadUrl = await storageRef.child(url).getDownloadURL();
+  return downloadUrl;
 } // get and return various data
 
 
@@ -3948,6 +4332,7 @@ module.exports = {
   saveExplanationWithFileToDB,
   saveWrittenExplanationToDB,
   saveExternalLinkExplanationToDB,
+  getFileURLFromFirebaseStorage,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

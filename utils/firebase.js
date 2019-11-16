@@ -191,6 +191,11 @@ async function incrementUserExplanationCount(userID) {
   userRef.update({ explanationCount: increment })
 }
 
+async function getFileURLFromFirebaseStorage(url) {
+  let downloadUrl = await storageRef.child(url).getDownloadURL()
+  return downloadUrl
+}
+
 // get and return various data
 
 async function saveExplanationToDB(explanationObj) {
@@ -422,6 +427,7 @@ module.exports = {
   saveExplanationWithFileToDB,
   saveWrittenExplanationToDB,
   saveExternalLinkExplanationToDB,
+  getFileURLFromFirebaseStorage,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

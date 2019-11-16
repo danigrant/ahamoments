@@ -44,11 +44,11 @@ class AddExplanationCard extends React.Component {
     const { router } = this.props
     e.preventDefault()
     if (this.state.type == "photo" || this.state.type == "video" || this.state.type == "audio") {
-      saveExplanationWithFileToDB(this.state.introText, this.state.fileToUpload, this.state.activeElement, this.props.loggedInUser.userID, router.query.id)
+      saveExplanationWithFileToDB(this.state.introText, this.state.fileToUpload, this.state.type, this.props.loggedInUser.userID, router.query.id)
     } else if (this.state.type == "text") {
       saveWrittenExplanationToDB(this.state.introText, this.props.loggedInUser.userID, router.query.id)
     } else if (this.state.type == "podcast" || this.state.type == "youtube" || this.state.type == "tweet" || this.state.type == "link") {
-      saveExternalLinkExplanationToDB(this.state.introText, this.state.mediaLink, this.state.mediaConsumptionGuidance, this.state.activeElement, this.props.loggedInUser.userID, router.query.id)
+      saveExternalLinkExplanationToDB(this.state.introText, this.state.mediaLink, this.state.mediaConsumptionGuidance, this.state.type, this.props.loggedInUser.userID, router.query.id)
     }
     // reset the ui
     this.setState({
