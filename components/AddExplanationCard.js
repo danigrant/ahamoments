@@ -15,7 +15,8 @@ class AddExplanationCard extends React.Component {
       mediaLink: '',
       mediaConsumptionGuidance: '',
       showAddExplanationSection: false,
-      typeSelected: false
+      typeSelected: false,
+      activeElement: "none" // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
     }
   }
   handleFileChange = (e) => {
@@ -46,7 +47,7 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.showAddExplanationSection &&
-                  <div onClick={() => { this.setState({ showAddExplanationSection: false, typeSelected: false }) }} className="font-med font-bold-extra float-right"><i className="material-icons">close_rounded</i></div>
+                  <div onClick={() => { this.setState({ showAddExplanationSection: false, typeSelected: false, activeElement: "none" }) }} className="font-med font-bold-extra float-right"><i className="material-icons">close_rounded</i></div>
                 }
               </div>
             </div>
@@ -62,16 +63,16 @@ class AddExplanationCard extends React.Component {
                 <span className="link"> spoken word</span>
               </h2>
               <div className="media-type-selection-section margin-top-sml">
-                <div onClick={() => { this.setState({ typeSelected: "text" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Write Something</div>
-                <div onClick={() => { this.setState({ typeSelected: "podcast" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Podcast Snippet</div>
-                <div onClick={() => { this.setState({ typeSelected: "youtube" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">YouTube Clip</div>
-                <div onClick={() => { this.setState({ typeSelected: "video" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Video</div>
-                <div onClick={() => { this.setState({ typeSelected: "audio" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Record Your Own Audio</div>
-                <div onClick={() => { this.setState({ typeSelected: "tweet" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Tweet</div>
-                <div onClick={() => { this.setState({ typeSelected: "video" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Video</div>
-                <div onClick={() => { this.setState({ typeSelected: "photo" }) }} className="action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Upload A Photo</div>
-                <div onClick={() => { this.setState({ typeSelected: "photo" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Draw Something And Upload It</div>
-                <div onClick={() => { this.setState({ typeSelected: "link" }) }} className="action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml">Link To Something On The Web</div>
+                <div onClick={() => { this.setState({ typeSelected: "text", activeElement: "write" }) }} className={this.state.activeElement == "write" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Write Something</div>
+                <div onClick={() => { this.setState({ typeSelected: "podcast", activeElement: "podcast" }) }} className={this.state.activeElement == "podcast" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Podcast Snippet</div>
+                <div onClick={() => { this.setState({ typeSelected: "youtube", activeElement: "youtube" }) }} className={this.state.activeElement == "youtube" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>YouTube Clip</div>
+                <div onClick={() => { this.setState({ typeSelected: "video", activeElement: "recordVideo" }) }} className={this.state.activeElement == "recordVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Record Your Own Video</div>
+                <div onClick={() => { this.setState({ typeSelected: "audio", activeElement: "recordAudio" }) }} className={this.state.activeElement == "recordAudio" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Record Your Own Audio</div>
+                <div onClick={() => { this.setState({ typeSelected: "tweet", activeElement: "tweet" }) }} className={this.state.activeElement == "tweet" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Tweet</div>
+                <div onClick={() => { this.setState({ typeSelected: "video", activeElement: "uploadVideo" }) }} className={this.state.activeElement == "uploadVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Upload A Video</div>
+                <div onClick={() => { this.setState({ typeSelected: "photo", activeElement: "uploadPhoto" }) }} className={this.state.activeElement == "uploadPhoto" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Upload A Photo</div>
+                <div onClick={() => { this.setState({ typeSelected: "photo", activeElement: "draw" }) }} className={this.state.activeElement == "draw" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Draw Something And Upload It</div>
+                <div onClick={() => { this.setState({ typeSelected: "link", activeElement: "link" }) }} className={this.state.activeElement == "link" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml"}>Link To Something On The Web</div>
               </div>
             </CardSection>
           }

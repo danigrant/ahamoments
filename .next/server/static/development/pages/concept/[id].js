@@ -154,7 +154,9 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       mediaLink: '',
       mediaConsumptionGuidance: '',
       showAddExplanationSection: false,
-      typeSelected: false
+      typeSelected: false,
+      activeElement: "none" // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
+
     };
   }
 
@@ -165,47 +167,47 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 36
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 37
       },
       __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
+    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 38
       },
       __self: this
     }, __jsx("div", {
-      className: "column-80-p",
+      className: "columns-parent-div",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 39
+      },
+      __self: this
+    }, __jsx("div", {
+      className: "column-80-p",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 41
       },
       __self: this
     }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
       className: "column-20-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42
+        lineNumber: 43
       },
       __self: this
     }, !this.state.showAddExplanationSection && __jsx("div", {
@@ -217,200 +219,211 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 46
       },
       __self: this
     }, "Contribute"), this.state.showAddExplanationSection && __jsx("div", {
       onClick: () => {
         this.setState({
           showAddExplanationSection: false,
-          typeSelected: false
+          typeSelected: false,
+          activeElement: "none"
         });
       },
       className: "font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     }, __jsx("i", {
       className: "material-icons",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 50
       },
       __self: this
     }, "close_rounded"))))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56
+        lineNumber: 57
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 58
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 59
       },
       __self: this
     }, "@barackobama "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60
+        lineNumber: 61
       },
       __self: this
     }, " ", router.query.id, " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62
+        lineNumber: 63
       },
       __self: this
     }, " spoken word")), __jsx("div", {
       className: "media-type-selection-section margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 65
       },
       __self: this
     }, __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "text"
+          typeSelected: "text",
+          activeElement: "write"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: this
-    }, "Write Something"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          typeSelected: "podcast"
-        });
-      },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "write" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 66
       },
       __self: this
-    }, "Podcast Snippet"), __jsx("div", {
+    }, "Write Something"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "youtube"
+          typeSelected: "podcast",
+          activeElement: "podcast"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "podcast" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 67
       },
       __self: this
-    }, "YouTube Clip"), __jsx("div", {
+    }, "Podcast Snippet"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "video"
+          typeSelected: "youtube",
+          activeElement: "youtube"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "youtube" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 68
       },
       __self: this
-    }, "Record Your Own Video"), __jsx("div", {
+    }, "YouTube Clip"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "audio"
+          typeSelected: "video",
+          activeElement: "recordVideo"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "recordVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 69
       },
       __self: this
-    }, "Record Your Own Audio"), __jsx("div", {
+    }, "Record Your Own Video"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "tweet"
+          typeSelected: "audio",
+          activeElement: "recordAudio"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "recordAudio" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 70
       },
       __self: this
-    }, "Tweet"), __jsx("div", {
+    }, "Record Your Own Audio"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "video"
+          typeSelected: "tweet",
+          activeElement: "tweet"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "tweet" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 71
       },
       __self: this
-    }, "Upload A Video"), __jsx("div", {
+    }, "Tweet"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "photo"
+          typeSelected: "video",
+          activeElement: "uploadVideo"
         });
       },
-      className: "action-button button background-purple rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "uploadVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 72
       },
       __self: this
-    }, "Upload A Photo"), __jsx("div", {
+    }, "Upload A Video"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "photo"
+          typeSelected: "photo",
+          activeElement: "uploadPhoto"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "uploadPhoto" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 73
       },
       __self: this
-    }, "Draw Something And Upload It"), __jsx("div", {
+    }, "Upload A Photo"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "link"
+          typeSelected: "photo",
+          activeElement: "draw"
         });
       },
-      className: "action-button button background-dark-grey rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      className: this.state.activeElement == "draw" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 74
       },
       __self: this
+    }, "Draw Something And Upload It"), __jsx("div", {
+      onClick: () => {
+        this.setState({
+          typeSelected: "link",
+          activeElement: "link"
+        });
+      },
+      className: this.state.activeElement == "link" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75
+      },
+      __self: this
     }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.typeSelected && __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 81
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 82
       },
       __self: this
     }, __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -419,13 +432,13 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 83
       },
       __self: this
     })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84
+        lineNumber: 85
       },
       __self: this
     }, __jsx("div", {
@@ -433,7 +446,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 86
       },
       __self: this
     }, "Submit!")))));
