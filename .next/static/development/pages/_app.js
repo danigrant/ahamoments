@@ -61475,7 +61475,7 @@ function _saveExplanationToDB() {
               "explanation": {
                 "introText": explanationObj.explanation.introText,
                 "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
-                "mediaLink": explanationObj.explanation.mediaLink,
+                "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type
               }
             };
@@ -61494,8 +61494,7 @@ function _saveExplanationToDB() {
 
 function saveExplanationWithFileToDB(_x10, _x11, _x12, _x13, _x14) {
   return _saveExplanationWithFileToDB.apply(this, arguments);
-} // returns 2 concepts for the front page that need love as an obj
-
+}
 
 function _saveExplanationWithFileToDB() {
   _saveExplanationWithFileToDB = (0, _asyncToGenerator2["default"])(
@@ -61550,6 +61549,53 @@ function _saveExplanationWithFileToDB() {
   return _saveExplanationWithFileToDB.apply(this, arguments);
 }
 
+function saveWrittenExplanationToDB(_x15, _x16, _x17) {
+  return _saveWrittenExplanationToDB.apply(this, arguments);
+} // returns 2 concepts for the front page that need love as an obj
+
+
+function _saveWrittenExplanationToDB() {
+  _saveWrittenExplanationToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee10(text, userID, concept) {
+    var cleanText, userObj;
+    return _regenerator["default"].wrap(function _callee10$(_context10) {
+      while (1) {
+        switch (_context10.prev = _context10.next) {
+          case 0:
+            // first remove any html or scripts because xss
+            cleanText = text.replace('<script>', '').replace('onclick', '').replace('onerror').replace('onResize', '').replace('onPropertyChange', '').replace('onMouseEnter', '').replace('onFocus', ''); // https://gist.github.com/JohannesHoppe/5612274
+            // then save explanation to firestore
+            // first to do that, need some user profile data
+
+            _context10.next = 3;
+            return getUserProfileInfoByUserID(userID);
+
+          case 3:
+            userObj = _context10.sent;
+            _context10.next = 6;
+            return saveExplanationToDB({
+              "concept": concept,
+              "authorUserID": userID,
+              "authorDisplayName": userObj.displayName,
+              "authorAvatarUrl": userObj.avatarUrl,
+              "datetime": firebase.firestore.Timestamp.now(),
+              "explanation": {
+                "introText": text,
+                "type": "text"
+              }
+            });
+
+          case 6:
+          case "end":
+            return _context10.stop();
+        }
+      }
+    }, _callee10);
+  }));
+  return _saveWrittenExplanationToDB.apply(this, arguments);
+}
+
 function getConceptsThatNeedLove() {
   return _getConceptsThatNeedLove.apply(this, arguments);
 } // returns top 5 creators in an array
@@ -61558,12 +61604,12 @@ function getConceptsThatNeedLove() {
 function _getConceptsThatNeedLove() {
   _getConceptsThatNeedLove = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee10() {
-    return _regenerator["default"].wrap(function _callee10$(_context10) {
+  _regenerator["default"].mark(function _callee11() {
+    return _regenerator["default"].wrap(function _callee11$(_context11) {
       while (1) {
-        switch (_context10.prev = _context10.next) {
+        switch (_context11.prev = _context11.next) {
           case 0:
-            return _context10.abrupt("return", {
+            return _context11.abrupt("return", {
               "totalAmountOfConceptsNeedingLove": 43,
               "conceptsNeedingLoveToDisplay": [{
                 "conceptName": "Derivative",
@@ -61578,10 +61624,10 @@ function _getConceptsThatNeedLove() {
 
           case 1:
           case "end":
-            return _context10.stop();
+            return _context11.stop();
         }
       }
-    }, _callee10);
+    }, _callee11);
   }));
   return _getConceptsThatNeedLove.apply(this, arguments);
 }
@@ -61594,20 +61640,20 @@ function getTopCreatorsAllTime() {
 function _getTopCreatorsAllTime() {
   _getTopCreatorsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee11() {
+  _regenerator["default"].mark(function _callee12() {
     var snapshot, data;
-    return _regenerator["default"].wrap(function _callee11$(_context11) {
+    return _regenerator["default"].wrap(function _callee12$(_context12) {
       while (1) {
-        switch (_context11.prev = _context11.next) {
+        switch (_context12.prev = _context12.next) {
           case 0:
-            _context11.next = 2;
+            _context12.next = 2;
             return usersRef.get();
 
           case 2:
-            snapshot = _context11.sent;
+            snapshot = _context12.sent;
             //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
-            _context11.next = 6;
+            _context12.next = 6;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61625,14 +61671,14 @@ function _getTopCreatorsAllTime() {
             });
 
           case 6:
-            return _context11.abrupt("return", data);
+            return _context12.abrupt("return", data);
 
           case 7:
           case "end":
-            return _context11.stop();
+            return _context12.stop();
         }
       }
-    }, _callee11);
+    }, _callee12);
   }));
   return _getTopCreatorsAllTime.apply(this, arguments);
 }
@@ -61644,20 +61690,20 @@ function getTopExplanationsAllTime() {
 function _getTopExplanationsAllTime() {
   _getTopExplanationsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee12() {
+  _regenerator["default"].mark(function _callee13() {
     var snapshot, data;
-    return _regenerator["default"].wrap(function _callee12$(_context12) {
+    return _regenerator["default"].wrap(function _callee13$(_context13) {
       while (1) {
-        switch (_context12.prev = _context12.next) {
+        switch (_context13.prev = _context13.next) {
           case 0:
-            _context12.next = 2;
+            _context13.next = 2;
             return explanationsRef.get();
 
           case 2:
-            snapshot = _context12.sent;
+            snapshot = _context13.sent;
             //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
-            _context12.next = 6;
+            _context13.next = 6;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61683,14 +61729,14 @@ function _getTopExplanationsAllTime() {
             });
 
           case 6:
-            return _context12.abrupt("return", data);
+            return _context13.abrupt("return", data);
 
           case 7:
           case "end":
-            return _context12.stop();
+            return _context13.stop();
         }
       }
-    }, _callee12);
+    }, _callee13);
   }));
   return _getTopExplanationsAllTime.apply(this, arguments);
 }
@@ -61703,12 +61749,12 @@ function getTopConceptsAllTime() {
 function _getTopConceptsAllTime() {
   _getTopConceptsAllTime = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee13() {
-    return _regenerator["default"].wrap(function _callee13$(_context13) {
+  _regenerator["default"].mark(function _callee14() {
+    return _regenerator["default"].wrap(function _callee14$(_context14) {
       while (1) {
-        switch (_context13.prev = _context13.next) {
+        switch (_context14.prev = _context14.next) {
           case 0:
-            return _context13.abrupt("return", [{
+            return _context14.abrupt("return", [{
               "conceptName": "Integrals",
               // these need to be transformed into - instead of space
               "explanationCount": 10,
@@ -61737,36 +61783,36 @@ function _getTopConceptsAllTime() {
 
           case 1:
           case "end":
-            return _context13.stop();
+            return _context14.stop();
         }
       }
-    }, _callee13);
+    }, _callee14);
   }));
   return _getTopConceptsAllTime.apply(this, arguments);
 }
 
-function getConceptExplanations(_x15) {
+function getConceptExplanations(_x18) {
   return _getConceptExplanations.apply(this, arguments);
 }
 
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee14(concept) {
+  _regenerator["default"].mark(function _callee15(concept) {
     var formattedConcept, snapshot, data;
-    return _regenerator["default"].wrap(function _callee14$(_context14) {
+    return _regenerator["default"].wrap(function _callee15$(_context15) {
       while (1) {
-        switch (_context14.prev = _context14.next) {
+        switch (_context15.prev = _context15.next) {
           case 0:
             formattedConcept = concept.toLowerCase();
-            _context14.next = 3;
+            _context15.next = 3;
             return explanationsRef.where('concept', '==', formattedConcept).get();
 
           case 3:
-            snapshot = _context14.sent;
+            snapshot = _context15.sent;
             //.orderBy('score', 'desc').get()
             data = [];
-            _context14.next = 7;
+            _context15.next = 7;
             return snapshot.forEach(function (doc) {
               var docData = doc.data();
               data.push({
@@ -61792,14 +61838,14 @@ function _getConceptExplanations() {
             });
 
           case 7:
-            return _context14.abrupt("return", data);
+            return _context15.abrupt("return", data);
 
           case 8:
           case "end":
-            return _context14.stop();
+            return _context15.stop();
         }
       }
-    }, _callee14);
+    }, _callee15);
   }));
   return _getConceptExplanations.apply(this, arguments);
 }
@@ -61811,6 +61857,7 @@ module.exports = {
   getLoggedInUser: getLoggedInUser,
   getUserByID: getUserByID,
   saveExplanationWithFileToDB: saveExplanationWithFileToDB,
+  saveWrittenExplanationToDB: saveWrittenExplanationToDB,
   getTopConceptsAllTime: getTopConceptsAllTime,
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,

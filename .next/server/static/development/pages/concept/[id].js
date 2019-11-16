@@ -157,18 +157,22 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
         router
       } = this.props;
       e.preventDefault();
-      Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_12__["saveExplanationWithFileToDB"])(this.state.introText, this.state.fileToUpload, this.state.type, this.props.loggedInUser.userID, router.query.id);
+
+      if (this.state.type == "photo" || this.state.type == "video" || this.state.type == "audio") {
+        Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_12__["saveExplanationWithFileToDB"])(this.state.introText, this.state.fileToUpload, this.state.type, this.props.loggedInUser.userID, router.query.id);
+      } else if (this.state.type == "text") {
+        Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_12__["saveWrittenExplanationToDB"])(this.state.introText, this.props.loggedInUser.userID, router.query.id);
+      }
     });
 
     this.state = {
-      type: '',
+      type: false,
       // photo, video, audio, podcast, youtube, tweet, link, text
       fileToUpload: '',
       introText: '',
       mediaLink: '',
       mediaConsumptionGuidance: '',
       showAddExplanationSection: false,
-      typeSelected: false,
       activeElement: "none" // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
 
     };
@@ -181,47 +185,47 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 46
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 47
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 48
       },
       __self: this
     }, __jsx("div", {
       className: "columns-parent-div",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 49
       },
       __self: this
     }, __jsx("div", {
       className: "column-80-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 50
       },
       __self: this
     }, __jsx("p", {
       className: "font-color-light-grey",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 51
       },
       __self: this
     }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
       className: "column-20-p",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 53
       },
       __self: this
     }, !this.state.showAddExplanationSection && __jsx("div", {
@@ -233,7 +237,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53
+        lineNumber: 56
       },
       __self: this
     }, "Contribute"), this.state.showAddExplanationSection && __jsx("div", {
@@ -247,263 +251,262 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "font-med font-bold-extra float-right",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 60
       },
       __self: this
     }, __jsx("i", {
       className: "material-icons",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 60
       },
       __self: this
     }, "close_rounded"))))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 67
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 68
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 69
       },
       __self: this
     }, "@barackobama "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 68
+        lineNumber: 71
       },
       __self: this
     }, " ", router.query.id, " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 73
       },
       __self: this
     }, " spoken word")), __jsx("div", {
       className: "media-type-selection-section margin-top-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 75
       },
       __self: this
     }, __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "text",
+          type: "text",
           activeElement: "write"
         });
       },
       className: this.state.activeElement == "write" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 76
       },
       __self: this
     }, "Write Something"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "podcast",
+          type: "podcast",
           activeElement: "podcast"
         });
       },
       className: this.state.activeElement == "podcast" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74
+        lineNumber: 77
       },
       __self: this
     }, "Podcast Snippet"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "youtube",
+          type: "youtube",
           activeElement: "youtube"
         });
       },
       className: this.state.activeElement == "youtube" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75
+        lineNumber: 78
       },
       __self: this
     }, "YouTube Clip"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "video",
+          type: "video",
           activeElement: "recordVideo"
         });
       },
       className: this.state.activeElement == "recordVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 76
+        lineNumber: 79
       },
       __self: this
     }, "Record Your Own Video"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "audio",
+          type: "audio",
           activeElement: "recordAudio"
         });
       },
       className: this.state.activeElement == "recordAudio" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 80
       },
       __self: this
     }, "Record Your Own Audio"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "tweet",
+          type: "tweet",
           activeElement: "tweet"
         });
       },
       className: this.state.activeElement == "tweet" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 81
       },
       __self: this
     }, "Tweet"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "video",
+          type: "video",
           activeElement: "uploadVideo"
         });
       },
       className: this.state.activeElement == "uploadVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 82
       },
       __self: this
     }, "Upload A Video"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "photo",
+          type: "photo",
           activeElement: "uploadPhoto"
         });
       },
       className: this.state.activeElement == "uploadPhoto" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 83
       },
       __self: this
     }, "Upload A Photo"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "photo",
+          type: "photo",
           activeElement: "draw"
         });
       },
       className: this.state.activeElement == "draw" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 84
       },
       __self: this
     }, "Draw Something And Upload It"), __jsx("div", {
       onClick: () => {
         this.setState({
-          typeSelected: "link",
+          type: "link",
           activeElement: "link"
         });
       },
       className: this.state.activeElement == "link" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 85
       },
       __self: this
-    }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.typeSelected && __jsx("div", {
+    }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.type && __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 91
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, this.state.typeSelected == "text" && __jsx(_uploadExplanationComponents_WriteText__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 92
       },
       __self: this
-    }), this.state.typeSelected == "podcast" && __jsx(_uploadExplanationComponents_AddPodcast__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
+    }, this.state.type == "text" && __jsx(_uploadExplanationComponents_WriteText__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      handleTextChange: this.handleIntroTextChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 96
+        lineNumber: 95
       },
       __self: this
-    }), this.state.typeSelected == "youtube" && __jsx(_uploadExplanationComponents_AddYouTube__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }), this.state.type == "podcast" && __jsx(_uploadExplanationComponents_AddPodcast__WEBPACK_IMPORTED_MODULE_8__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 100
+        lineNumber: 99
       },
       __self: this
-    }), this.state.typeSelected == "video" && __jsx(_uploadExplanationComponents_UploadVideo__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), this.state.type == "youtube" && __jsx(_uploadExplanationComponents_AddYouTube__WEBPACK_IMPORTED_MODULE_10__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 104
+        lineNumber: 103
       },
       __self: this
-    }), this.state.typeSelected == "audio" && __jsx(_uploadExplanationComponents_UploadAudio__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    }), this.state.type == "video" && __jsx(_uploadExplanationComponents_UploadVideo__WEBPACK_IMPORTED_MODULE_5__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108
+        lineNumber: 107
       },
       __self: this
-    }), this.state.typeSelected == "tweet" && __jsx(_uploadExplanationComponents_AddTweet__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), this.state.type == "audio" && __jsx(_uploadExplanationComponents_UploadAudio__WEBPACK_IMPORTED_MODULE_6__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 112
+        lineNumber: 111
       },
       __self: this
-    }), this.state.typeSelected == "photo" && __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), this.state.type == "tweet" && __jsx(_uploadExplanationComponents_AddTweet__WEBPACK_IMPORTED_MODULE_7__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 116
+        lineNumber: 115
       },
       __self: this
-    }), this.state.typeSelected == "link" && __jsx(_uploadExplanationComponents_AddLink__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }), this.state.type == "photo" && __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      handleIntroTextChange: this.handleIntroTextChange,
+      handleFileChange: this.handleFileChange,
+      currentConcept: router.query.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 119
+      },
+      __self: this
+    }), this.state.type == "link" && __jsx(_uploadExplanationComponents_AddLink__WEBPACK_IMPORTED_MODULE_9__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
@@ -512,13 +515,13 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120
+        lineNumber: 123
       },
       __self: this
     })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123
+        lineNumber: 126
       },
       __self: this
     }, __jsx("div", {
@@ -526,7 +529,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       className: "action-button button background-purple rounded-border font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 124
+        lineNumber: 127
       },
       __self: this
     }, "Submit!")))));
@@ -2279,12 +2282,9 @@ class WriteText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendFileChangeToParent", e => {
-      this.props.handleFileChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendTextChangeToParent", e => {
+      console.log(this.props);
+      this.props.handleTextChange(e);
     });
 
     this.state = {
@@ -2296,25 +2296,25 @@ class WriteText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
     return __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 18
       },
       __self: this
     }, __jsx("form", {
       className: "add-explanation-form",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21
+        lineNumber: 19
       },
       __self: this
     }, __jsx("h2", {
       className: "font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 20
       },
       __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
+    }, "Go for it! Teach us."), __jsx("textarea", {
+      onChange: this.sendTextChangeToParent,
       className: "margin-top-sml font-med background-grey rounded-border light-border",
       type: "text",
       name: "text",
@@ -2322,25 +2322,7 @@ class WriteText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
       rows: "5",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Write Text"), __jsx("input", {
-      onChange: this.sendFileChangeToParent,
-      className: "margin-top-sml font-med",
-      type: "file",
-      name: "photo-upload",
-      accept: "image/*",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 21
       },
       __self: this
     })));
@@ -4499,7 +4481,7 @@ async function saveExplanationToDB(explanationObj) {
     "explanation": {
       "introText": explanationObj.explanation.introText,
       "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
-      "mediaLink": explanationObj.explanation.mediaLink,
+      "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
       "type": explanationObj.explanation.type
     }
   };
@@ -4531,6 +4513,27 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
       "introText": introText,
       "mediaLink": snapshot.metadata.fullPath,
       "type": fileType
+    }
+  });
+}
+
+async function saveWrittenExplanationToDB(text, userID, concept) {
+  // first remove any html or scripts because xss
+  let cleanText = text.replace('<script>', '').replace('onclick', '').replace('onerror').replace('onResize', '').replace('onPropertyChange', '').replace('onMouseEnter', '').replace('onFocus', ''); // https://gist.github.com/JohannesHoppe/5612274
+  // then save explanation to firestore
+  // first to do that, need some user profile data
+
+  let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
+
+  await saveExplanationToDB({
+    "concept": concept,
+    "authorUserID": userID,
+    "authorDisplayName": userObj.displayName,
+    "authorAvatarUrl": userObj.avatarUrl,
+    "datetime": firebase.firestore.Timestamp.now(),
+    "explanation": {
+      "introText": text,
+      "type": "text"
     }
   });
 } // returns 2 concepts for the front page that need love as an obj
@@ -4673,6 +4676,7 @@ module.exports = {
   getLoggedInUser,
   getUserByID,
   saveExplanationWithFileToDB,
+  saveWrittenExplanationToDB,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

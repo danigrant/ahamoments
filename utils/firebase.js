@@ -203,7 +203,7 @@ async function saveExplanationToDB(explanationObj) {
     "explanation": {
       "introText": explanationObj.explanation.introText,
       "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.mediaConsumptionGuidance : "",
-      "mediaLink": explanationObj.explanation.mediaLink,
+      "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
       "type": explanationObj.explanation.type
     }
   }
@@ -235,6 +235,29 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
       "introText": introText,
       "mediaLink": snapshot.metadata.fullPath,
       "type": fileType
+    }
+  })
+}
+
+async function saveWrittenExplanationToDB(text, userID, concept) {
+  // first remove any html or scripts because xss
+  let cleanText = text.replace('<script>','').replace('onclick', '').replace('onerror').replace('onResize', '').replace('onPropertyChange', '').replace('onMouseEnter', '').replace('onFocus', '') // https://gist.github.com/JohannesHoppe/5612274
+
+  // then save explanation to firestore
+
+  // first to do that, need some user profile data
+  let userObj = await getUserProfileInfoByUserID(userID)
+
+  // then save to firebase
+  await saveExplanationToDB({
+    "concept": concept,
+    "authorUserID": userID,
+    "authorDisplayName": userObj.displayName,
+    "authorAvatarUrl": userObj.avatarUrl,
+    "datetime": firebase.firestore.Timestamp.now(),
+    "explanation": {
+      "introText": text,
+      "type": "text"
     }
   })
 }
@@ -377,6 +400,7 @@ module.exports = {
   getLoggedInUser,
   getUserByID,
   saveExplanationWithFileToDB,
+  saveWrittenExplanationToDB,
   getTopConceptsAllTime,
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,

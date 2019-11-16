@@ -9,20 +9,16 @@ class WriteText extends React.Component {
       fileToUpload: ''
     }
   }
-  sendFileChangeToParent = (e) => {
-    this.props.handleFileChange(e)
-  }
-  sendIntroTextChangeToParent = (e) => {
-    this.props.handleIntroTextChange(e)
+  sendTextChangeToParent = (e) => {
+    console.log(this.props);
+    this.props.handleTextChange(e)
   }
   render() {
     return (
       <div>
         <form className="add-explanation-form">
-          <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-          <textarea onChange={this.sendIntroTextChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
-          <h2 className="font-med font-bold-med margin-top-sml">Write Text</h2>
-          <input onChange={this.sendFileChangeToParent} className="margin-top-sml font-med" type="file" name="photo-upload" accept="image/*" />
+          <h2 className="font-med font-bold-med">Go for it! Teach us.</h2>
+          <textarea onChange={this.sendTextChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
         </form>
       </div>
     )
