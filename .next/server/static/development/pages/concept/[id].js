@@ -515,6 +515,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       },
       __self: this
     }), this.state.type == "photo" && __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      mode: this.state.activeElement == "uploadPhoto" ? "upload" : "draw",
       handleIntroTextChange: this.handleIntroTextChange,
       handleFileChange: this.handleFileChange,
       currentConcept: router.query.id,
@@ -525,10 +526,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Co
       __self: this
     }), this.state.type == "link" && __jsx(_uploadExplanationComponents_AddLink__WEBPACK_IMPORTED_MODULE_9__["default"], {
       handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
-      currentConcept: router.query.id,
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
+      handleMediaLinkChange: this.handleMediaLinkChange,
       currentConcept: router.query.id,
       __source: {
         fileName: _jsxFileName,
@@ -1557,12 +1555,12 @@ class AddLink extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
   constructor(props) {
     super(props);
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendFileChangeToParent", e => {
-      this.props.handleFileChange(e);
-    });
-
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
       this.props.handleIntroTextChange(e);
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaLinkChangeToParent", e => {
+      this.props.handleMediaLinkChange(e);
     });
 
     this.state = {
@@ -1610,12 +1608,12 @@ class AddLink extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
         lineNumber: 24
       },
       __self: this
-    }, "Add Link"), __jsx("input", {
-      onChange: this.sendFileChangeToParent,
-      className: "margin-top-sml font-med",
-      type: "file",
-      name: "photo-upload",
-      accept: "image/*",
+    }, "Link"), __jsx("input", {
+      onChange: this.sendMediaLinkChangeToParent,
+      className: "margin-top-sml font-med background-grey rounded-border light-border",
+      type: "text",
+      placeholder: "https:// ...",
+      name: "link-input",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 25
@@ -1626,15 +1624,7 @@ class AddLink extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (AddLink); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
+/* harmony default export */ __webpack_exports__["default"] = (AddLink);
 
 /***/ }),
 
@@ -2208,7 +2198,14 @@ class UploadImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
         lineNumber: 24
       },
       __self: this
-    }, "Upload Your Photo"), __jsx("input", {
+    }, "Upload Your Photo"), this.props.mode == "draw" && __jsx("p", {
+      className: "font-color-light-grey font-med font-bold-med",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, "Draw a picture and then upload it here. Your drawing can be a comic, a diagram, a chart, an illustration, anything you can do in pictionary you can do here. Can\u2019t wait to see what you come up with."), __jsx("input", {
       onChange: this.sendFileChangeToParent,
       className: "margin-top-sml font-med",
       type: "file",
@@ -2216,7 +2213,7 @@ class UploadImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component
       accept: "image/*",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 29
       },
       __self: this
     })));

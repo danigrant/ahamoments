@@ -124,11 +124,11 @@ class AddExplanationCard extends React.Component {
                 }
                 {
                   this.state.type == "photo" &&
-                  <UploadImage handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                  <UploadImage mode={this.state.activeElement == "uploadPhoto" ? "upload" : "draw"} handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
                 }
                 {
                   this.state.type == "link" &&
-                  <AddLink handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                  <AddLink handleIntroTextChange={this.handleIntroTextChange} handleMediaLinkChange={this.handleMediaLinkChange} currentConcept={router.query.id} />
                 }
               </CardSection>
               <CardSection>

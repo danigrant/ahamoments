@@ -22,6 +22,10 @@ class UploadImage extends React.Component {
           <h2 className="font-med font-bold-med">Optional Intro Text</h2>
           <textarea onChange={this.sendIntroTextChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
           <h2 className="font-med font-bold-med margin-top-sml">Upload Your Photo</h2>
+          {
+            this.props.mode == "draw" &&
+            <p className="font-color-light-grey font-med font-bold-med">Draw a picture and then upload it here. Your drawing can be a comic, a diagram, a chart, an illustration, anything you can do in pictionary you can do here. Can’t wait to see what you come up with.</p>
+          }
           <input onChange={this.sendFileChangeToParent} className="margin-top-sml font-med" type="file" name="photo-upload" accept="image/*" />
         </form>
       </div>
