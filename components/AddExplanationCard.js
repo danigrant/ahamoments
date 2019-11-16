@@ -40,7 +40,14 @@ class AddExplanationCard extends React.Component {
                 <p className="font-color-light-grey">Add your own explanation and give someone an aha moment.</p>
               </div>
               <div className="column-20-p">
-                <div className="action-button button background-purple rounded-border font-med font-bold-extra float-right">Contribute</div>
+                {
+                  !this.state.showAddExplanationSection &&
+                  <div onClick={() => { this.setState({ showAddExplanationSection: true }) }} className="action-button button background-purple rounded-border font-med font-bold-extra float-right">Contribute</div>
+                }
+                {
+                  this.state.showAddExplanationSection &&
+                  <div onClick={() => { this.setState({ showAddExplanationSection: false }) }} className="action-button button background-purple rounded-border font-med font-bold-extra float-right">Close</div>
+                }
               </div>
             </div>
           </CardSection>
