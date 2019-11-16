@@ -1856,31 +1856,51 @@ const EmbeddedPodcast = props => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedTweet.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const EmbeddedTweet = props => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: undefined
-  }, "tweet"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, props.tweet));
-};
+
+
+
+class EmbeddedTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      embedHTML: false
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      embedHTML: await Object(_utils_utils__WEBPACK_IMPORTED_MODULE_2__["getTwitterEmbed"])(this.props.tweet)
+    });
+  }
+
+  render() {
+    if (!this.state.embedHTML) {
+      return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      });
+    }
+
+    return __jsx("div", {
+      className: "center",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, this.state.embedHTML);
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (EmbeddedTweet);
 
@@ -5356,10 +5376,21 @@ const generateFilePathAndName = (fileType, userID, concept) => {
   return `/${concept}/${fileType}/${userID}/${randomID}`;
 };
 
+async function getTwitterEmbed(tweetUrl) {
+  let twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0];
+  let twitterStatus = tweetUrl.split('status/')[1].split('?')[0];
+  let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385`); // let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=${twitterUser}&status=${twitterStatus}`)
+
+  let text = await res.text();
+  console.log();
+  return text;
+}
+
 module.exports = {
   conceptToDisplayName,
   explanationTypeToDisplayType,
-  generateFilePathAndName
+  generateFilePathAndName,
+  getTwitterEmbed
 };
 
 /***/ }),
