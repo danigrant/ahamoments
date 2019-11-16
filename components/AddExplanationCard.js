@@ -2,6 +2,13 @@ import React from 'react'
 import Card from './Card'
 import CardSection from './CardSection'
 import UploadImage from './uploadExplanationComponents/UploadImage'
+import UploadVideo from './uploadExplanationComponents/UploadVideo'
+import UploadAudio from './uploadExplanationComponents/UploadAudio'
+import AddTweet from './uploadExplanationComponents/AddTweet'
+import AddPodcast from './uploadExplanationComponents/AddPodcast'
+import AddLink from './uploadExplanationComponents/AddLink'
+import AddYouTube from './uploadExplanationComponents/AddYouTube'
+import WriteText from './uploadExplanationComponents/WriteText'
 import { saveExplanationWithFileToDB } from '../utils/firebase'
 import { withRouter } from 'next/router'
 
@@ -80,7 +87,38 @@ class AddExplanationCard extends React.Component {
             this.state.showAddExplanationSection && this.state.typeSelected &&
             <div>
               <CardSection>
-                <UploadImage handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                {
+                  this.state.typeSelected == "text" &&
+                  <WriteText handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "podcast" &&
+                  <AddPodcast handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "youtube" &&
+                  <AddYouTube handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "video" &&
+                  <UploadVideo handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "audio" &&
+                  <UploadAudio handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "tweet" &&
+                  <AddTweet handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "photo" &&
+                  <UploadImage handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
+                {
+                  this.state.typeSelected == "link" &&
+                  <AddLink handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} handleIntroTextChange={this.handleIntroTextChange} handleFileChange={this.handleFileChange} currentConcept={router.query.id} />
+                }
               </CardSection>
               <CardSection>
                 <div onClick={this.handleSubmit} className="action-button button background-purple rounded-border font-med font-bold-med">Submit!</div>
