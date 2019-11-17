@@ -16,16 +16,17 @@ class EmbeddedVideo extends React.Component {
   }
   render() {
     if (!this.state.mediaUrl) {
-      return <Loading />
+      return <div>loading...</div>
+    } else {
+      return (
+        <div className="center">
+          <video className="inline-explanation-video" controls>
+            <source src={this.state.mediaUrl} />
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
+      )
     }
-    return (
-      <div className="center">
-        <video className="inline-explanation-video" controls>
-          <source src={this.state.mediaUrl} />
-          Sorry, your browser doesn't support embedded videos.
-        </video>
-      </div>
-    )
   }
 }
 

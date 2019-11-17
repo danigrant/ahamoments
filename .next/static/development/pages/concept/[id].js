@@ -1742,38 +1742,38 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.state.mediaUrl) {
-        return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 19
           },
           __self: this
-        });
+        }, "loading...");
+      } else {
+        return __jsx("div", {
+          className: "center",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, __jsx("audio", {
+          className: "inline-explanation-audio",
+          controls: true,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }, __jsx("source", {
+          src: this.state.mediaUrl,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }), "Your browser does not support in-browser audio players."));
       }
-
-      return __jsx("div", {
-        className: "center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, __jsx("audio", {
-        className: "inline-explanation-audio",
-        controls: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, __jsx("source", {
-        src: this.state.mediaUrl,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }), "Your browser does not support in-browser audio players."));
     }
   }]);
 
@@ -1917,31 +1917,31 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.state.mediaUrl) {
-        return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 19
           },
           __self: this
-        });
+        }, "loading...");
+      } else {
+        return __jsx("div", {
+          className: "center",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, __jsx("img", {
+          className: "inline-explanation-image",
+          src: this.state.mediaUrl,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }));
       }
-
-      return __jsx("div", {
-        className: "center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, __jsx("img", {
-        className: "inline-explanation-image",
-        src: this.state.mediaUrl,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }));
     }
   }]);
 
@@ -2039,7 +2039,7 @@ function (_React$Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(EmbeddedTweet).call(this, props));
     _this.state = {
-      embedHTML: false
+      tweetID: false
     };
     return _this;
   }
@@ -2054,11 +2054,16 @@ function (_React$Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                this.setState({
+                  tweetID: this.props.tweet.split('status/')[1].split('?')[0]
+                });
+
+              case 1:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, this);
       }));
 
       function componentDidMount() {
@@ -2070,21 +2075,31 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return __jsx("div", {
-        className: "center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 17
-        },
-        __self: this
-      }, __jsx(react_twitter_embed__WEBPACK_IMPORTED_MODULE_9__["TwitterTweetEmbed"], {
-        tweetId: '1148350276983824385',
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 18
-        },
-        __self: this
-      }));
+      if (!this.state.tweetID) {
+        return __jsx("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          },
+          __self: this
+        }, "loading...");
+      } else {
+        return __jsx("div", {
+          className: "center",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }, __jsx(react_twitter_embed__WEBPACK_IMPORTED_MODULE_9__["TwitterTweetEmbed"], {
+          tweetId: this.state.tweetID,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }));
+      }
     }
   }]);
 
@@ -2187,38 +2202,38 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       if (!this.state.mediaUrl) {
-        return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 19
           },
           __self: this
-        });
+        }, "loading...");
+      } else {
+        return __jsx("div", {
+          className: "center",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          },
+          __self: this
+        }, __jsx("video", {
+          className: "inline-explanation-video",
+          controls: true,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          },
+          __self: this
+        }, __jsx("source", {
+          src: this.state.mediaUrl,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }), "Sorry, your browser doesn't support embedded videos."));
       }
-
-      return __jsx("div", {
-        className: "center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 22
-        },
-        __self: this
-      }, __jsx("video", {
-        className: "inline-explanation-video",
-        controls: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 23
-        },
-        __self: this
-      }, __jsx("source", {
-        src: this.state.mediaUrl,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }), "Sorry, your browser doesn't support embedded videos."));
     }
   }]);
 

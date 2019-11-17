@@ -7,19 +7,26 @@ class EmbeddedTweet extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      embedHTML: false
+      tweetID: false
     }
   }
   async componentDidMount() {
+    this.setState({
+      tweetID: this.props.tweet.split('status/')[1].split('?')[0]
+    })
   }
   render() {
-    return (
-      <div className="center">
-        <TwitterTweetEmbed
-          tweetId={'1148350276983824385'}
-        />
-      </div>
-    )
+    if (!this.state.tweetID) {
+      return <div>loading...</div>
+    } else {
+      return (
+        <div className="center">
+          <TwitterTweetEmbed
+            tweetId={this.state.tweetID}
+          />
+        </div>
+      )
+    }
   }
 }
 

@@ -16,16 +16,17 @@ class EmbeddedAudio extends React.Component {
   }
   render() {
     if (!this.state.mediaUrl) {
-      return <Loading />
+      return <div>loading...</div>
+    } else {
+      return (
+        <div className="center">
+          <audio className="inline-explanation-audio" controls>
+            <source src={this.state.mediaUrl} />
+            Your browser does not support in-browser audio players.
+          </audio>
+        </div>
+      )
     }
-    return (
-      <div className="center">
-        <audio className="inline-explanation-audio" controls>
-          <source src={this.state.mediaUrl} />
-          Your browser does not support in-browser audio players.
-        </audio>
-      </div>
-    )
   }
 }
 

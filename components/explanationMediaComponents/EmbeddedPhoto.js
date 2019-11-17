@@ -16,13 +16,14 @@ class EmbeddedPhoto extends React.Component {
   }
   render() {
     if (!this.state.mediaUrl) {
-      return <Loading />
+      return <div>loading...</div>
+    } else {
+      return (
+        <div className="center">
+          <img className="inline-explanation-image" src={this.state.mediaUrl} />
+        </div>
+      )
     }
-    return (
-      <div className="center">
-        <img className="inline-explanation-image" src={this.state.mediaUrl} />
-      </div>
-    )
   }
 }
 

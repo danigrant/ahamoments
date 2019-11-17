@@ -256,6 +256,6 @@ a {
   outline: none;
 }
 
-#twitter-widget-0 {
+.twitter-tweet.twitter-tweet-rendered {
   margin: 0 auto;
 }
