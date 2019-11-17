@@ -2268,7 +2268,7 @@ class AddPodcast extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
         lineNumber: 27
       },
       __self: this
-    }, "RadioPublic"), " link to podcast"), __jsx("p", {
+    }, "SoundCloud"), " link to podcast"), __jsx("p", {
       className: "font-color-light-grey font-med font-bold-med",
       __source: {
         fileName: _jsxFileName,
@@ -2277,14 +2277,14 @@ class AddPodcast extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
       __self: this
     }, "Head over to ", __jsx("a", {
       className: "link",
-      href: "https://radiopublic.com/explore?search=1",
+      href: "https://soundcloud.com/search",
       target: "_blank",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 28
       },
       __self: this
-    }, "RadioPublic"), " and find the link to the podcast episode you're thinking of."), __jsx("input", {
+    }, "SoundCloud"), " and find the link to the podcast episode you're thinking of."), __jsx("input", {
       onChange: this.sendMediaLinkChangeToParent,
       className: "margin-top-sml font-med background-grey rounded-border light-border",
       type: "text",

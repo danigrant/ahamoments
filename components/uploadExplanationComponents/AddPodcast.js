@@ -24,7 +24,7 @@ class AddPodcast extends React.Component {
         <form className="add-explanation-form">
           <h2 className="font-med font-bold-med">Optional Intro Text</h2>
           <textarea onChange={this.sendIntroTextChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${this.props.currentConcept}s...`} rows="5"></textarea>
-          <h2 className="font-med font-bold-med margin-top-sml"><a className="link" href="https://soundcloud.com/search" target="_blank">SoundCloud> link to podcast</h2>
+          <h2 className="font-med font-bold-med margin-top-sml"><a className="link" href="https://soundcloud.com/search" target="_blank">SoundCloud</a> link to podcast</h2>
           <p className="font-color-light-grey font-med font-bold-med">Head over to <a className="link" href="https://soundcloud.com/search" target="_blank">SoundCloud</a> and find the link to the podcast episode you're thinking of.</p>
           <input onChange={this.sendMediaLinkChangeToParent} className="margin-top-sml font-med background-grey rounded-border light-border" type="text" placeholder="https://radiopublic.com/ ..." name="podcast-input" />
           <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
