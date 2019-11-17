@@ -812,19 +812,19 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
   }
 
   async handleDontGetIt() {
-    console.log("handling the dont get it");
+    await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["addDontGetItToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
   }
 
   async handleReactionGotIt() {
-    console.log("handling the got it reaction");
+    await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["addReactionGotItToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
   }
 
   async handleReactionLaughing() {
-    console.log("handling the laughing reaction");
+    await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["addReactionLaughingToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
   }
 
   async handleReactionShocked() {
-    console.log("handling the shocked reaction");
+    await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["addReactionShockedToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
   }
 
   render() {
@@ -5425,13 +5425,97 @@ async function addAhaToDB(explanationID, loggedInUserID, authorUserID) {
   });
 }
 
-async function addDontGetItToDB() {}
+async function addDontGetItToDB(explanationID, loggedInUserID, authorUserID) {
+  let explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
 
-async function addReactionGotItToDB() {}
+  explanationRef.update({
+    dontGetItCount: increment
+  }); // increment aha count for author of explanation
 
-async function addReactionLaughingToDB() {}
+  let docID = await getDocIDByUserID(loggedInUserID);
+  let userRef = usersRef.doc(docID);
+  userRef.update({
+    dontGetItCount: increment
+  }); // add vote to explanation vote log
 
-async function addReactionShockedToDB() {}
+  let newVote = {
+    "datetime": firebase.firestore.Timestamp.now(),
+    "userID": loggedInUserID,
+    "type": "dontGetIt"
+  };
+  explanationRef.update({
+    voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+  });
+}
+
+async function addReactionGotItToDB(explanationID, loggedInUserID, authorUserID) {
+  let explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+  explanationRef.update({
+    reactionGotItCount: increment
+  }); // increment aha count for author of explanation
+
+  let docID = await getDocIDByUserID(loggedInUserID);
+  let userRef = usersRef.doc(docID);
+  userRef.update({
+    reactionGotItCount: increment
+  }); // add vote to explanation vote log
+
+  let newVote = {
+    "datetime": firebase.firestore.Timestamp.now(),
+    "userID": loggedInUserID,
+    "type": "reactionGotIt"
+  };
+  explanationRef.update({
+    voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+  });
+}
+
+async function addReactionLaughingToDB(explanationID, loggedInUserID, authorUserID) {
+  let explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+  explanationRef.update({
+    reactionLaughingCount: increment
+  }); // increment aha count for author of explanation
+
+  let docID = await getDocIDByUserID(loggedInUserID);
+  let userRef = usersRef.doc(docID);
+  userRef.update({
+    reactionLaughingCount: increment
+  }); // add vote to explanation vote log
+
+  let newVote = {
+    "datetime": firebase.firestore.Timestamp.now(),
+    "userID": loggedInUserID,
+    "type": "reactionLaughing"
+  };
+  explanationRef.update({
+    voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+  });
+}
+
+async function addReactionShockedToDB(explanationID, loggedInUserID, authorUserID) {
+  let explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+  explanationRef.update({
+    reactionShockedCount: increment
+  }); // increment aha count for author of explanation
+
+  let docID = await getDocIDByUserID(loggedInUserID);
+  let userRef = usersRef.doc(docID);
+  userRef.update({
+    reactionShockedCount: increment
+  }); // add vote to explanation vote log
+
+  let newVote = {
+    "datetime": firebase.firestore.Timestamp.now(),
+    "userID": loggedInUserID,
+    "type": "reactionShocked"
+  };
+  explanationRef.update({
+    voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+  });
+}
 
 module.exports = {
   firebase,

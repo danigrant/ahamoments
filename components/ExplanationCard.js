@@ -29,16 +29,16 @@ class ExplanationCard extends React.Component {
     await addAhaToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
   async handleDontGetIt() {
-    console.log("handling the dont get it");
+    await addDontGetItToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
   async handleReactionGotIt() {
-    console.log("handling the got it reaction");
+    await addReactionGotItToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
   async handleReactionLaughing() {
-    console.log("handling the laughing reaction");
+    await addReactionLaughingToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
   async handleReactionShocked() {
-    console.log("handling the shocked reaction");
+    await addReactionShockedToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
   render() {
     return (

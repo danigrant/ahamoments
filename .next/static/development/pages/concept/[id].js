@@ -802,14 +802,15 @@ function (_React$Component) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                console.log("handling the dont get it");
+                _context2.next = 2;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addDontGetItToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
 
-              case 1:
+              case 2:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, this);
       }));
 
       function handleDontGetIt() {
@@ -828,14 +829,15 @@ function (_React$Component) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                console.log("handling the got it reaction");
+                _context3.next = 2;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addReactionGotItToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
 
-              case 1:
+              case 2:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3);
+        }, _callee3, this);
       }));
 
       function handleReactionGotIt() {
@@ -854,14 +856,15 @@ function (_React$Component) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                console.log("handling the laughing reaction");
+                _context4.next = 2;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addReactionLaughingToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
 
-              case 1:
+              case 2:
               case "end":
                 return _context4.stop();
             }
           }
-        }, _callee4);
+        }, _callee4, this);
       }));
 
       function handleReactionLaughing() {
@@ -880,14 +883,15 @@ function (_React$Component) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
-                console.log("handling the shocked reaction");
+                _context5.next = 2;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addReactionShockedToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
 
-              case 1:
+              case 2:
               case "end":
                 return _context5.stop();
             }
           }
-        }, _callee5);
+        }, _callee5, this);
       }));
 
       function handleReactionShocked() {
@@ -76144,18 +76148,45 @@ function _addAhaToDB() {
   return _addAhaToDB.apply(this, arguments);
 }
 
-function addDontGetItToDB() {
+function addDontGetItToDB(_x29, _x30, _x31) {
   return _addDontGetItToDB.apply(this, arguments);
 }
 
 function _addDontGetItToDB() {
   _addDontGetItToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee19() {
+  _regenerator["default"].mark(function _callee19(explanationID, loggedInUserID, authorUserID) {
+    var explanationRef, docID, userRef, newVote;
     return _regenerator["default"].wrap(function _callee19$(_context19) {
       while (1) {
         switch (_context19.prev = _context19.next) {
           case 0:
+            explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+            explanationRef.update({
+              dontGetItCount: increment
+            }); // increment aha count for author of explanation
+
+            _context19.next = 4;
+            return getDocIDByUserID(loggedInUserID);
+
+          case 4:
+            docID = _context19.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              dontGetItCount: increment
+            }); // add vote to explanation vote log
+
+            newVote = {
+              "datetime": firebase.firestore.Timestamp.now(),
+              "userID": loggedInUserID,
+              "type": "dontGetIt"
+            };
+            explanationRef.update({
+              voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+            });
+
+          case 9:
           case "end":
             return _context19.stop();
         }
@@ -76165,18 +76196,45 @@ function _addDontGetItToDB() {
   return _addDontGetItToDB.apply(this, arguments);
 }
 
-function addReactionGotItToDB() {
+function addReactionGotItToDB(_x32, _x33, _x34) {
   return _addReactionGotItToDB.apply(this, arguments);
 }
 
 function _addReactionGotItToDB() {
   _addReactionGotItToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee20() {
+  _regenerator["default"].mark(function _callee20(explanationID, loggedInUserID, authorUserID) {
+    var explanationRef, docID, userRef, newVote;
     return _regenerator["default"].wrap(function _callee20$(_context20) {
       while (1) {
         switch (_context20.prev = _context20.next) {
           case 0:
+            explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+            explanationRef.update({
+              reactionGotItCount: increment
+            }); // increment aha count for author of explanation
+
+            _context20.next = 4;
+            return getDocIDByUserID(loggedInUserID);
+
+          case 4:
+            docID = _context20.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              reactionGotItCount: increment
+            }); // add vote to explanation vote log
+
+            newVote = {
+              "datetime": firebase.firestore.Timestamp.now(),
+              "userID": loggedInUserID,
+              "type": "reactionGotIt"
+            };
+            explanationRef.update({
+              voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+            });
+
+          case 9:
           case "end":
             return _context20.stop();
         }
@@ -76186,18 +76244,45 @@ function _addReactionGotItToDB() {
   return _addReactionGotItToDB.apply(this, arguments);
 }
 
-function addReactionLaughingToDB() {
+function addReactionLaughingToDB(_x35, _x36, _x37) {
   return _addReactionLaughingToDB.apply(this, arguments);
 }
 
 function _addReactionLaughingToDB() {
   _addReactionLaughingToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee21() {
+  _regenerator["default"].mark(function _callee21(explanationID, loggedInUserID, authorUserID) {
+    var explanationRef, docID, userRef, newVote;
     return _regenerator["default"].wrap(function _callee21$(_context21) {
       while (1) {
         switch (_context21.prev = _context21.next) {
           case 0:
+            explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+            explanationRef.update({
+              reactionLaughingCount: increment
+            }); // increment aha count for author of explanation
+
+            _context21.next = 4;
+            return getDocIDByUserID(loggedInUserID);
+
+          case 4:
+            docID = _context21.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              reactionLaughingCount: increment
+            }); // add vote to explanation vote log
+
+            newVote = {
+              "datetime": firebase.firestore.Timestamp.now(),
+              "userID": loggedInUserID,
+              "type": "reactionLaughing"
+            };
+            explanationRef.update({
+              voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+            });
+
+          case 9:
           case "end":
             return _context21.stop();
         }
@@ -76207,18 +76292,45 @@ function _addReactionLaughingToDB() {
   return _addReactionLaughingToDB.apply(this, arguments);
 }
 
-function addReactionShockedToDB() {
+function addReactionShockedToDB(_x38, _x39, _x40) {
   return _addReactionShockedToDB.apply(this, arguments);
 }
 
 function _addReactionShockedToDB() {
   _addReactionShockedToDB = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regenerator["default"].mark(function _callee22() {
+  _regenerator["default"].mark(function _callee22(explanationID, loggedInUserID, authorUserID) {
+    var explanationRef, docID, userRef, newVote;
     return _regenerator["default"].wrap(function _callee22$(_context22) {
       while (1) {
         switch (_context22.prev = _context22.next) {
           case 0:
+            explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+            explanationRef.update({
+              reactionShockedCount: increment
+            }); // increment aha count for author of explanation
+
+            _context22.next = 4;
+            return getDocIDByUserID(loggedInUserID);
+
+          case 4:
+            docID = _context22.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              reactionShockedCount: increment
+            }); // add vote to explanation vote log
+
+            newVote = {
+              "datetime": firebase.firestore.Timestamp.now(),
+              "userID": loggedInUserID,
+              "type": "reactionShocked"
+            };
+            explanationRef.update({
+              voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+            });
+
+          case 9:
           case "end":
             return _context22.stop();
         }
