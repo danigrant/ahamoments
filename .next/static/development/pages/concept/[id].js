@@ -2031,13 +2031,13 @@ function (_React$Component) {
           lineNumber: 14
         },
         __self: this
-      }, this.props.podcast, __jsx(react_player__WEBPACK_IMPORTED_MODULE_9___default.a, {
-        url: "https://soundcloud.com/freshair/trevor-noah-on-the-power-of-language",
+      }, __jsx(react_player__WEBPACK_IMPORTED_MODULE_9___default.a, {
+        url: this.props.podcast,
         playing: false,
-        controls: "true",
+        controls: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 15
         },
         __self: this
       }));
@@ -2666,7 +2666,7 @@ function (_React$Component) {
           lineNumber: 27
         },
         __self: this
-      }, "RadioPublic"), " link to podcast"), __jsx("p", {
+      }, "SoundCloud"), " link to podcast"), __jsx("p", {
         className: "font-color-light-grey font-med font-bold-med",
         __source: {
           fileName: _jsxFileName,
@@ -2675,14 +2675,14 @@ function (_React$Component) {
         __self: this
       }, "Head over to ", __jsx("a", {
         className: "link",
-        href: "https://radiopublic.com/explore?search=1",
+        href: "https://soundcloud.com/search",
         target: "_blank",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 28
         },
         __self: this
-      }, "RadioPublic"), " and find the link to the podcast episode you're thinking of."), __jsx("input", {
+      }, "SoundCloud"), " and find the link to the podcast episode you're thinking of."), __jsx("input", {
         onChange: this.sendMediaLinkChangeToParent,
         className: "margin-top-sml font-med background-grey rounded-border light-border",
         type: "text",

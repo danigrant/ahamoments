@@ -12,8 +12,7 @@ class EmbeddedPodcast extends React.Component {
   render() {
     return (
       <div className="soundcloud-widget-wrapper">
-        {this.props.podcast}
-        <ReactPlayer url='https://soundcloud.com/freshair/trevor-noah-on-the-power-of-language' playing={false} controls="true" />
+        <ReactPlayer url={this.props.podcast} playing={false} controls={true} />
       </div>
     )
   }

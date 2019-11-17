@@ -1839,13 +1839,13 @@ class EmbeddedPodcast extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
         lineNumber: 14
       },
       __self: this
-    }, this.props.podcast, __jsx(react_player__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      url: "https://soundcloud.com/freshair/trevor-noah-on-the-power-of-language",
+    }, __jsx(react_player__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      url: this.props.podcast,
       playing: false,
-      controls: "true",
+      controls: true,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 16
+        lineNumber: 15
       },
       __self: this
     }));
