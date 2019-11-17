@@ -61298,7 +61298,7 @@ function _getUserByID() {
 
           case 6:
             _context4.next = 8;
-            return explanationsRef.where('authorUserID', '==', userID).get();
+            return explanationsRef.where('authorUserID', '==', userID).orderBy('ahaMomentCount', 'desc').get();
 
           case 8:
             explanationSnapshot = _context4.sent;
@@ -61507,7 +61507,12 @@ function _saveExplanationToDB() {
                 "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.explanation.mediaConsumptionGuidance : "",
                 "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type
-              }
+              },
+              "ahaMomentCount": 0,
+              "explanationCount": 0,
+              "reactionGotItCount": 0,
+              "reactionLaughingCount": 0,
+              "reactionShockedCount": 0
             };
             explanationsRef.add(newExplanation);
             incrementUserExplanationCount(explanationObj.authorUserID);
@@ -61566,7 +61571,12 @@ function _saveExplanationWithFileToDB() {
                 "introText": introText,
                 "mediaLink": snapshot.metadata.fullPath,
                 "type": fileType
-              }
+              },
+              "ahaMomentCount": 0,
+              "explanationCount": 0,
+              "reactionGotItCount": 0,
+              "reactionLaughingCount": 0,
+              "reactionShockedCount": 0
             });
 
           case 10:
@@ -61612,7 +61622,12 @@ function _saveWrittenExplanationToDB() {
               "explanation": {
                 "introText": text,
                 "type": "text"
-              }
+              },
+              "ahaMomentCount": 0,
+              "explanationCount": 0,
+              "reactionGotItCount": 0,
+              "reactionLaughingCount": 0,
+              "reactionShockedCount": 0
             });
 
           case 6:
@@ -61656,7 +61671,12 @@ function _saveExternalLinkExplanationToDB() {
                 "mediaLink": mediaLink,
                 "mediaConsumptionGuidance": mediaConsumptionGuidance,
                 "type": fileType
-              }
+              },
+              "ahaMomentCount": 0,
+              "explanationCount": 0,
+              "reactionGotItCount": 0,
+              "reactionLaughingCount": 0,
+              "reactionShockedCount": 0
             });
 
           case 5:
@@ -61720,11 +61740,10 @@ function _getTopCreatorsAllTime() {
         switch (_context14.prev = _context14.next) {
           case 0:
             _context14.next = 2;
-            return usersRef.get();
+            return usersRef.orderBy('ahaMomentCount', 'desc').get();
 
           case 2:
             snapshot = _context14.sent;
-            //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
             _context14.next = 6;
             return snapshot.forEach(function (doc) {
@@ -61770,11 +61789,10 @@ function _getTopExplanationsAllTime() {
         switch (_context15.prev = _context15.next) {
           case 0:
             _context15.next = 2;
-            return explanationsRef.get();
+            return explanationsRef.orderBy('ahaMomentCount', 'desc').get();
 
           case 2:
             snapshot = _context15.sent;
-            //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
             data = [];
             _context15.next = 6;
             return snapshot.forEach(function (doc) {
@@ -61880,11 +61898,10 @@ function _getConceptExplanations() {
           case 0:
             formattedConcept = concept.toLowerCase();
             _context17.next = 3;
-            return explanationsRef.where('concept', '==', formattedConcept).get();
+            return explanationsRef.where('concept', '==', formattedConcept).orderBy('ahaMomentCount', 'desc').get();
 
           case 3:
             snapshot = _context17.sent;
-            //.orderBy('score', 'desc').get()
             data = [];
             _context17.next = 7;
             return snapshot.forEach(function (doc) {

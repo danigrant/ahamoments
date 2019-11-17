@@ -134,7 +134,7 @@ async function getUserByID(userID) {
     }
   })
   // then get explanations
-  let explanationSnapshot = await explanationsRef.where('authorUserID', '==', userID).get() //.orderBy('score', 'desc').get()
+  let explanationSnapshot = await explanationsRef.where('authorUserID', '==', userID).orderBy('ahaMomentCount', 'desc').get()
   await explanationSnapshot.forEach(doc => {
     let explanationDocData = doc.data()
     data.explanations.push({
@@ -210,7 +210,12 @@ async function saveExplanationToDB(explanationObj) {
       "mediaConsumptionGuidance": explanationObj.explanation.mediaConsumptionGuidance ? explanationObj.explanation.mediaConsumptionGuidance : "",
       "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
       "type": explanationObj.explanation.type
-    }
+    },
+    "ahaMomentCount": 0,
+    "explanationCount": 0,
+    "reactionGotItCount": 0,
+    "reactionLaughingCount": 0,
+    "reactionShockedCount": 0
   }
   explanationsRef.add(newExplanation)
   incrementUserExplanationCount(explanationObj.authorUserID)
@@ -240,7 +245,12 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
       "introText": introText,
       "mediaLink": snapshot.metadata.fullPath,
       "type": fileType
-    }
+    },
+    "ahaMomentCount": 0,
+    "explanationCount": 0,
+    "reactionGotItCount": 0,
+    "reactionLaughingCount": 0,
+    "reactionShockedCount": 0
   })
 }
 
@@ -263,7 +273,12 @@ async function saveWrittenExplanationToDB(text, userID, concept) {
     "explanation": {
       "introText": text,
       "type": "text"
-    }
+    },
+    "ahaMomentCount": 0,
+    "explanationCount": 0,
+    "reactionGotItCount": 0,
+    "reactionLaughingCount": 0,
+    "reactionShockedCount": 0
   })
 }
 
@@ -283,7 +298,12 @@ async function saveExternalLinkExplanationToDB(introText, mediaLink, mediaConsum
       "mediaLink": mediaLink,
       "mediaConsumptionGuidance": mediaConsumptionGuidance,
       "type": fileType
-    }
+    },
+    "ahaMomentCount": 0,
+    "explanationCount": 0,
+    "reactionGotItCount": 0,
+    "reactionLaughingCount": 0,
+    "reactionShockedCount": 0
   })
 }
 
@@ -307,7 +327,7 @@ async function getConceptsThatNeedLove() {
 
 // returns top 5 creators in an array
 async function getTopCreatorsAllTime() {
-  let snapshot = await usersRef.get() //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
+  let snapshot = await usersRef.orderBy('ahaMomentCount', 'desc').get()
   let data = []
   await snapshot.forEach(doc => {
     let docData = doc.data()
@@ -329,7 +349,7 @@ async function getTopCreatorsAllTime() {
 
 // returns array of top 5 explanations
 async function getTopExplanationsAllTime() {
-  let snapshot = await explanationsRef.get() //.orderBy('score', 'desc').get() <-- need to do this when i have more than one concept to order by
+  let snapshot = await explanationsRef.orderBy('ahaMomentCount', 'desc').get()
   let data = []
   await snapshot.forEach(doc => {
     let docData = doc.data()
@@ -390,7 +410,7 @@ async function getTopExplanationsAllTime() {
   // returns array of explanations for a concept sorted in rank order
   async function getConceptExplanations(concept) {
   let formattedConcept = concept.toLowerCase()
-  let snapshot = await explanationsRef.where('concept', '==', formattedConcept).get() //.orderBy('score', 'desc').get()
+  let snapshot = await explanationsRef.where('concept', '==', formattedConcept).orderBy('ahaMomentCount', 'desc').get()
   let data = []
   await snapshot.forEach(doc => {
     let docData = doc.data()
