@@ -1815,33 +1815,55 @@ class EmbeddedPhoto extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-player */ "react-player");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_player__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedPodcast.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const EmbeddedPodcast = props => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: undefined
-  }, "podcast"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, props.podcast));
-};
+
+
+
+class EmbeddedPodcast extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  async componentDidMount() {}
+
+  render() {
+    return __jsx("div", {
+      className: "soundcloud-widget-wrapper",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, this.props.podcast, __jsx(react_player__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      url: "https://soundcloud.com/freshair/trevor-noah-on-the-power-of-language",
+      playing: "false",
+      controls: "true",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }));
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (EmbeddedPodcast);
+/*
+
+https://radiopublic.com/ThisAmerLife:dHJlbmRpbmctaW4tc2VhcmNo/s1!e4eae
+https://embed.radiopublic.com/e?if=ThisAmerLife:dHJlbmRpbmctaW4tc2VhcmNo&ge=s1!e4eae7b857c0e17d9476e56dd2b156cadb393386
+
+
+<iframe sandbox="allow-same-origin allow-scripts allow-top-navigation allow-popups" scrolling=no width="100%" height="185" frameborder="0" src="https://embed.radiopublic.com/e?if=ThisAmerLife:dHJlbmRpbmctaW4tc2VhcmNo&ge=s1!e4eae7b857c0e17d9476e56dd2b156cadb393386"></iframe>
+
+
+*/
 
 /***/ }),
 
@@ -5603,6 +5625,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-player":
+/*!*******************************!*\
+  !*** external "react-player" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-player");
 
 /***/ }),
 

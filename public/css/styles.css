@@ -259,3 +259,7 @@ a {
 .twitter-tweet.twitter-tweet-rendered {
   margin: 0 auto;
 }
+
+.soundcloud-widget-wrapper div {
+  margin: 0 auto;
+}
