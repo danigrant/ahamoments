@@ -2000,31 +2000,58 @@ class EmbeddedVideo extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
+/* harmony import */ var react_youtube__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-youtube */ "react-youtube");
+/* harmony import */ var react_youtube__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_youtube__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedYouTube.js";
-
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-const EmbeddedYouTube = props => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 3
-    },
-    __self: undefined
-  }, __jsx("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: undefined
-  }, "youtube"), __jsx("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 5
-    },
-    __self: undefined
-  }, props.youtube));
-};
+
+
+
+class EmbeddedYouTube extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      youtubeVideoID: false
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({
+      youtubeVideoID: this.props.youtube.split('v=')[1].split('&')[0]
+    });
+  }
+
+  render() {
+    if (!this.state.youtubeVideoID) {
+      return __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, "loading...");
+    } else {
+      return __jsx("div", {
+        className: "center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, __jsx(react_youtube__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        videoId: this.state.youtubeVideoID,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }));
+    }
+  }
+
+}
 
 /* harmony default export */ __webpack_exports__["default"] = (EmbeddedYouTube);
 
@@ -5381,16 +5408,7 @@ const explanationTypeToDisplayType = explanationType => {
 const generateFilePathAndName = (fileType, userID, concept) => {
   let randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   return `/${concept}/${fileType}/${userID}/${randomID}`;
-}; // async function getTwitterEmbed(tweetUrl) {
-//   let twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0]
-//   let twitterStatus = tweetUrl.split('status/')[1].split('?')[0]
-//   let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385`)
-//   // let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=${twitterUser}&status=${twitterStatus}`)
-//   let text = await res.text()
-//   console.log();
-//   return text
-// }
-
+};
 
 module.exports = {
   conceptToDisplayName,
@@ -5596,6 +5614,17 @@ module.exports = require("react-is");
 /***/ (function(module, exports) {
 
 module.exports = require("react-twitter-embed");
+
+/***/ }),
+
+/***/ "react-youtube":
+/*!********************************!*\
+  !*** external "react-youtube" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-youtube");
 
 /***/ }),
 
