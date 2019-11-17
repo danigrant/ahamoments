@@ -1841,7 +1841,7 @@ class EmbeddedPodcast extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       __self: this
     }, this.props.podcast, __jsx(react_player__WEBPACK_IMPORTED_MODULE_2___default.a, {
       url: "https://soundcloud.com/freshair/trevor-noah-on-the-power-of-language",
-      playing: "false",
+      playing: false,
       controls: "true",
       __source: {
         fileName: _jsxFileName,
@@ -2261,7 +2261,7 @@ class AddPodcast extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component 
       __self: this
     }, __jsx("a", {
       className: "link",
-      href: "https://radiopublic.com/explore?search=1",
+      href: "https://soundcloud.com/search",
       target: "_blank",
       __source: {
         fileName: _jsxFileName,
