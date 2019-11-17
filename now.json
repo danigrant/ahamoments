@@ -1,7 +1,7 @@
 {
   "env": {
-    "FIREBASE_API_KEY": "@environment-variable-name",
-    "TWITTER_API_KEY": "@environment-variable-name",
-    "TWITTER_API_SECRET": "@environment-variable-name"
+    "FIREBASE_API_KEY": "@FIREBASE_API_KEY",
+    "TWITTER_API_KEY": "@TWITTER_API_KEY",
+    "TWITTER_API_SECRET": "@TWITTER_API_SECRET"
   }
 }
