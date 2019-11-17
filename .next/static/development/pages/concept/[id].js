@@ -688,32 +688,37 @@ var DontGetItButton = function DontGetItButton(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
-/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
-/* harmony import */ var _AhaButton__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./AhaButton */ "./components/AhaButton.js");
-/* harmony import */ var _DontGetItButton__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./DontGetItButton */ "./components/DontGetItButton.js");
-/* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedPhoto */ "./components/explanationMediaComponents/EmbeddedPhoto.js");
-/* harmony import */ var _explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedAudio */ "./components/explanationMediaComponents/EmbeddedAudio.js");
-/* harmony import */ var _explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedVideo */ "./components/explanationMediaComponents/EmbeddedVideo.js");
-/* harmony import */ var _explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedTweet */ "./components/explanationMediaComponents/EmbeddedTweet.js");
-/* harmony import */ var _explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedYouTube */ "./components/explanationMediaComponents/EmbeddedYouTube.js");
-/* harmony import */ var _explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedPodcast */ "./components/explanationMediaComponents/EmbeddedPodcast.js");
-/* harmony import */ var _explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedLink */ "./components/explanationMediaComponents/EmbeddedLink.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
+/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _MultiAvatarUnit__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./MultiAvatarUnit */ "./components/MultiAvatarUnit.js");
+/* harmony import */ var _AhaButton__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./AhaButton */ "./components/AhaButton.js");
+/* harmony import */ var _DontGetItButton__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./DontGetItButton */ "./components/DontGetItButton.js");
+/* harmony import */ var _ReactionButtonBar__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ReactionButtonBar */ "./components/ReactionButtonBar.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedPhoto */ "./components/explanationMediaComponents/EmbeddedPhoto.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedAudio */ "./components/explanationMediaComponents/EmbeddedAudio.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedVideo */ "./components/explanationMediaComponents/EmbeddedVideo.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedTweet */ "./components/explanationMediaComponents/EmbeddedTweet.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedYouTube */ "./components/explanationMediaComponents/EmbeddedYouTube.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedPodcast */ "./components/explanationMediaComponents/EmbeddedPodcast.js");
+/* harmony import */ var _explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./explanationMediaComponents/EmbeddedLink */ "./components/explanationMediaComponents/EmbeddedLink.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../utils/utils */ "./utils/utils.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__);
+
 
 
 
@@ -722,7 +727,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/ExplanationCard.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
+
 
 
 
@@ -743,58 +749,173 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
 var ExplanationCard =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(ExplanationCard, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(ExplanationCard, _React$Component);
 
   function ExplanationCard(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, ExplanationCard);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, ExplanationCard);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(ExplanationCard).call(this, props));
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleAha", function () {
-      console.log("handling the aha");
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleDontGetIt", function () {
-      console.log("handling the dont get it");
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleReactionGotIt", function () {
-      console.log("handling the got it reaction");
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleReactionLaughing", function () {
-      console.log("handling the laughing reaction");
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleReactionShocked", function () {
-      console.log("handling the shocked reaction");
-    });
-
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(ExplanationCard).call(this, props));
+    _this.handleAha = _this.handleAha.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.handleDontGetIt = _this.handleDontGetIt.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.handleReactionGotIt = _this.handleReactionGotIt.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.handleReactionLaughing = _this.handleReactionLaughing.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.handleReactionShocked = _this.handleReactionShocked.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(ExplanationCard, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(ExplanationCard, [{
+    key: "handleAha",
+    value: function () {
+      var _handleAha = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addAhaToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function handleAha() {
+        return _handleAha.apply(this, arguments);
+      }
+
+      return handleAha;
+    }()
+  }, {
+    key: "handleDontGetIt",
+    value: function () {
+      var _handleDontGetIt = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                console.log("handling the dont get it");
+
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function handleDontGetIt() {
+        return _handleDontGetIt.apply(this, arguments);
+      }
+
+      return handleDontGetIt;
+    }()
+  }, {
+    key: "handleReactionGotIt",
+    value: function () {
+      var _handleReactionGotIt = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                console.log("handling the got it reaction");
+
+              case 1:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      function handleReactionGotIt() {
+        return _handleReactionGotIt.apply(this, arguments);
+      }
+
+      return handleReactionGotIt;
+    }()
+  }, {
+    key: "handleReactionLaughing",
+    value: function () {
+      var _handleReactionLaughing = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                console.log("handling the laughing reaction");
+
+              case 1:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }));
+
+      function handleReactionLaughing() {
+        return _handleReactionLaughing.apply(this, arguments);
+      }
+
+      return handleReactionLaughing;
+    }()
+  }, {
+    key: "handleReactionShocked",
+    value: function () {
+      var _handleReactionShocked = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      /*#__PURE__*/
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                console.log("handling the shocked reaction");
+
+              case 1:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }));
+
+      function handleReactionShocked() {
+        return _handleReactionShocked.apply(this, arguments);
+      }
+
+      return handleReactionShocked;
+    }()
+  }, {
     key: "render",
     value: function render() {
       return __jsx("div", {
         className: "explanation-card-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 45
         },
         __self: this
-      }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 46
         },
         __self: this
-      }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 47
         },
         __self: this
       }, __jsx("img", {
@@ -802,158 +923,158 @@ function (_React$Component) {
         src: this.props.explanation.authorAvatarUrl,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 48
         },
         __self: this
       }), __jsx("p", {
         className: "font-color-light-grey inline-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 49
         },
         __self: this
       }, __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 50
         },
         __self: this
-      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+      }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
         href: "/explainer/".concat(this.props.explanation.authorUserID),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 50
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 50
         },
         __self: this
       }, this.props.explanation.authorDisplayName)), " "), "explains", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 52
         },
         __self: this
-      }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_14___default.a, {
+      }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
         href: "/concept/".concat(this.props.explanation.concept),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, __jsx("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_22__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
-        className: "link",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_22__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, __jsx("p", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 52
         },
         __self: this
-      }, this.props.explanation.explanation.introText), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_18__["default"], {
+      }, __jsx("a", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_23__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
+        className: "link",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_23__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, __jsx("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, this.props.explanation.explanation.introText), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_19__["default"], {
         tweet: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 61
         },
         __self: this
-      }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_17__["default"], {
         audio: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 65
         },
         __self: this
-      }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_21__["default"], {
+      }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_22__["default"], {
         link: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 69
         },
         __self: this
-      }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_15__["default"], {
+      }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_16__["default"], {
         photo: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 73
         },
         __self: this
-      }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_20__["default"], {
+      }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_21__["default"], {
         podcast: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 77
         },
         __self: this
-      }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_18__["default"], {
         video: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 81
         },
         __self: this
-      }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_20__["default"], {
         youtube: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 85
         },
         __self: this
       }), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 89
         },
         __self: this
-      }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 92
         },
         __self: this
-      }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
         handleAha: this.handleAha,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 93
         },
         __self: this
-      }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_13__["default"], {
         handleDontGetIt: this.handleDontGetIt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 94
         },
         __self: this
-      }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_14__["default"], {
         className: "float-right",
         handleReactionGotIt: this.handleReactionGotIt,
         handleReactionLaughing: this.handleReactionLaughing,
         handleReactionShocked: this.handleReactionShocked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 95
         },
         __self: this
       }))));
@@ -961,7 +1082,7 @@ function (_React$Component) {
   }]);
 
   return ExplanationCard;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (ExplanationCard);
 
@@ -75013,6 +75134,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var router = this.props.router;
       {
         if (!this.state.conceptExplanationsArray.length) {
@@ -75099,6 +75222,7 @@ function (_React$Component) {
             return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__["default"], {
               key: e.explanationID,
               explanation: e,
+              loggedInUser: _this2.props.loggedInUser,
               __source: {
                 fileName: _jsxFileName,
                 lineNumber: 47
@@ -75914,7 +76038,8 @@ function _getTopConceptsAllTime() {
 
 function getConceptExplanations(_x25) {
   return _getConceptExplanations.apply(this, arguments);
-}
+} // voting utils
+
 
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
@@ -75971,6 +76096,138 @@ function _getConceptExplanations() {
   return _getConceptExplanations.apply(this, arguments);
 }
 
+function addAhaToDB(_x26, _x27, _x28) {
+  return _addAhaToDB.apply(this, arguments);
+}
+
+function _addAhaToDB() {
+  _addAhaToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee18(explanationID, loggedInUserID, authorUserID) {
+    var explanationRef, docID, userRef, newVote;
+    return _regenerator["default"].wrap(function _callee18$(_context18) {
+      while (1) {
+        switch (_context18.prev = _context18.next) {
+          case 0:
+            explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+            explanationRef.update({
+              ahaMomentCount: increment
+            }); // increment aha count for author of explanation
+
+            _context18.next = 4;
+            return getDocIDByUserID(loggedInUserID);
+
+          case 4:
+            docID = _context18.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              ahaMomentCount: increment
+            }); // add vote to explanation vote log
+
+            newVote = {
+              "datetime": firebase.firestore.Timestamp.now(),
+              "userID": loggedInUserID,
+              "type": "ahaMoment"
+            };
+            explanationRef.update({
+              voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+            });
+
+          case 9:
+          case "end":
+            return _context18.stop();
+        }
+      }
+    }, _callee18);
+  }));
+  return _addAhaToDB.apply(this, arguments);
+}
+
+function addDontGetItToDB() {
+  return _addDontGetItToDB.apply(this, arguments);
+}
+
+function _addDontGetItToDB() {
+  _addDontGetItToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee19() {
+    return _regenerator["default"].wrap(function _callee19$(_context19) {
+      while (1) {
+        switch (_context19.prev = _context19.next) {
+          case 0:
+          case "end":
+            return _context19.stop();
+        }
+      }
+    }, _callee19);
+  }));
+  return _addDontGetItToDB.apply(this, arguments);
+}
+
+function addReactionGotItToDB() {
+  return _addReactionGotItToDB.apply(this, arguments);
+}
+
+function _addReactionGotItToDB() {
+  _addReactionGotItToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee20() {
+    return _regenerator["default"].wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20);
+  }));
+  return _addReactionGotItToDB.apply(this, arguments);
+}
+
+function addReactionLaughingToDB() {
+  return _addReactionLaughingToDB.apply(this, arguments);
+}
+
+function _addReactionLaughingToDB() {
+  _addReactionLaughingToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee21() {
+    return _regenerator["default"].wrap(function _callee21$(_context21) {
+      while (1) {
+        switch (_context21.prev = _context21.next) {
+          case 0:
+          case "end":
+            return _context21.stop();
+        }
+      }
+    }, _callee21);
+  }));
+  return _addReactionLaughingToDB.apply(this, arguments);
+}
+
+function addReactionShockedToDB() {
+  return _addReactionShockedToDB.apply(this, arguments);
+}
+
+function _addReactionShockedToDB() {
+  _addReactionShockedToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee22() {
+    return _regenerator["default"].wrap(function _callee22$(_context22) {
+      while (1) {
+        switch (_context22.prev = _context22.next) {
+          case 0:
+          case "end":
+            return _context22.stop();
+        }
+      }
+    }, _callee22);
+  }));
+  return _addReactionShockedToDB.apply(this, arguments);
+}
+
 module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
@@ -75985,7 +76242,12 @@ module.exports = {
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
   getConceptsThatNeedLove: getConceptsThatNeedLove,
-  getConceptExplanations: getConceptExplanations
+  getConceptExplanations: getConceptExplanations,
+  addAhaToDB: addAhaToDB,
+  addDontGetItToDB: addDontGetItToDB,
+  addReactionGotItToDB: addReactionGotItToDB,
+  addReactionLaughingToDB: addReactionLaughingToDB,
+  addReactionShockedToDB: addReactionShockedToDB
 };
 
 /***/ }),

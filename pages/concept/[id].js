@@ -44,7 +44,7 @@ class ConceptPage extends React.Component {
               <div className="margin-top-sml">
                 {
                   this.state.conceptExplanationsArray.map(e => {
-                    return <ExplanationCard key={e.explanationID} explanation={e} />
+                    return <ExplanationCard key={e.explanationID} explanation={e} loggedInUser={this.props.loggedInUser} />
                   })
                 }
               </div>

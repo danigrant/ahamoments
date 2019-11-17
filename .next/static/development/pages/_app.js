@@ -61866,7 +61866,8 @@ function _getTopConceptsAllTime() {
 
 function getConceptExplanations(_x25) {
   return _getConceptExplanations.apply(this, arguments);
-}
+} // voting utils
+
 
 function _getConceptExplanations() {
   _getConceptExplanations = (0, _asyncToGenerator2["default"])(
@@ -61923,6 +61924,138 @@ function _getConceptExplanations() {
   return _getConceptExplanations.apply(this, arguments);
 }
 
+function addAhaToDB(_x26, _x27, _x28) {
+  return _addAhaToDB.apply(this, arguments);
+}
+
+function _addAhaToDB() {
+  _addAhaToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee18(explanationID, loggedInUserID, authorUserID) {
+    var explanationRef, docID, userRef, newVote;
+    return _regenerator["default"].wrap(function _callee18$(_context18) {
+      while (1) {
+        switch (_context18.prev = _context18.next) {
+          case 0:
+            explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+            explanationRef.update({
+              ahaMomentCount: increment
+            }); // increment aha count for author of explanation
+
+            _context18.next = 4;
+            return getDocIDByUserID(loggedInUserID);
+
+          case 4:
+            docID = _context18.sent;
+            userRef = usersRef.doc(docID);
+            userRef.update({
+              ahaMomentCount: increment
+            }); // add vote to explanation vote log
+
+            newVote = {
+              "datetime": firebase.firestore.Timestamp.now(),
+              "userID": loggedInUserID,
+              "type": "ahaMoment"
+            };
+            explanationRef.update({
+              voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+            });
+
+          case 9:
+          case "end":
+            return _context18.stop();
+        }
+      }
+    }, _callee18);
+  }));
+  return _addAhaToDB.apply(this, arguments);
+}
+
+function addDontGetItToDB() {
+  return _addDontGetItToDB.apply(this, arguments);
+}
+
+function _addDontGetItToDB() {
+  _addDontGetItToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee19() {
+    return _regenerator["default"].wrap(function _callee19$(_context19) {
+      while (1) {
+        switch (_context19.prev = _context19.next) {
+          case 0:
+          case "end":
+            return _context19.stop();
+        }
+      }
+    }, _callee19);
+  }));
+  return _addDontGetItToDB.apply(this, arguments);
+}
+
+function addReactionGotItToDB() {
+  return _addReactionGotItToDB.apply(this, arguments);
+}
+
+function _addReactionGotItToDB() {
+  _addReactionGotItToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee20() {
+    return _regenerator["default"].wrap(function _callee20$(_context20) {
+      while (1) {
+        switch (_context20.prev = _context20.next) {
+          case 0:
+          case "end":
+            return _context20.stop();
+        }
+      }
+    }, _callee20);
+  }));
+  return _addReactionGotItToDB.apply(this, arguments);
+}
+
+function addReactionLaughingToDB() {
+  return _addReactionLaughingToDB.apply(this, arguments);
+}
+
+function _addReactionLaughingToDB() {
+  _addReactionLaughingToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee21() {
+    return _regenerator["default"].wrap(function _callee21$(_context21) {
+      while (1) {
+        switch (_context21.prev = _context21.next) {
+          case 0:
+          case "end":
+            return _context21.stop();
+        }
+      }
+    }, _callee21);
+  }));
+  return _addReactionLaughingToDB.apply(this, arguments);
+}
+
+function addReactionShockedToDB() {
+  return _addReactionShockedToDB.apply(this, arguments);
+}
+
+function _addReactionShockedToDB() {
+  _addReactionShockedToDB = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee22() {
+    return _regenerator["default"].wrap(function _callee22$(_context22) {
+      while (1) {
+        switch (_context22.prev = _context22.next) {
+          case 0:
+          case "end":
+            return _context22.stop();
+        }
+      }
+    }, _callee22);
+  }));
+  return _addReactionShockedToDB.apply(this, arguments);
+}
+
 module.exports = {
   firebase: firebase,
   logUserIn: logUserIn,
@@ -61937,7 +62070,12 @@ module.exports = {
   getTopCreatorsAllTime: getTopCreatorsAllTime,
   getTopExplanationsAllTime: getTopExplanationsAllTime,
   getConceptsThatNeedLove: getConceptsThatNeedLove,
-  getConceptExplanations: getConceptExplanations
+  getConceptExplanations: getConceptExplanations,
+  addAhaToDB: addAhaToDB,
+  addDontGetItToDB: addDontGetItToDB,
+  addReactionGotItToDB: addReactionGotItToDB,
+  addReactionLaughingToDB: addReactionLaughingToDB,
+  addReactionShockedToDB: addReactionShockedToDB
 };
 
 /***/ }),

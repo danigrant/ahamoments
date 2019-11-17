@@ -14,24 +14,30 @@ import EmbeddedYouTube from './explanationMediaComponents/EmbeddedYouTube'
 import EmbeddedPodcast from './explanationMediaComponents/EmbeddedPodcast'
 import EmbeddedLink from './explanationMediaComponents/EmbeddedLink'
 import { conceptToDisplayName, explanationTypeToDisplayType } from '../utils/utils'
+import { addAhaToDB, addDontGetItToDB, addReactionGotItToDB, addReactionLaughingToDB, addReactionShockedToDB } from '../utils/firebase'
 
 class ExplanationCard extends React.Component {
   constructor(props) {
     super(props)
+    this.handleAha = this.handleAha.bind(this)
+    this.handleDontGetIt = this.handleDontGetIt.bind(this)
+    this.handleReactionGotIt = this.handleReactionGotIt.bind(this)
+    this.handleReactionLaughing = this.handleReactionLaughing.bind(this)
+    this.handleReactionShocked = this.handleReactionShocked.bind(this)
   }
-  handleAha = () => {
-    console.log("handling the aha");
+  async handleAha() {
+    await addAhaToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
-  handleDontGetIt = () => {
+  async handleDontGetIt() {
     console.log("handling the dont get it");
   }
-  handleReactionGotIt = () => {
+  async handleReactionGotIt() {
     console.log("handling the got it reaction");
   }
-  handleReactionLaughing = () => {
+  async handleReactionLaughing() {
     console.log("handling the laughing reaction");
   }
-  handleReactionShocked = () => {
+  async handleReactionShocked() {
     console.log("handling the shocked reaction");
   }
   render() {

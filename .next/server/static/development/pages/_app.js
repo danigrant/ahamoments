@@ -1302,7 +1302,39 @@ async function getConceptExplanations(concept) {
     });
   });
   return data;
+} // voting utils
+
+
+async function addAhaToDB(explanationID, loggedInUserID, authorUserID) {
+  let explanationRef = explanationsRef.doc(explanationID); // increment aha count for explanation
+
+  explanationRef.update({
+    ahaMomentCount: increment
+  }); // increment aha count for author of explanation
+
+  let docID = await getDocIDByUserID(loggedInUserID);
+  let userRef = usersRef.doc(docID);
+  userRef.update({
+    ahaMomentCount: increment
+  }); // add vote to explanation vote log
+
+  let newVote = {
+    "datetime": firebase.firestore.Timestamp.now(),
+    "userID": loggedInUserID,
+    "type": "ahaMoment"
+  };
+  explanationRef.update({
+    voteLog: firebase.firestore.FieldValue.arrayUnion(newVote)
+  });
 }
+
+async function addDontGetItToDB() {}
+
+async function addReactionGotItToDB() {}
+
+async function addReactionLaughingToDB() {}
+
+async function addReactionShockedToDB() {}
 
 module.exports = {
   firebase,
@@ -1318,7 +1350,12 @@ module.exports = {
   getTopCreatorsAllTime,
   getTopExplanationsAllTime,
   getConceptsThatNeedLove,
-  getConceptExplanations
+  getConceptExplanations,
+  addAhaToDB,
+  addDontGetItToDB,
+  addReactionGotItToDB,
+  addReactionLaughingToDB,
+  addReactionShockedToDB
 };
 
 /***/ }),
