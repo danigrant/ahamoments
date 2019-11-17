@@ -61497,7 +61497,7 @@ function _saveExplanationToDB() {
         switch (_context9.prev = _context9.next) {
           case 0:
             newExplanation = {
-              "concept": explanationObj.concept,
+              "concept": explanationObj.concept.toLowerCase(),
               "authorUserID": explanationObj.authorUserID,
               "authorDisplayName": explanationObj.authorDisplayName,
               "authorAvatarUrl": explanationObj.authorAvatarUrl,
@@ -61508,7 +61508,7 @@ function _saveExplanationToDB() {
                 "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type
               },
-              "ahaMomentCount": 0,
+              "ahaMomentCount": 1,
               "explanationCount": 0,
               "reactionGotItCount": 0,
               "reactionLaughingCount": 0,
@@ -61562,7 +61562,7 @@ function _saveExplanationWithFileToDB() {
             userObj = _context10.sent;
             _context10.next = 10;
             return saveExplanationToDB({
-              "concept": concept,
+              "concept": concept.toLowerCase(),
               "authorUserID": userID,
               "authorDisplayName": userObj.displayName,
               "authorAvatarUrl": userObj.avatarUrl,
@@ -61572,7 +61572,7 @@ function _saveExplanationWithFileToDB() {
                 "mediaLink": snapshot.metadata.fullPath,
                 "type": fileType
               },
-              "ahaMomentCount": 0,
+              "ahaMomentCount": 1,
               "explanationCount": 0,
               "reactionGotItCount": 0,
               "reactionLaughingCount": 0,
@@ -61614,7 +61614,7 @@ function _saveWrittenExplanationToDB() {
             userObj = _context11.sent;
             _context11.next = 6;
             return saveExplanationToDB({
-              "concept": concept,
+              "concept": concept.toLowerCase(),
               "authorUserID": userID,
               "authorDisplayName": userObj.displayName,
               "authorAvatarUrl": userObj.avatarUrl,
@@ -61623,7 +61623,7 @@ function _saveWrittenExplanationToDB() {
                 "introText": text,
                 "type": "text"
               },
-              "ahaMomentCount": 0,
+              "ahaMomentCount": 1,
               "explanationCount": 0,
               "reactionGotItCount": 0,
               "reactionLaughingCount": 0,
@@ -61661,7 +61661,7 @@ function _saveExternalLinkExplanationToDB() {
             userObj = _context12.sent;
             _context12.next = 5;
             return saveExplanationToDB({
-              "concept": concept,
+              "concept": concept.toLowerCase(),
               "authorUserID": userID,
               "authorDisplayName": userObj.displayName,
               "authorAvatarUrl": userObj.avatarUrl,
@@ -61709,7 +61709,7 @@ function _getConceptsThatNeedLove() {
                 "numContributors": 11,
                 "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
               }, {
-                "conceptName": "Limits",
+                "conceptName": "Infinity",
                 "numContributors": 4,
                 "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
               }]

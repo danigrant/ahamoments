@@ -1088,7 +1088,7 @@ async function getFileURLFromFirebaseStorage(url) {
 
 async function saveExplanationToDB(explanationObj) {
   let newExplanation = {
-    "concept": explanationObj.concept,
+    "concept": explanationObj.concept.toLowerCase(),
     "authorUserID": explanationObj.authorUserID,
     "authorDisplayName": explanationObj.authorDisplayName,
     "authorAvatarUrl": explanationObj.authorAvatarUrl,
@@ -1099,7 +1099,7 @@ async function saveExplanationToDB(explanationObj) {
       "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
       "type": explanationObj.explanation.type
     },
-    "ahaMomentCount": 0,
+    "ahaMomentCount": 1,
     "explanationCount": 0,
     "reactionGotItCount": 0,
     "reactionLaughingCount": 0,
@@ -1124,7 +1124,7 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
   let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
 
   await saveExplanationToDB({
-    "concept": concept,
+    "concept": concept.toLowerCase(),
     "authorUserID": userID,
     "authorDisplayName": userObj.displayName,
     "authorAvatarUrl": userObj.avatarUrl,
@@ -1134,7 +1134,7 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
       "mediaLink": snapshot.metadata.fullPath,
       "type": fileType
     },
-    "ahaMomentCount": 0,
+    "ahaMomentCount": 1,
     "explanationCount": 0,
     "reactionGotItCount": 0,
     "reactionLaughingCount": 0,
@@ -1151,7 +1151,7 @@ async function saveWrittenExplanationToDB(text, userID, concept) {
   let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
 
   await saveExplanationToDB({
-    "concept": concept,
+    "concept": concept.toLowerCase(),
     "authorUserID": userID,
     "authorDisplayName": userObj.displayName,
     "authorAvatarUrl": userObj.avatarUrl,
@@ -1160,7 +1160,7 @@ async function saveWrittenExplanationToDB(text, userID, concept) {
       "introText": text,
       "type": "text"
     },
-    "ahaMomentCount": 0,
+    "ahaMomentCount": 1,
     "explanationCount": 0,
     "reactionGotItCount": 0,
     "reactionLaughingCount": 0,
@@ -1173,7 +1173,7 @@ async function saveExternalLinkExplanationToDB(introText, mediaLink, mediaConsum
   let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
 
   await saveExplanationToDB({
-    "concept": concept,
+    "concept": concept.toLowerCase(),
     "authorUserID": userID,
     "authorDisplayName": userObj.displayName,
     "authorAvatarUrl": userObj.avatarUrl,
@@ -1201,7 +1201,7 @@ async function getConceptsThatNeedLove() {
       "numContributors": 11,
       "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
     }, {
-      "conceptName": "Limits",
+      "conceptName": "Infinity",
       "numContributors": 4,
       "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
     }]

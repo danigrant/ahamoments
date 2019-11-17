@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -536,67 +536,69 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       },
       __self: this
     }, __jsx("p", {
+      className: "margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 58
       },
       __self: this
-    }, this.props.explanation.explanation.introText), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      tweet: this.props.explanation.explanation.mediaLink,
+    }, this.props.explanation.explanation.introText), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
+      className: "margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 61
+      },
+      __self: this
+    }, this.props.explanation.explanation.mediaConsumptionGuidance), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      tweet: this.props.explanation.explanation.mediaLink,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 65
       },
       __self: this
     }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_9__["default"], {
       audio: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 69
       },
       __self: this
     }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_14__["default"], {
       link: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 73
       },
       __self: this
     }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_8__["default"], {
       photo: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 77
       },
       __self: this
     }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_13__["default"], {
       podcast: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 81
       },
       __self: this
     }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_10__["default"], {
       video: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 85
       },
       __self: this
     }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
       youtube: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
-      },
-      __self: this
-    }), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 89
       },
       __self: this
-    }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
         lineNumber: 92
@@ -1757,15 +1759,16 @@ const EmbeddedLink = props => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 4
     },
     __self: undefined
   }, __jsx("a", {
-    href: "",
+    className: "action-button button background-light-blue rounded-border",
+    href: props.link,
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 5
     },
     __self: undefined
   }, props.link));
@@ -4282,7 +4285,7 @@ async function getFileURLFromFirebaseStorage(url) {
 
 async function saveExplanationToDB(explanationObj) {
   let newExplanation = {
-    "concept": explanationObj.concept,
+    "concept": explanationObj.concept.toLowerCase(),
     "authorUserID": explanationObj.authorUserID,
     "authorDisplayName": explanationObj.authorDisplayName,
     "authorAvatarUrl": explanationObj.authorAvatarUrl,
@@ -4293,7 +4296,7 @@ async function saveExplanationToDB(explanationObj) {
       "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
       "type": explanationObj.explanation.type
     },
-    "ahaMomentCount": 0,
+    "ahaMomentCount": 1,
     "explanationCount": 0,
     "reactionGotItCount": 0,
     "reactionLaughingCount": 0,
@@ -4318,7 +4321,7 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
   let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
 
   await saveExplanationToDB({
-    "concept": concept,
+    "concept": concept.toLowerCase(),
     "authorUserID": userID,
     "authorDisplayName": userObj.displayName,
     "authorAvatarUrl": userObj.avatarUrl,
@@ -4328,7 +4331,7 @@ async function saveExplanationWithFileToDB(introText, fileToUpload, fileType, us
       "mediaLink": snapshot.metadata.fullPath,
       "type": fileType
     },
-    "ahaMomentCount": 0,
+    "ahaMomentCount": 1,
     "explanationCount": 0,
     "reactionGotItCount": 0,
     "reactionLaughingCount": 0,
@@ -4345,7 +4348,7 @@ async function saveWrittenExplanationToDB(text, userID, concept) {
   let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
 
   await saveExplanationToDB({
-    "concept": concept,
+    "concept": concept.toLowerCase(),
     "authorUserID": userID,
     "authorDisplayName": userObj.displayName,
     "authorAvatarUrl": userObj.avatarUrl,
@@ -4354,7 +4357,7 @@ async function saveWrittenExplanationToDB(text, userID, concept) {
       "introText": text,
       "type": "text"
     },
-    "ahaMomentCount": 0,
+    "ahaMomentCount": 1,
     "explanationCount": 0,
     "reactionGotItCount": 0,
     "reactionLaughingCount": 0,
@@ -4367,7 +4370,7 @@ async function saveExternalLinkExplanationToDB(introText, mediaLink, mediaConsum
   let userObj = await getUserProfileInfoByUserID(userID); // then save to firebase
 
   await saveExplanationToDB({
-    "concept": concept,
+    "concept": concept.toLowerCase(),
     "authorUserID": userID,
     "authorDisplayName": userObj.displayName,
     "authorAvatarUrl": userObj.avatarUrl,
@@ -4395,7 +4398,7 @@ async function getConceptsThatNeedLove() {
       "numContributors": 11,
       "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
     }, {
-      "conceptName": "Limits",
+      "conceptName": "Infinity",
       "numContributors": 4,
       "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
     }]
@@ -4711,7 +4714,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

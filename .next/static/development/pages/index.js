@@ -586,67 +586,69 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("p", {
+        className: "margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 58
         },
         __self: this
-      }, this.props.explanation.explanation.introText), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_19__["default"], {
-        tweet: this.props.explanation.explanation.mediaLink,
+      }, this.props.explanation.explanation.introText), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
+        className: "margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 61
+        },
+        __self: this
+      }, this.props.explanation.explanation.mediaConsumptionGuidance), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        tweet: this.props.explanation.explanation.mediaLink,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 65
         },
         __self: this
       }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_17__["default"], {
         audio: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 69
         },
         __self: this
       }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_22__["default"], {
         link: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 73
         },
         __self: this
       }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_16__["default"], {
         photo: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 77
         },
         __self: this
       }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_21__["default"], {
         podcast: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 81
         },
         __self: this
       }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_18__["default"], {
         video: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 85
         },
         __self: this
       }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_20__["default"], {
         youtube: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: this
-      }), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 89
         },
         __self: this
-      }, this.props.explanation.explanation.mediaConsumptionGuidance)), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 92
@@ -1987,15 +1989,16 @@ var EmbeddedLink = function EmbeddedLink(props) {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3
+      lineNumber: 4
     },
     __self: this
   }, __jsx("a", {
-    href: "",
+    className: "action-button button background-light-blue rounded-border",
+    href: props.link,
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 4
+      lineNumber: 5
     },
     __self: this
   }, props.link));
@@ -74429,7 +74432,7 @@ function _saveExplanationToDB() {
         switch (_context9.prev = _context9.next) {
           case 0:
             newExplanation = {
-              "concept": explanationObj.concept,
+              "concept": explanationObj.concept.toLowerCase(),
               "authorUserID": explanationObj.authorUserID,
               "authorDisplayName": explanationObj.authorDisplayName,
               "authorAvatarUrl": explanationObj.authorAvatarUrl,
@@ -74440,7 +74443,7 @@ function _saveExplanationToDB() {
                 "mediaLink": explanationObj.explanation.mediaLink ? explanationObj.explanation.mediaLink : "",
                 "type": explanationObj.explanation.type
               },
-              "ahaMomentCount": 0,
+              "ahaMomentCount": 1,
               "explanationCount": 0,
               "reactionGotItCount": 0,
               "reactionLaughingCount": 0,
@@ -74494,7 +74497,7 @@ function _saveExplanationWithFileToDB() {
             userObj = _context10.sent;
             _context10.next = 10;
             return saveExplanationToDB({
-              "concept": concept,
+              "concept": concept.toLowerCase(),
               "authorUserID": userID,
               "authorDisplayName": userObj.displayName,
               "authorAvatarUrl": userObj.avatarUrl,
@@ -74504,7 +74507,7 @@ function _saveExplanationWithFileToDB() {
                 "mediaLink": snapshot.metadata.fullPath,
                 "type": fileType
               },
-              "ahaMomentCount": 0,
+              "ahaMomentCount": 1,
               "explanationCount": 0,
               "reactionGotItCount": 0,
               "reactionLaughingCount": 0,
@@ -74546,7 +74549,7 @@ function _saveWrittenExplanationToDB() {
             userObj = _context11.sent;
             _context11.next = 6;
             return saveExplanationToDB({
-              "concept": concept,
+              "concept": concept.toLowerCase(),
               "authorUserID": userID,
               "authorDisplayName": userObj.displayName,
               "authorAvatarUrl": userObj.avatarUrl,
@@ -74555,7 +74558,7 @@ function _saveWrittenExplanationToDB() {
                 "introText": text,
                 "type": "text"
               },
-              "ahaMomentCount": 0,
+              "ahaMomentCount": 1,
               "explanationCount": 0,
               "reactionGotItCount": 0,
               "reactionLaughingCount": 0,
@@ -74593,7 +74596,7 @@ function _saveExternalLinkExplanationToDB() {
             userObj = _context12.sent;
             _context12.next = 5;
             return saveExplanationToDB({
-              "concept": concept,
+              "concept": concept.toLowerCase(),
               "authorUserID": userID,
               "authorDisplayName": userObj.displayName,
               "authorAvatarUrl": userObj.avatarUrl,
@@ -74641,7 +74644,7 @@ function _getConceptsThatNeedLove() {
                 "numContributors": 11,
                 "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
               }, {
-                "conceptName": "Limits",
+                "conceptName": "Infinity",
                 "numContributors": 4,
                 "contributorAvatars": ["/images/temp-avatar.jpg", "/images/temp-avatar2.jpg", "/images/temp-avatar3.jpg", "/images/temp-avatar4.jpg"]
               }]
@@ -75194,7 +75197,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2:
+/***/ 0:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fahamoments%2Fpages%2Findex.js ***!
   \********************************************************************************************************************************/
@@ -75217,5 +75220,5 @@ module.exports = dll_e9ad7d891b372a4221cf;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
