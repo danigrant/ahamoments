@@ -88,512 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./components/AddExplanationCard.js":
-/*!******************************************!*\
-  !*** ./components/AddExplanationCard.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
-/* harmony import */ var _uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./uploadExplanationComponents/UploadImage */ "./components/uploadExplanationComponents/UploadImage.js");
-/* harmony import */ var _uploadExplanationComponents_UploadVideo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./uploadExplanationComponents/UploadVideo */ "./components/uploadExplanationComponents/UploadVideo.js");
-/* harmony import */ var _uploadExplanationComponents_UploadAudio__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./uploadExplanationComponents/UploadAudio */ "./components/uploadExplanationComponents/UploadAudio.js");
-/* harmony import */ var _uploadExplanationComponents_AddTweet__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./uploadExplanationComponents/AddTweet */ "./components/uploadExplanationComponents/AddTweet.js");
-/* harmony import */ var _uploadExplanationComponents_AddPodcast__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./uploadExplanationComponents/AddPodcast */ "./components/uploadExplanationComponents/AddPodcast.js");
-/* harmony import */ var _uploadExplanationComponents_AddLink__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./uploadExplanationComponents/AddLink */ "./components/uploadExplanationComponents/AddLink.js");
-/* harmony import */ var _uploadExplanationComponents_AddYouTube__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./uploadExplanationComponents/AddYouTube */ "./components/uploadExplanationComponents/AddYouTube.js");
-/* harmony import */ var _uploadExplanationComponents_WriteText__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./uploadExplanationComponents/WriteText */ "./components/uploadExplanationComponents/WriteText.js");
-/* harmony import */ var fireworks_lib_react__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! fireworks/lib/react */ "fireworks/lib/react");
-/* harmony import */ var fireworks_lib_react__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(fireworks_lib_react__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_15__);
-
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/AddExplanationCard.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleFileChange", e => {
-      this.setState({
-        fileToUpload: e.target.files[0]
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleIntroTextChange", e => {
-      this.setState({
-        introText: e.target.value
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleMediaLinkChange", e => {
-      this.setState({
-        mediaLink: e.target.value
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleMediaGuidanceChange", e => {
-      this.setState({
-        mediaConsumptionGuidance: e.target.value
-      });
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "handleSubmit", e => {
-      const {
-        router
-      } = this.props;
-      e.preventDefault();
-
-      if (this.state.type == "photo" || this.state.type == "video" || this.state.type == "audio") {
-        Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_14__["saveExplanationWithFileToDB"])(this.state.introText, this.state.fileToUpload, this.state.type, this.props.loggedInUser.userID, router.query.id);
-      } else if (this.state.type == "text") {
-        Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_14__["saveWrittenExplanationToDB"])(this.state.introText, this.props.loggedInUser.userID, router.query.id);
-      } else if (this.state.type == "podcast" || this.state.type == "youtube" || this.state.type == "tweet" || this.state.type == "link") {
-        Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_14__["saveExternalLinkExplanationToDB"])(this.state.introText, this.state.mediaLink, this.state.mediaConsumptionGuidance, this.state.type, this.props.loggedInUser.userID, router.query.id);
-      } // reset the ui
-
-
-      this.setState({
-        showAddExplanationSection: false,
-        typeSelected: false,
-        activeElement: "none",
-        justSubmitted: true
-      });
-      let thisRef = this;
-      setTimeout(function () {
-        thisRef.setState({
-          justSubmitted: false
-        });
-      }, 1000);
-    });
-
-    this.state = {
-      type: false,
-      // photo, video, audio, podcast, youtube, tweet, link, text
-      fileToUpload: '',
-      introText: '',
-      mediaLink: '',
-      mediaConsumptionGuidance: '',
-      showAddExplanationSection: true,
-      activeElement: "none",
-      // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
-      justSubmitted: false
-    };
-  }
-
-  render() {
-    let fxProps = {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
-      colors: ['#e91e63', '#ff9800', '#ff5722']
-    };
-    const {
-      router
-    } = this.props;
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: this
-    }, this.state.justSubmitted && __jsx(fireworks_lib_react__WEBPACK_IMPORTED_MODULE_13__["Fireworks"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, fxProps, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 78
-      },
-      __self: this
-    })), __jsx(_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 80
-      },
-      __self: this
-    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 81
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "columns-parent-div",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82
-      },
-      __self: this
-    }, __jsx("div", {
-      className: "column-80-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 83
-      },
-      __self: this
-    }, __jsx("p", {
-      className: "font-color-light-grey",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 84
-      },
-      __self: this
-    }, "Add your own explanation and give someone an aha moment.")), __jsx("div", {
-      className: "column-20-p",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 86
-      },
-      __self: this
-    }, !this.state.showAddExplanationSection && __jsx("div", {
-      onClick: () => {
-        this.setState({
-          showAddExplanationSection: true
-        });
-      },
-      className: "action-button button background-purple rounded-border font-med font-bold-extra float-right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      },
-      __self: this
-    }, "Contribute"), this.state.showAddExplanationSection && __jsx("div", {
-      onClick: () => {
-        this.setState({
-          showAddExplanationSection: false,
-          typeSelected: false,
-          activeElement: "none"
-        });
-      },
-      className: "font-med font-bold-extra float-right",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: this
-    }, __jsx("i", {
-      className: "material-icons",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: this
-    }, "close_rounded"))))), this.state.showAddExplanationSection && __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 100
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101
-      },
-      __self: this
-    }, __jsx("span", {
-      className: "link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 102
-      },
-      __self: this
-    }, "@barackobama "), "explains", __jsx("span", {
-      className: "link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 104
-      },
-      __self: this
-    }, " ", router.query.id, " "), "through", __jsx("span", {
-      className: "link",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106
-      },
-      __self: this
-    }, " spoken word")), __jsx("div", {
-      className: "media-type-selection-section margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 108
-      },
-      __self: this
-    }, __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "text",
-          activeElement: "write"
-        });
-      },
-      className: this.state.activeElement == "write" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 109
-      },
-      __self: this
-    }, "Write Something"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "podcast",
-          activeElement: "podcast"
-        });
-      },
-      className: this.state.activeElement == "podcast" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 110
-      },
-      __self: this
-    }, "Podcast Snippet"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "youtube",
-          activeElement: "youtube"
-        });
-      },
-      className: this.state.activeElement == "youtube" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 111
-      },
-      __self: this
-    }, "YouTube Clip"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "video",
-          activeElement: "recordVideo"
-        });
-      },
-      className: this.state.activeElement == "recordVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 112
-      },
-      __self: this
-    }, "Record Your Own Video"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "audio",
-          activeElement: "recordAudio"
-        });
-      },
-      className: this.state.activeElement == "recordAudio" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 113
-      },
-      __self: this
-    }, "Record Your Own Audio"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "tweet",
-          activeElement: "tweet"
-        });
-      },
-      className: this.state.activeElement == "tweet" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 114
-      },
-      __self: this
-    }, "Tweet"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "video",
-          activeElement: "uploadVideo"
-        });
-      },
-      className: this.state.activeElement == "uploadVideo" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 115
-      },
-      __self: this
-    }, "Upload A Video"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "photo",
-          activeElement: "uploadPhoto"
-        });
-      },
-      className: this.state.activeElement == "uploadPhoto" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 116
-      },
-      __self: this
-    }, "Upload A Photo"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "photo",
-          activeElement: "draw"
-        });
-      },
-      className: this.state.activeElement == "draw" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 117
-      },
-      __self: this
-    }, "Draw Something And Upload It"), __jsx("div", {
-      onClick: () => {
-        this.setState({
-          type: "link",
-          activeElement: "link"
-        });
-      },
-      className: this.state.activeElement == "link" ? "background-purple action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml" : "background-dark-grey action-button button rounded-border font-med font-bold-med margin-right-sml margin-bottom-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 118
-      },
-      __self: this
-    }, "Link To Something On The Web"))), this.state.showAddExplanationSection && this.state.type && __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 124
-      },
-      __self: this
-    }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 125
-      },
-      __self: this
-    }, this.state.type == "text" && __jsx(_uploadExplanationComponents_WriteText__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      handleTextChange: this.handleIntroTextChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 128
-      },
-      __self: this
-    }), this.state.type == "podcast" && __jsx(_uploadExplanationComponents_AddPodcast__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleMediaLinkChange: this.handleMediaLinkChange,
-      handleMediaGuidanceChange: this.handleMediaGuidanceChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 132
-      },
-      __self: this
-    }), this.state.type == "youtube" && __jsx(_uploadExplanationComponents_AddYouTube__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleMediaLinkChange: this.handleMediaLinkChange,
-      handleMediaGuidanceChange: this.handleMediaGuidanceChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 136
-      },
-      __self: this
-    }), this.state.type == "video" && __jsx(_uploadExplanationComponents_UploadVideo__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      mode: this.state.activeElement == "recordVideo" ? "record" : "upload",
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 140
-      },
-      __self: this
-    }), this.state.type == "audio" && __jsx(_uploadExplanationComponents_UploadAudio__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 144
-      },
-      __self: this
-    }), this.state.type == "tweet" && __jsx(_uploadExplanationComponents_AddTweet__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleMediaLinkChange: this.handleMediaLinkChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 148
-      },
-      __self: this
-    }), this.state.type == "photo" && __jsx(_uploadExplanationComponents_UploadImage__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      mode: this.state.activeElement == "uploadPhoto" ? "upload" : "draw",
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleFileChange: this.handleFileChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 152
-      },
-      __self: this
-    }), this.state.type == "link" && __jsx(_uploadExplanationComponents_AddLink__WEBPACK_IMPORTED_MODULE_10__["default"], {
-      handleIntroTextChange: this.handleIntroTextChange,
-      handleMediaLinkChange: this.handleMediaLinkChange,
-      currentConcept: router.query.id,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 156
-      },
-      __self: this
-    })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 159
-      },
-      __self: this
-    }, __jsx("div", {
-      onClick: this.handleSubmit,
-      className: "action-button button background-purple rounded-border font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 160
-      },
-      __self: this
-    }, "Submit!")))));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_15__["withRouter"])(AddExplanationCard)); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
-
-/***/ }),
 
 /***/ "./components/AhaButton.js":
 /*!*********************************!*\
@@ -2119,907 +1617,6 @@ class EmbeddedYouTube extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
 
 /***/ }),
 
-/***/ "./components/uploadExplanationComponents/AddLink.js":
-/*!***********************************************************!*\
-  !*** ./components/uploadExplanationComponents/AddLink.js ***!
-  \***********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/AddLink.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class AddLink extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaLinkChangeToParent", e => {
-      this.props.handleMediaLinkChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Link"), __jsx("input", {
-      onChange: this.sendMediaLinkChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      placeholder: "https:// ...",
-      name: "link-input",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (AddLink);
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/AddPodcast.js":
-/*!**************************************************************!*\
-  !*** ./components/uploadExplanationComponents/AddPodcast.js ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/AddPodcast.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class AddPodcast extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaLinkChangeToParent", e => {
-      this.props.handleMediaLinkChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaGuidanceChangeToParent", e => {
-      this.props.handleMediaGuidanceChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, __jsx("a", {
-      className: "link",
-      href: "https://soundcloud.com/search",
-      target: "_blank",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, "SoundCloud"), " link to podcast"), __jsx("p", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: this
-    }, "Head over to ", __jsx("a", {
-      className: "link",
-      href: "https://soundcloud.com/search",
-      target: "_blank",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: this
-    }, "SoundCloud"), " and find the link to the podcast episode you're thinking of."), __jsx("input", {
-      onChange: this.sendMediaLinkChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      placeholder: "https://soundcloud.com/ ...",
-      name: "podcast-input",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
-    }, "What part should someone listen to?"), __jsx("p", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
-    }, "(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)"), __jsx("textarea", {
-      onChange: this.sendMediaGuidanceChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: "start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00",
-      rows: "2",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 32
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (AddPodcast);
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/AddTweet.js":
-/*!************************************************************!*\
-  !*** ./components/uploadExplanationComponents/AddTweet.js ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/AddTweet.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class AddTweet extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaLinkChangeToParent", e => {
-      this.props.handleMediaLinkChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Link to Tweet"), __jsx("input", {
-      onChange: this.sendMediaLinkChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      placeholder: "https://twitter.com/ ...",
-      name: "tweet-input",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (AddTweet);
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/AddYouTube.js":
-/*!**************************************************************!*\
-  !*** ./components/uploadExplanationComponents/AddYouTube.js ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/AddYouTube.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class AddYouTube extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaLinkChangeToParent", e => {
-      this.props.handleMediaLinkChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendMediaGuidanceChangeToParent", e => {
-      this.props.handleMediaGuidanceChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, "Link to YouTube video"), __jsx("input", {
-      onChange: this.sendMediaLinkChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      placeholder: "https://youtube.com/watch ...",
-      name: "video-input",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 28
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    }, "What part should someone listen to?"), __jsx("p", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      },
-      __self: this
-    }, "(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)"), __jsx("textarea", {
-      onChange: this.sendMediaGuidanceChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: "start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00",
-      rows: "2",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (AddYouTube);
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/UploadAudio.js":
-/*!***************************************************************!*\
-  !*** ./components/uploadExplanationComponents/UploadAudio.js ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/UploadAudio.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class UploadAudio extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendFileChangeToParent", e => {
-      this.props.handleFileChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Upload Your Audio"), __jsx("p", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      },
-      __self: this
-    }, "Record a voice memo and then upload it here. You can sing a song, do some freestyle rap, speak some poetry, tell a joke or just explain it straight, Can\u2019t wait to see what you come up with."), __jsx("input", {
-      onChange: this.sendFileChangeToParent,
-      className: "margin-top-sml font-med",
-      type: "file",
-      name: "photo-upload",
-      accept: "audio/*",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 26
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (UploadAudio); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/UploadImage.js":
-/*!***************************************************************!*\
-  !*** ./components/uploadExplanationComponents/UploadImage.js ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/UploadImage.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class UploadImage extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendFileChangeToParent", e => {
-      this.props.handleFileChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Upload Your Photo"), this.props.mode == "draw" && __jsx("p", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, "Draw a picture and then upload it here. Your drawing can be a comic, a diagram, a chart, an illustration, anything you can do in pictionary you can do here. Can\u2019t wait to see what you come up with."), __jsx("input", {
-      onChange: this.sendFileChangeToParent,
-      className: "margin-top-sml font-med",
-      type: "file",
-      name: "photo-upload",
-      accept: "image/*",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (UploadImage); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/UploadVideo.js":
-/*!***************************************************************!*\
-  !*** ./components/uploadExplanationComponents/UploadVideo.js ***!
-  \***************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/UploadVideo.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class UploadVideo extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendFileChangeToParent", e => {
-      this.props.handleFileChange(e);
-    });
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendIntroTextChangeToParent", e => {
-      this.props.handleIntroTextChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 22
-      },
-      __self: this
-    }, "Optional Intro Text"), __jsx("textarea", {
-      onChange: this.sendIntroTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 23
-      },
-      __self: this
-    }), __jsx("h2", {
-      className: "font-med font-bold-med margin-top-sml",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      },
-      __self: this
-    }, "Upload Your Video"), this.props.mode == "record" && __jsx("p", {
-      className: "font-color-light-grey font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 27
-      },
-      __self: this
-    }, "Record a video and then upload it here. In your video you can sing a song, do an interpretive dance, tell a joke or just explain it straight, Can\u2019t wait to see what you come up with."), __jsx("input", {
-      onChange: this.sendFileChangeToParent,
-      className: "margin-top-sml font-med",
-      type: "file",
-      name: "photo-upload",
-      accept: "video/mp4,video/x-m4v,video/*",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 29
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (UploadVideo); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
-
-/***/ }),
-
-/***/ "./components/uploadExplanationComponents/WriteText.js":
-/*!*************************************************************!*\
-  !*** ./components/uploadExplanationComponents/WriteText.js ***!
-  \*************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card */ "./components/Card.js");
-/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../CardSection */ "./components/CardSection.js");
-
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/uploadExplanationComponents/WriteText.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
-
-
-
-class WriteText extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
-  constructor(props) {
-    super(props);
-
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "sendTextChangeToParent", e => {
-      console.log(this.props);
-      this.props.handleTextChange(e);
-    });
-
-    this.state = {
-      fileToUpload: ''
-    };
-  }
-
-  render() {
-    return __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 18
-      },
-      __self: this
-    }, __jsx("form", {
-      className: "add-explanation-form",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19
-      },
-      __self: this
-    }, __jsx("h2", {
-      className: "font-med font-bold-med",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 20
-      },
-      __self: this
-    }, "Go for it! Teach us."), __jsx("textarea", {
-      onChange: this.sendTextChangeToParent,
-      className: "margin-top-sml font-med background-grey rounded-border light-border",
-      type: "text",
-      name: "text",
-      placeholder: `Here is a fabulous way to understand ${this.props.currentConcept}s...`,
-      rows: "5",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    })));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (WriteText); // <form className="add-explanation-form">
-//   <h2 className="font-med font-bold-med">Optional Intro Text</h2>
-//   <textarea className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="text" placeholder={`Here is a fabulous way to understand ${router.query.id}s...`} rows="5"></textarea>
-//   <h2 className="font-med font-bold-med margin-top-sml">Link to YouTube video</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="url" placeholder="https:// ..." />
-//   <h2 className="font-med font-bold-med margin-top-sml">What part should someone listen to?</h2>
-//   <h2 className="font-color-light-grey font-med font-bold-med">(i.e. start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00)</h2>
-//   <input className="margin-top-sml font-med background-grey rounded-border light-border" type="text" name="how-to-consume" placeholder="Start at 0:10 and listen until 3:50 and then listen again from 4:05-5:00" />
-// </form>
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
@@ -3105,69 +1702,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/weak-map */ "core-js/library/fn/weak-map");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _extends; });
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/assign */ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js");
-/* harmony import */ var _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0__);
-
-function _extends() {
-  _extends = _core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default.a || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
 
 /***/ }),
 
@@ -4828,10 +3362,10 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/concept/[id].js":
-/*!*******************************!*\
-  !*** ./pages/concept/[id].js ***!
-  \*******************************/
+/***/ "./pages/explainer/[id].js":
+/*!*********************************!*\
+  !*** ./pages/explainer/[id].js ***!
+  \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4843,14 +3377,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AppContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/AppContainer */ "./components/AppContainer.js");
 /* harmony import */ var _components_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Card */ "./components/Card.js");
 /* harmony import */ var _components_CardSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/CardSection */ "./components/CardSection.js");
-/* harmony import */ var _components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/AddExplanationCard */ "./components/AddExplanationCard.js");
-/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
-/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
-var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/concept/[id].js";
+/* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
+/* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/explainer/[id].js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -4862,21 +3395,17 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+class ProfilePage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor(props) {
     super(props);
     this.state = {
-      conceptExplanationsArray: []
+      currentProfileUser: {}
     };
   }
 
   async componentDidMount() {
-    const {
-      router
-    } = this.props;
     this.setState({
-      conceptExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_8__["getConceptExplanations"])(router.query.id)
+      currentProfileUser: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_7__["getUserByID"])(this.props.router.query.id)
     });
   }
 
@@ -4885,13 +3414,13 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       router
     } = this.props;
     {
-      if (!this.state.conceptExplanationsArray.length) {
-        return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      if (!this.state.currentProfileUser.displayName) {
+        return __jsx(_components_Loading__WEBPACK_IMPORTED_MODULE_6__["default"], {
           loggedIn: this.props.loggedIn,
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 28
           },
           __self: this
         });
@@ -4899,7 +3428,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 32
           },
           __self: this
         }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4907,72 +3436,98 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 33
           },
           __self: this
         }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
           __source: {
             fileName: _jsxFileName,
+            lineNumber: 34
+          },
+          __self: this
+        }, __jsx("h1", {
+          className: "font-lrg font-bold-med inline-block",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 35
+          },
+          __self: this
+        }, this.state.currentProfileUser.displayName), __jsx(_components_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          __source: {
+            fileName: _jsxFileName,
             lineNumber: 36
           },
           __self: this
-        }, __jsx("div", {
-          className: "concept-title-bar",
+        }, __jsx(_components_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 37
           },
           __self: this
-        }, __jsx("h1", {
-          className: "font-lrg font-bold-med inline-block capitalize",
+        }, __jsx("div", {
+          className: "columns-parent-div",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 38
           },
           __self: this
-        }, router.query.id), __jsx("p", {
-          className: "font-color-light-grey inline-block margin-left",
+        }, __jsx("div", {
+          className: "column-50-p flex-center-contents-vertically flex-justify-flex-start",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 39
           },
           __self: this
-        }, "originally asked by @bofirstdog")), __jsx(_components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          loggedInUser: this.props.loggedInUser,
+        }, __jsx("img", {
+          className: "avatar avatar-sml top-zero",
+          src: "/images/temp-avatar.jpg",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 40
+          },
+          __self: this
+        }), __jsx("p", {
+          className: "font-bold-med font-med inline-block",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 41
           },
           __self: this
-        }), __jsx("h1", {
-          className: "margin-top-lrg font-lrg font-bold-med inline-block",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 42
-          },
-          __self: this
-        }, "All of the wacky and wonderful ways to explain a ", router.query.id, " "), __jsx("p", {
-          className: "font-color-light-grey",
+        }, this.state.currentProfileUser.displayName)), __jsx("div", {
+          className: "column-50-p flex-center-contents-vertically flex-justify-flex-end",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 43
           },
           __self: this
-        }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
-          className: "margin-top-sml",
+        }, __jsx("p", {
+          className: "font-color-light-grey font-bold-med",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 44
           },
           __self: this
-        }, this.state.conceptExplanationsArray.map(e => {
-          return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        }, this.state.currentProfileUser.explanationCount, " explanations \u2022 ", this.state.currentProfileUser.ahaMomentCount, " aha moments"))))), __jsx("h1", {
+          className: "margin-top-lrg font-lrg font-bold-med inline-block",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49
+          },
+          __self: this
+        }, "Here are all the different ways ", this.state.currentProfileUser.displayName, " has explained things"), __jsx("div", {
+          className: "margin-top-sml",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }, this.state.currentProfileUser.explanations.map(e => {
+          return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
             key: e.explanationID,
             explanation: e,
-            loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 47
+              lineNumber: 53
             },
             __self: this
           });
@@ -4983,7 +3538,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_9__["withRouter"])(ConceptPage));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_8__["withRouter"])(ProfilePage));
 
 /***/ }),
 
@@ -5618,14 +4173,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4:
-/*!*************************************!*\
-  !*** multi ./pages/concept/[id].js ***!
-  \*************************************/
+/***/ 5:
+/*!***************************************!*\
+  !*** multi ./pages/explainer/[id].js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/danigrant/Projects/ahamoments/pages/concept/[id].js */"./pages/concept/[id].js");
+module.exports = __webpack_require__(/*! /Users/danigrant/Projects/ahamoments/pages/explainer/[id].js */"./pages/explainer/[id].js");
 
 
 /***/ }),
@@ -5737,17 +4292,6 @@ module.exports = require("firebase");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase/storage");
-
-/***/ }),
-
-/***/ "fireworks/lib/react":
-/*!**************************************!*\
-  !*** external "fireworks/lib/react" ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("fireworks/lib/react");
 
 /***/ }),
 

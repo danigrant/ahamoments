@@ -21,7 +21,7 @@ class EmbeddedYouTube extends React.Component {
     } else {
       return (
         <div className="center">
-          <YouTube videoId={this.state.youtubeVideoID} />
+          <YouTube videoId={this.state.youtubeVideoID} width="100%" />
         </div>
       )
     }

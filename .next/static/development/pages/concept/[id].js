@@ -1974,7 +1974,7 @@ var EmbeddedLink = function EmbeddedLink(props) {
     },
     __self: this
   }, __jsx("a", {
-    className: "action-button button background-light-blue rounded-border",
+    className: "word-wrap action-button button background-light-blue rounded-border",
     href: props.link,
     target: "_blank",
     __source: {
@@ -2576,6 +2576,7 @@ function (_React$Component) {
           __self: this
         }, __jsx(react_youtube__WEBPACK_IMPORTED_MODULE_9__["default"], {
           videoId: this.state.youtubeVideoID,
+          width: "100%",
           __source: {
             fileName: _jsxFileName,
             lineNumber: 24

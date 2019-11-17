@@ -1763,7 +1763,7 @@ const EmbeddedLink = props => {
     },
     __self: undefined
   }, __jsx("a", {
-    className: "action-button button background-light-blue rounded-border",
+    className: "word-wrap action-button button background-light-blue rounded-border",
     href: props.link,
     target: "_blank",
     __source: {
@@ -2107,6 +2107,7 @@ class EmbeddedYouTube extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
         __self: this
       }, __jsx(react_youtube__WEBPACK_IMPORTED_MODULE_2___default.a, {
         videoId: this.state.youtubeVideoID,
+        width: "100%",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 24
