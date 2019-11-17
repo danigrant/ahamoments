@@ -61947,11 +61947,7 @@ module.exports = {
   !*** ./utils/utils.js ***!
   \************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _regeneratorRuntime = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-
-var _asyncToGenerator = __webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js");
+/***/ (function(module, exports) {
 
 var conceptToDisplayName = function conceptToDisplayName(concept) {
   // replace - with space
@@ -61993,51 +61989,21 @@ var explanationTypeToDisplayType = function explanationTypeToDisplayType(explana
 var generateFilePathAndName = function generateFilePathAndName(fileType, userID, concept) {
   var randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   return "/".concat(concept, "/").concat(fileType, "/").concat(userID, "/").concat(randomID);
-};
+}; // async function getTwitterEmbed(tweetUrl) {
+//   let twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0]
+//   let twitterStatus = tweetUrl.split('status/')[1].split('?')[0]
+//   let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385`)
+//   // let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=${twitterUser}&status=${twitterStatus}`)
+//   let text = await res.text()
+//   console.log();
+//   return text
+// }
 
-function getTwitterEmbed(_x) {
-  return _getTwitterEmbed.apply(this, arguments);
-}
-
-function _getTwitterEmbed() {
-  _getTwitterEmbed = _asyncToGenerator(
-  /*#__PURE__*/
-  _regeneratorRuntime.mark(function _callee(tweetUrl) {
-    var twitterUser, twitterStatus, res, text;
-    return _regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0];
-            twitterStatus = tweetUrl.split('status/')[1].split('?')[0];
-            _context.next = 4;
-            return fetch("https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385");
-
-          case 4:
-            res = _context.sent;
-            _context.next = 7;
-            return res.text();
-
-          case 7:
-            text = _context.sent;
-            console.log();
-            return _context.abrupt("return", text);
-
-          case 10:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _getTwitterEmbed.apply(this, arguments);
-}
 
 module.exports = {
   conceptToDisplayName: conceptToDisplayName,
   explanationTypeToDisplayType: explanationTypeToDisplayType,
-  generateFilePathAndName: generateFilePathAndName,
-  getTwitterEmbed: getTwitterEmbed
+  generateFilePathAndName: generateFilePathAndName
 };
 
 /***/ }),

@@ -2013,8 +2013,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/utils */ "./utils/utils.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_twitter_embed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-twitter-embed */ "./node_modules/react-twitter-embed/dist/index.es.js");
 
 
 
@@ -2055,24 +2054,11 @@ function (_React$Component) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.t0 = this;
-                _context.next = 3;
-                return Object(_utils_utils__WEBPACK_IMPORTED_MODULE_9__["getTwitterEmbed"])(this.props.tweet);
-
-              case 3:
-                _context.t1 = _context.sent;
-                _context.t2 = {
-                  embedHTML: _context.t1
-                };
-
-                _context.t0.setState.call(_context.t0, _context.t2);
-
-              case 6:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this);
+        }, _callee);
       }));
 
       function componentDidMount() {
@@ -2084,24 +2070,21 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (!this.state.embedHTML) {
-        return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 19
-          },
-          __self: this
-        });
-      }
-
       return __jsx("div", {
         className: "center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 17
         },
         __self: this
-      }, this.state.embedHTML);
+      }, __jsx(react_twitter_embed__WEBPACK_IMPORTED_MODULE_9__["TwitterTweetEmbed"], {
+        tweetId: '1148350276983824385',
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }));
     }
   }]);
 
@@ -4400,6 +4383,220 @@ module.exports = _typeof;
 
 module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
 
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _assertThisInitialized; });
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _classCallCheck; });
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/createClass.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/createClass.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _createClass; });
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _getPrototypeOf; });
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/inherits.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/inherits.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _inherits; });
+/* harmony import */ var _setPrototypeOf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object(_setPrototypeOf__WEBPACK_IMPORTED_MODULE_0__["default"])(subClass, superClass);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _possibleConstructorReturn; });
+/* harmony import */ var _helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../helpers/esm/typeof */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
+/* harmony import */ var _assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (Object(_helpers_esm_typeof__WEBPACK_IMPORTED_MODULE_0__["default"])(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return Object(_assertThisInitialized__WEBPACK_IMPORTED_MODULE_1__["default"])(self);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _setPrototypeOf; });
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _typeof; });
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
 
 /***/ }),
 
@@ -60286,6 +60483,54 @@ module.exports = defineProperties;
 
 /***/ }),
 
+/***/ "./node_modules/exenv/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/exenv/index.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2015 Jed Watson.
+  Based on code that is Copyright 2013-2015, Facebook, Inc.
+  All rights reserved.
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var canUseDOM = !!(
+		typeof window !== 'undefined' &&
+		window.document &&
+		window.document.createElement
+	);
+
+	var ExecutionEnvironment = {
+
+		canUseDOM: canUseDOM,
+
+		canUseWorkers: typeof Worker !== 'undefined',
+
+		canUseEventListeners:
+			canUseDOM && !!(window.addEventListener || window.attachEvent),
+
+		canUseViewport: canUseDOM && !!window.screen
+
+	};
+
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return ExecutionEnvironment;
+		}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+
+}());
+
+
+/***/ }),
+
 /***/ "./node_modules/firebase/dist/index.cjs.js":
 /*!*************************************************!*\
   !*** ./node_modules/firebase/dist/index.cjs.js ***!
@@ -65162,6 +65407,1121 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-proptype-conditional-require/dist/isRequiredIf.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-proptype-conditional-require/dist/isRequiredIf.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports,'__esModule',{value:!0});var VALIDATOR_ARG_ERROR_MESSAGE='The typeValidator argument must be a function with the signature function(props, propName, componentName).',MESSAGE_ARG_ERROR_MESSAGE='The error message is optional, but must be a string if provided.',propIsRequired=function propIsRequired(a,b,c,d){if('boolean'==typeof a)return a;return'function'==typeof a?a(b,c,d):!(!0!==!!a)&&!!a},propExists=function propExists(a,b){return Object.hasOwnProperty.call(a,b)},missingPropError=function missingPropError(a,b,c,d){return d?new Error(d):new Error('Required '+a[b]+' `'+b+'`'+(' was not specified in `'+c+'`.'))},guardAgainstInvalidArgTypes=function guardAgainstInvalidArgTypes(a,b){if('function'!=typeof a)throw new TypeError(VALIDATOR_ARG_ERROR_MESSAGE);if(!!b&&'string'!=typeof b)throw new TypeError(MESSAGE_ARG_ERROR_MESSAGE)},isRequiredIf=function isRequiredIf(a,b,c){return guardAgainstInvalidArgTypes(a,c),function(d,e,f){for(var _len=arguments.length,g=Array(3<_len?_len-3:0),_key=3;_key<_len;_key++)g[_key-3]=arguments[_key];return propIsRequired(b,d,e,f)?propExists(d,e)?a.apply(void 0,[d,e,f].concat(g)):missingPropError(d,e,f,c):a.apply(void 0,[d,e,f].concat(g));// Is not required, so just run typeValidator.
+}};exports.default=isRequiredIf;
+
+//# sourceMappingURL=isRequiredIf.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-twitter-embed/dist/index.es.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-twitter-embed/dist/index.es.js ***!
+  \***********************************************************/
+/*! exports provided: TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterTimelineEmbed", function() { return TwitterTimelineEmbed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterShareButton", function() { return TwitterShareButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterFollowButton", function() { return TwitterFollowButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterHashtagButton", function() { return TwitterHashtagButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterMentionButton", function() { return TwitterMentionButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterTweetEmbed", function() { return TwitterTweetEmbed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterMomentShare", function() { return TwitterMomentShare; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterDMButton", function() { return TwitterDMButton; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterVideoEmbed", function() { return TwitterVideoEmbed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TwitterOnAirButton", function() { return TwitterOnAirButton; });
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-proptype-conditional-require */ "./node_modules/react-proptype-conditional-require/dist/isRequiredIf.js");
+/* harmony import */ var react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var exenv__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! exenv */ "./node_modules/exenv/index.js");
+/* harmony import */ var exenv__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(exenv__WEBPACK_IMPORTED_MODULE_9__);
+
+
+
+
+
+
+
+
+
+
+
+var twitterWidgetJs = 'https://platform.twitter.com/widgets.js';
+
+var TwitterTimelineEmbed =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterTimelineEmbed, _Component);
+
+  function TwitterTimelineEmbed(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterTimelineEmbed);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterTimelineEmbed).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterTimelineEmbed, [{
+    key: "buildChromeOptions",
+    value: function buildChromeOptions(options) {
+      options.chrome = '';
+
+      if (this.props.noHeader) {
+        options.chrome = options.chrome + ' noheader';
+      }
+
+      if (this.props.noFooter) {
+        options.chrome = options.chrome + ' nofooter';
+      }
+
+      if (this.props.noBorders) {
+        options.chrome = options.chrome + ' noborders';
+      }
+
+      if (this.props.noScrollbar) {
+        options.chrome = options.chrome + ' noscrollbar';
+      }
+
+      if (this.props.transparent) {
+        options.chrome = options.chrome + ' transparent';
+      }
+
+      return options;
+    }
+  }, {
+    key: "buildOptions",
+    value: function buildOptions() {
+      var options = Object.assign({}, this.props.options);
+
+      if (this.props.autoHeight) {
+        options.height = this.refs.embedContainer.parentNode.offsetHeight;
+      }
+
+      options = Object.assign({}, options, {
+        theme: this.props.theme,
+        linkColor: this.props.linkColor,
+        borderColor: this.props.borderColor,
+        lang: this.props.lang
+      });
+      return options;
+    }
+  }, {
+    key: "renderWidget",
+    value: function renderWidget(options) {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createTimeline({
+          sourceType: this.props.sourceType,
+          screenName: this.props.screenName,
+          userId: this.props.userId,
+          ownerScreenName: this.props.ownerScreenName,
+          slug: this.props.slug,
+          id: this.props.id || this.props.widgetId,
+          url: this.props.url
+        }, this.refs.embedContainer, options).then(function (element) {
+          _this2.setState({
+            isLoading: false
+          });
+
+          if (onLoad) {
+            onLoad(element);
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.');
+            return;
+          }
+
+          var options = _this3.buildOptions();
+          /** Append chrome options */
+
+
+          options = _this3.buildChromeOptions(options);
+
+          _this3.renderWidget(options);
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterTimelineEmbed;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterTimelineEmbed, "propTypes", {
+  /**
+       * This can be either of profile, likes, list, collection, URL, widget
+       */
+  sourceType: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOf(['profile', 'likes', 'list', 'collection', 'url', 'widget']).isRequired,
+
+  /**
+       * username of twitter handle as String
+       */
+  screenName: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, function (props) {
+    return !props.hasOwnProperty('userId') && (props.sourceType === 'profile' || props.sourceType === 'likes');
+  }),
+
+  /**
+       * UserId of twitter handle as number
+       */
+  userId: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.number, function (props) {
+    return !props.hasOwnProperty('screenName') && (props.sourceType === 'profile' || props.sourceType === 'likes');
+  }),
+
+  /**
+       * To show list, used along with slug
+       */
+  ownerScreenName: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, function (props) {
+    return props.sourceType === 'list' && !props.hasOwnProperty('id');
+  }),
+
+  /**
+       * To show list, used along with ownerScreenName
+       */
+  slug: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, function (props) {
+    return props.sourceType === 'list' && !props.hasOwnProperty('id');
+  }),
+
+  /**
+       * To show list, unique list id
+       * Also used with collections, in that case its valid collection id
+       */
+  id: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.number, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string]), function (props) {
+    return props.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug') || props.sourceType === 'collection';
+  }),
+
+  /**
+       * To show twitter content with url.
+       * Supported content includes profiles, likes, lists, and collections.
+       */
+  url: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, function (props) {
+    return props.sourceType === 'url';
+  }),
+
+  /**
+       * To show custom widget
+       */
+  widgetId: react_proptype_conditional_require__WEBPACK_IMPORTED_MODULE_8___default()(prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, function (props) {
+    return props.sourceType === 'widget';
+  }),
+
+  /**
+       * Additional options to pass to twitter widget plugin
+       */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+       * Automatically fit into parent container height
+       */
+  autoHeight: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.bool,
+
+  /**
+       * With dark or light theme
+       */
+  theme: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOf(['dark', 'light']),
+
+  /**
+       * With custom link colors. Note: Only Hex colors are supported.
+       */
+  linkColor: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string,
+
+  /**
+       * With custom border colors. Note: Only Hex colors are supported.
+       */
+  borderColor: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string,
+
+  /**
+       * Hide the header from timeline
+       */
+  noHeader: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.bool,
+
+  /**
+       * Hide the footer from timeline
+       */
+  noFooter: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.bool,
+
+  /**
+       * Hide the border from timeline
+       */
+  noBorders: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.bool,
+
+  /**
+       * Hide the scrollbars
+       */
+  noScrollbar: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.bool,
+
+  /**
+       * Enable Transparancy
+       */
+  transparent: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.bool,
+
+  /**
+       * Custom language code. Supported codes here: https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
+       */
+  lang: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterShareButton =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterShareButton, _Component);
+
+  function TwitterShareButton(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterShareButton);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterShareButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterShareButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterShareButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createShareButton(_this2.props.url, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterShareButton;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterShareButton, "propTypes", {
+  /**
+  * Url for sharing
+  */
+  url: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+  * Additional options for overriding config. Details at : https://dev.twitter.com/web/tweet-button/parameters
+  */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterFollowButton =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterFollowButton, _Component);
+
+  function TwitterFollowButton(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterFollowButton);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterFollowButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterFollowButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterFollowButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createFollowButton(_this2.props.screenName, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterFollowButton;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterFollowButton, "propTypes", {
+  /**
+       * Username of twitter user which will be followed on click
+       */
+  screenName: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+       * Additional options to be added to the button
+       */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterHashtagButton =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterHashtagButton, _Component);
+
+  function TwitterHashtagButton(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterHashtagButton);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterHashtagButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterHashtagButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterHashtagButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createHashtagButton(_this2.props.tag, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterHashtagButton;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterHashtagButton, "propTypes", {
+  /**
+       * Tag name for hashtag button
+       */
+  tag: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+       * Additional options to be added to the button
+       */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterMentionButton =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterMentionButton, _Component);
+
+  function TwitterMentionButton(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterMentionButton);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterMentionButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterMentionButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterMentionButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createMentionButton(_this2.props.screenName, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterMentionButton;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterMentionButton, "propTypes", {
+  /**
+   * Username to which you will need to tweet
+   */
+  screenName: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+   * Additional options for overriding config.
+   */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterTweetEmbed =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterTweetEmbed, _Component);
+
+  function TwitterTweetEmbed(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterTweetEmbed);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterTweetEmbed).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterTweetEmbed, [{
+    key: "renderWidget",
+    value: function renderWidget() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (!window.twttr) {
+        console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.');
+        return;
+      }
+
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createTweet(this.props.tweetId, this.refs.embedContainer, this.props.options).then(function (element) {
+          _this2.setState({
+            isLoading: false
+          });
+
+          if (onLoad) {
+            onLoad(element);
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          _this3.renderWidget();
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterTweetEmbed;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterTweetEmbed, "propTypes", {
+  /**
+       * Tweet id that needs to be shown
+       */
+  tweetId: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+       * Additional options to pass to twitter widget plugin
+       */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterMomentShare =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterMomentShare, _Component);
+
+  function TwitterMomentShare(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterMomentShare);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterMomentShare).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterMomentShare, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterMomentShare, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createMoment(_this2.props.momentId, _this2.refs.shareMoment, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "shareMoment"
+      }));
+    }
+  }]);
+
+  return TwitterMomentShare;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterMomentShare, "propTypes", {
+  /**
+   * id of Twitter moment to show
+   */
+  momentId: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+   * Additional options for overriding config.
+   */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterDMButton =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterDMButton, _Component);
+
+  function TwitterDMButton(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterDMButton);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterDMButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterDMButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterDMButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createDMButton(_this2.props.id, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterDMButton;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterDMButton, "propTypes", {
+  /**
+  * Twitter user id for DM button
+  */
+  id: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.number.isRequired,
+
+  /**
+  * Additional options to be added to the button
+  */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterVideoEmbed =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterVideoEmbed, _Component);
+
+  function TwitterVideoEmbed(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterVideoEmbed);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterVideoEmbed).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterVideoEmbed, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterVideoEmbed, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createVideo(_this2.props.id, _this2.refs.embedContainer).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterVideoEmbed;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterVideoEmbed, "propTypes", {
+  /**
+       * Id of video tweet.
+       */
+  id: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+var TwitterOnAirButton =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TwitterOnAirButton, _Component);
+
+  function TwitterOnAirButton(props) {
+    var _this;
+
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TwitterOnAirButton);
+
+    _this = Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TwitterOnAirButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TwitterOnAirButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (exenv__WEBPACK_IMPORTED_MODULE_9___default.a.canUseDOM) {
+        var script = __webpack_require__(/*! scriptjs */ "./node_modules/scriptjs/dist/script.js");
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterOnAirButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createPeriscopeOnAirButton(_this2.props.username, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, isLoading && placeholder, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+
+  return TwitterOnAirButton;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_5__["default"])(TwitterOnAirButton, "propTypes", {
+  /**
+   * Username for which you require periscope on air button
+   */
+  username: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string.isRequired,
+
+  /**
+   * Additional options for overriding config.
+   */
+  options: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: prop_types__WEBPACK_IMPORTED_MODULE_7___default.a.func
+});
+
+
+//# sourceMappingURL=index.es.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
   !*** delegated ./node_modules/react/index.js from dll-reference dll_e9ad7d891b372a4221cf ***!
@@ -65906,6 +67266,145 @@ try {
   // problems, please detail your unique predicament in a GitHub issue.
   Function("r", "regeneratorRuntime = r")(runtime);
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/scriptjs/dist/script.js":
+/*!**********************************************!*\
+  !*** ./node_modules/scriptjs/dist/script.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  * $script.js JS loader & dependency manager
+  * https://github.com/ded/script.js
+  * (c) Dustin Diaz 2014 | License MIT
+  */
+
+(function (name, definition) {
+  if ( true && module.exports) module.exports = definition()
+  else if (true) !(__WEBPACK_AMD_DEFINE_FACTORY__ = (definition),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))
+  else {}
+})('$script', function () {
+  var doc = document
+    , head = doc.getElementsByTagName('head')[0]
+    , s = 'string'
+    , f = false
+    , push = 'push'
+    , readyState = 'readyState'
+    , onreadystatechange = 'onreadystatechange'
+    , list = {}
+    , ids = {}
+    , delay = {}
+    , scripts = {}
+    , scriptpath
+    , urlArgs
+
+  function every(ar, fn) {
+    for (var i = 0, j = ar.length; i < j; ++i) if (!fn(ar[i])) return f
+    return 1
+  }
+  function each(ar, fn) {
+    every(ar, function (el) {
+      fn(el)
+      return 1
+    })
+  }
+
+  function $script(paths, idOrDone, optDone) {
+    paths = paths[push] ? paths : [paths]
+    var idOrDoneIsDone = idOrDone && idOrDone.call
+      , done = idOrDoneIsDone ? idOrDone : optDone
+      , id = idOrDoneIsDone ? paths.join('') : idOrDone
+      , queue = paths.length
+    function loopFn(item) {
+      return item.call ? item() : list[item]
+    }
+    function callback() {
+      if (!--queue) {
+        list[id] = 1
+        done && done()
+        for (var dset in delay) {
+          every(dset.split('|'), loopFn) && !each(delay[dset], loopFn) && (delay[dset] = [])
+        }
+      }
+    }
+    setTimeout(function () {
+      each(paths, function loading(path, force) {
+        if (path === null) return callback()
+        
+        if (!force && !/^https?:\/\//.test(path) && scriptpath) {
+          path = (path.indexOf('.js') === -1) ? scriptpath + path + '.js' : scriptpath + path;
+        }
+        
+        if (scripts[path]) {
+          if (id) ids[id] = 1
+          return (scripts[path] == 2) ? callback() : setTimeout(function () { loading(path, true) }, 0)
+        }
+
+        scripts[path] = 1
+        if (id) ids[id] = 1
+        create(path, callback)
+      })
+    }, 0)
+    return $script
+  }
+
+  function create(path, fn) {
+    var el = doc.createElement('script'), loaded
+    el.onload = el.onerror = el[onreadystatechange] = function () {
+      if ((el[readyState] && !(/^c|loade/.test(el[readyState]))) || loaded) return;
+      el.onload = el[onreadystatechange] = null
+      loaded = 1
+      scripts[path] = 2
+      fn()
+    }
+    el.async = 1
+    el.src = urlArgs ? path + (path.indexOf('?') === -1 ? '?' : '&') + urlArgs : path;
+    head.insertBefore(el, head.lastChild)
+  }
+
+  $script.get = create
+
+  $script.order = function (scripts, id, done) {
+    (function callback(s) {
+      s = scripts.shift()
+      !scripts.length ? $script(s, id, done) : $script(s, callback)
+    }())
+  }
+
+  $script.path = function (p) {
+    scriptpath = p
+  }
+  $script.urlArgs = function (str) {
+    urlArgs = str;
+  }
+  $script.ready = function (deps, ready, req) {
+    deps = deps[push] ? deps : [deps]
+    var missing = [];
+    !each(deps, function (dep) {
+      list[dep] || missing[push](dep);
+    }) && every(deps, function (dep) {return list[dep]}) ?
+      ready() : !function (key) {
+      delay[key] = delay[key] || []
+      delay[key][push](ready)
+      req && req(missing)
+    }(deps.join('|'))
+    return $script
+  }
+
+  $script.done = function (idOrDone) {
+    $script([null], idOrDone)
+  }
+
+  return $script
+});
 
 
 /***/ }),
@@ -68065,11 +69564,7 @@ module.exports = {
   !*** ./utils/utils.js ***!
   \************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var _regeneratorRuntime = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-
-var _asyncToGenerator = __webpack_require__(/*! @babel/runtime-corejs2/helpers/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/asyncToGenerator.js");
+/***/ (function(module, exports) {
 
 var conceptToDisplayName = function conceptToDisplayName(concept) {
   // replace - with space
@@ -68111,56 +69606,26 @@ var explanationTypeToDisplayType = function explanationTypeToDisplayType(explana
 var generateFilePathAndName = function generateFilePathAndName(fileType, userID, concept) {
   var randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   return "/".concat(concept, "/").concat(fileType, "/").concat(userID, "/").concat(randomID);
-};
+}; // async function getTwitterEmbed(tweetUrl) {
+//   let twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0]
+//   let twitterStatus = tweetUrl.split('status/')[1].split('?')[0]
+//   let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385`)
+//   // let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=${twitterUser}&status=${twitterStatus}`)
+//   let text = await res.text()
+//   console.log();
+//   return text
+// }
 
-function getTwitterEmbed(_x) {
-  return _getTwitterEmbed.apply(this, arguments);
-}
-
-function _getTwitterEmbed() {
-  _getTwitterEmbed = _asyncToGenerator(
-  /*#__PURE__*/
-  _regeneratorRuntime.mark(function _callee(tweetUrl) {
-    var twitterUser, twitterStatus, res, text;
-    return _regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0];
-            twitterStatus = tweetUrl.split('status/')[1].split('?')[0];
-            _context.next = 4;
-            return fetch("https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385");
-
-          case 4:
-            res = _context.sent;
-            _context.next = 7;
-            return res.text();
-
-          case 7:
-            text = _context.sent;
-            console.log();
-            return _context.abrupt("return", text);
-
-          case 10:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _getTwitterEmbed.apply(this, arguments);
-}
 
 module.exports = {
   conceptToDisplayName: conceptToDisplayName,
   explanationTypeToDisplayType: explanationTypeToDisplayType,
-  generateFilePathAndName: generateFilePathAndName,
-  getTwitterEmbed: getTwitterEmbed
+  generateFilePathAndName: generateFilePathAndName
 };
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!***************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fconcept%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fahamoments%2Fpages%2Fconcept%2F%5Bid%5D.js ***!
   \***************************************************************************************************************************************************************/
@@ -68183,5 +69648,5 @@ module.exports = dll_e9ad7d891b372a4221cf;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map

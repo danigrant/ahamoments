@@ -1,6 +1,7 @@
 import React from 'react'
 import Loading from '../Loading'
-import { getTwitterEmbed } from '../../utils/utils'
+import { TwitterTweetEmbed } from 'react-twitter-embed';
+
 
 class EmbeddedTweet extends React.Component {
   constructor(props) {
@@ -10,17 +11,13 @@ class EmbeddedTweet extends React.Component {
     }
   }
   async componentDidMount() {
-    this.setState({
-      embedHTML: await getTwitterEmbed(this.props.tweet)
-    })
   }
   render() {
-    if (!this.state.embedHTML) {
-      return <Loading />
-    }
     return (
       <div className="center">
-        {this.state.embedHTML}
+        <TwitterTweetEmbed
+          tweetId={'1148350276983824385'}
+        />
       </div>
     )
   }

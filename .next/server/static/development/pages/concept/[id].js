@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1857,8 +1857,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Loading */ "./components/Loading.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/utils */ "./utils/utils.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_utils__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_twitter_embed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-twitter-embed */ "react-twitter-embed");
+/* harmony import */ var react_twitter_embed__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_twitter_embed__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/explanationMediaComponents/EmbeddedTweet.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1873,31 +1873,24 @@ class EmbeddedTweet extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
     };
   }
 
-  async componentDidMount() {
-    this.setState({
-      embedHTML: await Object(_utils_utils__WEBPACK_IMPORTED_MODULE_2__["getTwitterEmbed"])(this.props.tweet)
-    });
-  }
+  async componentDidMount() {}
 
   render() {
-    if (!this.state.embedHTML) {
-      return __jsx(_Loading__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 19
-        },
-        __self: this
-      });
-    }
-
     return __jsx("div", {
       className: "center",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 17
       },
       __self: this
-    }, this.state.embedHTML);
+    }, __jsx(react_twitter_embed__WEBPACK_IMPORTED_MODULE_2__["TwitterTweetEmbed"], {
+      tweetId: '1148350276983824385',
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }));
   }
 
 }
@@ -5374,28 +5367,26 @@ const explanationTypeToDisplayType = explanationType => {
 const generateFilePathAndName = (fileType, userID, concept) => {
   let randomID = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
   return `/${concept}/${fileType}/${userID}/${randomID}`;
-};
+}; // async function getTwitterEmbed(tweetUrl) {
+//   let twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0]
+//   let twitterStatus = tweetUrl.split('status/')[1].split('?')[0]
+//   let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385`)
+//   // let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=${twitterUser}&status=${twitterStatus}`)
+//   let text = await res.text()
+//   console.log();
+//   return text
+// }
 
-async function getTwitterEmbed(tweetUrl) {
-  let twitterUser = tweetUrl.split('twitter.com/')[1].split('/')[0];
-  let twitterStatus = tweetUrl.split('status/')[1].split('?')[0];
-  let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=kylesamani&status=1148350276983824385`); // let res = await fetch(`https://twitter-get-embed-code-proxy.herokuapp.com/twitter-embed-code?name=${twitterUser}&status=${twitterStatus}`)
-
-  let text = await res.text();
-  console.log();
-  return text;
-}
 
 module.exports = {
   conceptToDisplayName,
   explanationTypeToDisplayType,
-  generateFilePathAndName,
-  getTwitterEmbed
+  generateFilePathAndName
 };
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*************************************!*\
   !*** multi ./pages/concept/[id].js ***!
   \*************************************/
@@ -5580,6 +5571,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-is");
+
+/***/ }),
+
+/***/ "react-twitter-embed":
+/*!**************************************!*\
+  !*** external "react-twitter-embed" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-twitter-embed");
 
 /***/ }),
 
