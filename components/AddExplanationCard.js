@@ -23,7 +23,7 @@ class AddExplanationCard extends React.Component {
       introText: '',
       mediaLink: '',
       mediaConsumptionGuidance: '',
-      showAddExplanationSection: false,
+      showAddExplanationSection: true,
       activeElement: "none", // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
       justSubmitted: false
     }

@@ -19,6 +19,21 @@ class ExplanationCard extends React.Component {
   constructor(props) {
     super(props)
   }
+  handleAha = () => {
+    console.log("handling the aha");
+  }
+  handleDontGetIt = () => {
+    console.log("handling the dont get it");
+  }
+  handleReactionGotIt = () => {
+    console.log("handling the got it reaction");
+  }
+  handleReactionLaughing = () => {
+    console.log("handling the laughing reaction");
+  }
+  handleReactionShocked = () => {
+    console.log("handling the shocked reaction");
+  }
   render() {
     return (
       <div className="explanation-card-wrapper">
@@ -69,14 +84,16 @@ class ExplanationCard extends React.Component {
             }
           </CardSection>
           <CardSection>
-            <AhaButton />
-            <DontGetItButton />
-            <ReactionButtonBar className="float-right" />
+            <AhaButton handleAha={this.handleAha} />
+            <DontGetItButton handleDontGetIt={this.handleDontGetIt} />
+            <ReactionButtonBar className="float-right" handleReactionGotIt={this.handleReactionGotIt} handleReactionLaughing={this.handleReactionLaughing} handleReactionShocked={this.handleReactionShocked} />
           </CardSection>
         </Card>
       </div>
     )
   }
 }
+
+
 
 export default ExplanationCard

@@ -1,8 +1,7 @@
 const EmbeddedLink = props => {
   return (
     <div>
-      <h1>link</h1>
-      <p>{props.link}</p>
+      <a href="" target="_blank">{props.link}</a>
     </div>
   )
 }
