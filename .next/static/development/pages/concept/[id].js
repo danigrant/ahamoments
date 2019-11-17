@@ -1618,6 +1618,7 @@ function (_React$Component) {
         },
         __self: this
       }, __jsx("form", {
+        className: "rounded-border",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 10
@@ -1631,6 +1632,7 @@ function (_React$Component) {
         },
         __self: this
       }, "search_rounded"), __jsx("input", {
+        className: "rounded-border",
         autoComplete: "off",
         name: "q",
         placeholder: "Find your next aha moment\u2026",

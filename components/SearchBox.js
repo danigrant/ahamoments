@@ -7,9 +7,9 @@ class SearchBox extends React.Component {
   render() {
     return (
       <div className="searchbox-wrapper light-border rounded-border">
-        <form>
+        <form className="rounded-border">
           <i className="material-icons font-color-light-grey">search_rounded</i>
-          <input autoComplete="off" name="q" placeholder="Find your next aha moment…" />
+          <input className="rounded-border" autoComplete="off" name="q" placeholder="Find your next aha moment…" />
         </form>
       </div>
     )

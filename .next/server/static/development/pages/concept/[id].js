@@ -1588,6 +1588,7 @@ class SearchBox extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     }, __jsx("form", {
+      className: "rounded-border",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 10
@@ -1601,6 +1602,7 @@ class SearchBox extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       },
       __self: this
     }, "search_rounded"), __jsx("input", {
+      className: "rounded-border",
       autoComplete: "off",
       name: "q",
       placeholder: "Find your next aha moment\u2026",
