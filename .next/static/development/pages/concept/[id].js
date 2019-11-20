@@ -132,7 +132,7 @@ function (_React$Component) {
       introText: '',
       mediaLink: '',
       mediaConsumptionGuidance: '',
-      showAddExplanationSection: true,
+      showAddExplanationSection: false,
       activeElement: "none",
       // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
       justSubmitted: false
@@ -779,6 +779,14 @@ function (_React$Component) {
                 return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addAhaToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
 
               case 2:
+                this.props.handleGoToNextCard();
+                setTimeout(function () {
+                  this.setState({
+                    confetti: false
+                  });
+                }, 2000);
+
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -806,6 +814,9 @@ function (_React$Component) {
                 return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_24__["addDontGetItToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
 
               case 2:
+                this.props.handleGoToNextCard();
+
+              case 3:
               case "end":
                 return _context2.stop();
             }
@@ -903,23 +914,35 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var confettiConfig = {
+        angle: 90,
+        spread: 45,
+        startVelocity: 45,
+        elementCount: 50,
+        dragFriction: 0.1,
+        duration: 3000,
+        stagger: 0,
+        width: "10px",
+        height: "10px",
+        colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+      };
       return __jsx("div", {
         className: "explanation-card-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 60
         },
         __self: this
       }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 61
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 62
         },
         __self: this
       }, __jsx("img", {
@@ -927,150 +950,150 @@ function (_React$Component) {
         src: this.props.explanation.authorAvatarUrl,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 63
         },
         __self: this
       }), __jsx("p", {
         className: "font-color-light-grey inline-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 64
         },
         __self: this
       }, __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 65
         },
         __self: this
       }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
         href: "/explainer/".concat(this.props.explanation.authorUserID),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 65
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 65
         },
         __self: this
       }, this.props.explanation.authorDisplayName)), " "), "explains", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 67
         },
         __self: this
       }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_15___default.a, {
         href: "/concept/".concat(this.props.explanation.concept),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 67
         },
         __self: this
       }, __jsx("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 67
         },
         __self: this
       }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_23__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
         className: "link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 69
         },
         __self: this
       }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_23__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 72
         },
         __self: this
       }, __jsx("p", {
         className: "margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 73
         },
         __self: this
       }, this.props.explanation.explanation.introText), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
         className: "margin-bottom-sml",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 76
         },
         __self: this
       }, this.props.explanation.explanation.mediaConsumptionGuidance), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_19__["default"], {
         tweet: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 80
         },
         __self: this
       }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_17__["default"], {
         audio: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 84
         },
         __self: this
       }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_22__["default"], {
         link: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 88
         },
         __self: this
       }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_16__["default"], {
         photo: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 92
         },
         __self: this
       }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_21__["default"], {
         podcast: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 96
         },
         __self: this
       }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_18__["default"], {
         video: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 100
         },
         __self: this
       }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_20__["default"], {
         youtube: this.props.explanation.explanation.mediaLink,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 104
         },
         __self: this
       })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 107
         },
         __self: this
       }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_12__["default"], {
         handleAha: this.handleAha,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 93
+          lineNumber: 108
         },
         __self: this
       }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_13__["default"], {
         handleDontGetIt: this.handleDontGetIt,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 109
         },
         __self: this
       }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -1080,7 +1103,7 @@ function (_React$Component) {
         handleReactionShocked: this.handleReactionShocked,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 110
         },
         __self: this
       }))));
@@ -1814,6 +1837,251 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchBox);
+
+/***/ }),
+
+/***/ "./components/SwipableCard.js":
+/*!************************************!*\
+  !*** ./components/SwipableCard.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _ExplanationCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ExplanationCard */ "./components/ExplanationCard.js");
+
+
+
+
+
+
+
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/SwipableCard.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+
+
+var SwipableCard =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(SwipableCard, _React$Component);
+
+  function SwipableCard(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, SwipableCard);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(SwipableCard).call(this, props));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleGoToNextCard", function () {
+      _this.props.advanceCard();
+    });
+
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(SwipableCard, [{
+    key: "render",
+    value: function render() {
+      return __jsx("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }, __jsx(_ExplanationCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        key: this.props.explanationID,
+        explanation: this.props.explanation,
+        loggedInUser: this.props.loggedInUser,
+        handleGoToNextCard: this.handleGoToNextCard,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return SwipableCard;
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SwipableCard);
+
+/***/ }),
+
+/***/ "./components/SwipableCardContainer.js":
+/*!*********************************************!*\
+  !*** ./components/SwipableCardContainer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _SwipableCard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SwipableCard */ "./components/SwipableCard.js");
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _ExplanationCard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ExplanationCard */ "./components/ExplanationCard.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! immutability-helper */ "./node_modules/immutability-helper/index.js");
+/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(immutability_helper__WEBPACK_IMPORTED_MODULE_14__);
+
+
+
+
+
+
+
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/SwipableCardContainer.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
+
+
+
+
+
+
+
+
+var SwipableCardContainer =
+/*#__PURE__*/
+function (_React$Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(SwipableCardContainer, _React$Component);
+
+  function SwipableCardContainer(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, SwipableCardContainer);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(SwipableCardContainer).call(this, props));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "advanceCard", function () {
+      _this.setState({
+        displayCardIndex: _this.state.displayCardIndex + 1
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleReplay", function () {
+      _this.setState({
+        displayCardIndex: 0
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleKeyPress", function (e) {
+      // right 39, left 37, up 38, down 40
+      if (e.keyCode == 39 || e.keyCode == 38) {
+        _this.setState({
+          displayCardIndex: _this.state.displayCardIndex + 1
+        });
+      } else if (e.keyCode == 37 || e.keyCode == 40) {
+        _this.setState({
+          displayCardIndex: _this.state.displayCardIndex - 1
+        });
+      }
+    });
+
+    _this.state = {
+      explanationCardDeck: _this.props.conceptExplanationsArray,
+      displayCardIndex: 0
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(SwipableCardContainer, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      window.addEventListener("keyup", this.handleKeyPress);
+    }
+  }, {
+    key: "componentDidUnount",
+    value: function componentDidUnount() {
+      window.removeEventListener("keyup", this.handleKeyPress);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var currentExplanation = this.state.explanationCardDeck[this.state.displayCardIndex];
+
+      if (this.state.displayCardIndex == this.state.explanationCardDeck.length) {
+        // no more cards to display
+        return __jsx(_Card__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          },
+          __self: this
+        }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 52
+          },
+          __self: this
+        }, __jsx("div", {
+          onClick: this.handleReplay,
+          className: "button",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }, __jsx("i", {
+          className: "material-icons",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
+          },
+          __self: this
+        }, "replay_rounded"), "Replay")));
+      } else {
+        return __jsx("div", {
+          onKeyDown: this.handleKeyPress,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 59
+          },
+          __self: this
+        }, __jsx(_SwipableCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          key: currentExplanation.explanationID,
+          explanation: currentExplanation,
+          advanceCard: this.advanceCard,
+          loggedInUser: this.props.loggedInUser,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 60
+          },
+          __self: this
+        }));
+      }
+    }
+  }]);
+
+  return SwipableCardContainer;
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (SwipableCardContainer);
 
 /***/ }),
 
@@ -61781,6 +62049,312 @@ module.exports = bind.call(Function.call, Object.prototype.hasOwnProperty);
 
 /***/ }),
 
+/***/ "./node_modules/immutability-helper/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/immutability-helper/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var invariant = __webpack_require__(/*! invariant */ "./node_modules/invariant/browser.js");
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var splice = Array.prototype.splice;
+var toString = Object.prototype.toString;
+function type(obj) {
+    return toString.call(obj).slice(8, -1);
+}
+var assign = Object.assign || /* istanbul ignore next */ (function (target, source) {
+    getAllKeys(source).forEach(function (key) {
+        if (hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+        }
+    });
+    return target;
+});
+var getAllKeys = typeof Object.getOwnPropertySymbols === 'function'
+    ? function (obj) { return Object.keys(obj).concat(Object.getOwnPropertySymbols(obj)); }
+    /* istanbul ignore next */
+    : function (obj) { return Object.keys(obj); };
+function copy(object) {
+    return Array.isArray(object)
+        ? assign(object.constructor(object.length), object)
+        : (type(object) === 'Map')
+            ? new Map(object)
+            : (type(object) === 'Set')
+                ? new Set(object)
+                : (object && typeof object === 'object')
+                    ? assign(Object.create(Object.getPrototypeOf(object)), object)
+                    /* istanbul ignore next */
+                    : object;
+}
+var Context = /** @class */ (function () {
+    function Context() {
+        this.commands = assign({}, defaultCommands);
+        this.update = this.update.bind(this);
+        // Deprecated: update.extend, update.isEquals and update.newContext
+        this.update.extend = this.extend = this.extend.bind(this);
+        this.update.isEquals = function (x, y) { return x === y; };
+        this.update.newContext = function () { return new Context().update; };
+    }
+    Object.defineProperty(Context.prototype, "isEquals", {
+        get: function () {
+            return this.update.isEquals;
+        },
+        set: function (value) {
+            this.update.isEquals = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Context.prototype.extend = function (directive, fn) {
+        this.commands[directive] = fn;
+    };
+    Context.prototype.update = function (object, $spec) {
+        var _this = this;
+        var spec = (typeof $spec === 'function') ? { $apply: $spec } : $spec;
+        if (!(Array.isArray(object) && Array.isArray(spec))) {
+            invariant(!Array.isArray(spec), 'update(): You provided an invalid spec to update(). The spec may ' +
+                'not contain an array except as the value of $set, $push, $unshift, ' +
+                '$splice or any custom command allowing an array value.');
+        }
+        invariant(typeof spec === 'object' && spec !== null, 'update(): You provided an invalid spec to update(). The spec and ' +
+            'every included key path must be plain objects containing one of the ' +
+            'following commands: %s.', Object.keys(this.commands).join(', '));
+        var nextObject = object;
+        getAllKeys(spec).forEach(function (key) {
+            if (hasOwnProperty.call(_this.commands, key)) {
+                var objectWasNextObject = object === nextObject;
+                nextObject = _this.commands[key](spec[key], nextObject, spec, object);
+                if (objectWasNextObject && _this.isEquals(nextObject, object)) {
+                    nextObject = object;
+                }
+            }
+            else {
+                var nextValueForKey = type(object) === 'Map'
+                    ? _this.update(object.get(key), spec[key])
+                    : _this.update(object[key], spec[key]);
+                var nextObjectValue = type(nextObject) === 'Map'
+                    ? nextObject.get(key)
+                    : nextObject[key];
+                if (!_this.isEquals(nextValueForKey, nextObjectValue)
+                    || typeof nextValueForKey === 'undefined'
+                        && !hasOwnProperty.call(object, key)) {
+                    if (nextObject === object) {
+                        nextObject = copy(object);
+                    }
+                    if (type(nextObject) === 'Map') {
+                        nextObject.set(key, nextValueForKey);
+                    }
+                    else {
+                        nextObject[key] = nextValueForKey;
+                    }
+                }
+            }
+        });
+        return nextObject;
+    };
+    return Context;
+}());
+exports.Context = Context;
+var defaultCommands = {
+    $push: function (value, nextObject, spec) {
+        invariantPushAndUnshift(nextObject, spec, '$push');
+        return value.length ? nextObject.concat(value) : nextObject;
+    },
+    $unshift: function (value, nextObject, spec) {
+        invariantPushAndUnshift(nextObject, spec, '$unshift');
+        return value.length ? value.concat(nextObject) : nextObject;
+    },
+    $splice: function (value, nextObject, spec, originalObject) {
+        invariantSplices(nextObject, spec);
+        value.forEach(function (args) {
+            invariantSplice(args);
+            if (nextObject === originalObject && args.length) {
+                nextObject = copy(originalObject);
+            }
+            splice.apply(nextObject, args);
+        });
+        return nextObject;
+    },
+    $set: function (value, _nextObject, spec) {
+        invariantSet(spec);
+        return value;
+    },
+    $toggle: function (targets, nextObject) {
+        invariantSpecArray(targets, '$toggle');
+        var nextObjectCopy = targets.length ? copy(nextObject) : nextObject;
+        targets.forEach(function (target) {
+            nextObjectCopy[target] = !nextObject[target];
+        });
+        return nextObjectCopy;
+    },
+    $unset: function (value, nextObject, _spec, originalObject) {
+        invariantSpecArray(value, '$unset');
+        value.forEach(function (key) {
+            if (Object.hasOwnProperty.call(nextObject, key)) {
+                if (nextObject === originalObject) {
+                    nextObject = copy(originalObject);
+                }
+                delete nextObject[key];
+            }
+        });
+        return nextObject;
+    },
+    $add: function (values, nextObject, _spec, originalObject) {
+        invariantMapOrSet(nextObject, '$add');
+        invariantSpecArray(values, '$add');
+        if (type(nextObject) === 'Map') {
+            values.forEach(function (_a) {
+                var key = _a[0], value = _a[1];
+                if (nextObject === originalObject && nextObject.get(key) !== value) {
+                    nextObject = copy(originalObject);
+                }
+                nextObject.set(key, value);
+            });
+        }
+        else {
+            values.forEach(function (value) {
+                if (nextObject === originalObject && !nextObject.has(value)) {
+                    nextObject = copy(originalObject);
+                }
+                nextObject.add(value);
+            });
+        }
+        return nextObject;
+    },
+    $remove: function (value, nextObject, _spec, originalObject) {
+        invariantMapOrSet(nextObject, '$remove');
+        invariantSpecArray(value, '$remove');
+        value.forEach(function (key) {
+            if (nextObject === originalObject && nextObject.has(key)) {
+                nextObject = copy(originalObject);
+            }
+            nextObject.delete(key);
+        });
+        return nextObject;
+    },
+    $merge: function (value, nextObject, _spec, originalObject) {
+        invariantMerge(nextObject, value);
+        getAllKeys(value).forEach(function (key) {
+            if (value[key] !== nextObject[key]) {
+                if (nextObject === originalObject) {
+                    nextObject = copy(originalObject);
+                }
+                nextObject[key] = value[key];
+            }
+        });
+        return nextObject;
+    },
+    $apply: function (value, original) {
+        invariantApply(value);
+        return value(original);
+    },
+};
+var defaultContext = new Context();
+exports.isEquals = defaultContext.update.isEquals;
+exports.extend = defaultContext.extend;
+exports.default = defaultContext.update;
+// @ts-ignore
+exports.default.default = module.exports = assign(exports.default, exports);
+// invariants
+function invariantPushAndUnshift(value, spec, command) {
+    invariant(Array.isArray(value), 'update(): expected target of %s to be an array; got %s.', command, value);
+    invariantSpecArray(spec[command], command);
+}
+function invariantSpecArray(spec, command) {
+    invariant(Array.isArray(spec), 'update(): expected spec of %s to be an array; got %s. ' +
+        'Did you forget to wrap your parameter in an array?', command, spec);
+}
+function invariantSplices(value, spec) {
+    invariant(Array.isArray(value), 'Expected $splice target to be an array; got %s', value);
+    invariantSplice(spec.$splice);
+}
+function invariantSplice(value) {
+    invariant(Array.isArray(value), 'update(): expected spec of $splice to be an array of arrays; got %s. ' +
+        'Did you forget to wrap your parameters in an array?', value);
+}
+function invariantApply(fn) {
+    invariant(typeof fn === 'function', 'update(): expected spec of $apply to be a function; got %s.', fn);
+}
+function invariantSet(spec) {
+    invariant(Object.keys(spec).length === 1, 'Cannot have more than one key in an object with $set');
+}
+function invariantMerge(target, specValue) {
+    invariant(specValue && typeof specValue === 'object', 'update(): $merge expects a spec of type \'object\'; got %s', specValue);
+    invariant(target && typeof target === 'object', 'update(): $merge expects a target of type \'object\'; got %s', target);
+}
+function invariantMapOrSet(target, command) {
+    var typeOfTarget = type(target);
+    invariant(typeOfTarget === 'Map' || typeOfTarget === 'Set', 'update(): %s expects a target of type Set or Map; got %s', command, typeOfTarget);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/invariant/browser.js":
+/*!*******************************************!*\
+  !*** ./node_modules/invariant/browser.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (true) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+
+/***/ }),
+
 /***/ "./node_modules/load-script/index.js":
 /*!*******************************************!*\
   !*** ./node_modules/load-script/index.js ***!
@@ -75060,10 +75634,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/AddExplanationCard */ "./components/AddExplanationCard.js");
 /* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
 /* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _components_SwipableCardContainer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../components/SwipableCardContainer */ "./components/SwipableCardContainer.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_17__);
 
 
 
@@ -75073,6 +75648,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/concept/[id].js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+
 
 
 
@@ -75115,7 +75691,7 @@ function (_React$Component) {
                 router = this.props.router;
                 _context.t0 = this;
                 _context.next = 4;
-                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_15__["getConceptExplanations"])(router.query.id);
+                return Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["getConceptExplanations"])(router.query.id);
 
               case 4:
                 _context.t1 = _context.sent;
@@ -75142,8 +75718,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var router = this.props.router;
       {
         if (!this.state.conceptExplanationsArray.length) {
@@ -75152,7 +75726,7 @@ function (_React$Component) {
             loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 30
+              lineNumber: 31
             },
             __self: this
           });
@@ -75160,7 +75734,7 @@ function (_React$Component) {
           return __jsx("div", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 34
+              lineNumber: 35
             },
             __self: this
           }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -75168,75 +75742,72 @@ function (_React$Component) {
             loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 35
+              lineNumber: 36
             },
             __self: this
           }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 37
             },
             __self: this
           }, __jsx("div", {
             className: "concept-title-bar",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 37
+              lineNumber: 38
             },
             __self: this
           }, __jsx("h1", {
             className: "font-lrg font-bold-med inline-block capitalize",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 38
+              lineNumber: 39
             },
             __self: this
           }, router.query.id), __jsx("p", {
             className: "font-color-light-grey inline-block margin-left",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 39
+              lineNumber: 40
             },
             __self: this
           }, "originally asked by @bofirstdog")), __jsx(_components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_12__["default"], {
             loggedInUser: this.props.loggedInUser,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 41
+              lineNumber: 42
             },
             __self: this
           }), __jsx("h1", {
             className: "margin-top-lrg font-lrg font-bold-med inline-block",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 42
+              lineNumber: 43
             },
             __self: this
           }, "All of the wacky and wonderful ways to explain a ", router.query.id, " "), __jsx("p", {
             className: "font-color-light-grey",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 43
+              lineNumber: 44
             },
             __self: this
           }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
             className: "margin-top-sml",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 44
+              lineNumber: 45
             },
             __self: this
-          }, this.state.conceptExplanationsArray.map(function (e) {
-            return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_13__["default"], {
-              key: e.explanationID,
-              explanation: e,
-              loggedInUser: _this2.props.loggedInUser,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 47
-              },
-              __self: this
-            });
+          }, __jsx(_components_SwipableCardContainer__WEBPACK_IMPORTED_MODULE_15__["default"], {
+            conceptExplanationsArray: this.state.conceptExplanationsArray,
+            loggedInUser: this.props.loggedInUser,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 46
+            },
+            __self: this
           }))));
         }
       }
@@ -75246,7 +75817,7 @@ function (_React$Component) {
   return ConceptPage;
 }(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_16__["withRouter"])(ConceptPage));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_17__["withRouter"])(ConceptPage));
 
 /***/ }),
 

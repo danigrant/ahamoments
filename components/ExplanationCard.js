@@ -27,9 +27,12 @@ class ExplanationCard extends React.Component {
   }
   async handleAha() {
     await addAhaToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
+    this.props.handleGoToNextCard()
+    setTimeout(function(){ this.setState({ confetti: false }) }, 2000);
   }
   async handleDontGetIt() {
     await addDontGetItToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
+    this.props.handleGoToNextCard()
   }
   async handleReactionGotIt() {
     await addReactionGotItToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
@@ -41,6 +44,18 @@ class ExplanationCard extends React.Component {
     await addReactionShockedToDB(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID)
   }
   render() {
+    let confettiConfig = {
+      angle: 90,
+      spread: 45,
+      startVelocity: 45,
+      elementCount: 50,
+      dragFriction: 0.1,
+      duration: 3000,
+      stagger: 0,
+      width: "10px",
+      height: "10px",
+      colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+    }
     return (
       <div className="explanation-card-wrapper">
         <Card>

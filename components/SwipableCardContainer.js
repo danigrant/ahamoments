@@ -1,9 +1,11 @@
 import React from 'react'
 import SwipableCard from './SwipableCard'
 import Card from './Card'
+import CardSection from './CardSection'
 import ExplanationCard from './ExplanationCard'
 import { getConceptExplanations } from '../utils/firebase'
 import { withRouter } from 'next/router'
+import update from 'immutability-helper';
 
 class SwipableCardContainer extends React.Component {
   constructor(props) {
@@ -14,9 +16,12 @@ class SwipableCardContainer extends React.Component {
     }
   }
   componentDidMount() {
-
+    window.addEventListener("keyup", this.handleKeyPress);
   }
-  handleSwipe = () => {
+  componentDidUnount() {
+    window.removeEventListener("keyup", this.handleKeyPress);
+  }
+  advanceCard = () => {
     this.setState({
       displayCardIndex: this.state.displayCardIndex + 1
     })
@@ -26,21 +31,33 @@ class SwipableCardContainer extends React.Component {
       displayCardIndex: 0
     })
   }
+  handleKeyPress = (e) => {
+    // right 39, left 37, up 38, down 40
+    if (e.keyCode == 39 || e.keyCode == 38) {
+      this.setState({
+        displayCardIndex: this.state.displayCardIndex + 1
+      })
+    } else if (e.keyCode == 37 || e.keyCode == 40) {
+      this.setState({
+        displayCardIndex: this.state.displayCardIndex - 1
+      })
+    }
+  }
   render() {
     let currentExplanation = this.state.explanationCardDeck[this.state.displayCardIndex]
     if (this.state.displayCardIndex == this.state.explanationCardDeck.length ) {
       // no more cards to display
       return (
         <Card>
-          <p>No more cards to display.</p>
-          <div onClick={this.handleReplay} className="button">Replay</div>
+          <CardSection>
+            <div onClick={this.handleReplay} className="button"><i className="material-icons">replay_rounded</i>Replay</div>
+          </CardSection>
         </Card>
       )
     } else {
       return (
-        <div>
-          <ExplanationCard key={currentExplanation.explanationID} explanation={currentExplanation} loggedInUser={this.props.loggedInUser} />
-          <div onClick={this.handleSwipe} className="button">Next Card</div>
+        <div onKeyDown={this.handleKeyPress}>
+          <SwipableCard key={currentExplanation.explanationID} explanation={currentExplanation} advanceCard={this.advanceCard} loggedInUser={this.props.loggedInUser} />
         </div>
       )
     }

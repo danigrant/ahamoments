@@ -205,7 +205,7 @@ class AddExplanationCard extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Co
       introText: '',
       mediaLink: '',
       mediaConsumptionGuidance: '',
-      showAddExplanationSection: true,
+      showAddExplanationSection: false,
       activeElement: "none",
       // write, podcast, youtube, recordVideo, recordAudio, tweet, uploadVideo, uploadPhoto, draw, link
       justSubmitted: false
@@ -809,10 +809,17 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
 
   async handleAha() {
     await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["addAhaToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
+    this.props.handleGoToNextCard();
+    setTimeout(function () {
+      this.setState({
+        confetti: false
+      });
+    }, 2000);
   }
 
   async handleDontGetIt() {
     await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_16__["addDontGetItToDB"])(this.props.explanation.explanationID, this.props.loggedInUser.userID, this.props.explanation.authorUserID);
+    this.props.handleGoToNextCard();
   }
 
   async handleReactionGotIt() {
@@ -828,23 +835,35 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
   }
 
   render() {
+    let confettiConfig = {
+      angle: 90,
+      spread: 45,
+      startVelocity: 45,
+      elementCount: 50,
+      dragFriction: 0.1,
+      duration: 3000,
+      stagger: 0,
+      width: "10px",
+      height: "10px",
+      colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+    };
     return __jsx("div", {
       className: "explanation-card-wrapper",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45
+        lineNumber: 60
       },
       __self: this
     }, __jsx(_Card__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46
+        lineNumber: 61
       },
       __self: this
     }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 62
       },
       __self: this
     }, __jsx("img", {
@@ -852,150 +871,150 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       src: this.props.explanation.authorAvatarUrl,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48
+        lineNumber: 63
       },
       __self: this
     }), __jsx("p", {
       className: "font-color-light-grey inline-block",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49
+        lineNumber: 64
       },
       __self: this
     }, __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 65
       },
       __self: this
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
       href: `/explainer/${this.props.explanation.authorUserID}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 65
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50
+        lineNumber: 65
       },
       __self: this
     }, this.props.explanation.authorDisplayName)), " "), "explains", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 67
       },
       __self: this
     }, " ", __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
       href: `/concept/${this.props.explanation.concept}`,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 67
       },
       __self: this
     }, __jsx("a", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52
+        lineNumber: 67
       },
       __self: this
     }, Object(_utils_utils__WEBPACK_IMPORTED_MODULE_15__["conceptToDisplayName"])(this.props.explanation.concept))), " "), "through", __jsx("span", {
       className: "link",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54
+        lineNumber: 69
       },
       __self: this
     }, " ", Object(_utils_utils__WEBPACK_IMPORTED_MODULE_15__["explanationTypeToDisplayType"])(this.props.explanation.explanation.type)))), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 72
       },
       __self: this
     }, __jsx("p", {
       className: "margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58
+        lineNumber: 73
       },
       __self: this
     }, this.props.explanation.explanation.introText), this.props.explanation.explanation.mediaConsumptionGuidance && __jsx("p", {
       className: "margin-bottom-sml",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 76
       },
       __self: this
     }, this.props.explanation.explanation.mediaConsumptionGuidance), this.props.explanation.explanation.type == "tweet" && __jsx(_explanationMediaComponents_EmbeddedTweet__WEBPACK_IMPORTED_MODULE_11__["default"], {
       tweet: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 80
       },
       __self: this
     }), this.props.explanation.explanation.type == "audio" && __jsx(_explanationMediaComponents_EmbeddedAudio__WEBPACK_IMPORTED_MODULE_9__["default"], {
       audio: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69
+        lineNumber: 84
       },
       __self: this
     }), this.props.explanation.explanation.type == "link" && __jsx(_explanationMediaComponents_EmbeddedLink__WEBPACK_IMPORTED_MODULE_14__["default"], {
       link: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
+        lineNumber: 88
       },
       __self: this
     }), this.props.explanation.explanation.type == "photo" && __jsx(_explanationMediaComponents_EmbeddedPhoto__WEBPACK_IMPORTED_MODULE_8__["default"], {
       photo: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 77
+        lineNumber: 92
       },
       __self: this
     }), this.props.explanation.explanation.type == "podcast" && __jsx(_explanationMediaComponents_EmbeddedPodcast__WEBPACK_IMPORTED_MODULE_13__["default"], {
       podcast: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 96
       },
       __self: this
     }), this.props.explanation.explanation.type == "video" && __jsx(_explanationMediaComponents_EmbeddedVideo__WEBPACK_IMPORTED_MODULE_10__["default"], {
       video: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 85
+        lineNumber: 100
       },
       __self: this
     }), this.props.explanation.explanation.type == "youtube" && __jsx(_explanationMediaComponents_EmbeddedYouTube__WEBPACK_IMPORTED_MODULE_12__["default"], {
       youtube: this.props.explanation.explanation.mediaLink,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89
+        lineNumber: 104
       },
       __self: this
     })), __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_2__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 92
+        lineNumber: 107
       },
       __self: this
     }, __jsx(_AhaButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
       handleAha: this.handleAha,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 93
+        lineNumber: 108
       },
       __self: this
     }), __jsx(_DontGetItButton__WEBPACK_IMPORTED_MODULE_5__["default"], {
       handleDontGetIt: this.handleDontGetIt,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 94
+        lineNumber: 109
       },
       __self: this
     }), __jsx(_ReactionButtonBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1005,7 +1024,7 @@ class ExplanationCard extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       handleReactionShocked: this.handleReactionShocked,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 95
+        lineNumber: 110
       },
       __self: this
     }))));
@@ -1657,6 +1676,198 @@ class SearchBox extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SearchBox);
+
+/***/ }),
+
+/***/ "./components/SwipableCard.js":
+/*!************************************!*\
+  !*** ./components/SwipableCard.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _ExplanationCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ExplanationCard */ "./components/ExplanationCard.js");
+
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/SwipableCard.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+class SwipableCard extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleGoToNextCard", () => {
+      this.props.advanceCard();
+    });
+  }
+
+  render() {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, __jsx(_ExplanationCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: this.props.explanationID,
+      explanation: this.props.explanation,
+      loggedInUser: this.props.loggedInUser,
+      handleGoToNextCard: this.handleGoToNextCard,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SwipableCard);
+
+/***/ }),
+
+/***/ "./components/SwipableCardContainer.js":
+/*!*********************************************!*\
+  !*** ./components/SwipableCardContainer.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _SwipableCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SwipableCard */ "./components/SwipableCard.js");
+/* harmony import */ var _Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Card */ "./components/Card.js");
+/* harmony import */ var _CardSection__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CardSection */ "./components/CardSection.js");
+/* harmony import */ var _ExplanationCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ExplanationCard */ "./components/ExplanationCard.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! immutability-helper */ "immutability-helper");
+/* harmony import */ var immutability_helper__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(immutability_helper__WEBPACK_IMPORTED_MODULE_8__);
+
+var _jsxFileName = "/Users/danigrant/Projects/ahamoments/components/SwipableCardContainer.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+
+
+
+
+class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a.Component {
+  constructor(props) {
+    super(props);
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "advanceCard", () => {
+      this.setState({
+        displayCardIndex: this.state.displayCardIndex + 1
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleReplay", () => {
+      this.setState({
+        displayCardIndex: 0
+      });
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleKeyPress", e => {
+      // right 39, left 37, up 38, down 40
+      if (e.keyCode == 39 || e.keyCode == 38) {
+        this.setState({
+          displayCardIndex: this.state.displayCardIndex + 1
+        });
+      } else if (e.keyCode == 37 || e.keyCode == 40) {
+        this.setState({
+          displayCardIndex: this.state.displayCardIndex - 1
+        });
+      }
+    });
+
+    this.state = {
+      explanationCardDeck: this.props.conceptExplanationsArray,
+      displayCardIndex: 0
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("keyup", this.handleKeyPress);
+  }
+
+  componentDidUnount() {
+    window.removeEventListener("keyup", this.handleKeyPress);
+  }
+
+  render() {
+    let currentExplanation = this.state.explanationCardDeck[this.state.displayCardIndex];
+
+    if (this.state.displayCardIndex == this.state.explanationCardDeck.length) {
+      // no more cards to display
+      return __jsx(_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }, __jsx("div", {
+        onClick: this.handleReplay,
+        className: "button",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, __jsx("i", {
+        className: "material-icons",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        },
+        __self: this
+      }, "replay_rounded"), "Replay")));
+    } else {
+      return __jsx("div", {
+        onKeyDown: this.handleKeyPress,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 59
+        },
+        __self: this
+      }, __jsx(_SwipableCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        key: currentExplanation.explanationID,
+        explanation: currentExplanation,
+        advanceCard: this.advanceCard,
+        loggedInUser: this.props.loggedInUser,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }));
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SwipableCardContainer);
 
 /***/ }),
 
@@ -4846,12 +5057,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/AddExplanationCard */ "./components/AddExplanationCard.js");
 /* harmony import */ var _components_ExplanationCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/ExplanationCard */ "./components/ExplanationCard.js");
 /* harmony import */ var _components_Loading__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Loading */ "./components/Loading.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
-/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_SwipableCardContainer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/SwipableCardContainer */ "./components/SwipableCardContainer.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/firebase */ "./utils/firebase.js");
+/* harmony import */ var _utils_firebase__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_utils_firebase__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
 var _jsxFileName = "/Users/danigrant/Projects/ahamoments/pages/concept/[id].js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -4876,7 +5089,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
       router
     } = this.props;
     this.setState({
-      conceptExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_8__["getConceptExplanations"])(router.query.id)
+      conceptExplanationsArray: await Object(_utils_firebase__WEBPACK_IMPORTED_MODULE_9__["getConceptExplanations"])(router.query.id)
     });
   }
 
@@ -4891,7 +5104,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 30
+            lineNumber: 31
           },
           __self: this
         });
@@ -4899,7 +5112,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         return __jsx("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 35
           },
           __self: this
         }, __jsx(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -4907,75 +5120,72 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 36
           },
           __self: this
         }), __jsx(_components_AppContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 37
           },
           __self: this
         }, __jsx("div", {
           className: "concept-title-bar",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 38
           },
           __self: this
         }, __jsx("h1", {
           className: "font-lrg font-bold-med inline-block capitalize",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 39
           },
           __self: this
         }, router.query.id), __jsx("p", {
           className: "font-color-light-grey inline-block margin-left",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 40
           },
           __self: this
         }, "originally asked by @bofirstdog")), __jsx(_components_AddExplanationCard__WEBPACK_IMPORTED_MODULE_5__["default"], {
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 42
           },
           __self: this
         }), __jsx("h1", {
           className: "margin-top-lrg font-lrg font-bold-med inline-block",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 42
+            lineNumber: 43
           },
           __self: this
         }, "All of the wacky and wonderful ways to explain a ", router.query.id, " "), __jsx("p", {
           className: "font-color-light-grey",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 44
           },
           __self: this
         }, "There are 114 explanations here. Some will work for you, some won\u2019t.  Keep going until you find one that gives you that aha! moment."), __jsx("div", {
           className: "margin-top-sml",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 45
           },
           __self: this
-        }, this.state.conceptExplanationsArray.map(e => {
-          return __jsx(_components_ExplanationCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
-            key: e.explanationID,
-            explanation: e,
-            loggedInUser: this.props.loggedInUser,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 47
-            },
-            __self: this
-          });
+        }, __jsx(_components_SwipableCardContainer__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          conceptExplanationsArray: this.state.conceptExplanationsArray,
+          loggedInUser: this.props.loggedInUser,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 46
+          },
+          __self: this
         }))));
       }
     }
@@ -4983,7 +5193,7 @@ class ConceptPage extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_9__["withRouter"])(ConceptPage));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_10__["withRouter"])(ConceptPage));
 
 /***/ }),
 
@@ -5748,6 +5958,17 @@ module.exports = require("firebase/storage");
 /***/ (function(module, exports) {
 
 module.exports = require("fireworks/lib/react");
+
+/***/ }),
+
+/***/ "immutability-helper":
+/*!**************************************!*\
+  !*** external "immutability-helper" ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("immutability-helper");
 
 /***/ }),
 

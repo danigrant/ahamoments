@@ -5,10 +5,13 @@ class SwipableCard extends React.Component {
   constructor(props) {
     super(props)
   }
+  handleGoToNextCard = () => {
+    this.props.advanceCard()
+  }
   render() {
     return (
       <div>
-        <ExplanationCard key={e.explanationID} explanation={e} loggedInUser={this.props.loggedInUser} />
+        <ExplanationCard key={this.props.explanationID} explanation={this.props.explanation} loggedInUser={this.props.loggedInUser} handleGoToNextCard={this.handleGoToNextCard} />
       </div>
     )
   }
