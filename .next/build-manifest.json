@@ -20,7 +20,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/explainer/[id]": [
+    "/swippableconcept/[id]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
