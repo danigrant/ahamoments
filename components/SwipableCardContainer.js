@@ -22,9 +22,26 @@ class SwipableCardContainer extends React.Component {
     window.removeEventListener("keyup", this.handleKeyPress);
   }
   advanceCard = () => {
-    this.setState({
-      displayCardIndex: this.state.displayCardIndex + 1
-    })
+    if (this.state.displayCardIndex > this.state.explanationCardDeck.length - 1) {
+      this.setState({
+        displayCardIndex: 0
+      })
+    } else {
+      this.setState({
+        displayCardIndex: this.state.displayCardIndex + 1
+      })
+    }
+  }
+  decreaseCard = () => {
+    if (this.state.displayCardIndex < 1) {
+      this.setState({
+        displayCardIndex: 0
+      })
+    } else {
+      this.setState({
+        displayCardIndex: this.state.displayCardIndex - 1
+      })
+    }
   }
   handleReplay = () => {
     this.setState({
@@ -34,13 +51,9 @@ class SwipableCardContainer extends React.Component {
   handleKeyPress = (e) => {
     // right 39, left 37, up 38, down 40
     if (e.keyCode == 39 || e.keyCode == 38) {
-      this.setState({
-        displayCardIndex: this.state.displayCardIndex + 1
-      })
+      this.advanceCard()
     } else if (e.keyCode == 37 || e.keyCode == 40) {
-      this.setState({
-        displayCardIndex: this.state.displayCardIndex - 1
-      })
+      this.decreaseCard()
     }
   }
   render() {

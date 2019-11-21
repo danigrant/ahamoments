@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1772,9 +1772,27 @@ class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a
     super(props);
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "advanceCard", () => {
-      this.setState({
-        displayCardIndex: this.state.displayCardIndex + 1
-      });
+      if (this.state.displayCardIndex > this.state.explanationCardDeck.length - 1) {
+        this.setState({
+          displayCardIndex: 0
+        });
+      } else {
+        this.setState({
+          displayCardIndex: this.state.displayCardIndex + 1
+        });
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "decreaseCard", () => {
+      if (this.state.displayCardIndex < 1) {
+        this.setState({
+          displayCardIndex: 0
+        });
+      } else {
+        this.setState({
+          displayCardIndex: this.state.displayCardIndex - 1
+        });
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleReplay", () => {
@@ -1786,13 +1804,9 @@ class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "handleKeyPress", e => {
       // right 39, left 37, up 38, down 40
       if (e.keyCode == 39 || e.keyCode == 38) {
-        this.setState({
-          displayCardIndex: this.state.displayCardIndex + 1
-        });
+        this.advanceCard();
       } else if (e.keyCode == 37 || e.keyCode == 40) {
-        this.setState({
-          displayCardIndex: this.state.displayCardIndex - 1
-        });
+        this.decreaseCard();
       }
     });
 
@@ -1818,13 +1832,13 @@ class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a
       return __jsx(_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 64
         },
         __self: this
       }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 65
         },
         __self: this
       }, __jsx("div", {
@@ -1832,14 +1846,14 @@ class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a
         className: "button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 66
         },
         __self: this
       }, __jsx("i", {
         className: "material-icons",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 66
         },
         __self: this
       }, "replay_rounded"), "Replay")));
@@ -1848,7 +1862,7 @@ class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a
         onKeyDown: this.handleKeyPress,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 72
         },
         __self: this
       }, __jsx(_SwipableCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1858,7 +1872,7 @@ class SwipableCardContainer extends react__WEBPACK_IMPORTED_MODULE_1___default.a
         loggedInUser: this.props.loggedInUser,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 73
         },
         __self: this
       }));
@@ -5828,7 +5842,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*************************************!*\
   !*** multi ./pages/concept/[id].js ***!
   \*************************************/

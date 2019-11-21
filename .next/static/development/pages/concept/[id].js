@@ -1979,9 +1979,27 @@ function (_React$Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(SwipableCardContainer).call(this, props));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "advanceCard", function () {
-      _this.setState({
-        displayCardIndex: _this.state.displayCardIndex + 1
-      });
+      if (_this.state.displayCardIndex > _this.state.explanationCardDeck.length - 1) {
+        _this.setState({
+          displayCardIndex: 0
+        });
+      } else {
+        _this.setState({
+          displayCardIndex: _this.state.displayCardIndex + 1
+        });
+      }
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "decreaseCard", function () {
+      if (_this.state.displayCardIndex < 1) {
+        _this.setState({
+          displayCardIndex: 0
+        });
+      } else {
+        _this.setState({
+          displayCardIndex: _this.state.displayCardIndex - 1
+        });
+      }
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleReplay", function () {
@@ -1993,13 +2011,9 @@ function (_React$Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleKeyPress", function (e) {
       // right 39, left 37, up 38, down 40
       if (e.keyCode == 39 || e.keyCode == 38) {
-        _this.setState({
-          displayCardIndex: _this.state.displayCardIndex + 1
-        });
+        _this.advanceCard();
       } else if (e.keyCode == 37 || e.keyCode == 40) {
-        _this.setState({
-          displayCardIndex: _this.state.displayCardIndex - 1
-        });
+        _this.decreaseCard();
       }
     });
 
@@ -2030,13 +2044,13 @@ function (_React$Component) {
         return __jsx(_Card__WEBPACK_IMPORTED_MODULE_9__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 64
           },
           __self: this
         }, __jsx(_CardSection__WEBPACK_IMPORTED_MODULE_10__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 65
           },
           __self: this
         }, __jsx("div", {
@@ -2044,14 +2058,14 @@ function (_React$Component) {
           className: "button",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 66
           },
           __self: this
         }, __jsx("i", {
           className: "material-icons",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 66
           },
           __self: this
         }, "replay_rounded"), "Replay")));
@@ -2060,7 +2074,7 @@ function (_React$Component) {
           onKeyDown: this.handleKeyPress,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 72
           },
           __self: this
         }, __jsx(_SwipableCard__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2070,7 +2084,7 @@ function (_React$Component) {
           loggedInUser: this.props.loggedInUser,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 60
+            lineNumber: 73
           },
           __self: this
         }));
@@ -77013,7 +77027,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!***************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fconcept%2F%5Bid%5D&absolutePagePath=%2FUsers%2Fdanigrant%2FProjects%2Fahamoments%2Fpages%2Fconcept%2F%5Bid%5D.js ***!
   \***************************************************************************************************************************************************************/
@@ -77036,5 +77050,5 @@ module.exports = dll_e9ad7d891b372a4221cf;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=[id].js.map
